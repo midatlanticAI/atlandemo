@@ -1,105 +1,206 @@
-# AtlanDemo
+# VTRFM Source Code Archive – April 2025
 
-A demonstration project for Mid Atlantic AI.
+**Inventor:** Johnathan Scott Viruet
+
+## Atlan Symbolic Cognitive Engine
+
+A comprehensive framework for symbolic memory, perception, reasoning, and reflection designed to create adaptive AI agents with emergent personality and belief systems.
 
 ## Overview
 
-This project serves as a demonstration of best practices in software development, focusing on:
-- Clean, modular code architecture
-- Robust error handling
-- Security best practices
-- Asynchronous programming patterns
-- Comprehensive testing
-- Scalable design patterns
+The Atlan Symbolic Cognitive Engine is a sophisticated AI architecture that combines multiple cognitive components to create agents capable of:
 
-## Project Structure
+- **Symbolic Memory Management**: Efficient storage and retrieval of experiences with reinforcement learning
+- **Emotional Perception**: Sentiment analysis and mood tracking with drift detection
+- **Belief System Evolution**: Dynamic belief revision based on experience and feedback
+- **Narrative Construction**: Personality development through mood pattern analysis
+- **Self-Reflection**: Autonomous belief updating and state assessment
 
-```
-atlandemo/
-├── src/                    # Source code
-│   ├── __init__.py
-│   ├── main.py            # Application entry point
-│   ├── models/            # Data models
-│   ├── services/          # Business logic
-│   ├── utils/             # Utility functions
-│   └── config/            # Configuration management
-├── tests/                 # Test files
-│   ├── __init__.py
-│   ├── test_main.py
-│   └── unit/              # Unit tests
-├── docs/                  # Documentation
-├── requirements.txt       # Python dependencies
-├── .gitignore            # Git ignore patterns
-└── README.md             # This file
-```
+## Architecture
 
-## Getting Started
+### Core Components
 
-### Prerequisites
+1. **AtlanAgent** (`agent.py`) - Main orchestrator that coordinates all cognitive components
+2. **RCoreMemoryIndex** (`memory.py`) - Indexed memory system with symbolic nodes and reinforcement
+3. **ToneEngine & DriftTracker** (`perception.py`) - Sentiment analysis and emotional state tracking
+4. **BeliefSystem & DreamspaceSimulator** (`reasoning.py`) - Belief management and action simulation
+5. **SelfAnchor** (`reflection.py`) - Self-reflection and belief revision mechanisms
+6. **NarrativeNode** (`narrative.py`) - Personality development and narrative construction
+7. **ReinforcementEngine** (`reinforcement.py`) - Memory strengthening and decay management
+8. **Similarity Functions** (`similarity.py`) - Vector similarity and resonance calculations
+9. **Utilities** (`utils.py`) - Vector encoding and helper functions
 
-- Python 3.8 or higher
-- pip package manager
+### Key Features
 
-### Installation
+- **Memory Reinforcement**: Memories strengthen with repeated access and weaken over time
+- **Emotional Drift Tracking**: Monitors mood changes and volatility patterns
+- **Belief Evolution**: Beliefs adapt based on action outcomes and feedback
+- **Personality Emergence**: Personality traits develop from behavioral patterns
+- **Action Simulation**: Dreamspace simulates potential outcomes before action selection
+- **Self-Reflection Cycles**: Periodic belief revision and state assessment
 
-1. Clone the repository:
-   ```powershell
-   git clone https://github.com/midatlanticAI/atlandemo.git
-   cd atlandemo
-   ```
+## Installation
 
-2. Create a virtual environment:
-   ```powershell
-   python -m venv venv
-   venv\Scripts\Activate.ps1
-   ```
+```bash
+# Clone or extract the VTRFM source code
+cd atlandemo
 
-3. Install dependencies:
-   ```powershell
-   pip install -r requirements.txt
-   ```
-
-### Running the Application
-
-```powershell
-python src/main.py
+# Install dependencies (optional, uses only Python standard library)
+pip install -r requirements.txt
 ```
 
-## Development Guidelines
+## Usage
 
-### Code Style
-- Follow PEP 8 standards
-- Use meaningful variable and function names
-- Include docstrings for all functions and classes
-- Maintain consistent code formatting
+### Basic Agent Creation
 
-### Testing
-- Write unit tests for all functions
-- Aim for high test coverage
-- Use pytest for testing framework
+```python
+from src import AtlanAgent
 
-### Security
-- Never commit sensitive data
-- Use environment variables for configuration
-- Follow secure coding practices
+# Create an agent with default configuration
+agent = AtlanAgent(agent_id="my_agent")
 
-### Performance
-- Use async/await for I/O operations
-- Optimize database queries
-- Consider scalability in design decisions
+# Create an agent with custom configuration
+config = {
+    'memory': {'max_size': 2000},
+    'drift_window': 50,
+    'match_threshold': 0.9,
+    'initial_beliefs': {
+        'exploration_is_valuable': 0.8,
+        'caution_prevents_mistakes': 0.6
+    }
+}
+agent = AtlanAgent(agent_id="custom_agent", config=config)
+```
 
-## Contributing
+### Processing Input and Learning
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Write or update tests
-5. Submit a pull request
+```python
+# Process input phrases
+result = agent.process_input("I feel great about this project!", label="positive_feedback")
+print(f"Mood score: {result['mood_score']}")
+print(f"Memory status: {result['memory_interaction']['status']}")
+
+# Choose actions based on current state
+action = agent.choose_action()
+print(f"Chosen action: {action}")
+
+# Record outcomes to update beliefs
+feedback = agent.record_outcome(action, actual_outcome=0.7)
+print(f"Feedback: {feedback['feedback']}")
+```
+
+### Self-Reflection and State Monitoring
+
+```python
+# Trigger self-reflection
+reflection = agent.reflect()
+print(f"Belief revisions: {reflection['belief_revisions']}")
+
+# Get current agent state
+state = agent.get_state(include_memory_sample=5)
+print(f"Current personality: {state['personality']}")
+print(f"Memory stats: {state['memory_stats']}")
+
+# Get tone-appropriate response template
+template = agent.get_response_template()
+print(f"Response template: {template}")
+```
+
+### State Persistence
+
+```python
+# Save agent state
+agent.save_state("agent_state.json")
+
+# Load agent state (implementation needs completion)
+agent.load_state("agent_state.json")
+```
+
+## Configuration Options
+
+The agent accepts a configuration dictionary with the following options:
+
+```python
+config = {
+    'memory': {
+        'max_size': 1000,              # Maximum memory nodes
+        'decay_threshold': 0.2,        # Minimum reinforcement before decay
+        'retention_window': 604800,    # Retention time in seconds (7 days)
+        'reinforcement_weight': 0.05   # Weight of reinforcement in similarity
+    },
+    'drift_window': 30,                # Mood history window size
+    'match_threshold': 0.95,           # Similarity threshold for memory matching
+    'initial_beliefs': {               # Starting beliefs and confidence levels
+        'custom_belief': 0.7
+    },
+    'action_effects': {                # Action outcome templates
+        'custom_action': 0.3
+    }
+}
+```
+
+## Testing
+
+```bash
+# Run basic functionality tests
+python -m pytest tests/ -v
+
+# Run specific test modules
+python -m pytest tests/unit/test_agent.py -v
+```
+
+## Architecture Principles
+
+### Symbolic Representation
+- All experiences are encoded as symbolic vectors with semantic meaning
+- Memory nodes contain both content and metadata for rich retrieval
+- Similarity calculations combine multiple vector metrics
+
+### Reinforcement Learning
+- Memories strengthen with repeated access and successful outcomes
+- Weak memories decay over time to prevent information overload
+- Belief confidence adjusts based on action feedback
+
+### Emergent Behavior
+- Personality traits emerge from behavioral patterns over time
+- Beliefs evolve through experience rather than explicit programming
+- Emotional states influence decision-making and memory formation
+
+### Self-Awareness
+- Agents monitor their own internal states and patterns
+- Reflection cycles trigger belief revision and adaptation
+- Narrative construction provides coherent self-understanding
+
+## Security Considerations
+
+- Input validation prevents malformed data from corrupting agent state
+- Memory pruning prevents unbounded growth and resource exhaustion
+- Belief revision has safeguards against rapid oscillation
+- State serialization should be validated when loading from external sources
+
+## Performance Optimization
+
+- Memory indexing provides O(1) hash-based retrieval
+- Caching reduces redundant similarity calculations
+- Configurable memory limits prevent resource exhaustion
+- Efficient vector operations minimize computational overhead
+
+## Future Enhancements
+
+- Multi-agent communication and belief sharing
+- Enhanced natural language processing integration
+- Persistent storage backends (database integration)
+- Distributed memory and processing capabilities
+- Advanced personality modeling and social dynamics
 
 ## License
 
-This project is licensed under the MIT License.
+This code is provided as an archive of the VTRFM (Atlan) Symbolic Cognitive Engine developed by Johnathan Scott Viruet in April 2025.
 
 ## Contact
 
-For questions or support, please contact Mid Atlantic AI. 
+For questions about the VTRFM architecture or implementation details, please refer to the original research documentation or contact the inventor.
+
+---
+
+*"The mind is not a vessel to be filled, but a fire to be kindled."* - Plutarch 

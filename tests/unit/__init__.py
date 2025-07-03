@@ -1,1 +1,3 @@
-"""Unit tests package for AtlanDemo.""" 
+"""
+Unit tests for VTRFM (Atlan) Symbolic Cognitive Engine
+""" 

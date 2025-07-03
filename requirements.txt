@@ -1,42 +1,12 @@
-# Core dependencies
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-python-dotenv==1.0.0
+# VTRFM (Atlan) Cognitive Engine Dependencies
+# Core Python libraries (built-in modules used: time, json, random, uuid, collections, math, typing)
 
-# Database
-sqlalchemy==2.0.23
-alembic==1.12.1
+# No external dependencies required for basic functionality
+# The system is designed to be self-contained using only Python standard library
 
-# HTTP client
-httpx==0.25.2
-aiofiles==23.2.1
-
-# Security
-passlib[bcrypt]==1.7.4
-python-jose[cryptography]==3.3.0
-
-# Testing
-pytest==7.4.3
-pytest-asyncio==0.21.1
-pytest-cov==4.1.0
-httpx==0.25.2
-
-# Development tools
-black==23.11.0
-flake8==6.1.0
-mypy==1.7.1
-pre-commit==3.5.0
-
-# Logging
-loguru==0.7.2
-
-# Configuration
-pydantic-settings==2.1.0
-
-# Optional: For data processing
-pandas==2.1.3
-numpy==1.25.2
-
-# Optional: For ML/AI capabilities
-scikit-learn==1.3.2 
+# Optional dependencies for enhanced functionality:
+# numpy>=1.21.0          # For advanced vector operations (if needed)
+# scikit-learn>=1.0.0    # For improved similarity calculations (if needed)
+# pytest>=6.0.0          # For running tests
+# black>=22.0.0          # For code formatting
+# pylint>=2.12.0         # For code linting 
