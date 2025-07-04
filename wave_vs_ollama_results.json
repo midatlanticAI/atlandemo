@@ -1,0 +1,1021 @@
+{
+  "wave": {
+    "correct": 34,
+    "total": 50,
+    "time": 0.031199216842651367,
+    "answers": [
+      {
+        "question": "Can we say at least one of the following must always be true? (a) i won't have a coke and (b) i will watch have snacks",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "If John doesn't walk his dog every day, does this imply that The dog won't be happy?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't devour books of all genres and (b) tom is an avid reader",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Does this entail that tom isn't crossing the street?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she will get good grades. and (b) she will spend time with her friends.",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will take a break and (b) he will have lunch",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) jane sends a letter and (b) he doesn't send a letter",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he won't get a tan and (b) he will take a stroll",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't work hard to perfect his voice and (b) harry is a great singer",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "If Jerry doesn't go for jogging, does this mean that he will drink lots of water?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) ava won't have an ice-cream and (b) she will have popcorn",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Does this mean that ally can't join a reading club?",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) his friends will join in  and (b) her family will join in",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will watch a movie and (b) he will go shopping",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) jill doesn't read a lot and (b) she watches television",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "If jim didn't clean his room, does this imply that he will buy a new toy?",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Does this imply that benjamin isn't going to the beach?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will stay fit and (b) he goes to the gym",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "If Nina doesn't complete her daily tasks, does this imply that she will have more free time?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Does this entail that theodore has a pet dog?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will frame it and (b) he will publish it.",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will suffer from diseases and (b) he takes care of his health",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he practices daily for hours and (b) he doesn't play guitar incredibly well",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) hannah takes the bus  and (b) she drives her own car",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "does this imply that there is a renowned structure in paris?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "If kathy doesn't buy all the necessary ingredients, does this entail that she won't be able to impress her friends?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he practices for several hours every day or (b) he is a talented musician",
+        "expected": "yes",
+        "predicted": "unknown",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) sara doesn't work hard and (b) she takes a break",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Based on context, can we say, at least one of the following must always be true? (a) she is able to dance and (b) she will not join dance class",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false
+      },
+      {
+        "question": "does this imply that no one have expertise in cooking?",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't drive a car and (b) he rides a bike",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) alice visits the library  and (b) she takes a break",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Does this entail that john has a good job?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "If tom doesn't wake up early, does this imply that he won't be happy?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "does this mean that no one win the marathon race?",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "If john has a good job, does this mean that he can buy whatever he wants?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Based on context, can we say, at least one of the following must always be true? (a) he is eating healthy and (b) he will gain weight",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she won't have energy to start my day and (b) she will feel groggy in the morning",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he takes a nap and (b) he drinks coffee",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will complete the race and (b) he will have improved his stamina",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't make groundbreaking discoveries and (b) he is a brilliant scientist",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) sara works hard  and (b) she doesn't take a break",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she will arrive quickly and (b) she doesn't climb the stairs",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false
+      },
+      {
+        "question": "Based on context, can we say, at least one of the following must always be true? (a) she is home and (b) she will answer the phone",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) nina doesn't eat healthy and (b) she doesn't exercise regularly",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false
+      },
+      {
+        "question": "Does this entail that she won't plan a trip?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will get a tan and (b) he doesn't stay inside for long hours",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false
+      },
+      {
+        "question": "Does this imply that she will go for dinner outside?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she will become stronger and (b) she doesn't eat unhealthy food",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) his friends won't join for a game and (b) her brother will join them.",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true
+      }
+    ],
+    "accuracy": 0.68
+  },
+  "ollama": {
+    "correct": 36,
+    "total": 50,
+    "time": 325.15928506851196,
+    "answers": [
+      {
+        "question": "Can we say at least one of the following must always be true? (a) i won't have a coke and (b) i will watch have snacks",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "If John doesn't walk his dog every day, does this imply that The dog won't be happy?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't devour books of all genres and (b) tom is an avid reader",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Does this entail that tom isn't crossing the street?",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she will get good grades. and (b) she will spend time with her friends.",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will take a break and (b) he will have lunch",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) jane sends a letter and (b) he doesn't send a letter",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he won't get a tan and (b) he will take a stroll",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't work hard to perfect his voice and (b) harry is a great singer",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "If Jerry doesn't go for jogging, does this mean that he will drink lots of water?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) ava won't have an ice-cream and (b) she will have popcorn",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Does this mean that ally can't join a reading club?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) his friends will join in  and (b) her family will join in",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will watch a movie and (b) he will go shopping",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) jill doesn't read a lot and (b) she watches television",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "If jim didn't clean his room, does this imply that he will buy a new toy?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Does this imply that benjamin isn't going to the beach?",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will stay fit and (b) he goes to the gym",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "If Nina doesn't complete her daily tasks, does this imply that she will have more free time?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Does this entail that theodore has a pet dog?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will frame it and (b) he will publish it.",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will suffer from diseases and (b) he takes care of his health",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he practices daily for hours and (b) he doesn't play guitar incredibly well",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) hannah takes the bus  and (b) she drives her own car",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "does this imply that there is a renowned structure in paris?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "If kathy doesn't buy all the necessary ingredients, does this entail that she won't be able to impress her friends?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he practices for several hours every day or (b) he is a talented musician",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) sara doesn't work hard and (b) she takes a break",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Based on context, can we say, at least one of the following must always be true? (a) she is able to dance and (b) she will not join dance class",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false,
+        "raw_response": "No"
+      },
+      {
+        "question": "does this imply that no one have expertise in cooking?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't drive a car and (b) he rides a bike",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) alice visits the library  and (b) she takes a break",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Does this entail that john has a good job?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "If tom doesn't wake up early, does this imply that he won't be happy?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "does this mean that no one win the marathon race?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "If john has a good job, does this mean that he can buy whatever he wants?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Based on context, can we say, at least one of the following must always be true? (a) he is eating healthy and (b) he will gain weight",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she won't have energy to start my day and (b) she will feel groggy in the morning",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he takes a nap and (b) he drinks coffee",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will complete the race and (b) he will have improved his stamina",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he doesn't make groundbreaking discoveries and (b) he is a brilliant scientist",
+        "expected": "no",
+        "predicted": "yes",
+        "correct": false,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) sara works hard  and (b) she doesn't take a break",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she will arrive quickly and (b) she doesn't climb the stairs",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Based on context, can we say, at least one of the following must always be true? (a) she is home and (b) she will answer the phone",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) nina doesn't eat healthy and (b) she doesn't exercise regularly",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Does this entail that she won't plan a trip?",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) he will get a tan and (b) he doesn't stay inside for long hours",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Does this imply that she will go for dinner outside?",
+        "expected": "yes",
+        "predicted": "yes",
+        "correct": true,
+        "raw_response": "Yes"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) she will become stronger and (b) she doesn't eat unhealthy food",
+        "expected": "yes",
+        "predicted": "no",
+        "correct": false,
+        "raw_response": "No"
+      },
+      {
+        "question": "Can we say at least one of the following must always be true? (a) his friends won't join for a game and (b) her brother will join them.",
+        "expected": "no",
+        "predicted": "no",
+        "correct": true,
+        "raw_response": "No"
+      }
+    ],
+    "accuracy": 0.72
+  },
+  "ollama_model": "llama3.1:70b",
+  "questions": [
+    {
+      "context": "If I decide to go to the picnic, I will definitely treat myself to a refreshing coke. On the other hand, if I choose to go to the movies, I will indulge in some delicious snacks. It is certain that I will make one of the following choices: either go to the picnic or go to the movies. However, it remains uncertain which one of these options I will ultimately choose. It could be the case that I only go to the picnic, or only go to the movies, or even that I decide to do both.",
+      "question": "Can we say at least one of the following must always be true? (a) i won't have a coke and (b) i will watch have snacks",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If an individual takes their dog companion for a stroll on a daily basis, it will result in the dog maintaining good health. When the dog remains in good health, it experiences happiness.",
+      "question": "If John doesn't walk his dog every day, does this imply that The dog won't be happy?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "At least one of two things is true about Tom - he is either an avid reader or he devours books of all genres. We are unsure which one of these statements is true or if both are true. It could be that only the first statement is true, or only the second statement is true, or even that both are true.",
+      "question": "Can we say at least one of the following must always be true? (a) he doesn't devour books of all genres and (b) tom is an avid reader",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "commutation"
+    },
+    {
+      "context": "If an individual desires to cross the street, it is essential for them to observe both directions before doing so. In contrast, Tom did not look both ways before proceeding.",
+      "question": "Does this entail that tom isn't crossing the street?",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "modus_tollens"
+    },
+    {
+      "context": "If someone dedicates their time to exam preparations, they are likely to achieve favorable results. Conversely, individuals who take breaks tend to enjoy the company of friends. It is known that either Alice is intensely focused on studying for her exams or she is taking a break. The specific case for this context concludes that Alice is either studying for her exams or taking a break.",
+      "question": "Can we say at least one of the following must always be true? (a) she will get good grades. and (b) she will spend time with her friends.",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If someone decides to give the car a good scrubbing, they will reward themselves with a well-deserved break afterward. On the other hand, if they choose to tidy up the house, they will treat themselves to a delicious lunch. It is known that at least one of the following possibilities is true: either someone named John washes the car, or he cleans the house. It is uncertain which one of these options is true, as it could be solely the case that John washes the car, or it might be solely the case that John cleans the house, or perhaps even both activities are performed by John.",
+      "question": "Can we say at least one of the following must always be true? (a) he will take a break and (b) he will have lunch",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If a person chooses to send a letter, they will definitely receive a response in return. On the other hand, if they decide not to send a letter, they will not receive any response at all. It is certain that either the first statement is true and jane won't receive a response, or the second statement is true and he will receive a response. We cannot determine which statement is true, as it could be the case that only the first statement is true, only the second statement is true, or both statements are true at the same time.",
+      "question": "Can we say at least one of the following must always be true? (a) jane sends a letter and (b) he doesn't send a letter",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "John had a choice to make for the day - either go to the beach or go on a trail. He knew that if he decided to go to the beach, he would definitely get a tan. On the other hand, if he opted for the trail, he would enjoy a relaxing stroll. It was certain that John would do at least one of these activities, but it was unclear which one. It could be that he only went to the beach, or solely went on the trail, or perhaps even both. The final decision was yet to be made, but either way, John was looking forward to a day filled with either a sun-kissed tan or a serene walk in nature.",
+      "question": "Can we say at least one of the following must always be true? (a) he won't get a tan and (b) he will take a stroll",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "We have knowledge that Harry is either a talented singer or he puts a lot of effort into perfecting his voice. However, it is uncertain which one of these statements is true. It could be the case that Harry is indeed a great singer, or it might be that he only works hard to improve his vocal abilities. Additionally, it is possible that both statements are accurate.",
+      "question": "Can we say at least one of the following must always be true? (a) he doesn't work hard to perfect his voice and (b) harry is a great singer",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "commutation"
+    },
+    {
+      "context": "If Jerry decides to go for a jog, he knows he will eventually work up a sweat. Whenever he finds himself perspiring heavily, it's a clear sign that he needs to replenish his body with lots of water.",
+      "question": "If Jerry doesn't go for jogging, does this mean that he will drink lots of water?",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "If Ava chooses to go to the hotel, she will be rewarded with a delightful ice-cream. On the other hand, if she decides to go to the movies, she will be able to indulge in some delicious popcorn. What we do know for sure is that at least one of the following options is true: Ava goes to the hotel or Ava goes to the movies. However, the exact combination of whether only option one is true, or only option two, or if both options are true, remains unknown.",
+      "question": "Can we say at least one of the following must always be true? (a) ava won't have an ice-cream and (b) she will have popcorn",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "In this scenario, we are aware that there are two possibilities: either all students have the opportunity to attend a music festival, or all students have the option to join a reading club. However, it is unclear which of the two possibilities is true, as it could be either one, or even both. We are given the information that Ally is unable to attend the music festival.",
+      "question": "Does this mean that ally can't join a reading club?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "disjunctive_syllogism"
+    },
+    {
+      "context": "If someone decides to go for a run in the park, it is highly likely that their friends will join them and run alongside. Similarly, if someone chooses to dance at the club, it is very probable that their family members will also join in the fun and dance to the music. We have knowledge that at least one of the following statements is true: either John is currently running in the park or Mary is currently dancing in the club. It is uncertain which statement is accurate, as it could be that only John is running, or it could be that only Mary is dancing, or even the possibility that both are true.",
+      "question": "Can we say at least one of the following must always be true? (a) his friends will join in  and (b) her family will join in",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If someone decides to engage in physical exercise, then they are likely to follow it up with a leisurely movie-watching session. Similarly, should they opt to visit a shopping center, they will probably indulge in some retail therapy. It is worth noting that at least one of the statements holds true: either the person named John went to the gym, or he ventured into the mall. The specifics of these options remain unknown; it could be the case that only the former is accurate, or solely the latter, or perhaps even both are accurate.",
+      "question": "Can we say at least one of the following must always be true? (a) he will watch a movie and (b) he will go shopping",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If someone does a reading extensively, it has been proven to have a positive impact on their academic performance, leading to good grades. Additionally, for everyone, it is believed that watching television can help promote a restful night's sleep. Notably, at least one of two possibilities is true: either Jill will not achieve good grades or she will not experience sound sleep. It is worth noting that it is unclear which of these possibilities is true, as it could be either one or both.",
+      "question": "Can we say at least one of the following must always be true? (a) jill doesn't read a lot and (b) she watches television",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "If Jim cleans his room, he will receive a reward. And if he receives a reward, he will use it to buy a new toy. So, Jim decided to tidy up his room, hoping to earn a reward. He diligently gathered his clothes, organized his toys, and dusted every surface. After a few hours of hard work, Jim's room was spotless.",
+      "question": "If jim didn't clean his room, does this imply that he will buy a new toy?",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "Benjamin had been eagerly anticipating his trip to the beach for weeks. His friends had told him, 'If he is going to the beach, then he will go swimming.' However, he didn't end up going swimming after all.",
+      "question": "Does this imply that benjamin isn't going to the beach?",
+      "answer": "yes",
+      "logic_type": "propositional_logic",
+      "axiom": "modus_tollens"
+    },
+    {
+      "context": "John knows that if he goes to the gym, then he will stay fit, but if he doesn't go to the gym, then he will become unhealthy. In his situation, it is known that either John goes to the gym or he won't become unhealthy, but it is unclear which one is true or if both are true.",
+      "question": "Can we say at least one of the following must always be true? (a) he will stay fit and (b) he goes to the gym",
+      "answer": "yes",
+      "logic_type": "propositional_logic",
+      "axiom": "bidirectional_dilemma"
+    },
+    {
+      "context": "If an individual successfully completes their daily tasks, they will experience a state of tranquility within themselves. This sense of peace will subsequently grant them additional leisure time to enjoy.",
+      "question": "If Nina doesn't complete her daily tasks, does this imply that she will have more free time?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "If Theodore has a pet dog, he will take it out for a walk. However, he would not take his dog out for a walk.",
+      "question": "Does this entail that theodore has a pet dog?",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "modus_tollens"
+    },
+    {
+      "context": "If someone is painting a picture, then they will frame it. Similarly, the natural course of action for a writer would be to publish their completed story. In this scenario, it is certain that at least one of the following statements holds true: (1) John is currently engrossed in painting a picture, or (2) John is currently immersed in the act of writing a story. It should be emphasized that we are unaware of which statement specifically applies, as there is a possibility that either (1) alone is true, or (2) alone is true, or even that both (1) and (2) are simultaneously true.",
+      "question": "Can we say at least one of the following must always be true? (a) he will frame it and (b) he will publish it.",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If someone does not prioritize their well-being, they will likely experience health issues. Conversely, if they pay attention to their health, they will likely remain in good health. It is uncertain which of the following statements is true: (1) Mark neglects his health, or (2) he will not be healthy. It is possible that either only (1) is true, only (2) is true, or both are true.",
+      "question": "Can we say at least one of the following must always be true? (a) he will suffer from diseases and (b) he takes care of his health",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "bidirectional_dilemma"
+    },
+    {
+      "context": "John is a talented musician, known for his incredible guitar skills. It is a well-known fact that John either plays the guitar incredibly well or practices daily for hours, but it remains a mystery which of the two options is true. Whether it is his natural talent or his dedication and hard work that have led to his musical prowess, nobody can say for certain. However, one thing is clear - John's musical abilities are truly awe-inspiring and continue to captivate audiences wherever he performs.",
+      "question": "Can we say at least one of the following must always be true? (a) he practices daily for hours and (b) he doesn't play guitar incredibly well",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "commutation"
+    },
+    {
+      "context": "If a person chooses to take the bus, they will arrive at their destination punctually. On the other hand, if they opt to drive their own car, they will reach their intended location more quickly. It is important to note that we are aware that at least one of the following statements is true: either hannah will not arrive on time or she will not reach their destination faster. However, we do not have information regarding which specific statement (1 or 2) is true. It could be the case that only statement (1) is true, or only statement (2) is true, or both could be true.",
+      "question": "Can we say at least one of the following must always be true? (a) hannah takes the bus  and (b) she drives her own car",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "The Eiffel Tower, an iconic landmark situated in the charming city of Paris, is well-known and admired by people from around the world. Standing tall and proud, this magnificent structure has become a symbol of the city's rich history and architectural brilliance. Its captivating design and intricate details continue to mesmerize visitors who flock to witness its beauty firsthand. The Eiffel Tower, a renowned attraction, serves as a testament to human ingenuity and creative prowess.",
+      "question": "does this imply that there is a renowned structure in paris?",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "existential_generalization"
+    },
+    {
+      "context": "If all the necessary ingredients are purchased by someone, then the possibility of cooking a delicious meal arises by them. The act of successfully cooking a delicious meal has the potential to leave a lasting impression on one's friends.",
+      "question": "If kathy doesn't buy all the necessary ingredients, does this entail that she won't be able to impress her friends?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "John is a musician who spends several hours every day practicing. It is not clear whether he is a talented musician, but he is dedicated to honing his skills through extensive daily practice. The condition in this story is that either John is a talented musician or he practices for several hours every day. There could be multiple scenarios: (1) John is both a talented musician and practices diligently, (2) John is a talented musician but does not practice regularly, or (3) John may not have innate talent but compensates by putting in rigorous practice sessions.",
+      "question": "Can we say at least one of the following must always be true? (a) he practices for several hours every day or (b) he is a talented musician",
+      "answer": "yes",
+      "logic_type": "propositional_logic",
+      "axiom": "commutation"
+    },
+    {
+      "context": "Working hard can lead to promotions, while taking breaks can help refresh the mind. In this situation, we are aware that at least one of two outcomes is true: either Sara will not receive a promotion or she will not refresh her mind. It is uncertain which specific outcome is accurate, as it could be either one, or even both.",
+      "question": "Can we say at least one of the following must always be true? (a) sara doesn't work hard and (b) she takes a break",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "If she is unable to dance, then she won't be able to join the dance class. One day, Sarah, an aspiring dancer, eagerly arrived at the dance studio for her first class.",
+      "question": "Based on context, can we say, at least one of the following must always be true? (a) she is able to dance and (b) she will not join dance class",
+      "answer": "yes",
+      "logic_type": "propositional_logic",
+      "axiom": "material_implication"
+    },
+    {
+      "context": "John, a skilled culinary expert, possesses an exceptional talent in the art of cooking. His expertise in the kitchen surpasses that of most, as he has acquired the status of a master chef. His culinary achievements have been widely recognized and celebrated by both critics and food enthusiasts alike. In every dish he creates, John showcases his tremendous skill and creativity, elevating ordinary ingredients into extraordinary culinary masterpieces. With his profound knowledge of flavors, meticulous attention to detail, and unwavering dedication to his craft, John continues to amaze and inspire all who have the pleasure of experiencing his delectable creations.",
+      "question": "does this imply that no one have expertise in cooking?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "existential_generalization"
+    },
+    {
+      "context": "If John drives a car, then he will reach my destination on time. On the other hand, if he rides a bike, then he will save money on fuel. However, it is evident that he will not reach his destination on time or save money on fuel. It is unclear which of these scenarios is true. It could be that he won't reach his destination on time, or it could be that he won't save money on fuel, or it is possible that both situations are true.",
+      "question": "Can we say at least one of the following must always be true? (a) he doesn't drive a car and (b) he rides a bike",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "If someone decides to pay a visit to the library, they will be able to discover the book they are in search of. In the event that they choose to take a break, they will eventually return to their research. It is known that at least one of the following statements holds true: either Alice will fail to find the book they need, or she will not resume their research. Please note that the veracity of either statement (1) or statement (2) is not established, as it could be the case that solely statement (1) is true, solely statement (2) is true, or that both statements are indeed true.",
+      "question": "Can we say at least one of the following must always be true? (a) alice visits the library  and (b) she takes a break",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "John was always a hardworking individual, and he believed that having a good job would give him the financial stability he desired. He was convinced that if he had a good job, he would have the means to invest in stocks, which he believed would be a smart financial decision. Despite his dedication and efforts, he found himself in a situation where he couldn't invest in stocks.",
+      "question": "Does this entail that john has a good job?",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "modus_tollens"
+    },
+    {
+      "context": "If Tom wakes up early, he will have a productive day. As a result, he will be happy. Thus, Tom's happiness is contingent upon him waking up early in the morning and having a productive day ahead.",
+      "question": "If tom doesn't wake up early, does this imply that he won't be happy?",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "The marathon race was won by James, who emerged as the champion.",
+      "question": "does this mean that no one win the marathon race?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "existential_generalization"
+    },
+    {
+      "context": "If an individual is employed in a high-paying occupation, they are likely to possess a substantial amount of wealth. This extensive wealth enables them to indulge in the purchase of anything their heart desires.",
+      "question": "If john has a good job, does this mean that he can buy whatever he wants?",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "hypothetical_syllogism"
+    },
+    {
+      "context": "Once upon a time, there was a guy named John who was very conscious about his weight. He knew that if he didn't eat healthy, he wouldn't be able to maintain his desired weight. John understood the condition that if he didn't eat healthy, he wouldn't be able to gain weight.",
+      "question": "Based on context, can we say, at least one of the following must always be true? (a) he is eating healthy and (b) he will gain weight",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "material_implication"
+    },
+    {
+      "context": "Lisa woke up one morning feeling unsure about how her day would unfold. She knew that if she had eaten breakfast, she would have the energy to start her day on a positive note. On the other hand, if she had slept in late, she would feel groggy and sluggish. As she sat at the breakfast table contemplating her options, Lisa realized that she had two possibilities. It could be that she had indeed eaten breakfast in the morning, or it could be that she had slept in late. She couldn't be certain which one was true, or if both were true. Regardless, Lisa understood that her level of energy for the day would greatly depend on the outcome of her morning routine.",
+      "question": "Can we say at least one of the following must always be true? (a) she won't have energy to start my day and (b) she will feel groggy in the morning",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "If Mihir takes a nap, he will feel refreshed, but if he drinks coffee, he will stay alert. However, we know that at least one of the following is true: he won't feel refreshed or he won't stay alert. It's uncertain which one of these is true, it could be that only the first statement is true, or only the second statement is true, or both are true.",
+      "question": "Can we say at least one of the following must always be true? (a) he takes a nap and (b) he drinks coffee",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "If someone participates in a marathon, then they will successfully complete the race. Similarly, if an individual engages in jogging, it will result in an enhancement of their stamina. From the given information, we are aware that either (1) James is running a marathon, (2) he is jogging, or it is possible that both statements are true without disclosing which one specifically.",
+      "question": "Can we say at least one of the following must always be true? (a) he will complete the race and (b) he will have improved his stamina",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    },
+    {
+      "context": "We are aware that either he is an exceptionally intelligent scientist or he is known for making revolutionary discoveries. It remains uncertain which one of these possibilities is true. It is conceivable that only his brilliance as a scientist is true, or alternatively, only his groundbreaking discoveries, or even both might be true.",
+      "question": "Can we say at least one of the following must always be true? (a) he doesn't make groundbreaking discoveries and (b) he is a brilliant scientist",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "commutation"
+    },
+    {
+      "context": "Working hard can lead to promotions, while taking breaks can help refresh the mind. In this situation, we are aware that at least one of two outcomes is true: either Sara will not receive a promotion or she will not refresh her mind. It is uncertain which specific outcome is accurate, as it could be either one, or even both.",
+      "question": "Can we say at least one of the following must always be true? (a) sara works hard  and (b) she doesn't take a break",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "If an individual chooses to ride the elevator, they will reach their destination more quickly, whereas if they opt to climb the stairs, they will find themselves short of breath. Interestingly, we can infer that at least one of two situations is true: either Ava takes the elevator or she will not experience any breathlessness. Importantly, it remains ambiguous whether only one of these situations is true, or if both are indeed accurate.",
+      "question": "Can we say at least one of the following must always be true? (a) she will arrive quickly and (b) she doesn't climb the stairs",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "bidirectional_dilemma"
+    },
+    {
+      "context": "If Jane is not at home, then she will not pick up the phone.",
+      "question": "Based on context, can we say, at least one of the following must always be true? (a) she is home and (b) she will answer the phone",
+      "answer": "no",
+      "logic_type": "propositional_logic",
+      "axiom": "material_implication"
+    },
+    {
+      "context": "If anyone who eats healthy, then they will stay fit. if they exercises regularly, then they will have a toned body. we know that atleast one of the following is true (1) Nina won't stay fit and (2) she won't have a toned body. note that we do not know which ones of (1) and (2) are true. it might be the case that only (1) is true, or only (2) is true or both are true.",
+      "question": "Can we say at least one of the following must always be true? (a) nina doesn't eat healthy and (b) she doesn't exercise regularly",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "destructive_dilemma"
+    },
+    {
+      "context": "If a person experiences a great amount of excitement, they tend to organize and arrange a journey or expedition. Debbie is filled with exhilaration and enthusiasm.",
+      "question": "Does this entail that she won't plan a trip?",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "modus_ponens"
+    },
+    {
+      "context": "If someone is frequently outside, it is likely that they will develop a tan. Conversely, if an individual spends prolonged periods indoors, it is unlikely for them to get a tan. At least one of the following statements holds true: (1) Rahul spends a considerable amount of time outdoors or (2) he will acquire a tan. It is important to note that we do not possess knowledge regarding the accuracy of (1) or (2). It could be the case that only (1) is accurate, or solely (2), or possibly, both are accurate. (Rephrased: It is uncertain if spending time outdoors or acquiring a tan is true, or if both are true.)",
+      "question": "Can we say at least one of the following must always be true? (a) he will get a tan and (b) he doesn't stay inside for long hours",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "bidirectional_dilemma"
+    },
+    {
+      "context": "If an individual experiences joy, they have a tendency to dine out in the evening. Earlier today, Reema experienced joy.",
+      "question": "Does this imply that she will go for dinner outside?",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "modus_ponens"
+    },
+    {
+      "context": "If a person attends regular gym sessions, they will experience an increase in their physical strength. Consuming unhealthy food regularly will lead to an individual gaining weight. At least one of the following scenarios is true: either Julie is dedicated to her gym routine or she will not experience weight gain. It is unclear which statement from the above is accurate, as either one or both of them could hold true.",
+      "question": "Can we say at least one of the following must always be true? (a) she will become stronger and (b) she doesn't eat unhealthy food",
+      "answer": "yes",
+      "logic_type": "first_order_logic",
+      "axiom": "bidirectional_dilemma"
+    },
+    {
+      "context": "If a person decides to partake in basketball outdoors, it is highly likely that their friends will join them for a friendly game. On the other hand, if someone chooses to indulge in video games indoors, it is highly probable that their sibling will join them in their virtual adventures. It is important to note that at least one of the following statements holds true: either John is currently engaged in a game of basketball outside, or Sophia is immersed in the world of video games indoors.",
+      "question": "Can we say at least one of the following must always be true? (a) his friends won't join for a game and (b) her brother will join them.",
+      "answer": "no",
+      "logic_type": "first_order_logic",
+      "axiom": "constructive_dilemma"
+    }
+  ]
+}

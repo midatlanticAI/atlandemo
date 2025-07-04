@@ -166,4 +166,66 @@ agent_state.json
 *.state
 *.memory
 logs/
-temp/ 
+temp/
+
+# Build artifacts and executables
+*.exe
+*.obj
+*.dll
+*.pdb
+*.cache
+*.json.tmp
+*.log
+
+# .NET build artifacts
+*/bin/
+*/obj/
+*/Debug/
+*/Release/
+**/bin/**
+**/obj/**
+
+# Language-specific build artifacts
+*.class
+*.o
+*.so
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+target/
+Cargo.lock
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Python virtual environment
+venv/
+env/
+.env
+
+# Results and temporary files
+*_results.json
+*_validation.json
+*.tmp
+temp/
+logs/
+
+# Keep validation reports that are important
+!validation_report.json
+!wave_vs_llm_benchmark_results.json
+!wave_vs_ollama_results.json
+!*logicbench_results.json 
