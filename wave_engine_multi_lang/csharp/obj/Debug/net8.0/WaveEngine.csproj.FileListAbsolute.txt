@@ -1,0 +1,15 @@
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\bin\Debug\net8.0\WaveEngine.exe
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\bin\Debug\net8.0\WaveEngine.deps.json
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\bin\Debug\net8.0\WaveEngine.runtimeconfig.json
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\bin\Debug\net8.0\WaveEngine.dll
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\bin\Debug\net8.0\WaveEngine.pdb
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.AssemblyInfoInputs.cache
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.AssemblyInfo.cs
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.csproj.CoreCompileInputs.cache
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.sourcelink.json
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.dll
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\refint\WaveEngine.dll
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.pdb
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\WaveEngine.genruntimeconfig.cache
+C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\obj\Debug\net8.0\ref\WaveEngine.dll
