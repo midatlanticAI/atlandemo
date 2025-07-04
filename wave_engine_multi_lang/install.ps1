@@ -24,19 +24,19 @@ function Write-ColorOutput($ForegroundColor) {
     $host.UI.RawUI.ForegroundColor = $fc
 }
 
-function Log-Info($message) {
+function Write-Info($message) {
     Write-ColorOutput Blue "[INFO] $message"
 }
 
-function Log-Success($message) {
+function Write-Success($message) {
     Write-ColorOutput Green "[SUCCESS] $message"
 }
 
-function Log-Warning($message) {
+function Write-Warning($message) {
     Write-ColorOutput Yellow "[WARNING] $message"
 }
 
-function Log-Error($message) {
+function Write-Error($message) {
     Write-ColorOutput Red "[ERROR] $message"
 }
 
@@ -46,50 +46,50 @@ function Test-Command($cmdName) {
 
 function Install-Chocolatey {
     if (-not (Test-Command choco)) {
-        Log-Info "Installing Chocolatey package manager..."
+        Write-Info "Installing Chocolatey package manager..."
         Set-ExecutionPolicy Bypass -Scope Process -Force
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
         Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         refreshenv
-        Log-Success "Chocolatey installed"
+        Write-Success "Chocolatey installed"
     } else {
-        Log-Success "Chocolatey already installed"
+        Write-Success "Chocolatey already installed"
     }
 }
 
 function Install-Winget {
     if (-not (Test-Command winget)) {
-        Log-Info "Installing winget (App Installer)..."
+        Write-Info "Installing winget (App Installer)..."
         try {
             $progressPreference = 'silentlyContinue'
             Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
             Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
             Remove-Item Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-            Log-Success "Winget installed"
+            Write-Success "Winget installed"
         } catch {
-            Log-Warning "Could not install winget automatically. Please install from Microsoft Store."
+            Write-Warning "Could not install winget automatically. Please install from Microsoft Store."
         }
     } else {
-        Log-Success "Winget already available"
+        Write-Success "Winget already available"
     }
 }
 
 function Install-Python {
     if (-not ($Languages -contains "python")) { return }
     
-    Log-Info "Setting up Python..."
+    Write-Info "Setting up Python..."
     
     if (Test-Command python) {
         $pythonVersion = python --version 2>&1
-        Log-Success "Python already installed: $pythonVersion"
+        Write-Success "Python already installed: $pythonVersion"
     } else {
-        Log-Info "Installing Python..."
+        Write-Info "Installing Python..."
         if (Test-Command winget) {
             winget install Python.Python.3.11 --accept-source-agreements --accept-package-agreements
         } elseif (Test-Command choco) {
             choco install python -y
         } else {
-            Log-Error "No package manager available. Please install Python manually from https://python.org"
+            Write-Error "No package manager available. Please install Python manually from https://python.org"
             return
         }
         refreshenv
@@ -97,28 +97,28 @@ function Install-Python {
     
     # Install Python Wave Engine
     if (Test-Command pip) {
-        Log-Info "Installing Python Wave Engine..."
+        Write-Info "Installing Python Wave Engine..."
         pip install -e python/
-        Log-Success "Python Wave Engine installed"
+        Write-Success "Python Wave Engine installed"
     }
 }
 
 function Install-JavaScript {
     if (-not ($Languages -contains "javascript")) { return }
     
-    Log-Info "Setting up JavaScript/Node.js..."
+    Write-Info "Setting up JavaScript/Node.js..."
     
     if (Test-Command node) {
         $nodeVersion = node --version
-        Log-Success "Node.js already installed: $nodeVersion"
+        Write-Success "Node.js already installed: $nodeVersion"
     } else {
-        Log-Info "Installing Node.js..."
+        Write-Info "Installing Node.js..."
         if (Test-Command winget) {
             winget install OpenJS.NodeJS --accept-source-agreements --accept-package-agreements
         } elseif (Test-Command choco) {
             choco install nodejs -y
         } else {
-            Log-Error "No package manager available. Please install Node.js manually from https://nodejs.org"
+            Write-Error "No package manager available. Please install Node.js manually from https://nodejs.org"
             return
         }
         refreshenv
@@ -126,28 +126,28 @@ function Install-JavaScript {
     
     # Install JavaScript packages
     if (Test-Command npm) {
-        Log-Info "Installing JavaScript Wave Engine..."
+        Write-Info "Installing JavaScript Wave Engine..."
         npm install
-        Log-Success "JavaScript Wave Engine installed"
+        Write-Success "JavaScript Wave Engine installed"
     }
 }
 
 function Install-Java {
     if (-not ($Languages -contains "java")) { return }
     
-    Log-Info "Setting up Java..."
+    Write-Info "Setting up Java..."
     
     if (Test-Command java) {
         $javaVersion = java -version 2>&1 | Select-String "version" | Select-Object -First 1
-        Log-Success "Java already installed: $javaVersion"
+        Write-Success "Java already installed: $javaVersion"
     } else {
-        Log-Info "Installing Java..."
+        Write-Info "Installing Java..."
         if (Test-Command winget) {
             winget install Eclipse.Temurin.17.JDK --accept-source-agreements --accept-package-agreements
         } elseif (Test-Command choco) {
             choco install openjdk17 -y
         } else {
-            Log-Error "No package manager available. Please install Java manually."
+            Write-Error "No package manager available. Please install Java manually."
             return
         }
         refreshenv
@@ -155,45 +155,45 @@ function Install-Java {
     
     # Compile Java Wave Engine
     if (Test-Command javac) {
-        Log-Info "Compiling Java Wave Engine..."
+        Write-Info "Compiling Java Wave Engine..."
         Push-Location java
         javac WaveEngine.java
         Pop-Location
-        Log-Success "Java Wave Engine compiled"
+        Write-Success "Java Wave Engine compiled"
     }
 }
 
 function Install-Cpp {
     if (-not ($Languages -contains "cpp")) { return }
     
-    Log-Info "Setting up C++..."
+    Write-Info "Setting up C++..."
     
     # Check for Visual Studio Build Tools
     $vsPath = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvarsall.bat"
     $vsPathCommunity = "${env:ProgramFiles}\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
     
     if ((Test-Path $vsPath) -or (Test-Path $vsPathCommunity)) {
-        Log-Success "Visual Studio Build Tools already installed"
+        Write-Success "Visual Studio Build Tools already installed"
     } else {
-        Log-Info "Installing Visual Studio Build Tools..."
+        Write-Info "Installing Visual Studio Build Tools..."
         if (Test-Command winget) {
             winget install Microsoft.VisualStudio.2022.BuildTools --accept-source-agreements --accept-package-agreements
         } elseif (Test-Command choco) {
             choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended" -y
         } else {
-            Log-Warning "Please install Visual Studio Build Tools manually from https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022"
+            Write-Warning "Please install Visual Studio Build Tools manually from https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022"
             return
         }
     }
     
     # Compile C++ Wave Engine
-    Log-Info "Compiling C++ Wave Engine..."
+    Write-Info "Compiling C++ Wave Engine..."
     Push-Location cpp
     if (Test-Path "compile.bat") {
         .\compile.bat
-        Log-Success "C++ Wave Engine compiled"
+        Write-Success "C++ Wave Engine compiled"
     } else {
-        Log-Warning "compile.bat not found in cpp directory"
+        Write-Warning "compile.bat not found in cpp directory"
     }
     Pop-Location
 }
@@ -201,13 +201,13 @@ function Install-Cpp {
 function Install-Rust {
     if (-not ($Languages -contains "rust")) { return }
     
-    Log-Info "Setting up Rust..."
+    Write-Info "Setting up Rust..."
     
     if (Test-Command rustc) {
         $rustVersion = rustc --version
-        Log-Success "Rust already installed: $rustVersion"
+        Write-Success "Rust already installed: $rustVersion"
     } else {
-        Log-Info "Installing Rust..."
+        Write-Info "Installing Rust..."
         if (Test-Command winget) {
             winget install Rustlang.Rust.MSVC --accept-source-agreements --accept-package-agreements
         } else {
@@ -223,30 +223,30 @@ function Install-Rust {
     
     # Build Rust Wave Engine
     if (Test-Command cargo) {
-        Log-Info "Building Rust Wave Engine..."
+        Write-Info "Building Rust Wave Engine..."
         Push-Location rust
         cargo build --release
         Pop-Location
-        Log-Success "Rust Wave Engine built"
+        Write-Success "Rust Wave Engine built"
     }
 }
 
 function Install-Go {
     if (-not ($Languages -contains "go")) { return }
     
-    Log-Info "Setting up Go..."
+    Write-Info "Setting up Go..."
     
     if (Test-Command go) {
         $goVersion = go version
-        Log-Success "Go already installed: $goVersion"
+        Write-Success "Go already installed: $goVersion"
     } else {
-        Log-Info "Installing Go..."
+        Write-Info "Installing Go..."
         if (Test-Command winget) {
             winget install GoLang.Go --accept-source-agreements --accept-package-agreements
         } elseif (Test-Command choco) {
             choco install golang -y
         } else {
-            Log-Error "No package manager available. Please install Go manually from https://golang.org"
+            Write-Error "No package manager available. Please install Go manually from https://golang.org"
             return
         }
         refreshenv
@@ -254,30 +254,30 @@ function Install-Go {
     
     # Test Go Wave Engine
     if (Test-Command go) {
-        Log-Info "Testing Go Wave Engine..."
+        Write-Info "Testing Go Wave Engine..."
         Push-Location go
         go run wave_engine.go > $null
         Pop-Location
-        Log-Success "Go Wave Engine tested"
+        Write-Success "Go Wave Engine tested"
     }
 }
 
 function Install-DotNet {
     if (-not ($Languages -contains "csharp")) { return }
     
-    Log-Info "Setting up .NET..."
+    Write-Info "Setting up .NET..."
     
     if (Test-Command dotnet) {
         $dotnetVersion = dotnet --version
-        Log-Success ".NET already installed: $dotnetVersion"
+        Write-Success ".NET already installed: $dotnetVersion"
     } else {
-        Log-Info "Installing .NET..."
+        Write-Info "Installing .NET..."
         if (Test-Command winget) {
             winget install Microsoft.DotNet.SDK.8 --accept-source-agreements --accept-package-agreements
         } elseif (Test-Command choco) {
             choco install dotnet-sdk -y
         } else {
-            Log-Error "No package manager available. Please install .NET manually from https://dotnet.microsoft.com"
+            Write-Error "No package manager available. Please install .NET manually from https://dotnet.microsoft.com"
             return
         }
         refreshenv
@@ -285,34 +285,34 @@ function Install-DotNet {
     
     # Build C# Wave Engine
     if (Test-Command dotnet) {
-        Log-Info "Building C# Wave Engine..."
+        Write-Info "Building C# Wave Engine..."
         Push-Location csharp
         dotnet build --configuration Release
         Pop-Location
-        Log-Success "C# Wave Engine built"
+        Write-Success "C# Wave Engine built"
     }
 }
 
-function Run-Validation {
+function Invoke-Validation {
     if ($SkipValidation) {
-        Log-Info "Skipping validation (--SkipValidation specified)"
+        Write-Info "Skipping validation (--SkipValidation specified)"
         return
     }
     
-    Log-Info "Running cross-language validation..."
+    Write-Info "Running cross-language validation..."
     
     if (Test-Command python) {
         Push-Location validation
-        $result = python cross_language_test.py
+        python cross_language_test.py | Out-Host
         Pop-Location
         
         if ($LASTEXITCODE -eq 0) {
-            Log-Success "All implementations validated successfully!"
+            Write-Success "All implementations validated successfully!"
         } else {
-            Log-Warning "Some implementations may need attention"
+            Write-Warning "Some implementations may need attention"
         }
     } else {
-        Log-Warning "Python not available, skipping validation"
+        Write-Warning "Python not available, skipping validation"
     }
 }
 
@@ -325,27 +325,27 @@ function Main {
     Write-Host "Languages: Python, JavaScript, Java, C++, Rust, Go, C#"
     Write-Host ""
     
-    Log-Info "Starting Universal Wave Engine installation..."
-    Log-Info "Target languages: $($Languages -join ', ')"
+    Write-Info "Starting Universal Wave Engine installation..."
+    Write-Info "Target languages: $($Languages -join ', ')"
     
     # Install package managers
     Install-Winget
     Install-Chocolatey
     
     # Install languages
-    try { Install-Python } catch { Log-Warning "Python installation failed: $_" }
-    try { Install-JavaScript } catch { Log-Warning "JavaScript installation failed: $_" }
-    try { Install-Java } catch { Log-Warning "Java installation failed: $_" }
-    try { Install-Cpp } catch { Log-Warning "C++ installation failed: $_" }
-    try { Install-Rust } catch { Log-Warning "Rust installation failed: $_" }
-    try { Install-Go } catch { Log-Warning "Go installation failed: $_" }
-    try { Install-DotNet } catch { Log-Warning ".NET installation failed: $_" }
+    try { Install-Python } catch { Write-Warning "Python installation failed: $_" }
+    try { Install-JavaScript } catch { Write-Warning "JavaScript installation failed: $_" }
+    try { Install-Java } catch { Write-Warning "Java installation failed: $_" }
+    try { Install-Cpp } catch { Write-Warning "C++ installation failed: $_" }
+    try { Install-Rust } catch { Write-Warning "Rust installation failed: $_" }
+    try { Install-Go } catch { Write-Warning "Go installation failed: $_" }
+    try { Install-DotNet } catch { Write-Warning ".NET installation failed: $_" }
     
     # Run validation
-    Run-Validation
+    Invoke-Validation
     
     Write-Host ""
-    Log-Success "Universal Wave Engine installation completed!"
+    Write-Success "Universal Wave Engine installation completed!"
     Write-Host ""
     Write-Host "🎯 Quick Start:"
     Write-Host "  • Python: python api/wave_api.py"
