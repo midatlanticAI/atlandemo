@@ -1,5 +1,12 @@
 import time
-from typing import Dict, Any, Literal
+from typing import Dict, Any
+
+# Handle Literal compatibility for Python 3.8/3.9
+try:
+    from typing import Literal
+except ImportError:
+    # Fallback for older Python versions
+    from typing_extensions import Literal
 
 
 class ReinforcementEngine:

@@ -6,6 +6,7 @@
 
 # Essential dependencies for functionality
 numpy>=1.19.0           # For numerical computations and wave processing
+typing_extensions>=4.0.0  # For Python 3.8/3.9 compatibility (Literal type)
 
 # Essential dependencies for testing and CI/CD
 pytest>=6.0.0          # For running tests
