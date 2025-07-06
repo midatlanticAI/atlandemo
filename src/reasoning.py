@@ -1,11 +1,11 @@
 import random
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Union, Optional
 
 
 class BeliefSystem:
     """Manages agent beliefs, confidence, and revision based on feedback."""
     
-    def __init__(self, initial_beliefs: Dict[str, float] | None = None):
+    def __init__(self, initial_beliefs: Optional[Dict[str, float]] = None):
         # Default beliefs linked to potential Dreamspace actions
         default_beliefs = {
             "follow_up_now improves outcome": 0.8,
@@ -15,7 +15,7 @@ class BeliefSystem:
         }
         
         # Store beliefs as: statement -> {"confidence": float, "fail_count": int}
-        self.beliefs: Dict[str, Dict[str, float | int]] = {}
+        self.beliefs: Dict[str, Dict[str, Union[float, int]]] = {}
         beliefs_to_init = initial_beliefs if initial_beliefs is not None else default_beliefs
         
         for statement, confidence in beliefs_to_init.items():
@@ -70,7 +70,7 @@ class BeliefSystem:
         
         return revised_list
 
-    def get_belief(self, statement: str) -> Dict | None:
+    def get_belief(self, statement: str) -> Optional[Dict]:
         """Retrieves the data for a specific belief."""
         return self.beliefs.get(statement)
 
@@ -78,7 +78,7 @@ class BeliefSystem:
 class DreamspaceSimulator:
     """Simulates potential outcomes of actions to aid decision-making."""
     
-    def __init__(self, action_effects: Dict[str, float] | None = None):
+    def __init__(self, action_effects: Optional[Dict[str, float]] = None):
         default_action_effects = {
             "follow_up_now": 0.3,
             "wait": 0.1,

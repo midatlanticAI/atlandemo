@@ -1,5 +1,5 @@
 import time
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 
 # Need to import the classes it depends on
 # Assuming they are in the same package level
@@ -32,7 +32,7 @@ class SelfAnchor:
             # Add more mappings as actions/beliefs evolve
         }
 
-    def _find_related_belief(self, action: str) -> str | None:
+    def _find_related_belief(self, action: str) -> Optional[str]:
         """Finds a belief statement related to the action performed."""
         action_lower = action.lower()
         for keyword, belief_statement in self.action_to_belief_map.items():
