@@ -31,6 +31,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest pytest-cov pytest-benchmark
+        
+    - name: Debug Python environment
+      run: |
+        python -c "import sys; print(f'Python version: {sys.version}'); print(f'Python executable: {sys.executable}')"
+        python -c "import numpy; print('numpy version:', numpy.__version__)"
+        python -c "import typing_extensions; print('typing_extensions imported successfully')"
+        python -c "import src; print('src module imported successfully')"
+        python -c "import expert_modules; print('expert_modules imported successfully')"
+        python -c "from src.reinforcement import ReinforcementEngine; print('ReinforcementEngine imported successfully')"
+        python -c "from expert_modules.logic_expert import LogicExpertModule; print('LogicExpertModule imported successfully')"
+        python -c "from enhanced_wave_engine import EnhancedWaveEngine; print('EnhancedWaveEngine imported successfully')"
+        python -c "import os; print('Current directory:', os.getcwd()); print('Directory contents:', os.listdir('.'))"
     
     - name: Run core wave engine tests
       run: |
