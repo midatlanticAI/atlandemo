@@ -42,79 +42,100 @@ def analyze_wave_mechanics():
     # Test 1: Basic wave generation
     safe_print("\n[TEST] TEST 1: Basic Wave Generation")
     safe_print("-" * 30)
-    engine.perceive("cat")
-    engine.perceive("animal")
+    result1 = engine.live_experience(
+        visual=['cat', 'animal'],
+        mood=0.5,
+        arousal=0.8,
+        attention=0.7
+    )
     
-    activations = engine.get_active_waves()
-    safe_print(f"Active waves: {len(activations)}")
-    safe_print(f"Activation field: {activations}")
-    safe_print(f"Recent resonance: {engine.get_recent_resonance()}")
+    safe_print(f"Active waves: {result1['active_waves']}")
+    safe_print(f"Activation field: {result1['activation_field']}")
+    safe_print(f"Recent resonance: {result1['recent_resonance']}")
     
     # Test 2: Wave interference
     safe_print("\n[TEST] TEST 2: Wave Interference")
     safe_print("-" * 30)
-    engine.perceive("dog")
+    result2 = engine.live_experience(
+        visual=['dog', 'animal'],  # 'animal' should interfere with previous
+        mood=0.3,
+        arousal=0.6,
+        attention=0.9
+    )
     
-    activations = engine.get_active_waves()
-    safe_print(f"Active waves: {len(activations)}")
-    safe_print(f"Activation field: {activations}")
-    safe_print(f"\nRecent resonance: {engine.get_recent_resonance()}")
+    safe_print(f"Active waves: {result2['active_waves']}")
+    safe_print(f"Activation field: {result2['activation_field']}")
+    safe_print(f"Recent resonance: {result2['recent_resonance']}")
     
     # Test 3: Emotional modulation
     safe_print("\n[TEST] TEST 3: Emotional Wave Modulation")
     safe_print("-" * 30)
-    engine.set_emotional_state(0.8, 0.3)  # Happy and calm
-    engine.perceive("cat")
+    result3 = engine.live_experience(
+        visual=['cat'],  # Same concept, different emotion
+        mood=-0.8,  # Negative mood
+        arousal=0.2,  # Low arousal
+        attention=0.3  # Low attention
+    )
     
-    activations = engine.get_active_waves()
-    safe_print(f"Active waves: {len(activations)}")
-    safe_print(f"Activation field: {activations}")
-    safe_print(f"\nRecent resonance: {engine.get_recent_resonance()}")
+    safe_print(f"Active waves: {result3['active_waves']}")
+    safe_print(f"Activation field: {result3['activation_field']}")
+    safe_print(f"Recent resonance: {result3['recent_resonance']}")
     
     # Test 4: Temporal decay
     safe_print("\n[TEST] TEST 4: Wave Decay Over Time")
     safe_print("-" * 30)
     safe_print("Waiting 2 seconds...")
     time.sleep(2)
-    engine.perceive("test")
+    result4 = engine.live_experience(
+        visual=['test'],  # New concept
+        mood=0.0,
+        arousal=0.1,
+        attention=0.1
+    )
     
-    activations = engine.get_active_waves()
-    safe_print(f"Active waves: {len(activations)}")
-    safe_print(f"Activation field: {activations}")
-    safe_print(f"Recent resonance: {engine.get_recent_resonance()}")
+    safe_print(f"Active waves: {result4['active_waves']}")
+    safe_print(f"Activation field: {result4['activation_field']}")
+    safe_print(f"Recent resonance: {result4['recent_resonance']}")
     
     # Test 5: Complex multi-concept interference
     safe_print("\n[TEST] TEST 5: Complex Multi-Concept Interference")
     safe_print("-" * 30)
-    concepts = ["cat", "dog", "pet", "meow", "bark", "sound", "understand", "learn"]
-    for concept in concepts:
-        engine.perceive(concept)
+    result5 = engine.live_experience(
+        visual=['cat', 'dog', 'animal', 'pet'],
+        auditory=['meow', 'bark', 'sound'],
+        mood=0.7,
+        arousal=0.9,
+        attention=0.8,
+        goals=['understand', 'learn']
+    )
     
-    activations = engine.get_active_waves()
-    safe_print(f"Active waves: {len(activations)}")
-    safe_print(f"Activation field: {activations}")
-    safe_print(f"Recent resonance: {engine.get_recent_resonance()}")
+    safe_print(f"Active waves: {result5['active_waves']}")
+    safe_print(f"Activation field: {result5['activation_field']}")
+    safe_print(f"Recent resonance: {result5['recent_resonance']}")
     
     # Analysis summary
     safe_print("\n[ANALYSIS] ANALYSIS SUMMARY")
     safe_print("=" * 30)
     
-    # Calculate statistics
-    all_activations = list(activations.values())
-    resonances = engine.get_recent_resonance()
+    # Calculate statistics from all results
+    all_activations = []
+    all_resonances = []
+    for result in [result1, result2, result3, result4, result5]:
+        all_activations.extend(result['activation_field'].values())
+        all_resonances.extend(result['recent_resonance'])
     
     safe_print(f"Total activations generated: {len(all_activations)}")
     if all_activations:
         safe_print(f"Activation range: {min(all_activations):.3f} to {max(all_activations):.3f}")
-    safe_print(f"Total resonance patterns: {len(resonances)}")
+    safe_print(f"Total resonance patterns: {len(all_resonances)}")
     
     # Resonance type analysis
-    if resonances:
-        resonance_types = set(r['resonance_type'] for r in resonances)
+    if all_resonances:
+        resonance_types = set(r['resonance_type'] for r in all_resonances)
         safe_print(f"Resonance types seen: {resonance_types}")
         
         # Find strongest interference
-        max_interference = max(r['interference'] for r in resonances)
+        max_interference = max(abs(r['interference']) for r in all_resonances)
         safe_print(f"Strongest interference: {max_interference:.3f}")
     
     return engine
@@ -142,21 +163,25 @@ def test_conversational_wave_processing():
         safe_print(f"\n[>>>] Turn {i}: '{text}'")
         safe_print(f"  Symbols: {symbols}")
         
-        # Process each symbol
-        for symbol in symbols:
-            engine.perceive(symbol)
+        # Process through wave engine
+        result = engine.live_experience(
+            visual=symbols,
+            auditory=['conversation', 'speech'],
+            mood=0.2,
+            arousal=0.5,
+            attention=0.8
+        )
         
-        # Show current state
-        activations = engine.get_active_waves()
-        safe_print(f"  Active waves: {len(activations)}")
+        safe_print(f"  Active waves: {result['active_waves']}")
         
         # Show top 3 activations
+        activations = result['activation_field']
         if activations:
             top_activations = dict(sorted(activations.items(), key=lambda x: abs(x[1]), reverse=True)[:3])
             safe_print(f"  Top activations: {top_activations}")
         
         # Show latest resonance
-        resonances = engine.get_recent_resonance()
+        resonances = result['recent_resonance']
         if resonances:
             latest = resonances[-1]
             safe_print(f"  Latest resonance: {latest['resonance_type']}")
