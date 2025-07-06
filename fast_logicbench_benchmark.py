@@ -24,6 +24,15 @@ import random
 from pathlib import Path
 from enhanced_wave_engine import EnhancedWaveEngine
 
+# Safe print function for CI/CD compatibility
+def safe_print(text):
+    """Print function that handles encoding issues on different platforms"""
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        # Fallback to ASCII-safe version
+        print(text.encode('ascii', 'replace').decode('ascii'))
+
 class FastLogicBenchBenchmark:
     """Fast LogicBench benchmark - optimized for speed and accuracy"""
     
@@ -38,8 +47,8 @@ class FastLogicBenchBenchmark:
         base_path = Path("logicbench/LogicBench(Eval)/BQA")
         
         if not base_path.exists():
-            print(f"❌ LogicBench path not found: {base_path}")
-            print("⚠️  Running without LogicBench data - using synthetic test")
+            safe_print(f"[-] LogicBench path not found: {base_path}")
+            safe_print("[WARNING] Running without LogicBench data - using synthetic test")
             return self._create_synthetic_test_data()
             
         # Get all data_instances.json files
@@ -175,7 +184,7 @@ class FastLogicBenchBenchmark:
             }
             
         except Exception as e:
-            print(f"❌ Error processing {file_path}: {e}")
+            safe_print(f"[-] Error processing {file_path}: {e}")
             return None
     
     def quick_logical_reasoning(self, question: str, context_text: str, logic_type: str, axiom: str):
@@ -438,16 +447,16 @@ class FastLogicBenchBenchmark:
     
     def run_fast_benchmark(self, max_files: int = 25, questions_per_file: int = 40):
         """Run fast benchmark across sampled LogicBench data"""
-        print("🚀 FAST LOGICBENCH BENCHMARK")
-        print(f"📊 Testing {max_files} files, {questions_per_file} questions each (total: ~{max_files * questions_per_file})")
-        print("⚡ Target: Beat 69% in under 5 seconds!")
+        safe_print("[FAST] FAST LOGICBENCH BENCHMARK")
+        safe_print(f"[DATA] Testing {max_files} files, {questions_per_file} questions each (total: ~{max_files * questions_per_file})")
+        safe_print("[TARGET] Beat 69% in under 5 seconds!")
         
         start_time = time.time()
         
         # Find all files
         all_files = self.find_all_logicbench_files()
         if not all_files:
-            print("❌ No LogicBench files found!")
+            safe_print("[-] No LogicBench files found!")
             return None
         
         # Sample files for speed
@@ -456,7 +465,7 @@ class FastLogicBenchBenchmark:
         else:
             test_files = all_files
         
-        print(f"🎯 Testing {len(test_files)} files...")
+        safe_print(f"[TARGET] Testing {len(test_files)} files...")
         
         # Process files quickly
         all_results = []
@@ -493,35 +502,35 @@ class FastLogicBenchBenchmark:
         overall_accuracy = self.total_correct / self.total_questions if self.total_questions > 0 else 0
         
         # Print results
-        print(f"\n⚡ FAST BENCHMARK RESULTS:")
-        print(f"   Total Questions: {self.total_questions}")
-        print(f"   Correct Answers: {self.total_correct}")
-        print(f"   Overall Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
-        print(f"   Processing Time: {elapsed_time:.2f} seconds")
-        print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
+        safe_print(f"\n[RESULTS] FAST BENCHMARK RESULTS:")
+        safe_print(f"   Total Questions: {self.total_questions}")
+        safe_print(f"   Correct Answers: {self.total_correct}")
+        safe_print(f"   Overall Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
+        safe_print(f"   Processing Time: {elapsed_time:.2f} seconds")
+        safe_print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n📈 PERFORMANCE COMPARISON:")
+        safe_print(f"\n[COMPARISON] PERFORMANCE COMPARISON:")
         if overall_accuracy > 0.69:
             improvement = (overall_accuracy - 0.69) * 100
-            print(f"   ✅ BEAT 69% BENCHMARK! (+{improvement:.1f} percentage points)")
+            safe_print(f"   [SUCCESS] BEAT 69% BENCHMARK! (+{improvement:.1f} percentage points)")
         else:
             gap = (0.69 - overall_accuracy) * 100
-            print(f"   ❌ Below 69% benchmark (-{gap:.1f} percentage points)")
+            safe_print(f"   [MISS] Below 69% benchmark (-{gap:.1f} percentage points)")
         
         if overall_accuracy >= 0.84:
-            print(f"   🏆 APPROACHING SOTA! (84-87% range)")
+            safe_print(f"   [EXCELLENT] APPROACHING SOTA! (84-87% range)")
         elif overall_accuracy >= 0.75:
-            print(f"   🌟 STRONG PERFORMANCE! Getting close to SOTA")
+            safe_print(f"   [STRONG] STRONG PERFORMANCE! Getting close to SOTA")
         
         if overall_accuracy >= 0.91:
-            print(f"   🤯 HUMAN-LEVEL PERFORMANCE! (91%+)")
+            safe_print(f"   [HUMAN] HUMAN-LEVEL PERFORMANCE! (91%+)")
         
         # Logic type breakdown
-        print(f"\n🧠 LOGIC TYPE BREAKDOWN:")
+        safe_print(f"\n[BREAKDOWN] LOGIC TYPE BREAKDOWN:")
         for logic_type, summary in logic_type_summary.items():
             accuracy = summary['accuracy']
-            print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%})")
+            safe_print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%})")
         
         results = {
             'overall_accuracy': overall_accuracy,
@@ -548,19 +557,19 @@ def main():
             # Save results
             with open('fast_logicbench_results.json', 'w') as f:
                 json.dump(results, f, indent=2)
-            print(f"\n💾 Results saved to: fast_logicbench_results.json")
+            safe_print(f"\n[SAVE] Results saved to: fast_logicbench_results.json")
         
-        print(f"\n🎯 MISSION: BEAT 69% FAST!")
+        safe_print(f"\n[MISSION] MISSION: BEAT 69% FAST!")
         if results and results['overall_accuracy'] > 0.69:
-            print(f"✅ MISSION ACCOMPLISHED!")
+            safe_print(f"[SUCCESS] MISSION ACCOMPLISHED!")
             sys.exit(0)  # Success
         else:
-            print(f"🔧 Need more optimization!")
+            safe_print(f"[OPTIMIZE] Need more optimization!")
             # Still exit with success - benchmark ran successfully even if accuracy is low
             sys.exit(0)
             
     except Exception as e:
-        print(f"❌ Benchmark failed with error: {e}")
+        safe_print(f"[-] Benchmark failed with error: {e}")
         sys.exit(1)  # Failure
 
 
