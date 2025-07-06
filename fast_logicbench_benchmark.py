@@ -4,6 +4,20 @@ FAST LogicBench Benchmark - Beat the 69% in 2 seconds!
 No slow dream cycles, just pure logical reasoning performance.
 """
 
+import sys
+import os
+
+# Ensure proper import paths for CI/CD environment
+current_dir = os.path.dirname(__file__)
+project_root = current_dir  # This file is in the root directory
+src_path = os.path.join(project_root, 'src')
+expert_modules_path = os.path.join(project_root, 'expert_modules')
+
+# Add all necessary paths to sys.path
+for path in [project_root, src_path, expert_modules_path]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
 import json
 import time
 import random

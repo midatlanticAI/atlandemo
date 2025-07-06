@@ -32,11 +32,17 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-cov pytest-benchmark
         
+    - name: Set up Python environment paths
+      run: |
+        python -c "import os, sys; print('PYTHONPATH=' + os.pathsep.join([os.getcwd(), os.path.join(os.getcwd(), 'src'), os.path.join(os.getcwd(), 'expert_modules')]))" >> $GITHUB_ENV
+      shell: bash
+        
     - name: Debug Python environment
       run: |
         python -c "import sys; print(f'Python version: {sys.version}'); print(f'Python executable: {sys.executable}')"
         python -c "import numpy; print('numpy version:', numpy.__version__)"
         python -c "import typing_extensions; print('typing_extensions imported successfully')"
+        python -c "import sys; print('Python path:'); [print(f'  {p}') for p in sys.path]"
         python -c "import src; print('src module imported successfully')"
         python -c "import expert_modules; print('expert_modules imported successfully')"
         python -c "from src.reinforcement import ReinforcementEngine; print('ReinforcementEngine imported successfully')"

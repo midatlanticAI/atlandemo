@@ -4,7 +4,17 @@ Basic integration tests for VTRFM (Atlan) Symbolic Cognitive Engine
 
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+# Ensure proper import paths for CI/CD environment
+current_dir = os.path.dirname(__file__)
+project_root = os.path.dirname(current_dir)
+src_path = os.path.join(project_root, 'src')
+expert_modules_path = os.path.join(project_root, 'expert_modules')
+
+# Add all necessary paths to sys.path
+for path in [project_root, src_path, expert_modules_path]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
 
 from src import AtlanAgent
 
