@@ -23,10 +23,19 @@ import pytest
 from wave_text_engine import WaveTextEngine
 from wave_text_learning_simple import SimpleWaveTextLearner
 
+# Safe print function for CI/CD compatibility
+def safe_print(text):
+    """Print function that handles encoding issues on different platforms"""
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        # Fallback to ASCII-safe version
+        print(text.encode('ascii', 'replace').decode('ascii'))
+
 def test_basic_conversation():
     """Test basic conversational capabilities"""
-    print("🌊 TESTING BASIC CONVERSATION 🌊")
-    print("=" * 50)
+    safe_print("\n~~ TESTING BASIC CONVERSATION ~~")
+    safe_print("=" * 50)
     
     engine = WaveTextEngine()
     
@@ -40,26 +49,26 @@ def test_basic_conversation():
     ]
     
     for i, (text, expected_type) in enumerate(test_cases, 1):
-        print(f"\n--- Test {i}: {expected_type.title()} ---")
-        print(f"User: {text}")
+        safe_print(f"\n--- Test {i}: {expected_type.title()} ---")
+        safe_print(f"User: {text}")
         
         result = engine.process_text_input(text)
         
-        print(f"Assistant: {result['response']}")
-        print(f"Detected Type: {result['conversation_type']}")
-        print(f"Wave Activity: {len(result['wave_activations'])} concepts active")
+        safe_print(f"Assistant: {result['response']}")
+        safe_print(f"Detected Type: {result['conversation_type']}")
+        safe_print(f"Wave Activity: {len(result['wave_activations'])} concepts active")
         
         # Show strongest wave activation
         if result['wave_activations']:
             strongest = max(result['wave_activations'].items(), key=lambda x: abs(x[1]))
-            print(f"Strongest Wave: {strongest[0]} ({strongest[1]:.3f})")
+            safe_print(f"Strongest Wave: {strongest[0]} ({strongest[1]:.3f})")
     
     return engine
 
 def test_text_learning():
     """Test text learning capabilities"""
-    print("\n\n🧠 TESTING TEXT LEARNING 🧠")
-    print("=" * 50)
+    safe_print("\n\n[*] TESTING TEXT LEARNING [*]")
+    safe_print("=" * 50)
     
     learner = SimpleWaveTextLearner()
     
@@ -78,16 +87,16 @@ def test_text_learning():
     Wave patterns in the brain might explain conscious experience.
     """
     
-    print("\n📚 Learning from AI text:")
+    safe_print("\n[>>] Learning from AI text:")
     ai_result = learner.learn_from_text(ai_text, "ai_knowledge")
-    print(f"✅ Learned {ai_result['concepts_learned']} concepts from {ai_result['sentences_processed']} sentences")
+    safe_print(f"[+] Learned {ai_result['concepts_learned']} concepts from {ai_result['sentences_processed']} sentences")
     
-    print("\n📚 Learning from consciousness text:")
+    safe_print("\n[>>] Learning from consciousness text:")
     consciousness_result = learner.learn_from_text(consciousness_text, "consciousness_knowledge")
-    print(f"✅ Learned {consciousness_result['concepts_learned']} concepts from {consciousness_result['sentences_processed']} sentences")
+    safe_print(f"[+] Learned {consciousness_result['concepts_learned']} concepts from {consciousness_result['sentences_processed']} sentences")
     
     # Test knowledge queries
-    print("\n❓ Testing knowledge queries:")
+    safe_print("\n[?] Testing knowledge queries:")
     
     queries = [
         "What is artificial intelligence?",
@@ -97,23 +106,23 @@ def test_text_learning():
     
     for query in queries:
         response = learner.query_knowledge(query)
-        print(f"Q: {query}")
-        print(f"A: {response}")
-        print()
+        safe_print(f"Q: {query}")
+        safe_print(f"A: {response}")
+        safe_print("")
     
     # Show knowledge summary
     summary = learner.get_knowledge_summary()
-    print(f"📊 Knowledge Summary:")
-    print(f"Total concepts learned: {summary['total_concepts']}")
-    print(f"Documents processed: {summary['documents_learned']}")
-    print(f"Top concepts: {[concept for concept, _ in summary['top_concepts'][:5]]}")
+    safe_print(f"[INFO] Knowledge Summary:")
+    safe_print(f"Total concepts learned: {summary['total_concepts']}")
+    safe_print(f"Documents processed: {summary['documents_learned']}")
+    safe_print(f"Top concepts: {[concept for concept, _ in summary['top_concepts'][:5]]}")
     
     return learner
 
 def test_text_generation():
     """Test text generation capabilities"""
-    print("\n\n🎨 TESTING TEXT GENERATION 🎨")
-    print("=" * 50)
+    safe_print("\n\n[>>] TESTING TEXT GENERATION [<<]")
+    safe_print("=" * 50)
     
     learner = SimpleWaveTextLearner()
     
@@ -126,9 +135,9 @@ def test_text_generation():
     Consciousness might emerge from the complex interference of wave patterns over time.
     """
     
-    print("📚 Teaching the system about wave cognition...")
+    safe_print("[>>] Teaching the system about wave cognition...")
     result = learner.learn_from_text(knowledge_text, "wave_cognition")
-    print(f"✅ Learned {result['concepts_learned']} concepts")
+    safe_print(f"[+] Learned {result['concepts_learned']} concepts")
     
     # Test text generation with different prompts
     prompts = [
@@ -138,19 +147,19 @@ def test_text_generation():
         "Tell me about temporal dynamics"
     ]
     
-    print("\n🎯 Generating text from prompts:")
+    safe_print("\n[TARGET] Generating text from prompts:")
     
     for prompt in prompts:
         generated = learner.generate_text(prompt, length=40)
-        print(f"\nPrompt: {prompt}")
-        print(f"Generated: {generated}")
+        safe_print(f"\nPrompt: {prompt}")
+        safe_print(f"Generated: {generated}")
     
     return learner
 
 def test_interactive_features():
     """Test interactive features like conversation memory"""
-    print("\n\n💭 TESTING INTERACTIVE FEATURES 💭")
-    print("=" * 50)
+    safe_print("\n\n[INTERACTIVE] TESTING INTERACTIVE FEATURES [INTERACTIVE]")
+    safe_print("=" * 50)
     
     engine = WaveTextEngine()
     
@@ -163,41 +172,41 @@ def test_interactive_features():
         "Thank you for the information"
     ]
     
-    print("🗨️ Simulating conversation with memory:")
+    safe_print("[CHAT] Simulating conversation with memory:")
     
     for i, message in enumerate(conversation, 1):
-        print(f"\nTurn {i}:")
-        print(f"User: {message}")
+        safe_print(f"\nTurn {i}:")
+        safe_print(f"User: {message}")
         
         result = engine.process_text_input(message, user_id="test_user")
-        print(f"Assistant: {result['response']}")
+        safe_print(f"Assistant: {result['response']}")
         
         # Show conversation context building
         if i > 1:
             summary = engine.get_conversation_summary()
             if summary['total_turns'] > 0:
-                print(f"Context: {summary['total_turns']} turns, discussing: {summary['top_topics'][:3]}")
+                safe_print(f"Context: {summary['total_turns']} turns, discussing: {summary['top_topics'][:3]}")
     
     # Show final conversation analysis
-    print(f"\n📈 Final Conversation Analysis:")
+    safe_print(f"\n[ANALYSIS] Final Conversation Analysis:")
     summary = engine.get_conversation_summary()
-    print(f"Total turns: {summary['total_turns']}")
-    print(f"Conversation types: {summary['conversation_types']}")
-    print(f"Main topics: {[topic for topic, _ in summary['top_topics'][:5]]}")
+    safe_print(f"Total turns: {summary['total_turns']}")
+    safe_print(f"Conversation types: {summary['conversation_types']}")
+    safe_print(f"Main topics: {[topic for topic, _ in summary['top_topics'][:5]]}")
     
     # Show wave reasoning for last response
-    print(f"\n🌊 Wave Analysis of Last Response:")
+    safe_print(f"\n~~ Wave Analysis of Last Response:")
     explanation = engine.explain_last_response()
-    print(explanation)
+    safe_print(explanation)
     
     return engine
 
 def main():
     """Run all tests"""
-    print("🚀 COMPREHENSIVE CONVERSATIONAL WAVE ENGINE TEST 🚀")
-    print("=" * 70)
-    print("Testing all text processing and conversational AI capabilities")
-    print("=" * 70)
+    safe_print("*** COMPREHENSIVE CONVERSATIONAL WAVE ENGINE TEST ***")
+    safe_print("=" * 70)
+    safe_print("Testing all text processing and conversational AI capabilities")
+    safe_print("=" * 70)
     
     # Run all tests
     conversation_engine = test_basic_conversation()
@@ -205,14 +214,14 @@ def main():
     generation_learner = test_text_generation()
     interactive_engine = test_interactive_features()
     
-    print("\n\n🎉 ALL TESTS COMPLETED SUCCESSFULLY! 🎉")
-    print("=" * 50)
-    print("✅ Basic conversation - Working")
-    print("✅ Text learning - Working")
-    print("✅ Text generation - Working")
-    print("✅ Interactive features - Working")
-    print("✅ Wave-based reasoning - Working")
-    print("\n🌊 The Conversational Wave Engine is ready for use! 🌊")
+    safe_print("\n\n*** ALL TESTS COMPLETED SUCCESSFULLY! ***")
+    safe_print("=" * 50)
+    safe_print("[+] Basic conversation - Working")
+    safe_print("[+] Text learning - Working")
+    safe_print("[+] Text generation - Working")
+    safe_print("[+] Interactive features - Working")
+    safe_print("[+] Wave-based reasoning - Working")
+    safe_print("\n~~ The Conversational Wave Engine is ready for use! ~~")
     
     return {
         'conversation_engine': conversation_engine,
@@ -225,13 +234,13 @@ if __name__ == "__main__":
     try:
         result = main()
         if result:
-            print("🎯 All conversational tests completed successfully!")
+            safe_print("[SUCCESS] All conversational tests completed successfully!")
             sys.exit(0)
         else:
-            print("❌ Some tests failed!")
+            safe_print("[-] Some tests failed!")
             sys.exit(1)
     except Exception as e:
-        print(f"❌ Test execution failed: {e}")
+        safe_print(f"[-] Test execution failed: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1) 
