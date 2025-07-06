@@ -164,16 +164,26 @@ def test_conversational_wave_processing():
             print(f"  Latest resonance: {result['recent_resonance'][-1]['resonance_type']}")
 
 if __name__ == "__main__":
-    # Run the analysis
-    results = analyze_wave_mechanics()
-    
-    # Run conversational test
-    test_conversational_wave_processing()
-    
-    print("\n🎯 CONCLUSION")
-    print("=" * 50)
-    print("Wave mechanics analysis complete!")
-    print("This system demonstrates genuine wave interference patterns")
-    print("that create emergent associations between concepts.")
-    print("The temporal dynamics show real decay and reinforcement.")
-    print("This is a fundamentally different approach to AI cognition.") 
+    import sys
+    try:
+        # Run the analysis
+        results = analyze_wave_mechanics()
+        
+        # Run conversational test
+        test_conversational_wave_processing()
+        
+        print("\n🎯 CONCLUSION")
+        print("=" * 50)
+        print("Wave mechanics analysis complete!")
+        print("This system demonstrates genuine wave interference patterns")
+        print("that create emergent associations between concepts.")
+        print("The temporal dynamics show real decay and reinforcement.")
+        print("This is a fundamentally different approach to AI cognition.")
+        
+        sys.exit(0)
+        
+    except Exception as e:
+        print(f"❌ Wave mechanics test failed: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1) 

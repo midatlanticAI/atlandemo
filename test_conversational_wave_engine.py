@@ -206,4 +206,17 @@ def main():
     }
 
 if __name__ == "__main__":
-    main() 
+    import sys
+    try:
+        result = main()
+        if result:
+            print("🎯 All conversational tests completed successfully!")
+            sys.exit(0)
+        else:
+            print("❌ Some tests failed!")
+            sys.exit(1)
+    except Exception as e:
+        print(f"❌ Test execution failed: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1) 

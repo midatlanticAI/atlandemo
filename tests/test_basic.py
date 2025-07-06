@@ -138,13 +138,19 @@ def test_response_template():
 
 
 if __name__ == "__main__":
-    # Run basic tests
-    test_agent_creation()
-    test_input_processing()
-    test_action_selection()
-    test_outcome_recording()
-    test_reflection()
-    test_state_retrieval()
-    test_response_template()
-    
-    print("All basic tests passed!") 
+    # Run basic tests when executed directly (not through pytest)
+    import sys
+    try:
+        test_agent_creation()
+        test_input_processing()
+        test_action_selection()
+        test_outcome_recording()
+        test_reflection()
+        test_state_retrieval()
+        test_response_template()
+        
+        print("All basic tests passed!")
+        sys.exit(0)
+    except Exception as e:
+        print(f"❌ Tests failed: {e}")
+        sys.exit(1) 

@@ -524,20 +524,30 @@ class FastLogicBenchBenchmark:
 
 def main():
     """Run the fast LogicBench benchmark"""
-    benchmark = FastLogicBenchBenchmark()
-    results = benchmark.run_fast_benchmark()
+    import sys
     
-    if results:
-        # Save results
-        with open('fast_logicbench_results.json', 'w') as f:
-            json.dump(results, f, indent=2)
-        print(f"\n💾 Results saved to: fast_logicbench_results.json")
-    
-    print(f"\n🎯 MISSION: BEAT 69% FAST!")
-    if results and results['overall_accuracy'] > 0.69:
-        print(f"✅ MISSION ACCOMPLISHED!")
-    else:
-        print(f"🔧 Need more optimization!")
+    try:
+        benchmark = FastLogicBenchBenchmark()
+        results = benchmark.run_fast_benchmark()
+        
+        if results:
+            # Save results
+            with open('fast_logicbench_results.json', 'w') as f:
+                json.dump(results, f, indent=2)
+            print(f"\n💾 Results saved to: fast_logicbench_results.json")
+        
+        print(f"\n🎯 MISSION: BEAT 69% FAST!")
+        if results and results['overall_accuracy'] > 0.69:
+            print(f"✅ MISSION ACCOMPLISHED!")
+            sys.exit(0)  # Success
+        else:
+            print(f"🔧 Need more optimization!")
+            # Still exit with success - benchmark ran successfully even if accuracy is low
+            sys.exit(0)
+            
+    except Exception as e:
+        print(f"❌ Benchmark failed with error: {e}")
+        sys.exit(1)  # Failure
 
 
 if __name__ == "__main__":
