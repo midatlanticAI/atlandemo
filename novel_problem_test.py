@@ -39,13 +39,13 @@ def novel_problem_1_economics():
     # Check if wave interference suggests price increase
     economic_reasoning = abs(price_activation) > 0.3 and abs(increase_activation) > 0.3
     
-    print(f"   🌊 Key activations:")
+    print(f"   [WAVE] Key activations:")
     for concept in ['demand', 'increase', 'supply', 'price']:
         if concept in field:
             print(f"     {concept}: {field[concept]:.3f}")
     
-    print(f"   🧠 Economic reasoning detected: {'✅ YES' if economic_reasoning else '❌ NO'}")
-    print(f"   📊 Price-increase correlation: {abs(price_activation * increase_activation):.3f}")
+    print(f"   [BRAIN] Economic reasoning detected: {'[+] YES' if economic_reasoning else '[-] NO'}")
+    print(f"   [DATA] Price-increase correlation: {abs(price_activation * increase_activation):.3f}")
     
     return {
         'problem': 'demand_increase_supply_constant',
@@ -85,13 +85,13 @@ def novel_problem_2_physics():
     # Check if wave interference suggests "same time"
     physics_reasoning = abs(same_activation) > 0.3 and abs(time_activation) > 0.3
     
-    print(f"   🌊 Key activations:")
+    print(f"   [WAVE] Key activations:")
     for concept in ['heavy', 'light', 'falling', 'same', 'time', 'gravity']:
         if concept in field:
             print(f"     {concept}: {field[concept]:.3f}")
     
-    print(f"   🧠 Physics reasoning detected: {'✅ YES' if physics_reasoning else '❌ NO'}")
-    print(f"   📊 Same-time correlation: {abs(same_activation * time_activation):.3f}")
+    print(f"   [BRAIN] Physics reasoning detected: {'[+] YES' if physics_reasoning else '[-] NO'}")
+    print(f"   [DATA] Same-time correlation: {abs(same_activation * time_activation):.3f}")
     
     return {
         'problem': 'falling_objects_galileo',
@@ -131,13 +131,13 @@ def novel_problem_3_social():
     # Check if wave interference suggests positive response
     social_reasoning = abs(positive_activation) > 0.3 or abs(gratitude_activation) > 0.3
     
-    print(f"   🌊 Key activations:")
+    print(f"   [WAVE] Key activations:")
     for concept in ['helps', 'kindness', 'response', 'gratitude', 'positive']:
         if concept in field:
             print(f"     {concept}: {field[concept]:.3f}")
     
-    print(f"   🧠 Social reasoning detected: {'✅ YES' if social_reasoning else '❌ NO'}")
-    print(f"   📊 Help-positive correlation: {abs(helps_activation * positive_activation):.3f}")
+    print(f"   [BRAIN] Social reasoning detected: {'[+] YES' if social_reasoning else '[-] NO'}")
+    print(f"   [DATA] Help-positive correlation: {abs(helps_activation * positive_activation):.3f}")
     
     return {
         'problem': 'social_reciprocity',
@@ -177,13 +177,13 @@ def novel_problem_4_mathematics():
     # Check if wave interference suggests "square" pattern
     math_reasoning = abs(square_activation) > 0.3 and abs(pattern_activation) > 0.3
     
-    print(f"   🌊 Key activations:")
+    print(f"   [WAVE] Key activations:")
     for concept in ['pattern', 'square', 'numbers', 'sequence']:
         if concept in field:
             print(f"     {concept}: {field[concept]:.3f}")
     
-    print(f"   🧠 Mathematical reasoning detected: {'✅ YES' if math_reasoning else '❌ NO'}")
-    print(f"   📊 Square-pattern correlation: {abs(square_activation * pattern_activation):.3f}")
+    print(f"   [BRAIN] Mathematical reasoning detected: {'[+] YES' if math_reasoning else '[-] NO'}")
+    print(f"   [DATA] Square-pattern correlation: {abs(square_activation * pattern_activation):.3f}")
     
     return {
         'problem': 'square_number_sequence',
@@ -196,7 +196,7 @@ def run_novel_problem_battery():
     """
     Run all novel problem tests to address Claude's challenge
     """
-    print("🧠 NOVEL PROBLEM SOLVING BATTERY")
+    print("[BRAIN] NOVEL PROBLEM SOLVING BATTERY")
     print("="*70)
     print("Testing wave engine on problems it was NEVER designed for")
     print("Addressing Claude's challenge about generalization")
@@ -217,11 +217,11 @@ def run_novel_problem_battery():
         results['tests']['mathematics'] = novel_problem_4_mathematics()
         
     except Exception as e:
-        print(f"❌ Error during novel problem testing: {e}")
+        print(f"[-] Error during novel problem testing: {e}")
     
     # Summary
     print("\n" + "="*70)
-    print("📊 NOVEL PROBLEM SOLVING SUMMARY")
+    print("[DATA] NOVEL PROBLEM SOLVING SUMMARY")
     print("="*70)
     
     successful_reasoning = 0
@@ -231,23 +231,23 @@ def run_novel_problem_battery():
         reasoning_key = next((k for k in test_result.keys() if 'reasoning_detected' in k), None)
         if reasoning_key and test_result[reasoning_key]:
             successful_reasoning += 1
-            print(f"✅ {domain.upper()}: Novel reasoning detected")
+            print(f"[+] {domain.upper()}: Novel reasoning detected")
         else:
-            print(f"❌ {domain.upper()}: No clear reasoning detected")
+            print(f"[-] {domain.upper()}: No clear reasoning detected")
     
     success_rate = successful_reasoning / total_tests if total_tests > 0 else 0
     
-    print(f"\n🎯 CLAUDE'S CHALLENGE RESULTS:")
+    print(f"\n[TARGET] CLAUDE'S CHALLENGE RESULTS:")
     print(f"   Novel problems solved: {successful_reasoning}/{total_tests}")
     print(f"   Success rate: {success_rate:.1%}")
     print(f"   Domains tested: Economics, Physics, Social, Mathematics")
     
     if success_rate >= 0.5:
-        print(f"\n✅ CHALLENGE ACCEPTED AND MET!")
+        print(f"\n[+] CHALLENGE ACCEPTED AND MET!")
         print(f"   Wave engine shows genuine generalization")
         print(f"   This goes beyond keyword matching")
     else:
-        print(f"\n❌ CHALLENGE NOT MET")
+        print(f"\n[-] CHALLENGE NOT MET")
         print(f"   Wave engine shows limited generalization")
         print(f"   Claude's criticism may be valid")
     
@@ -255,12 +255,12 @@ def run_novel_problem_battery():
     with open('novel_problem_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"\n💾 Results saved to 'novel_problem_results.json'")
+    print(f"\n[SAVE] Results saved to 'novel_problem_results.json'")
     
     return results
 
 if __name__ == "__main__":
-    print("🎯 ACCEPTING CLAUDE'S CHALLENGE")
+    print("[TARGET] ACCEPTING CLAUDE'S CHALLENGE")
     print("Testing wave engine on novel problems it was never designed for")
     print()
     

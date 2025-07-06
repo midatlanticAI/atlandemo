@@ -164,7 +164,7 @@ def experiment_1_improved_novelty_detection():
             print(f"surprise={surprise:.3f}, entropy_Δ={entropy_change:.3f}")
     
     # Analyze results
-    print('\n📊 NOVELTY DETECTION ANALYSIS:')
+    print('\n[DATA] NOVELTY DETECTION ANALYSIS:')
     print('='*40)
     
     by_condition = {}
@@ -200,7 +200,7 @@ def experiment_2_proper_habituation():
     repeated_stimulus = ['storm', 'lightning', 'thunder']
     
     habituation_data = []
-    print("📈 Habituation sequence (15 trials):")
+    print("[CHART] Habituation sequence (15 trials):")
     
     for trial in range(15):
         print(f"  Trial {trial+1:2d}... ", end='', flush=True)
@@ -252,7 +252,7 @@ def experiment_2_proper_habituation():
     print(f"  Novel: entropy={novel_entropy:.3f}, symbols={novel_state.get('active_symbol_count', 0)}")
     
     # Analyze habituation pattern
-    print('\n📊 HABITUATION ANALYSIS:')
+    print('\n[DATA] HABITUATION ANALYSIS:')
     print('='*35)
     
     entropies = [d['entropy'] for d in habituation_data]
@@ -276,11 +276,11 @@ def experiment_2_proper_habituation():
     
     if habituation_effect > 0.1:
         if novel_boost > 0.2:
-            print("✅ CLEAR HABITUATION + NOVELTY RESPONSE")
+            print("[+] CLEAR HABITUATION + NOVELTY RESPONSE")
         else:
             print("🤔 HABITUATION WITHOUT NOVELTY RESPONSE")
     else:
-        print("❌ NO CLEAR HABITUATION DETECTED")
+        print("[-] NO CLEAR HABITUATION DETECTED")
     
     return habituation_data, novel_result
 
@@ -296,7 +296,7 @@ def experiment_3_decision_timing():
     conditions = ['fast_decision', 'slow_decision']
     
     for condition in conditions:
-        print(f"🎯 Testing {condition}...")
+        print(f"[TARGET] Testing {condition}...")
         
         for trial in range(5):  # Multiple trials
             print(f"   Trial {trial+1}... ", end='', flush=True)
@@ -351,7 +351,7 @@ def experiment_3_decision_timing():
             print(f"explore={explore_activation:.3f}, exploit={exploit_activation:.3f}, pref={preference:.3f}")
     
     # Analyze decisions
-    print('\n📊 DECISION ANALYSIS:')
+    print('\n[DATA] DECISION ANALYSIS:')
     print('='*25)
     
     fast_decisions = [r for r in decision_results if r['condition'] == 'fast_decision']
@@ -372,15 +372,15 @@ def experiment_3_decision_timing():
     print(f"Timing effect: {timing_effect:.3f}")
     
     if abs(timing_effect) > 0.1:
-        print("✅ TIMING AFFECTS DECISION MAKING")
+        print("[+] TIMING AFFECTS DECISION MAKING")
     else:
-        print("❌ NO CLEAR TIMING EFFECT")
+        print("[-] NO CLEAR TIMING EFFECT")
     
     return decision_results
 
 def run_improved_experiments():
     """Run all improved experiments with proper timing"""
-    print('🌊 IMPROVED WAVE COGNITION EXPERIMENTS')
+    print('[WAVE] IMPROVED WAVE COGNITION EXPERIMENTS')
     print('='*70)
     print('Taking time to do this right...')
     print()
@@ -395,7 +395,7 @@ def run_improved_experiments():
     end_time = time.time()
     
     print(f'\n⏱️ Total runtime: {end_time - start_time:.2f} seconds')
-    print('🎯 EXPERIMENTS COMPLETED WITH PROPER TIMING')
+    print('[TARGET] EXPERIMENTS COMPLETED WITH PROPER TIMING')
     
     return {
         'novelty_results': novelty_results,
@@ -406,7 +406,7 @@ def run_improved_experiments():
     }
 
 if __name__ == "__main__":
-    print("⚡ Running IMPROVED experiments...")
+    print("[BOLT] Running IMPROVED experiments...")
     print("🐌 Taking time to do proper measurements...")
     print()
     
@@ -416,5 +416,5 @@ if __name__ == "__main__":
     with open('improved_experimental_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"\n💾 Results saved to 'improved_experimental_results.json'")
+    print(f"\n[SAVE] Results saved to 'improved_experimental_results.json'")
     print("🔬 Proper scientific methodology with timing!") 

@@ -207,16 +207,16 @@ class PerformanceBenchmark:
     
     def run_performance_benchmark(self, max_files=25, questions_per_file=40):
         """Run benchmark focused on maximum performance"""
-        print(f"\n🎯 PERFORMANCE-FOCUSED BENCHMARK")
-        print(f"🚀 Goal: Beat 65% baseline with optimized approach")
-        print(f"⚡ Strategy: Keep what works, ditch complexity")
+        print(f"\n[TARGET] PERFORMANCE-FOCUSED BENCHMARK")
+        print(f"[ROCKET] Goal: Beat 65% baseline with optimized approach")
+        print(f"[BOLT] Strategy: Keep what works, ditch complexity")
         
         start_time = time.time()
         
         # Find files
         all_files = self.find_all_logicbench_files()
         if not all_files:
-            print("❌ No LogicBench files found!")
+            print("[-] No LogicBench files found!")
             return None
         
         # Sample files
@@ -225,7 +225,7 @@ class PerformanceBenchmark:
         else:
             test_files = all_files
         
-        print(f"🎯 Performance testing on {len(test_files)} files...")
+        print(f"[TARGET] Performance testing on {len(test_files)} files...")
         
         all_results = []
         logic_type_summary = {}
@@ -257,7 +257,7 @@ class PerformanceBenchmark:
         overall_accuracy = self.total_correct / self.total_questions if self.total_questions > 0 else 0
         
         # Print results
-        print(f"\n🎯 PERFORMANCE RESULTS:")
+        print(f"\n[TARGET] PERFORMANCE RESULTS:")
         print(f"   Total Questions: {self.total_questions}")
         print(f"   Correct Answers: {self.total_correct}")
         print(f"   Performance Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
@@ -265,28 +265,28 @@ class PerformanceBenchmark:
         print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n🚀 PERFORMANCE VS BASELINE:")
+        print(f"\n[ROCKET] PERFORMANCE VS BASELINE:")
         baseline = 0.652  # Single-agent baseline
         if overall_accuracy > baseline:
             improvement = (overall_accuracy - baseline) * 100
-            print(f"   ✅ PERFORMANCE WINS! (+{improvement:.1f} percentage points)")
+            print(f"   [+] PERFORMANCE WINS! (+{improvement:.1f} percentage points)")
             if overall_accuracy > 0.69:
-                print(f"   🎉 BEAT 69% STRETCH GOAL!")
+                print(f"   [PARTY] BEAT 69% STRETCH GOAL!")
         else:
             decline = (baseline - overall_accuracy) * 100
-            print(f"   ❌ Still need improvement (-{decline:.1f} percentage points)")
+            print(f"   [-] Still need improvement (-{decline:.1f} percentage points)")
         
         # Logic type breakdown
-        print(f"\n🎯 PERFORMANCE BREAKDOWN:")
+        print(f"\n[TARGET] PERFORMANCE BREAKDOWN:")
         for logic_type, summary in logic_type_summary.items():
             accuracy = summary['accuracy']
             baseline_map = {'propositional_logic': 0.73, 'first_order_logic': 0.70, 'nm_logic': 0.50}
             baseline_acc = baseline_map.get(logic_type, 0.65)
             
             if accuracy > baseline_acc:
-                print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%}) ✅ BEAT BASELINE")
+                print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%}) [+] BEAT BASELINE")
             else:
-                print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%}) ❌ Below baseline")
+                print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%}) [-] Below baseline")
         
         return {
             'overall_accuracy': overall_accuracy,
@@ -365,29 +365,29 @@ class PerformanceBenchmark:
             }
             
         except Exception as e:
-            print(f"❌ Performance test failed on {file_path}: {e}")
+            print(f"[-] Performance test failed on {file_path}: {e}")
             return None
 
 
 def main():
     """Run the performance-focused benchmark"""
-    print("🎯 PERFORMANCE-FOCUSED WAVE AGENT 🎯")
-    print("🚀 Optimized for results, not theory")
+    print("[TARGET] PERFORMANCE-FOCUSED WAVE AGENT [TARGET]")
+    print("[ROCKET] Optimized for results, not theory")
     print("=" * 60)
     
     benchmark = PerformanceBenchmark()
     results = benchmark.run_performance_benchmark()
     
     if results:
-        print(f"\n🎯 PERFORMANCE TEST COMPLETE!")
+        print(f"\n[TARGET] PERFORMANCE TEST COMPLETE!")
         print(f"   Strategy: Keep what works, ditch complexity")
         print(f"   Accuracy: {results['overall_accuracy']:.1%}")
         print(f"   Speed: {results['total_questions']/results['processing_time']:.1f} q/s")
         
         if results['overall_accuracy'] > 0.652:
-            print(f"\n🚀 SUCCESS! Beat the 65% baseline!")
+            print(f"\n[ROCKET] SUCCESS! Beat the 65% baseline!")
         else:
-            print(f"\n❌ Need more optimization to beat 65%")
+            print(f"\n[-] Need more optimization to beat 65%")
 
 
 if __name__ == "__main__":

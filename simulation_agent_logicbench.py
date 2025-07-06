@@ -168,7 +168,7 @@ class SimulationBasedCommittee:
             "Logic_Validator"        # Validates overall logical flow
         ]
         
-        print("🧠 SPAWNING SIMULATION AGENTS")
+        print("[BRAIN] SPAWNING SIMULATION AGENTS")
         for i, role in enumerate(roles):
             agent = ScenarioSimulator(i, role)
             agent.engine = self.shared_engine  # Share engine instead of creating new ones
@@ -330,14 +330,14 @@ class SimulationLogicBench:
         """Run benchmark with simulation-based reasoning"""
         print(f"\n🎭 SIMULATION-BASED LOGICBENCH BENCHMARK")
         print(f"💭 Agents mentally simulate scenarios and observe outcomes")
-        print(f"🎯 Target: Beat 65% through imagination and observation!")
+        print(f"[TARGET] Target: Beat 65% through imagination and observation!")
         
         start_time = time.time()
         
         # Find files
         all_files = self.find_all_logicbench_files()
         if not all_files:
-            print("❌ No LogicBench files found!")
+            print("[-] No LogicBench files found!")
             return None
         
         # Sample files
@@ -386,17 +386,17 @@ class SimulationLogicBench:
         print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n🧠 SIMULATION VS SINGLE AGENT:")
+        print(f"\n[BRAIN] SIMULATION VS SINGLE AGENT:")
         baseline = 0.652  # Single-agent baseline
         if overall_accuracy > baseline:
             improvement = (overall_accuracy - baseline) * 100
-            print(f"   ✅ SIMULATION WINS! (+{improvement:.1f} percentage points)")
+            print(f"   [+] SIMULATION WINS! (+{improvement:.1f} percentage points)")
         else:
             decline = (baseline - overall_accuracy) * 100
-            print(f"   ❌ Single agent better (-{decline:.1f} percentage points)")
+            print(f"   [-] Single agent better (-{decline:.1f} percentage points)")
         
         if overall_accuracy > 0.69:
-            print(f"   🎉 BEAT 69% BENCHMARK!")
+            print(f"   [PARTY] BEAT 69% BENCHMARK!")
         
         # Logic type breakdown
         print(f"\n💭 SIMULATION LOGIC BREAKDOWN:")
@@ -481,7 +481,7 @@ class SimulationLogicBench:
             }
             
         except Exception as e:
-            print(f"❌ Simulation failed on {file_path}: {e}")
+            print(f"[-] Simulation failed on {file_path}: {e}")
             return None
 
 
@@ -495,7 +495,7 @@ def main():
     results = benchmark.run_simulation_benchmark()
     
     if results:
-        print(f"\n🎯 SIMULATION EXPERIMENT COMPLETE!")
+        print(f"\n[TARGET] SIMULATION EXPERIMENT COMPLETE!")
         print(f"   Through mental simulation and observation:")
         print(f"   Accuracy: {results['overall_accuracy']:.1%}")
         print(f"   Speed: {results['total_questions']/results['processing_time']:.1f} q/s")

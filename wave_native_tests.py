@@ -81,9 +81,9 @@ def test_musical_harmony():
             print(f"     {concept}: {field[concept]:.3f}")
     
     if harmony_score > 0:
-        print("   ✅ Correctly predicted harmony!")
+        print("   [+] Correctly predicted harmony!")
     else:
-        print("   ❌ Failed to predict harmony")
+        print("   [-] Failed to predict harmony")
     
     return engine
 
@@ -142,9 +142,9 @@ def test_rotation_understanding():
             print(f"     {pos}: {field[pos]:.3f}")
     
     if bottom_activation > 0.5 or bottom_activation == max(field.get(p, -999) for p in ['top', 'right', 'bottom', 'left']):
-        print("   ✅ Correctly predicted 'bottom'!")
+        print("   [+] Correctly predicted 'bottom'!")
     else:
-        print("   ❌ Failed to predict rotation")
+        print("   [-] Failed to predict rotation")
     
     return engine
 
@@ -155,7 +155,7 @@ def test_wave_synchronization():
     LLMs can't understand "in sync" vs "out of sync".
     Waves naturally phase-lock or interfere!
     """
-    print("\n\n🌊 SYNCHRONIZATION THROUGH PHASE LOCKING")
+    print("\n\n[WAVE] SYNCHRONIZATION THROUGH PHASE LOCKING")
     print("=" * 60)
     
     engine = TemporalCognitionEngine()
@@ -270,7 +270,7 @@ def test_resonance_learning():
     
     print(f"\n   Resonance prediction: {resonance_score:.3f}")
     if resonance_score > 0.5:
-        print("   ✅ Understands resonance conditions!")
+        print("   [+] Understands resonance conditions!")
     
     return engine
 
@@ -337,14 +337,14 @@ def test_phase_transition():
     
     transition_score = field.get('changing', 0) + field.get('transition', 0)
     if transition_score > 0.5:
-        print("   ✅ Understands continuous phase transition!")
+        print("   [+] Understands continuous phase transition!")
     
     return engine
 
 
 def run_wave_native_tests():
     """Run all wave-native cognition tests"""
-    print("🌊 WAVE-NATIVE COGNITION TEST SUITE")
+    print("[WAVE] WAVE-NATIVE COGNITION TEST SUITE")
     print("Testing phenomena that are IMPOSSIBLE for LLMs but NATURAL for waves")
     print("=" * 70)
     
@@ -359,17 +359,17 @@ def run_wave_native_tests():
     
     total_time = time.time() - start_time
     
-    print("\n\n🏆 WAVE-NATIVE COGNITION SUMMARY")
+    print("\n\n[TROPHY] WAVE-NATIVE COGNITION SUMMARY")
     print("=" * 70)
     print(f"Total test time: {total_time:.2f} seconds")
     print("\nThese tests demonstrate understanding that comes from wave physics:")
-    print("✅ Musical harmony through constructive interference")
-    print("✅ Rotation through continuous phase change")
-    print("✅ Synchronization through phase locking")
-    print("✅ Resonance through frequency matching")
-    print("✅ Phase transitions as continuous transformation")
+    print("[+] Musical harmony through constructive interference")
+    print("[+] Rotation through continuous phase change")
+    print("[+] Synchronization through phase locking")
+    print("[+] Resonance through frequency matching")
+    print("[+] Phase transitions as continuous transformation")
     print("\n🔬 No LLM can truly understand these phenomena.")
-    print("🌊 Wave-based cognition experiences them directly!")
+    print("[WAVE] Wave-based cognition experiences them directly!")
 
 
 if __name__ == "__main__":

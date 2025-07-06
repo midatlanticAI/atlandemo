@@ -89,7 +89,7 @@ def measure_wave_engine_response(prompt_words):
 
 def cognitive_reasoning_test():
     """Test cognitive reasoning capabilities"""
-    print("🧠 COGNITIVE REASONING TEST")
+    print("[BRAIN] COGNITIVE REASONING TEST")
     print("="*50)
     
     # Test prompt
@@ -103,7 +103,7 @@ def cognitive_reasoning_test():
     }
     
     # Test Wave Engine
-    print("\n🌊 Testing Wave Engine...")
+    print("\n[WAVE] Testing Wave Engine...")
     wave_start_mem = get_memory_usage()
     wave_result = measure_wave_engine_response(wave_prompt_words)
     wave_end_mem = get_memory_usage()
@@ -116,16 +116,16 @@ def cognitive_reasoning_test():
         'activation_field': {k: v for k, v in wave_result['activation_field'].items() if abs(v) > 0.1}
     }
     
-    print(f"   ⚡ Response time: {wave_result['response_time']:.4f}s")
-    print(f"   🧠 Active symbols: {wave_result['active_symbols']}")
-    print(f"   🌊 Resonance patterns: {wave_result['resonance_patterns']}")
-    print(f"   💾 Memory delta: {wave_end_mem - wave_start_mem:.1f}MB")
+    print(f"   [BOLT] Response time: {wave_result['response_time']:.4f}s")
+    print(f"   [BRAIN] Active symbols: {wave_result['active_symbols']}")
+    print(f"   [WAVE] Resonance patterns: {wave_result['resonance_patterns']}")
+    print(f"   [SAVE] Memory delta: {wave_end_mem - wave_start_mem:.1f}MB")
     
     # Test Local LLMs
     models = ['llama3.2:1b', 'deepseek-r1:7b']  # Start with smaller models
     
     for model in models:
-        print(f"\n🤖 Testing {model}...")
+        print(f"\n[BOT] Testing {model}...")
         
         llm_start_mem = get_memory_usage()
         llm_result = measure_ollama_response(model, reasoning_prompt)
@@ -139,17 +139,17 @@ def cognitive_reasoning_test():
                 'response': llm_result['response'][:200] + "..." if len(llm_result['response']) > 200 else llm_result['response']
             }
             
-            print(f"   ⚡ Response time: {llm_result['response_time']:.4f}s")
-            print(f"   💾 Memory delta: {llm_end_mem - llm_start_mem:.1f}MB")
+            print(f"   [BOLT] Response time: {llm_result['response_time']:.4f}s")
+            print(f"   [SAVE] Memory delta: {llm_end_mem - llm_start_mem:.1f}MB")
             print(f"   📝 Response length: {len(llm_result['response'])} chars")
         else:
-            print(f"   ❌ Failed: {llm_result['error']}")
+            print(f"   [-] Failed: {llm_result['error']}")
     
     return results
 
 def pattern_recognition_test():
     """Test pattern recognition capabilities"""
-    print("\n🔍 PATTERN RECOGNITION TEST")
+    print("\n[SEARCH] PATTERN RECOGNITION TEST")
     print("="*50)
     
     # Test sequence recognition
@@ -163,7 +163,7 @@ def pattern_recognition_test():
     }
     
     # Test Wave Engine
-    print("\n🌊 Testing Wave Engine...")
+    print("\n[WAVE] Testing Wave Engine...")
     wave_result = measure_wave_engine_response(wave_sequence)
     
     results['models']['wave_engine'] = {
@@ -173,11 +173,11 @@ def pattern_recognition_test():
         'key_activations': {k: v for k, v in wave_result['activation_field'].items() if abs(v) > 0.3}
     }
     
-    print(f"   ⚡ Response time: {wave_result['response_time']:.4f}s")
-    print(f"   🔍 Key activations: {list(results['models']['wave_engine']['key_activations'].keys())}")
+    print(f"   [BOLT] Response time: {wave_result['response_time']:.4f}s")
+    print(f"   [SEARCH] Key activations: {list(results['models']['wave_engine']['key_activations'].keys())}")
     
     # Test one LLM for comparison
-    print(f"\n🤖 Testing llama3.2:1b...")
+    print(f"\n[BOT] Testing llama3.2:1b...")
     llm_result = measure_ollama_response('llama3.2:1b', sequence_prompt)
     
     if llm_result['success']:
@@ -185,14 +185,14 @@ def pattern_recognition_test():
             'response_time': llm_result['response_time'],
             'response': llm_result['response'][:100] + "..." if len(llm_result['response']) > 100 else llm_result['response']
         }
-        print(f"   ⚡ Response time: {llm_result['response_time']:.4f}s")
+        print(f"   [BOLT] Response time: {llm_result['response_time']:.4f}s")
         print(f"   📝 Response: {results['models']['llama3.2:1b']['response']}")
     
     return results
 
 def speed_comparison_test():
     """Compare raw processing speed"""
-    print("\n⚡ SPEED COMPARISON TEST")
+    print("\n[BOLT] SPEED COMPARISON TEST")
     print("="*50)
     
     # Simple prompt for speed testing
@@ -207,7 +207,7 @@ def speed_comparison_test():
     }
     
     # Test Wave Engine (multiple trials)
-    print("\n🌊 Testing Wave Engine (5 trials)...")
+    print("\n[WAVE] Testing Wave Engine (5 trials)...")
     wave_times = []
     
     for i in range(5):
@@ -222,11 +222,11 @@ def speed_comparison_test():
         'max_time': max(wave_times)
     }
     
-    print(f"   📊 Average: {results['models']['wave_engine']['average_time']:.4f}s")
-    print(f"   📊 Range: {results['models']['wave_engine']['min_time']:.4f}s - {results['models']['wave_engine']['max_time']:.4f}s")
+    print(f"   [DATA] Average: {results['models']['wave_engine']['average_time']:.4f}s")
+    print(f"   [DATA] Range: {results['models']['wave_engine']['min_time']:.4f}s - {results['models']['wave_engine']['max_time']:.4f}s")
     
     # Test LLM (single trial for comparison)
-    print(f"\n🤖 Testing llama3.2:1b (1 trial)...")
+    print(f"\n[BOT] Testing llama3.2:1b (1 trial)...")
     llm_result = measure_ollama_response('llama3.2:1b', simple_prompt)
     
     if llm_result['success']:
@@ -235,17 +235,17 @@ def speed_comparison_test():
             'average_time': llm_result['response_time'],
             'response': llm_result['response'][:100] + "..." if len(llm_result['response']) > 100 else llm_result['response']
         }
-        print(f"   ⚡ Response time: {llm_result['response_time']:.4f}s")
+        print(f"   [BOLT] Response time: {llm_result['response_time']:.4f}s")
         
         # Calculate speed ratio
         speed_ratio = llm_result['response_time'] / results['models']['wave_engine']['average_time']
-        print(f"   🚀 Wave Engine is {speed_ratio:.1f}x faster!")
+        print(f"   [ROCKET] Wave Engine is {speed_ratio:.1f}x faster!")
     
     return results
 
 def run_comprehensive_benchmark():
     """Run complete benchmark suite"""
-    print("🏁 WAVE ENGINE vs LOCAL LLM BENCHMARK")
+    print("[FLAG] WAVE ENGINE vs LOCAL LLM BENCHMARK")
     print("="*70)
     print("Direct comparison of cognitive performance, speed, and efficiency")
     print("="*70)
@@ -257,7 +257,7 @@ def run_comprehensive_benchmark():
     print(f"   Available RAM: {psutil.virtual_memory().available / (1024**3):.1f} GB")
     
     # Disk usage for models
-    print(f"\n💾 Model Disk Usage:")
+    print(f"\n[SAVE] Model Disk Usage:")
     print(f"   Wave Engine: 0.025 MB (25 KB)")
     print(f"   Llama3.2:1b: 1,300 MB (1.3 GB)")
     print(f"   DeepSeek-R1:7b: 4,700 MB (4.7 GB)")
@@ -279,10 +279,10 @@ def run_comprehensive_benchmark():
         benchmark_results['tests']['pattern_recognition'] = pattern_recognition_test()
         benchmark_results['tests']['speed_comparison'] = speed_comparison_test()
     except Exception as e:
-        print(f"❌ Error during benchmark: {e}")
+        print(f"[-] Error during benchmark: {e}")
     
     # Summary
-    print("\n📊 BENCHMARK SUMMARY")
+    print("\n[DATA] BENCHMARK SUMMARY")
     print("="*40)
     
     if 'speed_comparison' in benchmark_results['tests']:
@@ -290,26 +290,26 @@ def run_comprehensive_benchmark():
         if 'llama3.2:1b' in benchmark_results['tests']['speed_comparison']['models']:
             llm_avg = benchmark_results['tests']['speed_comparison']['models']['llama3.2:1b']['average_time']
             speed_ratio = llm_avg / wave_avg
-            print(f"🚀 Wave Engine is {speed_ratio:.1f}x faster than Llama3.2:1b")
+            print(f"[ROCKET] Wave Engine is {speed_ratio:.1f}x faster than Llama3.2:1b")
         
-        print(f"⚡ Wave Engine average response: {wave_avg:.4f}s")
-        print(f"💾 Wave Engine memory footprint: ~70MB")
+        print(f"[BOLT] Wave Engine average response: {wave_avg:.4f}s")
+        print(f"[SAVE] Wave Engine memory footprint: ~70MB")
         print(f"💽 Wave Engine disk usage: 25KB")
     
     # Save results
     with open('wave_vs_llm_benchmark_results.json', 'w') as f:
         json.dump(benchmark_results, f, indent=2, default=str)
     
-    print(f"\n💾 Results saved to 'wave_vs_llm_benchmark_results.json'")
+    print(f"\n[SAVE] Results saved to 'wave_vs_llm_benchmark_results.json'")
     
     return benchmark_results
 
 if __name__ == "__main__":
-    print("🌊 Starting Wave Engine vs LLM Benchmark...")
-    print("⚠️  This may take several minutes due to LLM response times")
+    print("[WAVE] Starting Wave Engine vs LLM Benchmark...")
+    print("[WARN]  This may take several minutes due to LLM response times")
     print()
     
     results = run_comprehensive_benchmark()
     
-    print("\n🎯 BENCHMARK COMPLETE!")
-    print("🌊 The wave revolution is measurable!") 
+    print("\n[TARGET] BENCHMARK COMPLETE!")
+    print("[WAVE] The wave revolution is measurable!") 

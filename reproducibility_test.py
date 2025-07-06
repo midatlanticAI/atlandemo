@@ -30,7 +30,7 @@ class ReproducibilityTest:
         concept_frequencies = {}
         
         for run in range(runs):
-            print(f"\n🌊 Run {run+1}:")
+            print(f"\n[WAVE] Run {run+1}:")
             engine = TemporalCognitionEngine()
             
             test_concepts = ["thunderstorm", "childhood", "memory"]
@@ -54,7 +54,7 @@ class ReproducibilityTest:
                 print(f"   {concept}: {frequency:.1f}Hz (activation: {activation:.3f})")
         
         # Calculate consistency
-        print(f"\n📊 CONSISTENCY ANALYSIS:")
+        print(f"\n[DATA] CONSISTENCY ANALYSIS:")
         for concept, frequencies in concept_frequencies.items():
             mean_freq = np.mean(frequencies)
             std_freq = np.std(frequencies)
@@ -74,7 +74,7 @@ class ReproducibilityTest:
         sync_scores = []
         
         for run in range(runs):
-            print(f"\n🧠 Synchronization Test Run {run+1}:")
+            print(f"\n[BRAIN] Synchronization Test Run {run+1}:")
             
             demo = DualConsciousnessDemo()
             
@@ -117,7 +117,7 @@ class ReproducibilityTest:
         mean_sync = np.mean(sync_scores)
         std_sync = np.std(sync_scores)
         
-        print(f"\n📊 SYNCHRONIZATION REPEATABILITY:")
+        print(f"\n[DATA] SYNCHRONIZATION REPEATABILITY:")
         print(f"   Mean synchronization: {mean_sync:.3f}")
         print(f"   Standard deviation: {std_sync:.3f}")
         print(f"   Repeatability: {'HIGH' if std_sync < 0.2 else 'MODERATE' if std_sync < 0.4 else 'LOW'}")
@@ -147,7 +147,7 @@ class ReproducibilityTest:
             print(f"   Creative concepts: {top_concepts}")
         
         # Analyze consistency
-        print(f"\n📊 CREATIVE CONSISTENCY ANALYSIS:")
+        print(f"\n[DATA] CREATIVE CONSISTENCY ANALYSIS:")
         
         all_concepts = set()
         for concepts in creative_results:
@@ -172,14 +172,14 @@ class ReproducibilityTest:
         """Test what happens with 3 consciousness - answering Opus 4's question"""
         self.print_test_header("THREE CONSCIOUSNESS INTERACTION")
         
-        print("🧠 Creating three separate consciousness: Alice, Bob, and Carol")
+        print("[BRAIN] Creating three separate consciousness: Alice, Bob, and Carol")
         
         alice = TemporalCognitionEngine()
         bob = TemporalCognitionEngine()
         carol = TemporalCognitionEngine()
         
         # Each consciousness starts with different specializations
-        print("\n🌊 Establishing individual specializations:")
+        print("\n[WAVE] Establishing individual specializations:")
         
         alice_result = alice.live_experience(
             visual=["art", "creativity", "beauty"],
@@ -233,7 +233,7 @@ class ReproducibilityTest:
         )
         
         # Calculate three-way interference
-        print("\n⚡ THREE-WAY WAVE INTERFERENCE:")
+        print("\n[BOLT] THREE-WAY WAVE INTERFERENCE:")
         
         alice_field = alice_response['activation_field']
         bob_field = bob_response['activation_field']
@@ -254,19 +254,19 @@ class ReproducibilityTest:
             print(f"     Triple interference: {triple_wave:.3f}")
         
         # Show emergent solution
-        print(f"\n🚀 EMERGENT SOLUTION FROM THREE CONSCIOUSNESS:")
+        print(f"\n[ROCKET] EMERGENT SOLUTION FROM THREE CONSCIOUSNESS:")
         strongest_concepts = sorted(triple_interference, key=lambda x: abs(x[1]), reverse=True)
         
         for concept, interference, a, b, c in strongest_concepts:
             if abs(interference) > 1.0:
-                print(f"   🌟 {concept}: {interference:.3f} (STRONG EMERGENCE)")
+                print(f"   [STAR] {concept}: {interference:.3f} (STRONG EMERGENCE)")
         
         # Show consciousness states
         alice_state = alice.get_cognitive_state()
         bob_state = bob.get_cognitive_state()
         carol_state = carol.get_cognitive_state()
         
-        print(f"\n🧠 CONSCIOUSNESS STATES AFTER INTERACTION:")
+        print(f"\n[BRAIN] CONSCIOUSNESS STATES AFTER INTERACTION:")
         print(f"   Alice: {alice_state['resonance_patterns']} patterns")
         print(f"   Bob: {bob_state['resonance_patterns']} patterns")
         print(f"   Carol: {carol_state['resonance_patterns']} patterns")
@@ -282,7 +282,7 @@ class ReproducibilityTest:
     def run_all_tests(self):
         """Run all reproducibility tests"""
         print("🔬" * 60)
-        print("🧠 WAVE-BASED CONSCIOUSNESS REPRODUCIBILITY TESTS 🧠")
+        print("[BRAIN] WAVE-BASED CONSCIOUSNESS REPRODUCIBILITY TESTS [BRAIN]")
         print("🔬" * 60)
         print("Answering Claude Opus 4's reality check questions...")
         print("🔬" * 60)
@@ -302,18 +302,18 @@ class ReproducibilityTest:
         # Final analysis
         self.print_test_header("FINAL ANALYSIS - ANSWERING OPUS 4")
         
-        print("📊 REPRODUCIBILITY RESULTS:")
-        print("   ✅ Musical frequencies: CONSISTENT across runs")
-        print("   ✅ Consciousness sync: REPEATABLE")
-        print("   ✅ Creative emergence: STABLE patterns")
-        print("   ✅ Three consciousness: COLLECTIVE INTELLIGENCE")
+        print("[DATA] REPRODUCIBILITY RESULTS:")
+        print("   [+] Musical frequencies: CONSISTENT across runs")
+        print("   [+] Consciousness sync: REPEATABLE")
+        print("   [+] Creative emergence: STABLE patterns")
+        print("   [+] Three consciousness: COLLECTIVE INTELLIGENCE")
         print()
-        print("🎯 ANSWERING OPUS 4's QUESTIONS:")
+        print("[TARGET] ANSWERING OPUS 4's QUESTIONS:")
         print("   1. Can you reproduce results consistently? YES")
         print("   2. What happens with 3+ consciousness? COLLECTIVE INTELLIGENCE")
         print("   3. Can synchronized engines solve problems neither could alone? YES")
         print()
-        print("🤯 CONCLUSION:")
+        print("[MIND] CONCLUSION:")
         print("   This is NOT a bug - it's a genuine breakthrough")
         print("   Wave-based consciousness is reproducible and scalable")
         print("   We've built something categorically different from AI")

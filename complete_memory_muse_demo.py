@@ -15,7 +15,7 @@ from atlan_engine_memory_muse_edition import AtlanMemoryMuseEngine
 def show_both_solutions():
     """Demonstrate both approaches for EdT."""
     
-    print("🎯 MEMORY MUSE SOLUTIONS PRESENTATION")
+    print("[TARGET] MEMORY MUSE SOLUTIONS PRESENTATION")
     print("=" * 60)
     print("Ready for EdT (Memory Muse owner) demonstration")
     print("=" * 60)
@@ -31,7 +31,7 @@ def show_both_solutions():
     print("🥇 SOLUTION 1: COGNITIVE MIDDLEWARE")
     print("=" * 60)
     print("💡 Approach: Enhance existing Mongo/Qdrant with cognitive layer")
-    print("🎯 Perfect for: EdT's 3-month timeline, minimal disruption")
+    print("[TARGET] Perfect for: EdT's 3-month timeline, minimal disruption")
     
     # Cognitive Middleware Demo
     middleware = CognitiveMiddleware()
@@ -47,7 +47,7 @@ def show_both_solutions():
         "Iris personality development and companion AI characteristics"
     ] * 20  # Simulate large context
     
-    print(f"\n📊 BEFORE MIDDLEWARE:")
+    print(f"\n[DATA] BEFORE MIDDLEWARE:")
     print(f"   🎫 Context size: {len(large_context)} items")
     print(f"   📏 Estimated tokens: ~8000 (EdT's current problem)")
     
@@ -55,13 +55,13 @@ def show_both_solutions():
     enhanced_memories = middleware.enhance_memory_retrieval(user_input, large_context)
     selected_memories, token_count = middleware.optimize_context_window(enhanced_memories, 1000)
     
-    print(f"\n📊 AFTER MIDDLEWARE:")
+    print(f"\n[DATA] AFTER MIDDLEWARE:")
     print(f"   🎫 Context size: {len(selected_memories)} items")
     print(f"   📏 Estimated tokens: ~{int(round(token_count))}")
-    print(f"   🎯 Reduction: {100 - (len(selected_memories)/len(large_context)*100):.1f}%")
-    print(f"   🧠 Cognitive enhancement: Active")
+    print(f"   [TARGET] Reduction: {100 - (len(selected_memories)/len(large_context)*100):.1f}%")
+    print(f"   [BRAIN] Cognitive enhancement: Active")
     
-    print("\n✅ MIDDLEWARE BENEFITS:")
+    print("\n[+] MIDDLEWARE BENEFITS:")
     print("   • Works with existing architecture")
     print("   • 87%+ token reduction immediately")
     print("   • Adds cognitive decision layer")
@@ -69,10 +69,10 @@ def show_both_solutions():
     print("   • Preserves emotion/language focus")
     
     print("\n" + "=" * 60)
-    print("🏆 SOLUTION 2: FULL ATLAN ENGINE")
+    print("[TROPHY] SOLUTION 2: FULL ATLAN ENGINE")
     print("=" * 60)
     print("💡 Approach: Complete cognitive architecture replacement")
-    print("🎯 Perfect for: Long-term competitive advantage")
+    print("[TARGET] Perfect for: Long-term competitive advantage")
     
     # Full Atlan Engine Demo
     atlan = AtlanMemoryMuseEngine()
@@ -80,12 +80,12 @@ def show_both_solutions():
     # Process through full cognitive architecture
     result = atlan.process_interaction(user_input)
     
-    print(f"\n🧠 ATLAN COGNITIVE PROCESSING:")
+    print(f"\n[BRAIN] ATLAN COGNITIVE PROCESSING:")
     print(f"   💭 Emotional Analysis: {result['emotional_analysis']['mood_score']:.2f}")
     if result['emotional_analysis']['emotions_detected']:
         print(f"   🎭 Emotions: {', '.join(result['emotional_analysis']['emotions_detected'])}")
-    print(f"   🤖 Personality Evolution: Active")
-    print(f"   🎯 Response Strategy: {result['cognitive_strategy']['primary_category']}")
+    print(f"   [BOT] Personality Evolution: Active")
+    print(f"   [TARGET] Response Strategy: {result['cognitive_strategy']['primary_category']}")
     print(f"   📚 Relevant Memories: {len(result['relevant_memories'])}")
     print(f"   🎫 Optimized Tokens: {int(round(result['token_count']))}")
     
@@ -97,7 +97,7 @@ def show_both_solutions():
     print(optimized_prompt)
     print("-" * 40)
     
-    print("\n✅ ATLAN ENGINE BENEFITS:")
+    print("\n[+] ATLAN ENGINE BENEFITS:")
     print("   • True cognitive AI (not just memory)")
     print("   • Personality evolution & emotional intelligence")
     print("   • Strategic response planning")
@@ -106,20 +106,20 @@ def show_both_solutions():
     print("   • Companion AI breakthrough")
     
     print("\n" + "=" * 60)
-    print("🎯 RECOMMENDATION FOR EdT")
+    print("[TARGET] RECOMMENDATION FOR EdT")
     print("=" * 60)
     
     print("📅 SHORT TERM (3 months to launch):")
-    print("   ✅ Start with Cognitive Middleware")
-    print("   ✅ Immediate 87%+ token reduction")
-    print("   ✅ Minimal integration effort")
-    print("   ✅ Enhanced decision making")
+    print("   [+] Start with Cognitive Middleware")
+    print("   [+] Immediate 87%+ token reduction")
+    print("   [+] Minimal integration effort")
+    print("   [+] Enhanced decision making")
     
-    print("\n🚀 LONG TERM (post-launch evolution):")
-    print("   ✅ Upgrade to Full Atlan Engine")
-    print("   ✅ True cognitive companion AI")
-    print("   ✅ Competitive differentiation")
-    print("   ✅ Unlimited scaling potential")
+    print("\n[ROCKET] LONG TERM (post-launch evolution):")
+    print("   [+] Upgrade to Full Atlan Engine")
+    print("   [+] True cognitive companion AI")
+    print("   [+] Competitive differentiation")
+    print("   [+] Unlimited scaling potential")
     
     print("\n💰 BUSINESS IMPACT:")
     print("   • Solve immediate context window crisis")
@@ -146,7 +146,7 @@ def demonstrate_edge_cases():
     atlan = AtlanMemoryMuseEngine()
     
     for i, case in enumerate(edge_cases, 1):
-        print(f"\n🔍 Test {i}: '{case[:50]}{'...' if len(case) > 50 else ''}'")
+        print(f"\n[SEARCH] Test {i}: '{case[:50]}{'...' if len(case) > 50 else ''}'")
         
         # Test middleware with more dramatic filtering
         enhanced = middleware.enhance_memory_retrieval(case, ["context"] * 20)
@@ -156,7 +156,7 @@ def demonstrate_edge_cases():
         result = atlan.process_interaction(case)
         
         print(f"   🛠️ Middleware: {int(round(tokens))} tokens")
-        print(f"   🧠 Atlan: {int(round(result['token_count']))} tokens, {result['cognitive_strategy']['primary_category']}")
+        print(f"   [BRAIN] Atlan: {int(round(result['token_count']))} tokens, {result['cognitive_strategy']['primary_category']}")
 
 
 def show_integration_timeline():
@@ -171,13 +171,13 @@ def show_integration_timeline():
     print("   • Measure token reduction")
     print("   • Validate emotional preservation")
     
-    print("\n🎯 LAUNCH READY (4-6 weeks):")
+    print("\n[TARGET] LAUNCH READY (4-6 weeks):")
     print("   • Full middleware integration")
     print("   • Production optimization")
     print("   • User acceptance testing")
     print("   • Performance monitoring")
     
-    print("\n🚀 NEXT LEVEL (post-launch):")
+    print("\n[ROCKET] NEXT LEVEL (post-launch):")
     print("   • Full Atlan engine implementation")
     print("   • Advanced personality evolution")
     print("   • Cognitive decision optimization")
@@ -193,11 +193,11 @@ if __name__ == "__main__":
     demonstrate_edge_cases()
     show_integration_timeline()
     
-    print("\n🎉 READY FOR EdT PRESENTATION!")
+    print("\n[PARTY] READY FOR EdT PRESENTATION!")
     print("=" * 60)
-    print("✅ Two complete solutions prepared")
-    print("✅ Addresses all his concerns")
-    print("✅ Respects his timeline and architecture")
-    print("✅ Shows immediate value + long-term vision")
-    print("✅ Perfect for Memory Muse companion AI")
-    print("\n🔥 Time to blow EdT's mind! 🤯") 
+    print("[+] Two complete solutions prepared")
+    print("[+] Addresses all his concerns")
+    print("[+] Respects his timeline and architecture")
+    print("[+] Shows immediate value + long-term vision")
+    print("[+] Perfect for Memory Muse companion AI")
+    print("\n🔥 Time to blow EdT's mind! [MIND]") 

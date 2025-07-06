@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-WAVE vs OLLAMA BENCHMARK
-Head-to-head comparison on LogicBench questions
+Wave Engine vs Ollama Benchmark
+Test Wave Engine against local Ollama models
 """
 
 import json
@@ -11,6 +11,15 @@ import requests
 from pathlib import Path
 from enhanced_wave_engine import EnhancedWaveEngine
 from typing import List, Dict, Any
+
+# Safe print function for CI/CD compatibility
+def safe_print(text):
+    """Print function that handles encoding issues on different platforms"""
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        # Fallback to ASCII-safe version
+        print(text.encode('ascii', 'replace').decode('ascii'))
 
 class WaveVsOllamaBenchmark:
     """Compare Wave engine vs Ollama models on LogicBench"""
@@ -32,10 +41,10 @@ class WaveVsOllamaBenchmark:
                 models = [model['name'] for model in data.get('models', [])]
                 return models
             else:
-                print(f"❌ Could not connect to Ollama at {self.ollama_url}")
+                safe_print(f"[-] Could not connect to Ollama at {self.ollama_url}")
                 return []
         except Exception as e:
-            print(f"❌ Error connecting to Ollama: {e}")
+            safe_print(f"[-] Error connecting to Ollama: {e}")
             return []
     
     def ask_ollama(self, model: str, prompt: str, max_tokens: int = 50) -> str:
@@ -59,7 +68,7 @@ class WaveVsOllamaBenchmark:
             else:
                 return "error"
         except Exception as e:
-            print(f"❌ Error querying Ollama: {e}")
+            safe_print(f"[-] Error querying Ollama: {e}")
             return "error"
     
     def extract_yes_no_answer(self, response: str) -> str:
@@ -81,7 +90,7 @@ class WaveVsOllamaBenchmark:
     
     def test_wave_engine(self, questions: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Test Wave engine on questions"""
-        print("🌊 Testing Wave Engine...")
+        safe_print("[WAVE] Testing Wave Engine...")
         
         start_time = time.time()
         correct = 0
@@ -124,7 +133,7 @@ class WaveVsOllamaBenchmark:
     
     def test_ollama_model(self, model: str, questions: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Test Ollama model on questions"""
-        print(f"🤖 Testing Ollama model: {model}...")
+        safe_print(f"[BOT] Testing Ollama model: {model}...")
         
         start_time = time.time()
         correct = 0
@@ -155,7 +164,7 @@ Please answer with just 'yes' or 'no' based on logical reasoning."""
             
             # Progress indicator
             if (i + 1) % 10 == 0:
-                print(f"   Progress: {i + 1}/{len(questions)} ({((i + 1)/len(questions)*100):.1f}%)")
+                safe_print(f"   Progress: {i + 1}/{len(questions)} ({((i + 1)/len(questions)*100):.1f}%)")
         
         end_time = time.time()
         
@@ -214,7 +223,7 @@ Please answer with just 'yes' or 'no' based on logical reasoning."""
                                         'axiom': axiom
                                     })
                         except Exception as e:
-                            print(f"❌ Error loading {data_file}: {e}")
+                            safe_print(f"[-] Error loading {data_file}: {e}")
         
         # Sample questions
         if len(questions) > sample_size:
@@ -224,18 +233,18 @@ Please answer with just 'yes' or 'no' based on logical reasoning."""
     
     def run_comparison(self, ollama_model: str, sample_size: int = 100):
         """Run head-to-head comparison"""
-        print("🏁 WAVE vs OLLAMA BENCHMARK")
-        print("=" * 50)
+        safe_print("[FLAG] WAVE vs OLLAMA BENCHMARK")
+        safe_print("=" * 50)
         
         # Load questions
-        print(f"📊 Loading {sample_size} LogicBench questions...")
+        safe_print(f"[DATA] Loading {sample_size} LogicBench questions...")
         questions = self.load_sample_questions(sample_size)
         
         if not questions:
-            print("❌ No questions loaded!")
+            safe_print("[-] No questions loaded!")
             return
         
-        print(f"✅ Loaded {len(questions)} questions")
+        safe_print(f"[+] Loaded {len(questions)} questions")
         
         # Test Wave engine
         wave_results = self.test_wave_engine(questions)
@@ -257,48 +266,48 @@ Please answer with just 'yes' or 'no' based on logical reasoning."""
         with open('wave_vs_ollama_results.json', 'w') as f:
             json.dump(results, f, indent=2)
         
-        print("\n💾 Detailed results saved to: wave_vs_ollama_results.json")
+        safe_print("\n[SAVE] Detailed results saved to: wave_vs_ollama_results.json")
     
     def display_comparison(self, wave_results: Dict[str, Any], ollama_results: Dict[str, Any], model_name: str):
         """Display comparison results"""
-        print("\n🏆 BENCHMARK RESULTS")
-        print("=" * 50)
+        safe_print("\n[TROPHY] BENCHMARK RESULTS")
+        safe_print("=" * 50)
         
         # Accuracy comparison
-        print(f"📊 ACCURACY COMPARISON:")
-        print(f"   🌊 Wave Engine:  {wave_results['accuracy']:.3f} ({wave_results['accuracy']*100:.1f}%)")
-        print(f"   🤖 {model_name}: {ollama_results['accuracy']:.3f} ({ollama_results['accuracy']*100:.1f}%)")
+        safe_print(f"[DATA] ACCURACY COMPARISON:")
+        safe_print(f"   [WAVE] Wave Engine:  {wave_results['accuracy']:.3f} ({wave_results['accuracy']*100:.1f}%)")
+        safe_print(f"   [BOT] {model_name}: {ollama_results['accuracy']:.3f} ({ollama_results['accuracy']*100:.1f}%)")
         
         # Determine winner
         if wave_results['accuracy'] > ollama_results['accuracy']:
             diff = (wave_results['accuracy'] - ollama_results['accuracy']) * 100
-            print(f"   🏆 WINNER: Wave Engine (+{diff:.1f} percentage points)")
+            safe_print(f"   [TROPHY] WINNER: Wave Engine (+{diff:.1f} percentage points)")
         elif ollama_results['accuracy'] > wave_results['accuracy']:
             diff = (ollama_results['accuracy'] - wave_results['accuracy']) * 100
-            print(f"   🏆 WINNER: {model_name} (+{diff:.1f} percentage points)")
+            safe_print(f"   [TROPHY] WINNER: {model_name} (+{diff:.1f} percentage points)")
         else:
-            print(f"   🤝 TIE!")
+            safe_print(f"   [SHAKE] TIE!")
         
         # Speed comparison
-        print(f"\n⚡ SPEED COMPARISON:")
-        print(f"   🌊 Wave Engine:  {wave_results['time']:.2f}s ({wave_results['total']/wave_results['time']:.1f} q/s)")
-        print(f"   🤖 {model_name}: {ollama_results['time']:.2f}s ({ollama_results['total']/ollama_results['time']:.1f} q/s)")
+        safe_print(f"\n[BOLT] SPEED COMPARISON:")
+        safe_print(f"   [WAVE] Wave Engine:  {wave_results['time']:.2f}s ({wave_results['total']/wave_results['time']:.1f} q/s)")
+        safe_print(f"   [BOT] {model_name}: {ollama_results['time']:.2f}s ({ollama_results['total']/ollama_results['time']:.1f} q/s)")
         
         # Speed winner
         wave_speed = wave_results['total'] / wave_results['time']
         ollama_speed = ollama_results['total'] / ollama_results['time']
         speed_ratio = wave_speed / ollama_speed
         
-        print(f"   🚀 Wave Engine is {speed_ratio:.1f}x faster!")
+        safe_print(f"   [ROCKET] Wave Engine is {speed_ratio:.1f}x faster!")
         
         # Overall verdict
-        print(f"\n🎯 OVERALL VERDICT:")
+        safe_print(f"\n[TARGET] OVERALL VERDICT:")
         if wave_results['accuracy'] > ollama_results['accuracy']:
-            print(f"   🌊 Wave Engine DOMINATES with better accuracy AND speed!")
+            safe_print(f"   [WAVE] Wave Engine DOMINATES with better accuracy AND speed!")
         elif wave_results['accuracy'] == ollama_results['accuracy']:
-            print(f"   🌊 Wave Engine WINS on speed (same accuracy but {speed_ratio:.1f}x faster)!")
+            safe_print(f"   [WAVE] Wave Engine WINS on speed (same accuracy but {speed_ratio:.1f}x faster)!")
         else:
-            print(f"   🤖 {model_name} has better accuracy, but Wave Engine is {speed_ratio:.1f}x faster")
+            safe_print(f"   [BOT] {model_name} has better accuracy, but Wave Engine is {speed_ratio:.1f}x faster")
 
 
 def main():
@@ -309,12 +318,12 @@ def main():
     models = benchmark.get_available_ollama_models()
     
     if not models:
-        print("❌ No Ollama models found! Make sure Ollama is running.")
+        safe_print("[-] No Ollama models found! Make sure Ollama is running.")
         return
     
-    print("🤖 Available Ollama models:")
+    safe_print("[BOT] Available Ollama models:")
     for i, model in enumerate(models):
-        print(f"   {i+1}. {model}")
+        safe_print(f"   {i+1}. {model}")
     
     # Let user choose model
     try:
@@ -324,10 +333,10 @@ def main():
         if 0 <= model_index < len(models):
             selected_model = models[model_index]
         else:
-            print("❌ Invalid choice, using first model")
+            safe_print("[-] Invalid choice, using first model")
             selected_model = models[0]
     except:
-        print("❌ Invalid input, using first model")
+        safe_print("[-] Invalid input, using first model")
         selected_model = models[0]
     
     # Ask for sample size
@@ -337,8 +346,8 @@ def main():
     except:
         sample_size = 50
     
-    print(f"\n🎯 Selected: {selected_model}")
-    print(f"📊 Sample size: {sample_size}")
+    safe_print(f"\n[TARGET] Selected: {selected_model}")
+    safe_print(f"[DATA] Sample size: {sample_size}")
     
     # Run benchmark
     benchmark.run_comparison(selected_model, sample_size)

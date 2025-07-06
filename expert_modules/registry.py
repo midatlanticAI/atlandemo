@@ -29,16 +29,16 @@ class ExpertRegistry:
             'average_processing_time': 0.0,
             'success_rate': 0.0
         }
-        print(f"✅ Registered expert: {expert.name} (domain: {expert.domain})")
+        print(f"[+] Registered expert: {expert.name} (domain: {expert.domain})")
     
     def unregister_expert(self, expert_name: str):
         """Unregister an expert module."""
         if expert_name in self.experts:
             del self.experts[expert_name]
             del self.performance_metrics[expert_name]
-            print(f"❌ Unregistered expert: {expert_name}")
+            print(f"[-] Unregistered expert: {expert_name}")
         else:
-            print(f"⚠️  Expert {expert_name} not found")
+            print(f"[WARN]  Expert {expert_name} not found")
     
     def find_best_expert(self, query: str, context: Dict[str, Any] = None) -> Optional[BaseExpertModule]:
         """Find the best expert to handle a given query."""

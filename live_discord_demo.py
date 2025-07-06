@@ -49,7 +49,7 @@ class LiveDiscordDemo:
         print(f"\n📝 Extracted symbols: {symbols}")
         
         # Show wave generation for each symbol
-        print(f"\n🌊 Wave Generation (Pure Math - No AI!):")
+        print(f"\n[WAVE] Wave Generation (Pure Math - No AI!):")
         print("   Formula: amplitude * sin(2π * frequency * time + phase)")
         print("   Where:")
         print("     frequency = 1.0 + (hash(symbol) % 100) / 100.0")
@@ -70,15 +70,15 @@ class LiveDiscordDemo:
                 
                 print(f"   '{symbol}': freq={frequency:.3f}, amp={amplitude:.3f}, phase={phase:.3f} → {wave_value:.6f}")
         
-        print(f"\n✅ Result: Just sine waves! No language model anywhere!")
+        print(f"\n[+] Result: Just sine waves! No language model anywhere!")
         
     def demonstrate_wave_vs_llm_difference(self):
         """Show the fundamental difference between Wave Engine and LLMs"""
-        print("\n🎯 WAVE ENGINE vs LLM: FUNDAMENTAL DIFFERENCES")
+        print("\n[TARGET] WAVE ENGINE vs LLM: FUNDAMENTAL DIFFERENCES")
         print("=" * 80)
         
         # Wave Engine
-        print("🌊 WAVE ENGINE:")
+        print("[WAVE] WAVE ENGINE:")
         print("   ✓ Mathematical wave functions (sine/cosine)")
         print("   ✓ Symbol → frequency/amplitude/phase conversion")
         print("   ✓ Wave interference calculations")
@@ -87,7 +87,7 @@ class LiveDiscordDemo:
         print("   ✓ Deterministic (same input = same output)")
         
         # LLM
-        print("\n🤖 LOCAL LLM (e.g., Llama):")
+        print("\n[BOT] LOCAL LLM (e.g., Llama):")
         print("   ✓ Neural network with billions of parameters")
         print("   ✓ Transformer architecture with attention mechanisms")
         print("   ✓ Learned from massive text corpus")
@@ -95,7 +95,7 @@ class LiveDiscordDemo:
         print("   ✓ 4-70GB model files")
         print("   ✓ Non-deterministic (can vary between runs)")
         
-        print("\n🔍 THE PROOF: Let's see the actual files!")
+        print("\n[SEARCH] THE PROOF: Let's see the actual files!")
         
     def show_actual_files(self):
         """Show the actual Wave Engine files vs LLM model files"""
@@ -111,7 +111,7 @@ class LiveDiscordDemo:
         ]
         
         total_wave_size = 0
-        print("🌊 Wave Engine files:")
+        print("[WAVE] Wave Engine files:")
         for file in wave_files:
             try:
                 import os
@@ -125,7 +125,7 @@ class LiveDiscordDemo:
         print(f"   TOTAL: {total_wave_size:,} bytes ({total_wave_size/1024:.1f} KB)")
         
         # LLM model files (typical sizes)
-        print("\n🤖 Typical LLM model files:")
+        print("\n[BOT] Typical LLM model files:")
         llm_sizes = {
             "llama3.2-1b": 1_300_000_000,
             "llama3.1-8b": 4_700_000_000,
@@ -138,15 +138,15 @@ class LiveDiscordDemo:
         # Comparison
         smallest_llm = min(llm_sizes.values())
         size_ratio = smallest_llm / total_wave_size
-        print(f"\n📊 Wave Engine is {size_ratio:.0f}x SMALLER than smallest LLM!")
+        print(f"\n[DATA] Wave Engine is {size_ratio:.0f}x SMALLER than smallest LLM!")
         
     def run_live_speed_test(self):
         """Run a live speed test showing real-time processing"""
-        print("\n⚡ LIVE SPEED TEST")
+        print("\n[BOLT] LIVE SPEED TEST")
         print("=" * 50)
         
         # Test Wave Engine
-        print("🌊 Testing Wave Engine speed...")
+        print("[WAVE] Testing Wave Engine speed...")
         wave_times = []
         
         for i, query in enumerate(self.demo_queries):
@@ -160,13 +160,13 @@ class LiveDiscordDemo:
             response_time = time.time() - start_time
             wave_times.append(response_time)
             
-            print(f"   ⚡ {response_time*1000:.1f}ms - Answer: {result['final_answer']}")
+            print(f"   [BOLT] {response_time*1000:.1f}ms - Answer: {result['final_answer']}")
         
         wave_avg = sum(wave_times) / len(wave_times)
-        print(f"\n📊 Wave Engine Average: {wave_avg*1000:.1f}ms")
+        print(f"\n[DATA] Wave Engine Average: {wave_avg*1000:.1f}ms")
         
         # Test LLM (if available)
-        print(f"\n🤖 Testing Local LLM (if available)...")
+        print(f"\n[BOT] Testing Local LLM (if available)...")
         
         try:
             # Try to test with ollama
@@ -178,7 +178,7 @@ class LiveDiscordDemo:
             )
             
             if llm_result.returncode == 0:
-                print("   ✅ LLM available - running one test query...")
+                print("   [+] LLM available - running one test query...")
                 
                 test_query = "Does 'All cats are animals' and 'Fluffy is a cat' mean 'Fluffy is an animal'?"
                 start_time = time.time()
@@ -191,24 +191,24 @@ class LiveDiscordDemo:
                 )
                 
                 llm_time = time.time() - start_time
-                print(f"   ⚡ LLM Response: {llm_time*1000:.0f}ms")
+                print(f"   [BOLT] LLM Response: {llm_time*1000:.0f}ms")
                 
                 speed_advantage = llm_time / wave_avg
-                print(f"\n🚀 Wave Engine is {speed_advantage:.0f}x FASTER!")
+                print(f"\n[ROCKET] Wave Engine is {speed_advantage:.0f}x FASTER!")
                 
             else:
-                print("   ❌ No local LLM available")
-                print("   📊 Typical LLM response time: 2000-5000ms")
-                print("   🚀 Wave Engine is 20-50x faster than typical LLM")
+                print("   [-] No local LLM available")
+                print("   [DATA] Typical LLM response time: 2000-5000ms")
+                print("   [ROCKET] Wave Engine is 20-50x faster than typical LLM")
                 
         except Exception as e:
-            print("   ❌ No local LLM available for testing")
-            print("   📊 Typical LLM response time: 2000-5000ms")
-            print(f"   🚀 Wave Engine is ~{2500/wave_avg/1000:.0f}x faster than typical LLM")
+            print("   [-] No local LLM available for testing")
+            print("   [DATA] Typical LLM response time: 2000-5000ms")
+            print(f"   [ROCKET] Wave Engine is ~{2500/wave_avg/1000:.0f}x faster than typical LLM")
     
     def visualize_wave_mathematics(self):
         """Create real-time visualization of Wave mathematics"""
-        print("\n📊 WAVE MATHEMATICS VISUALIZATION")
+        print("\n[DATA] WAVE MATHEMATICS VISUALIZATION")
         print("=" * 50)
         print("Opening real-time wave visualization...")
         print("This shows the actual sine waves being computed!")
@@ -287,19 +287,19 @@ class LiveDiscordDemo:
         try:
             self.visualize_wave_mathematics()
         except:
-            print("\n📊 (Visualization requires matplotlib - install with: pip install matplotlib)")
+            print("\n[DATA] (Visualization requires matplotlib - install with: pip install matplotlib)")
         
         # Final summary
-        print("\n🎯 FINAL PROOF:")
+        print("\n[TARGET] FINAL PROOF:")
         print("=" * 50)
-        print("✅ Wave Engine = Mathematical wave functions (sine/cosine)")
-        print("✅ No neural networks, no transformers, no language models")
-        print("✅ Just physics-inspired mathematics")
-        print("✅ 58KB vs 4-70GB (1000x smaller)")
-        print("✅ Deterministic mathematics vs statistical generation")
-        print("✅ You can see ALL the code - nothing hidden!")
+        print("[+] Wave Engine = Mathematical wave functions (sine/cosine)")
+        print("[+] No neural networks, no transformers, no language models")
+        print("[+] Just physics-inspired mathematics")
+        print("[+] 58KB vs 4-70GB (1000x smaller)")
+        print("[+] Deterministic mathematics vs statistical generation")
+        print("[+] You can see ALL the code - nothing hidden!")
         
-        print("\n🚀 The Wave Engine is NOT an LLM - it's pure mathematical reasoning!")
+        print("\n[ROCKET] The Wave Engine is NOT an LLM - it's pure mathematical reasoning!")
         print("It uses wave interference patterns to simulate reasoning,")
         print("but it's fundamentally different from language models.")
         

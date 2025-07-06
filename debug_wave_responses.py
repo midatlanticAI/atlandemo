@@ -18,7 +18,7 @@ def debug_wave_responses():
         "If motion detected in secure area, then what action?"
     ]
     
-    print("🔍 DEBUGGING WAVE ENGINE RESPONSES")
+    print("[SEARCH] DEBUGGING WAVE ENGINE RESPONSES")
     print("=" * 60)
     
     for i, query in enumerate(test_queries, 1):

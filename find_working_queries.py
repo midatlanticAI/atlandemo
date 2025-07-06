@@ -37,7 +37,7 @@ def test_different_query_types():
         ]
     }
     
-    print("🔍 TESTING QUERY TYPES TO FIND WHAT WORKS")
+    print("[SEARCH] TESTING QUERY TYPES TO FIND WHAT WORKS")
     print("=" * 60)
     
     working_queries = []
@@ -58,14 +58,14 @@ def test_different_query_types():
                 'error' not in answer.lower()
             )
             
-            status = "✅ GOOD" if is_reasonable else "❌ BAD"
+            status = "[+] GOOD" if is_reasonable else "[-] BAD"
             print(f"  {status}: {query}")
             print(f"    Answer: '{answer}'")
             
             if is_reasonable:
                 working_queries.append((query, answer))
     
-    print(f"\n📊 SUMMARY")
+    print(f"\n[DATA] SUMMARY")
     print(f"Found {len(working_queries)} working queries:")
     for i, (query, answer) in enumerate(working_queries[:5], 1):
         print(f"  {i}. {query} → {answer}")

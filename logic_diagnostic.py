@@ -10,7 +10,7 @@ import json
 def debug_logic_expert():
     """Debug the logic expert module"""
     
-    print("🔍 LOGIC EXPERT DIAGNOSTIC")
+    print("[SEARCH] LOGIC EXPERT DIAGNOSTIC")
     print("=" * 50)
     
     # Initialize components
@@ -78,13 +78,13 @@ def debug_logic_expert():
             print(f"Negation detected: {has_negation}")
             
             correct = result.answer == test['expected']
-            print(f"✅ CORRECT" if correct else f"❌ WRONG ({result.answer} != {test['expected']})")
+            print(f"[+] CORRECT" if correct else f"[-] WRONG ({result.answer} != {test['expected']})")
         else:
-            print("❌ CANNOT HANDLE")
+            print("[-] CANNOT HANDLE")
         
         print("-" * 40)
     
-    print("\n🔧 DEBUGGING WAVE FREQUENCIES:")
+    print("\n[TOOL] DEBUGGING WAVE FREQUENCIES:")
     print("Logic frequencies:")
     for concept, freq in expert.wave_frequencies.items():
         print(f"  {concept}: {freq}Hz")

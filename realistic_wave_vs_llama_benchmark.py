@@ -27,16 +27,16 @@ class RealisticWaveVsLlamaComparison:
         """Print the comparison benchmark header"""
         header = """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                🌊 REALISTIC WAVE ENGINE vs 🦙 LLaMA BENCHMARK                ║
+║                [WAVE] REALISTIC WAVE ENGINE vs [LLAMA] LLaMA BENCHMARK                ║
 ║                    Using Actual Working Capabilities                         ║
 ║                                                                              ║
-║               ⚡ Speed | 💾 Footprint | 🔒 Security | 🎯 Accuracy            ║
+║               [BOLT] Speed | [SAVE] Footprint | [LOCK] Security | [TARGET] Accuracy            ║
 ║                                                                              ║
 ║          "Honest Performance on Logic & Math Reasoning Tasks"                ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
         """
         print(header)
-        print("🏁 Testing realistic logical reasoning and basic math performance")
+        print("[FLAG] Testing realistic logical reasoning and basic math performance")
         print("=" * 80)
     
     def get_system_resources(self):
@@ -294,7 +294,7 @@ class RealisticWaveVsLlamaComparison:
     
     def benchmark_wave_engine(self):
         """Benchmark Wave Engine performance using ACTUAL working logic"""
-        print("\n🌊 WAVE ENGINE PERFORMANCE TEST")
+        print("\n[WAVE] WAVE ENGINE PERFORMANCE TEST")
         print("-" * 50)
         
         # Memory footprint test
@@ -304,7 +304,7 @@ class RealisticWaveVsLlamaComparison:
         query_times = []
         correct_answers = 0
         
-        print("⚡ Speed Test: Processing LogicBench-style reasoning queries...")
+        print("[BOLT] Speed Test: Processing LogicBench-style reasoning queries...")
         start_time = time.time()
         
         for i, test_item in enumerate(self.test_data):
@@ -326,7 +326,7 @@ class RealisticWaveVsLlamaComparison:
             if is_correct:
                 correct_answers += 1
             
-            status = "✅" if is_correct else "❌"
+            status = "[+]" if is_correct else "[-]"
             print(f"  {status} Query {i+1}: {query_time*1000:.1f}ms")
             print(f"     Q: {test_item['question'][:80]}...")
             print(f"     Expected: {test_item['answer']} | Got: {predicted_answer}")
@@ -357,20 +357,20 @@ class RealisticWaveVsLlamaComparison:
             'deployment_complexity': 'Minimal'
         }
         
-        print(f"\n📊 Wave Engine Results:")
-        print(f"  💾 Footprint: {wave_results['footprint_kb']}KB")
-        print(f"  🧠 Memory: {wave_results['memory_usage_mb']:.1f}MB")
-        print(f"  ⚡ Speed: {wave_results['avg_response_time_ms']:.1f}ms avg")
+        print(f"\n[DATA] Wave Engine Results:")
+        print(f"  [SAVE] Footprint: {wave_results['footprint_kb']}KB")
+        print(f"  [BRAIN] Memory: {wave_results['memory_usage_mb']:.1f}MB")
+        print(f"  [BOLT] Speed: {wave_results['avg_response_time_ms']:.1f}ms avg")
         print(f"  🔥 Throughput: {wave_results['queries_per_second']:.1f} q/s")
-        print(f"  🎯 Accuracy: {wave_results['accuracy']:.1%} ({correct_answers}/{len(self.test_data)})")
-        print(f"  🔒 Security: {wave_results['security_level']}")
+        print(f"  [TARGET] Accuracy: {wave_results['accuracy']:.1%} ({correct_answers}/{len(self.test_data)})")
+        print(f"  [LOCK] Security: {wave_results['security_level']}")
         
         self.results['wave_engine'] = wave_results
         return wave_results
     
     def simulate_llama_performance(self):
         """Simulate LLaMA model performance on the same tasks"""
-        print(f"\n🦙 LLaMA MODEL COMPARISON")
+        print(f"\n[LLAMA] LLaMA MODEL COMPARISON")
         print("-" * 50)
         
         # LLaMA models with realistic performance on logic/math tasks
@@ -413,15 +413,15 @@ class RealisticWaveVsLlamaComparison:
             }
         }
         
-        print("📊 LLaMA performance estimates on logic/math tasks:")
+        print("[DATA] LLaMA performance estimates on logic/math tasks:")
         
         for model_key, model_data in llama_models.items():
             print(f"\n  {model_data['name']}:")
-            print(f"    💾 Model Size: {model_data['footprint_gb']:.1f}GB")
-            print(f"    🧠 Memory: {model_data['memory_usage_gb']:.1f}GB")
-            print(f"    ⚡ Speed: {model_data['avg_response_time_ms']:,}ms avg")
+            print(f"    [SAVE] Model Size: {model_data['footprint_gb']:.1f}GB")
+            print(f"    [BRAIN] Memory: {model_data['memory_usage_gb']:.1f}GB")
+            print(f"    [BOLT] Speed: {model_data['avg_response_time_ms']:,}ms avg")
             print(f"    🔥 Throughput: {model_data['queries_per_second']:.3f} q/s")
-            print(f"    🎯 Accuracy: {model_data['accuracy']:.1%}")
+            print(f"    [TARGET] Accuracy: {model_data['accuracy']:.1%}")
             print(f"    ⏰ Startup: {model_data['startup_time_ms']/1000:.1f}s")
             
             self.results[model_key] = model_data
@@ -430,7 +430,7 @@ class RealisticWaveVsLlamaComparison:
     
     def create_comparison_table(self):
         """Create detailed comparison table"""
-        print(f"\n📊 REALISTIC HEAD-TO-HEAD COMPARISON")
+        print(f"\n[DATA] REALISTIC HEAD-TO-HEAD COMPARISON")
         print("=" * 100)
         
         models = ['wave_engine', 'llama_7b', 'llama_13b', 'llama_70b']
@@ -470,7 +470,7 @@ class RealisticWaveVsLlamaComparison:
     
     def generate_realistic_summary(self):
         """Generate realistic executive summary"""
-        print(f"\n🎯 REALISTIC ASSESSMENT")
+        print(f"\n[TARGET] REALISTIC ASSESSMENT")
         print("=" * 60)
         
         wave = self.results['wave_engine']
@@ -480,35 +480,35 @@ class RealisticWaveVsLlamaComparison:
         throughput_advantage = wave['queries_per_second'] / llama7b['queries_per_second']
         size_advantage = (llama7b['footprint_gb'] * 1024 * 1024) / wave['footprint_kb']
         
-        print(f"📊 PERFORMANCE COMPARISON:")
-        print(f"   ⚡ Wave Engine: {wave['avg_response_time_ms']:.1f}ms response")
-        print(f"   🦙 LLaMA 7B: {llama7b['avg_response_time_ms']:.0f}ms response")
-        print(f"   🚀 Speed advantage: {speed_advantage:.0f}x FASTER")
+        print(f"[DATA] PERFORMANCE COMPARISON:")
+        print(f"   [BOLT] Wave Engine: {wave['avg_response_time_ms']:.1f}ms response")
+        print(f"   [LLAMA] LLaMA 7B: {llama7b['avg_response_time_ms']:.0f}ms response")
+        print(f"   [ROCKET] Speed advantage: {speed_advantage:.0f}x FASTER")
         print(f"   🔥 Throughput advantage: {throughput_advantage:.0f}x HIGHER")
-        print(f"   💾 Size advantage: {size_advantage:.0f}x SMALLER")
+        print(f"   [SAVE] Size advantage: {size_advantage:.0f}x SMALLER")
         
-        print(f"\n🎯 ACCURACY COMPARISON:")
-        print(f"   🌊 Wave Engine: {wave['accuracy']:.1%} on logic/math tasks")
-        print(f"   🦙 LLaMA 7B: {llama7b['accuracy']:.1%} on logic/math tasks")
+        print(f"\n[TARGET] ACCURACY COMPARISON:")
+        print(f"   [WAVE] Wave Engine: {wave['accuracy']:.1%} on logic/math tasks")
+        print(f"   [LLAMA] LLaMA 7B: {llama7b['accuracy']:.1%} on logic/math tasks")
         
         accuracy_diff = llama7b['accuracy'] - wave['accuracy']
-        print(f"   📈 LLaMA accuracy advantage: {accuracy_diff:.1%}")
+        print(f"   [CHART] LLaMA accuracy advantage: {accuracy_diff:.1%}")
         
         print(f"\n🏗️ DEPLOYMENT REALITY:")
-        print(f"   🌊 Wave Engine: Deploy on ANY device (58KB)")
-        print(f"   🦙 LLaMA: Requires GPU with 16GB+ VRAM")
+        print(f"   [WAVE] Wave Engine: Deploy on ANY device (58KB)")
+        print(f"   [LLAMA] LLaMA: Requires GPU with 16GB+ VRAM")
         print(f"   💰 Hardware cost: $50 vs $1,200+")
-        print(f"   ⚡ Power usage: 0.1W vs 250W")
+        print(f"   [BOLT] Power usage: 0.1W vs 250W")
         
-        print(f"\n✅ HONEST CONCLUSION:")
+        print(f"\n[+] HONEST CONCLUSION:")
         print(f"   • Wave Engine: Ultra-fast, tiny footprint, decent accuracy")
         print(f"   • LLaMA: Slower, huge footprint, higher accuracy")
         print(f"   • Use Case: Wave Engine for SPEED & DEPLOYMENT")
         print(f"   • Use Case: LLaMA for MAXIMUM ACCURACY")
         
-        print(f"\n🎯 WAVE ENGINE ADVANTAGES:")
-        print(f"   • 🚀 {speed_advantage:.0f}x faster responses")
-        print(f"   • 💾 {size_advantage:.0f}x smaller footprint")
+        print(f"\n[TARGET] WAVE ENGINE ADVANTAGES:")
+        print(f"   • [ROCKET] {speed_advantage:.0f}x faster responses")
+        print(f"   • [SAVE] {size_advantage:.0f}x smaller footprint")
         print(f"   • 🔌 Runs on battery-powered devices")
         print(f"   • 🏭 Enable billion+ edge AI deployments")
         print(f"   • 💰 Massive cost savings for inference")
@@ -532,7 +532,7 @@ class RealisticWaveVsLlamaComparison:
         # Save results
         self.save_results()
         
-        print(f"\n🏁 REALISTIC BENCHMARK COMPLETE!")
+        print(f"\n[FLAG] REALISTIC BENCHMARK COMPLETE!")
         print(f"Results show Wave Engine's actual strengths vs LLaMA")
         
     def save_results(self):
@@ -545,7 +545,7 @@ class RealisticWaveVsLlamaComparison:
                 'results': self.results
             }, f, indent=2)
         
-        print(f"\n💾 Results saved to realistic_wave_vs_llama_results.json")
+        print(f"\n[SAVE] Results saved to realistic_wave_vs_llama_results.json")
 
 
 def main():

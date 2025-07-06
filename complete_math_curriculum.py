@@ -74,7 +74,7 @@ def pre_k_math(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Pre-K math completed")
+    print(f"\n[+] Pre-K math completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
     print(f"   Active symbols: {state['active_symbol_count']}")
@@ -210,14 +210,14 @@ def kindergarten_math_extended(engine):
         )
         time.sleep(0.02)
     
-    print(f"\n✅ Extended kindergarten math completed")
+    print(f"\n[+] Extended kindergarten math completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def test_comprehensive_math(engine):
     """Comprehensive testing across all levels."""
-    print(f"\n\n🔍 COMPREHENSIVE MATHEMATICS TESTING")
+    print(f"\n\n[SEARCH] COMPREHENSIVE MATHEMATICS TESTING")
     print("=" * 50)
     
     test_cases = [
@@ -271,9 +271,9 @@ def test_comprehensive_math(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: {description}")
+            print(f"   [+] CORRECT: {description}")
         else:
-            print(f"   ❌ INCORRECT: {description}")
+            print(f"   [-] INCORRECT: {description}")
     
     return results
 
@@ -302,7 +302,7 @@ def run_complete_curriculum():
     end_time = time.time()
     
     # Analysis
-    print("\n\n📊 COMPLETE CURRICULUM RESULTS")
+    print("\n\n[DATA] COMPLETE CURRICULUM RESULTS")
     print("=" * 70)
     
     # Categorize results
@@ -315,7 +315,7 @@ def run_complete_curriculum():
     if pre_k_results:
         print(f"   Correct: {pre_k_correct}/{len(pre_k_results)} ({pre_k_correct/len(pre_k_results)*100:.1f}%)")
         for desc, success, activation in pre_k_results:
-            status = "✅" if success else "❌"
+            status = "[+]" if success else "[-]"
             print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n🎒 KINDERGARTEN LEVEL:")
@@ -323,7 +323,7 @@ def run_complete_curriculum():
     if k_results:
         print(f"   Correct: {k_correct}/{len(k_results)} ({k_correct/len(k_results)*100:.1f}%)")
         for desc, success, activation in k_results:
-            status = "✅" if success else "❌"
+            status = "[+]" if success else "[-]"
             print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n📚 FIRST GRADE LEVEL:")
@@ -331,20 +331,20 @@ def run_complete_curriculum():
     if first_results:
         print(f"   Correct: {first_correct}/{len(first_results)} ({first_correct/len(first_results)*100:.1f}%)")
         for desc, success, activation in first_results:
-            status = "✅" if success else "❌"
+            status = "[+]" if success else "[-]"
             print(f"   {status} {desc}: {activation:.3f}")
     
     # Overall assessment
     total_correct = sum(1 for _, success, _ in results if success)
     total_tests = len(results)
     
-    print(f"\n🎯 OVERALL CURRICULUM PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL CURRICULUM PERFORMANCE:")
     print(f"   Total correct: {total_correct}/{total_tests} ({total_correct/total_tests*100:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE STATE:")
+    print(f"\n[BRAIN] FINAL COGNITIVE STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active symbols: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
@@ -352,10 +352,10 @@ def run_complete_curriculum():
     
     # Assessment
     if total_correct/total_tests >= 0.9:
-        print(f"\n🎉 EXCELLENT: Complete curriculum achieves outstanding results!")
+        print(f"\n[PARTY] EXCELLENT: Complete curriculum achieves outstanding results!")
         print(f"   Thorough step-by-step learning following natural development works!")
     elif total_correct/total_tests >= 0.8:
-        print(f"\n🌟 VERY GOOD: Complete curriculum shows strong performance")
+        print(f"\n[STAR] VERY GOOD: Complete curriculum shows strong performance")
         print(f"   Comprehensive foundation building is highly effective")
     elif total_correct/total_tests >= 0.7:
         print(f"\n👍 GOOD: Complete curriculum shows solid improvement")
@@ -364,10 +364,10 @@ def run_complete_curriculum():
         print(f"\n🤔 MODERATE: Some improvement with complete curriculum")
         print(f"   Foundation building helps but needs refinement")
     else:
-        print(f"\n⚠️ LIMITED: Curriculum approach needs significant adjustment")
+        print(f"\n[WARN] LIMITED: Curriculum approach needs significant adjustment")
     
     # Detailed analysis
-    print(f"\n📈 DETAILED CURRICULUM ANALYSIS:")
+    print(f"\n[CHART] DETAILED CURRICULUM ANALYSIS:")
     if pre_k_results:
         print(f"   Pre-K mastery: {pre_k_correct}/{len(pre_k_results)} ({pre_k_correct/len(pre_k_results)*100:.1f}%)")
     if k_results:
@@ -381,18 +381,18 @@ def run_complete_curriculum():
         k_rate = k_correct/len(k_results) if k_results else 0
         first_rate = first_correct/len(first_results) if first_results else 0
         
-        print(f"\n📊 LEARNING PROGRESSION:")
+        print(f"\n[DATA] LEARNING PROGRESSION:")
         print(f"   Pre-K → K: {pre_k_rate:.1%} → {k_rate:.1%}")
         print(f"   K → 1st: {k_rate:.1%} → {first_rate:.1%}")
         
         if k_rate > pre_k_rate and first_rate > k_rate:
-            print(f"   📈 Pattern: Consistent improvement across grade levels")
+            print(f"   [CHART] Pattern: Consistent improvement across grade levels")
         elif k_rate > pre_k_rate:
-            print(f"   📈 Pattern: Strong foundation building, complexity challenges")
+            print(f"   [CHART] Pattern: Strong foundation building, complexity challenges")
         elif first_rate > k_rate:
-            print(f"   📈 Pattern: Building momentum with practice")
+            print(f"   [CHART] Pattern: Building momentum with practice")
         else:
-            print(f"   📊 Pattern: Uneven development, needs targeted intervention")
+            print(f"   [DATA] Pattern: Uneven development, needs targeted intervention")
 
 
 if __name__ == "__main__":

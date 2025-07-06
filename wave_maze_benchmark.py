@@ -283,7 +283,7 @@ class MazeBenchmarkSuite:
             print("-" * 30)
             
             for i, maze_str in enumerate(maze_list):
-                print(f"🔍 Maze {i+1}/{len(maze_list)}: ", end="")
+                print(f"[SEARCH] Maze {i+1}/{len(maze_list)}: ", end="")
                 
                 try:
                     solver = solver_class(maze_str)
@@ -315,9 +315,9 @@ class MazeBenchmarkSuite:
                     results.append(benchmark_result)
                     
                     if result["solved"]:
-                        print(f"✅ SOLVED ({result['solve_time']:.3f}s, path: {result['path_length']})")
+                        print(f"[+] SOLVED ({result['solve_time']:.3f}s, path: {result['path_length']})")
                     else:
-                        print(f"❌ FAILED ({result['solve_time']:.3f}s)")
+                        print(f"[-] FAILED ({result['solve_time']:.3f}s)")
                         
                 except Exception as e:
                     print(f"💥 ERROR: {str(e)}")
@@ -326,7 +326,7 @@ class MazeBenchmarkSuite:
     
     def run_comprehensive_benchmark(self):
         """Run comprehensive benchmark comparing Wave Engine vs Traditional solvers"""
-        print("🌊 COMPREHENSIVE MAZE BENCHMARK SUITE")
+        print("[WAVE] COMPREHENSIVE MAZE BENCHMARK SUITE")
         print("=" * 60)
         
         # Create maze collection
@@ -334,7 +334,7 @@ class MazeBenchmarkSuite:
         mazes = self.create_maze_collection()
         
         total_mazes = sum(len(maze_list) for maze_list in mazes.values())
-        print(f"📊 Generated {total_mazes} test mazes across {len(mazes)} categories")
+        print(f"[DATA] Generated {total_mazes} test mazes across {len(mazes)} categories")
         
         # Benchmark Wave Engine
         wave_results = self.benchmark_solver(WaveMazeSolver, "Wave Engine", mazes)
@@ -347,7 +347,7 @@ class MazeBenchmarkSuite:
     
     def _analyze_results(self, wave_results: List[BenchmarkResult], astar_results: List[BenchmarkResult]):
         """Analyze and compare benchmark results"""
-        print("\n📊 BENCHMARK ANALYSIS")
+        print("\n[DATA] BENCHMARK ANALYSIS")
         print("=" * 60)
         
         # Overall statistics
@@ -360,7 +360,7 @@ class MazeBenchmarkSuite:
         wave_avg_path = np.mean([r.path_length for r in wave_results if r.solved])
         astar_avg_path = np.mean([r.path_length for r in astar_results if r.solved])
         
-        print(f"\n🏆 OVERALL RESULTS:")
+        print(f"\n[TROPHY] OVERALL RESULTS:")
         print(f"Wave Engine:    {wave_solved}/{len(wave_results)} solved ({wave_solved/len(wave_results)*100:.1f}%)")
         print(f"A* Traditional: {astar_solved}/{len(astar_results)} solved ({astar_solved/len(astar_results)*100:.1f}%)")
         
@@ -373,7 +373,7 @@ class MazeBenchmarkSuite:
         print(f"A* Traditional: {astar_avg_path:.1f}")
         
         # Category breakdown
-        print(f"\n📈 CATEGORY BREAKDOWN:")
+        print(f"\n[CHART] CATEGORY BREAKDOWN:")
         categories = set(r.maze_name.split('_')[0] for r in wave_results)
         
         for category in sorted(categories):
@@ -389,7 +389,7 @@ class MazeBenchmarkSuite:
         total_experiences = sum(r.cognitive_experiences for r in wave_results)
         total_patterns = sum(r.wave_patterns for r in wave_results)
         
-        print(f"\n🧠 COGNITIVE INSIGHTS (Wave Engine):")
+        print(f"\n[BRAIN] COGNITIVE INSIGHTS (Wave Engine):")
         print(f"Total Experiences: {total_experiences}")
         print(f"Total Wave Patterns: {total_patterns}")
         print(f"Avg Experiences per Maze: {total_experiences/len(wave_results):.1f}")
@@ -397,16 +397,16 @@ class MazeBenchmarkSuite:
         # Performance comparison
         if wave_avg_time < astar_avg_time:
             speedup = astar_avg_time / wave_avg_time
-            print(f"\n🚀 Wave Engine is {speedup:.1f}x FASTER than A*!")
+            print(f"\n[ROCKET] Wave Engine is {speedup:.1f}x FASTER than A*!")
         else:
             slowdown = wave_avg_time / astar_avg_time
             print(f"\n🐌 Wave Engine is {slowdown:.1f}x slower than A*")
         
         # Path optimality
         if wave_avg_path <= astar_avg_path * 1.1:  # Within 10%
-            print(f"✅ Wave Engine paths are comparable to A* (within 10%)")
+            print(f"[+] Wave Engine paths are comparable to A* (within 10%)")
         else:
-            print(f"⚠️  Wave Engine paths are longer than A* paths")
+            print(f"[WARN]  Wave Engine paths are longer than A* paths")
         
         # Save results
         self._save_results(wave_results, astar_results)
@@ -443,7 +443,7 @@ class MazeBenchmarkSuite:
         with open(filename, 'w') as f:
             json.dump(all_results, f, indent=2)
         
-        print(f"\n💾 Results saved to: {filename}")
+        print(f"\n[SAVE] Results saved to: {filename}")
 
 
 def main():

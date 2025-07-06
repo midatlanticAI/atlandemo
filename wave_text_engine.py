@@ -336,7 +336,7 @@ class WaveTextEngine:
 
 def demo_wave_text_engine():
     """Demonstrate the wave text engine"""
-    print("🌊 WAVE TEXT ENGINE DEMO 🌊")
+    print("[WAVE] WAVE TEXT ENGINE DEMO [WAVE]")
     print("=" * 50)
     
     engine = WaveTextEngine()
@@ -351,7 +351,7 @@ def demo_wave_text_engine():
         "Thank you for the explanation. Goodbye!"
     ]
     
-    print("\n🎯 Testing different types of inputs:")
+    print("\n[TARGET] Testing different types of inputs:")
     
     for i, text in enumerate(test_inputs):
         print(f"\n--- Test {i+1} ---")
@@ -369,13 +369,13 @@ def demo_wave_text_engine():
             top_activation = max(activations.items(), key=lambda x: abs(x[1]))
             print(f"Strongest Wave: {top_activation[0]} ({top_activation[1]:.3f})")
     
-    print(f"\n🔍 Conversation Summary:")
+    print(f"\n[SEARCH] Conversation Summary:")
     summary = engine.get_conversation_summary()
     print(f"Total turns: {summary['total_turns']}")
     print(f"Conversation types: {summary['conversation_types']}")
     print(f"Top topics: {[topic for topic, _ in summary['top_topics'][:5]]}")
     
-    print(f"\n🌊 Wave Reasoning Explanation:")
+    print(f"\n[WAVE] Wave Reasoning Explanation:")
     explanation = engine.explain_last_response()
     print(explanation)
     

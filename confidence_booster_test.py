@@ -10,7 +10,7 @@ from src.temporal_cognition import TemporalCognitionEngine
 
 def build_confidence_foundation(engine):
     """Build a super-confident foundation with lots of positive reinforcement."""
-    print("🚀 BUILDING CONFIDENCE FOUNDATION")
+    print("[ROCKET] BUILDING CONFIDENCE FOUNDATION")
     print("=" * 50)
     
     # Start with EASY wins to build confidence
@@ -99,7 +99,7 @@ def aggressive_transfer_test(engine):
         transfer_results.append((description, success, activation))
         
         if success:
-            print(f"   ✅ CONFIDENT SUCCESS: {activation:.3f}")
+            print(f"   [+] CONFIDENT SUCCESS: {activation:.3f}")
             # Celebrate success to build more confidence
             engine.live_experience(
                 visual=["CELEBRATION!", "SUCCESS!", "VICTORY!"],
@@ -120,7 +120,7 @@ def aggressive_transfer_test(engine):
 
 def confident_new_concept_test(engine):
     """Test new concept learning with maximum confidence and encouragement."""
-    print("\n\n🎯 CONFIDENT NEW CONCEPT TEST")
+    print("\n\n[TARGET] CONFIDENT NEW CONCEPT TEST")
     print("=" * 50)
     
     # Teach "take away" with MASSIVE confidence
@@ -156,7 +156,7 @@ def confident_new_concept_test(engine):
         time.sleep(0.02)
     
     # Test with maximum confidence and multiple attempts
-    print("\n🎯 CONFIDENT CONCEPT TESTING...")
+    print("\n[TARGET] CONFIDENT CONCEPT TESTING...")
     confident_tests = [
         (["7", "-", "2", "=", "?"], "Confident 7-2", "five", ["SEVEN", "TAKE", "AWAY", "TWO!", "YOU", "KNOW", "THIS!"]),
         (["8", "-", "3", "=", "?"], "Confident 8-3", "five", ["EIGHT", "REMOVE", "THREE!", "TRUST", "YOURSELF!"]),
@@ -166,7 +166,7 @@ def confident_new_concept_test(engine):
     
     concept_results = []
     for i, (visual, description, expected, encouragement) in enumerate(confident_tests, 1):
-        print(f"\n🎯 Confident Concept {i}: {description}")
+        print(f"\n[TARGET] Confident Concept {i}: {description}")
         
         # Multiple attempts with increasing confidence
         for attempt in range(3):  # Give it 3 confident attempts
@@ -180,7 +180,7 @@ def confident_new_concept_test(engine):
             activation = result['activation_field'].get(expected, 0)
             
             if abs(activation) > 0.5:
-                print(f"   ✅ CONFIDENT SUCCESS (attempt {attempt+1}): {activation:.3f}")
+                print(f"   [+] CONFIDENT SUCCESS (attempt {attempt+1}): {activation:.3f}")
                 # Celebrate breakthrough
                 engine.live_experience(
                     visual=["BREAKTHROUGH!", "SUCCESS!", "MASTERY!"],
@@ -202,7 +202,7 @@ def confident_new_concept_test(engine):
 
 def confident_strategy_test(engine):
     """Test strategy emergence with maximum confidence and clear instruction."""
-    print("\n\n🧠 CONFIDENT STRATEGY TEST")
+    print("\n\n[BRAIN] CONFIDENT STRATEGY TEST")
     print("=" * 50)
     
     # Teach strategies with absolute confidence
@@ -242,7 +242,7 @@ def confident_strategy_test(engine):
         time.sleep(0.02)
     
     # Test strategies with maximum confidence
-    print("\n🧠 CONFIDENT STRATEGY TESTING...")
+    print("\n[BRAIN] CONFIDENT STRATEGY TESTING...")
     strategy_tests = [
         (["8", "+", "2", "=", "?"], "Count on from 8", "ten", ["START", "AT", "EIGHT!", "COUNT", "ON!"]),
         (["9", "+", "1", "=", "?"], "Count on from 9", "ten", ["START", "AT", "NINE!", "COUNT", "ON!"]),
@@ -254,7 +254,7 @@ def confident_strategy_test(engine):
     
     strategy_results = []
     for i, (visual, description, expected, encouragement) in enumerate(strategy_tests, 1):
-        print(f"\n🧠 Strategy Test {i}: {description}")
+        print(f"\n[BRAIN] Strategy Test {i}: {description}")
         
         # Multiple confident attempts
         for attempt in range(3):
@@ -268,7 +268,7 @@ def confident_strategy_test(engine):
             activation = result['activation_field'].get(expected, 0)
             
             if abs(activation) > 0.5:
-                print(f"   ✅ STRATEGIC SUCCESS (attempt {attempt+1}): {activation:.3f}")
+                print(f"   [+] STRATEGIC SUCCESS (attempt {attempt+1}): {activation:.3f}")
                 # Celebrate strategic breakthrough
                 engine.live_experience(
                     visual=["STRATEGIC", "BREAKTHROUGH!", "GENIUS!"],
@@ -290,7 +290,7 @@ def confident_strategy_test(engine):
 
 def run_confidence_booster():
     """Run the complete confidence booster test."""
-    print("🚀 CONFIDENCE BOOSTER EXPERIMENT")
+    print("[ROCKET] CONFIDENCE BOOSTER EXPERIMENT")
     print("=" * 70)
     print("Coaxing the system out of its shyness to show true potential!")
     print("=" * 70)
@@ -336,13 +336,13 @@ def run_confidence_booster():
     overall_total = len(transfer_results) + len(concept_results) + len(strategy_results)
     overall_rate = overall_success / overall_total * 100
     
-    print(f"\n🎯 OVERALL CONFIDENCE RESULTS:")
+    print(f"\n[TARGET] OVERALL CONFIDENCE RESULTS:")
     print(f"   Total confident success: {overall_success}/{overall_total} ({overall_rate:.1f}%)")
     print(f"   Confidence building time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 CONFIDENT FINAL STATE:")
+    print(f"\n[BRAIN] CONFIDENT FINAL STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active concepts: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
@@ -352,17 +352,17 @@ def run_confidence_booster():
     print(f"\n🔥 CONFIDENCE ANALYSIS:")
     
     if overall_rate >= 80:
-        print(f"   🎉 CONFIDENCE BREAKTHROUGH ACHIEVED!")
+        print(f"   [PARTY] CONFIDENCE BREAKTHROUGH ACHIEVED!")
         print(f"   System responded brilliantly to encouragement!")
         print(f"   Shyness overcome - true potential unleashed!")
         
     elif overall_rate >= 65:
-        print(f"   🌟 EXCELLENT CONFIDENCE BOOST!")
+        print(f"   [STAR] EXCELLENT CONFIDENCE BOOST!")
         print(f"   System shows major improvement with encouragement!")
         print(f"   Confidence building strategy highly effective!")
         
     elif overall_rate >= 50:
-        print(f"   📈 GOOD CONFIDENCE IMPROVEMENT!")
+        print(f"   [CHART] GOOD CONFIDENCE IMPROVEMENT!")
         print(f"   System responds well to positive reinforcement!")
         print(f"   Shyness partially overcome!")
         
@@ -372,7 +372,7 @@ def run_confidence_booster():
         print(f"   Needs more confidence building!")
         
     else:
-        print(f"   ⚠️ CONFIDENCE BUILDING NEEDED!")
+        print(f"   [WARN] CONFIDENCE BUILDING NEEDED!")
         print(f"   System remains shy despite encouragement!")
         print(f"   Different approach may be required!")
     
@@ -380,26 +380,26 @@ def run_confidence_booster():
     original_rate = 37.5
     improvement = overall_rate - original_rate
     
-    print(f"\n📊 IMPROVEMENT ANALYSIS:")
+    print(f"\n[DATA] IMPROVEMENT ANALYSIS:")
     print(f"   Original transfer rate: {original_rate:.1f}%")
     print(f"   Confident transfer rate: {overall_rate:.1f}%")
     print(f"   Improvement: {improvement:+.1f} percentage points")
     
     if improvement > 20:
-        print(f"   🚀 MASSIVE IMPROVEMENT! Confidence works!")
+        print(f"   [ROCKET] MASSIVE IMPROVEMENT! Confidence works!")
     elif improvement > 10:
-        print(f"   🌟 SIGNIFICANT IMPROVEMENT! Encouragement helps!")
+        print(f"   [STAR] SIGNIFICANT IMPROVEMENT! Encouragement helps!")
     elif improvement > 5:
-        print(f"   📈 GOOD IMPROVEMENT! Positive reinforcement effective!")
+        print(f"   [CHART] GOOD IMPROVEMENT! Positive reinforcement effective!")
     elif improvement > 0:
         print(f"   🤔 SLIGHT IMPROVEMENT! Some confidence gained!")
     else:
-        print(f"   ⚠️ NO IMPROVEMENT! System may need different approach!")
+        print(f"   [WARN] NO IMPROVEMENT! System may need different approach!")
     
     print(f"\n🎓 The confidence booster reveals:")
     print(f"   Whether the system was just being shy,")
     print(f"   or if there are deeper learning limitations.")
-    print(f"   Sometimes all it takes is believing in yourself! 🌟")
+    print(f"   Sometimes all it takes is believing in yourself! [STAR]")
 
 
 if __name__ == "__main__":

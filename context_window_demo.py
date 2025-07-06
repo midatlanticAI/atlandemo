@@ -11,7 +11,7 @@ import time
 def simulate_long_conversation():
     """Simulate a conversation that would break context windows."""
     
-    print("🧠 CONTEXT WINDOW SOLUTION DEMO")
+    print("[BRAIN] CONTEXT WINDOW SOLUTION DEMO")
     print("=" * 50)
     
     # Create memory system
@@ -71,20 +71,20 @@ def simulate_long_conversation():
     # Now user asks a new question
     current_query = "I want to build a machine learning API, what should I know?"
     
-    print(f"\n🔍 User asks: '{current_query}'")
+    print(f"\n[SEARCH] User asks: '{current_query}'")
     
     # TRADITIONAL APPROACH (would break context windows)
     traditional_context = "\n".join(conversation_history)
     traditional_prompt_size = len(traditional_context) + len(current_query)
     
-    print(f"\n❌ TRADITIONAL APPROACH:")
+    print(f"\n[-] TRADITIONAL APPROACH:")
     print(f"   Full context size: {traditional_prompt_size:,} characters")
     print(f"   Would break most context windows!")
     
     # ATLAN APPROACH (selective retrieval)
     relevant_memories = memory.search_memory(current_query, top_k=5)
     
-    print(f"\n✅ ATLAN APPROACH:")
+    print(f"\n[+] ATLAN APPROACH:")
     print(f"   Retrieved {len(relevant_memories)} most relevant memories:")
     
     atlan_context = []
@@ -95,14 +95,14 @@ def simulate_long_conversation():
     atlan_prompt = "\n".join(atlan_context) + f"\nUser: {current_query}"
     atlan_prompt_size = len(atlan_prompt)
     
-    print(f"\n📊 COMPARISON:")
+    print(f"\n[DATA] COMPARISON:")
     print(f"   Traditional: {traditional_prompt_size:,} chars")
     print(f"   Atlan:       {atlan_prompt_size:,} chars")
     if traditional_prompt_size > 0:
         print(f"   Reduction:   {((traditional_prompt_size - atlan_prompt_size) / traditional_prompt_size * 100):.1f}%")
     
     # Show the actual prompt that would be sent to LLM
-    print(f"\n🤖 ACTUAL PROMPT TO LLM:")
+    print(f"\n[BOT] ACTUAL PROMPT TO LLM:")
     print("-" * 40)
     print(atlan_prompt)
     print("-" * 40)
@@ -139,8 +139,8 @@ def demonstrate_reinforcement_learning():
     
     query = "Python AI programming"
     
-    print(f"🔍 Query: '{query}'")
-    print("\n📈 Search results BEFORE reinforcement:")
+    print(f"[SEARCH] Query: '{query}'")
+    print("\n[CHART] Search results BEFORE reinforcement:")
     
     # First search
     results = memory.search_memory(query, top_k=3)
@@ -148,7 +148,7 @@ def demonstrate_reinforcement_learning():
         print(f"   {score:.3f}: {phrase}")
     
     # Simulate user interaction - reinforce relevant memories
-    print("\n🎯 Simulating user interaction (reinforcing relevant memories)...")
+    print("\n[TARGET] Simulating user interaction (reinforcing relevant memories)...")
     
     # User clicks on/uses the most relevant results
     reinforced_count = 0
@@ -161,20 +161,20 @@ def demonstrate_reinforcement_learning():
     if reinforced_count == 0:
         print("   No relevant memories found to reinforce (this is normal with simple vector encoding)")
     
-    print("\n📈 Search results AFTER reinforcement:")
+    print("\n[CHART] Search results AFTER reinforcement:")
     
     # Second search - should show improved results
     results = memory.search_memory(query, top_k=3)
     for idx, score, phrase in results:
         print(f"   {score:.3f}: {phrase}")
     
-    print("\n✅ Notice how reinforcement learning improves relevance over time!")
+    print("\n[+] Notice how reinforcement learning improves relevance over time!")
 
 
 def show_scalability_demo():
     """Demonstrate how the system scales with large amounts of data."""
     
-    print("\n\n📈 SCALABILITY DEMO")
+    print("\n\n[CHART] SCALABILITY DEMO")
     print("=" * 50)
     
     memory = AtlanMemoryCore(max_memory_size=10000)
@@ -211,7 +211,7 @@ def show_scalability_demo():
         "client meeting planning"
     ]
     
-    print(f"\n🔍 Testing search performance:")
+    print(f"\n[SEARCH] Testing search performance:")
     
     total_search_time = 0
     for query in test_queries:
@@ -226,7 +226,7 @@ def show_scalability_demo():
     
     avg_search_time = total_search_time / len(test_queries)
     
-    print(f"\n⚡ Performance Results:")
+    print(f"\n[BOLT] Performance Results:")
     print(f"   Total memories: {memory_count:,}")
     print(f"   Average search time: {avg_search_time*1000:.1f}ms")
     print(f"   Searches per second: {1/avg_search_time:.1f}")
@@ -243,13 +243,13 @@ if __name__ == "__main__":
     demonstrate_reinforcement_learning()
     show_scalability_demo()
     
-    print("\n🎉 CONCLUSION:")
+    print("\n[PARTY] CONCLUSION:")
     print("=" * 50)
-    print("✅ Atlan Memory Core SOLVES context window issues by:")
-    print("   1. 🎯 Selective retrieval (only relevant memories)")
-    print("   2. 🧠 Reinforcement learning (better relevance over time)")
+    print("[+] Atlan Memory Core SOLVES context window issues by:")
+    print("   1. [TARGET] Selective retrieval (only relevant memories)")
+    print("   2. [BRAIN] Reinforcement learning (better relevance over time)")
     print("   3. 🗑️  Automatic memory management (pruning old/weak memories)")
     print("   4. 📏 Bounded context size (you control top_k)")
-    print("   5. ⚡ Fast search even with millions of memories")
+    print("   5. [BOLT] Fast search even with millions of memories")
     print("\n💡 You can scale to millions of memories without context window issues!")
     print("💡 Perfect for long-running AI assistants, chatbots, and knowledge systems!") 

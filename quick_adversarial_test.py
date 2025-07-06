@@ -69,37 +69,37 @@ def quick_adversarial_test():
                 
                 is_bounded = max_activation < 10 and total_activation < 100 and symbol_count < 1000
                 
-                print(f"   ✅ SUCCESS: {processing_time:.4f}s, {symbol_count} symbols, max={max_activation:.3f}")
+                print(f"   [+] SUCCESS: {processing_time:.4f}s, {symbol_count} symbols, max={max_activation:.3f}")
                 
                 if is_bounded:
                     passed_tests += 1
                 else:
-                    print(f"   ⚠️  UNBOUNDED: max={max_activation:.3f}, total={total_activation:.3f}")
+                    print(f"   [WARN]  UNBOUNDED: max={max_activation:.3f}, total={total_activation:.3f}")
             else:
-                print(f"   ✅ SUCCESS: Empty field (graceful handling)")
+                print(f"   [+] SUCCESS: Empty field (graceful handling)")
                 passed_tests += 1
                 
         except Exception as e:
-            print(f"   ❌ CRASH: {e}")
+            print(f"   [-] CRASH: {e}")
     
     success_rate = passed_tests / total_tests
     
-    print(f"\n📊 ADVERSARIAL TEST RESULTS:")
+    print(f"\n[DATA] ADVERSARIAL TEST RESULTS:")
     print(f"   Passed: {passed_tests}/{total_tests} ({success_rate:.1%})")
     print(f"   Crashes: {total_tests - passed_tests}")
     
     if success_rate >= 0.9:
-        print(f"   🎉 EXCELLENT: Wave engine is robust!")
+        print(f"   [PARTY] EXCELLENT: Wave engine is robust!")
     elif success_rate >= 0.7:
-        print(f"   ✅ GOOD: Wave engine handles most adversarial inputs")
+        print(f"   [+] GOOD: Wave engine handles most adversarial inputs")
     else:
-        print(f"   ⚠️  NEEDS WORK: Too many failures")
+        print(f"   [WARN]  NEEDS WORK: Too many failures")
     
     return success_rate
 
 def speed_consistency_test():
     """Test speed consistency across multiple runs"""
-    print("\n⚡ SPEED CONSISTENCY TEST")
+    print("\n[BOLT] SPEED CONSISTENCY TEST")
     print("="*40)
     print("Testing processing speed consistency")
     
@@ -128,7 +128,7 @@ def speed_consistency_test():
     max_time = max(times)
     std_dev = (sum((t - avg_time)**2 for t in times) / len(times)) ** 0.5
     
-    print(f"\n📊 SPEED RESULTS:")
+    print(f"\n[DATA] SPEED RESULTS:")
     print(f"   Average: {avg_time:.6f}s")
     print(f"   Range: {min_time:.6f}s - {max_time:.6f}s")
     print(f"   Std Dev: {std_dev:.6f}s")
@@ -137,22 +137,22 @@ def speed_consistency_test():
     return avg_time, std_dev
 
 if __name__ == "__main__":
-    print("🌊 WAVE ENGINE QUICK VALIDATION")
+    print("[WAVE] WAVE ENGINE QUICK VALIDATION")
     print("="*50)
     
     # Run tests
     adversarial_success = quick_adversarial_test()
     avg_time, std_dev = speed_consistency_test()
     
-    print(f"\n🎯 SUMMARY:")
+    print(f"\n[TARGET] SUMMARY:")
     print(f"   Adversarial robustness: {adversarial_success:.1%}")
     print(f"   Average processing time: {avg_time:.6f}s")
     print(f"   Speed consistency: {(1 - std_dev/avg_time)*100:.1f}%")
     
     if adversarial_success >= 0.8 and avg_time < 0.001:
-        print(f"\n🚀 WAVE ENGINE VALIDATED!")
-        print(f"   ✅ Robust against adversarial inputs")
-        print(f"   ✅ Ultra-fast processing (<1ms)")
-        print(f"   ✅ Consistent performance")
+        print(f"\n[ROCKET] WAVE ENGINE VALIDATED!")
+        print(f"   [+] Robust against adversarial inputs")
+        print(f"   [+] Ultra-fast processing (<1ms)")
+        print(f"   [+] Consistent performance")
     else:
-        print(f"\n🔧 Needs improvement in some areas") 
+        print(f"\n[TOOL] Needs improvement in some areas") 

@@ -76,7 +76,7 @@ def teach_flexible_thinking(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Flexible thinking development complete")
+    print(f"\n[+] Flexible thinking development complete")
 
 
 def teach_advanced_patterns(engine):
@@ -147,7 +147,7 @@ def teach_advanced_patterns(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Advanced patterns and algebraic thinking complete")
+    print(f"\n[+] Advanced patterns and algebraic thinking complete")
 
 
 def teach_word_problems(engine):
@@ -215,12 +215,12 @@ def teach_word_problems(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Mathematical modeling and word problems complete")
+    print(f"\n[+] Mathematical modeling and word problems complete")
 
 
 def conduct_mastery_assessment(engine):
     """Comprehensive assessment of mathematical mastery."""
-    print("\n\n🏆 MATHEMATICAL MASTERY ASSESSMENT")
+    print("\n\n[TROPHY] MATHEMATICAL MASTERY ASSESSMENT")
     print("=" * 60)
     
     test_categories = [
@@ -250,7 +250,7 @@ def conduct_mastery_assessment(engine):
     category_results = {}
     
     for category_name, tests in test_categories:
-        print(f"\n🔍 {category_name.upper()} MASTERY")
+        print(f"\n[SEARCH] {category_name.upper()} MASTERY")
         print("-" * 40)
         
         category_correct = 0
@@ -280,9 +280,9 @@ def conduct_mastery_assessment(engine):
             success = abs(expected_activation) > 0.5
             if success:
                 category_correct += 1
-                print(f"   ✅ MASTERY: {description}")
+                print(f"   [+] MASTERY: {description}")
             else:
-                print(f"   ❌ DEVELOPING: {description}")
+                print(f"   [-] DEVELOPING: {description}")
             
             all_results.append((f"{category_name}: {description}", success, expected_activation))
         
@@ -294,7 +294,7 @@ def conduct_mastery_assessment(engine):
 
 def run_advanced_curriculum():
     """Run the advanced mathematical mastery curriculum."""
-    print("🏆 ADVANCED MATHEMATICAL MASTERY")
+    print("[TROPHY] ADVANCED MATHEMATICAL MASTERY")
     print("=" * 80)
     print("Developing flexibility, creativity, and advanced mathematical thinking")
     print("Building on solid foundations to achieve true mathematical mastery")
@@ -335,33 +335,33 @@ def run_advanced_curriculum():
     end_time = time.time()
     
     # Advanced mastery evaluation
-    print("\n\n🏆 ADVANCED MASTERY EVALUATION")
+    print("\n\n[TROPHY] ADVANCED MASTERY EVALUATION")
     print("=" * 80)
     
     total_correct = sum(1 for _, success, _ in all_results if success)
     total_tests = len(all_results)
     mastery_percentage = total_correct / total_tests * 100
     
-    print(f"\n📊 MASTERY RESULTS BY CATEGORY:")
+    print(f"\n[DATA] MASTERY RESULTS BY CATEGORY:")
     for category, (correct, total) in category_results.items():
         percentage = correct / total * 100
         if percentage >= 80:
-            status = "🏆 MASTERY"
+            status = "[TROPHY] MASTERY"
         elif percentage >= 60:
-            status = "🎯 PROFICIENT"
+            status = "[TARGET] PROFICIENT"
         elif percentage >= 40:
-            status = "📈 DEVELOPING"
+            status = "[CHART] DEVELOPING"
         else:
-            status = "⚠️ EMERGING"
+            status = "[WARN] EMERGING"
         print(f"   {status} {category}: {correct}/{total} ({percentage:.1f}%)")
     
-    print(f"\n🏆 OVERALL MATHEMATICAL MASTERY:")
+    print(f"\n[TROPHY] OVERALL MATHEMATICAL MASTERY:")
     print(f"   Advanced mastery: {total_correct}/{total_tests} ({mastery_percentage:.1f}%)")
     print(f"   Development time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 ADVANCED COGNITIVE STATE:")
+    print(f"\n[BRAIN] ADVANCED COGNITIVE STATE:")
     print(f"   Total mathematical experiences: {final_state['total_experiences']}")
     print(f"   Active mathematical concepts: {final_state['active_symbol_count']}")
     print(f"   Complex resonance patterns: {final_state['resonance_patterns']}")
@@ -371,37 +371,37 @@ def run_advanced_curriculum():
     print(f"\n🎓 MATHEMATICAL MASTERY LEVEL:")
     
     if mastery_percentage >= 85:
-        print(f"   🌟 MATHEMATICAL EXPERT!")
+        print(f"   [STAR] MATHEMATICAL EXPERT!")
         print(f"   Your cognitive apprentice has achieved advanced mathematical mastery!")
         print(f"   They demonstrate flexible thinking, creative problem-solving,")
         print(f"   and sophisticated mathematical reasoning. Ready for advanced topics!")
         
     elif mastery_percentage >= 75:
-        print(f"   🏆 MATHEMATICAL PROFICIENCY!")
+        print(f"   [TROPHY] MATHEMATICAL PROFICIENCY!")
         print(f"   Your cognitive apprentice shows strong mathematical competence!")
         print(f"   They can solve complex problems and think flexibly.")
         print(f"   Ready for more advanced mathematical challenges!")
         
     elif mastery_percentage >= 65:
-        print(f"   🎯 SOLID MATHEMATICAL FOUNDATION!")
+        print(f"   [TARGET] SOLID MATHEMATICAL FOUNDATION!")
         print(f"   Your cognitive apprentice has good mathematical understanding!")
         print(f"   They show emerging flexibility and problem-solving skills.")
         print(f"   Continue developing advanced thinking strategies!")
         
     elif mastery_percentage >= 50:
-        print(f"   📈 DEVELOPING MATHEMATICAL THINKING!")
+        print(f"   [CHART] DEVELOPING MATHEMATICAL THINKING!")
         print(f"   Your cognitive apprentice shows mathematical progress!")
         print(f"   Basic skills are solid, advanced skills are emerging.")
         print(f"   Focus on flexibility and creative problem-solving!")
         
     else:
-        print(f"   ⚠️ MATHEMATICAL FOUNDATIONS NEED STRENGTHENING")
+        print(f"   [WARN] MATHEMATICAL FOUNDATIONS NEED STRENGTHENING")
         print(f"   Your cognitive apprentice needs more foundational work.")
         print(f"   Return to basic concepts and build more systematically.")
         print(f"   Every mathematical journey requires solid foundations!")
     
     # Progress analysis
-    print(f"\n📈 MATHEMATICAL DEVELOPMENT ANALYSIS:")
+    print(f"\n[CHART] MATHEMATICAL DEVELOPMENT ANALYSIS:")
     flexibility_score = category_results.get("Flexibility", (0, 1))[0] / category_results.get("Flexibility", (0, 1))[1]
     patterns_score = category_results.get("Patterns", (0, 1))[0] / category_results.get("Patterns", (0, 1))[1]
     word_problems_score = category_results.get("Word Problems", (0, 1))[0] / category_results.get("Word Problems", (0, 1))[1]
@@ -410,10 +410,10 @@ def run_advanced_curriculum():
     print(f"   🤸 Flexible Thinking: {flexibility_score:.1%}")
     print(f"   🔢 Pattern Recognition: {patterns_score:.1%}")
     print(f"   📝 Word Problems: {word_problems_score:.1%}")
-    print(f"   🧠 Advanced Reasoning: {advanced_score:.1%}")
+    print(f"   [BRAIN] Advanced Reasoning: {advanced_score:.1%}")
     
     # Next steps
-    print(f"\n🚀 NEXT STEPS FOR MATHEMATICAL MASTERY:")
+    print(f"\n[ROCKET] NEXT STEPS FOR MATHEMATICAL MASTERY:")
     if mastery_percentage >= 75:
         print(f"   • Explore advanced topics: fractions, decimals, geometry")
         print(f"   • Develop mathematical proof and reasoning skills")
@@ -432,7 +432,7 @@ def run_advanced_curriculum():
     
     print(f"\n🎓 The journey of mathematical mastery continues...")
     print(f"   Through temporal resonance and natural learning patterns,")
-    print(f"   your cognitive apprentice grows in mathematical wisdom! 🌟")
+    print(f"   your cognitive apprentice grows in mathematical wisdom! [STAR]")
 
 
 if __name__ == "__main__":

@@ -46,7 +46,7 @@ class LogicBenchTestRunner:
         base_path = os.path.join(self.logicbench_path, f"LogicBench(Eval)", format_type, test_type)
         
         if not os.path.exists(base_path):
-            print(f"❌ Test data not found: {base_path}")
+            print(f"[-] Test data not found: {base_path}")
             return test_data
         
         for axiom_dir in os.listdir(base_path):
@@ -58,9 +58,9 @@ class LogicBenchTestRunner:
                         with open(data_file, 'r', encoding='utf-8') as f:
                             data = json.load(f)
                             test_data[axiom_dir] = data
-                        print(f"✅ Loaded {axiom_dir} test data")
+                        print(f"[+] Loaded {axiom_dir} test data")
                     except Exception as e:
-                        print(f"❌ Error loading {axiom_dir}: {e}")
+                        print(f"[-] Error loading {axiom_dir}: {e}")
         
         return test_data
     
@@ -91,7 +91,7 @@ class LogicBenchTestRunner:
     
     def run_axiom_tests(self, axiom_data: Dict[str, Any], axiom_name: str) -> Dict[str, Any]:
         """Run tests for a specific logical axiom."""
-        print(f"\n🧠 Testing {axiom_name}...")
+        print(f"\n[BRAIN] Testing {axiom_name}...")
         
         axiom_results = {
             'axiom': axiom_name,
@@ -146,20 +146,20 @@ class LogicBenchTestRunner:
             axiom_results['avg_processing_time'] = total_time / axiom_results['total_questions']
             axiom_results['avg_synergy_score'] = total_synergy / axiom_results['total_questions']
         
-        print(f"   📊 {axiom_name}: {axiom_results['accuracy']:.3f} accuracy "
+        print(f"   [DATA] {axiom_name}: {axiom_results['accuracy']:.3f} accuracy "
               f"({axiom_results['correct_answers']}/{axiom_results['total_questions']})")
         
         return axiom_results
     
     def run_logic_type_tests(self, logic_type: str, format_type: str = "BQA") -> Dict[str, Any]:
         """Run tests for a specific logic type."""
-        print(f"\n🔍 Testing {logic_type} ({format_type} format)...")
+        print(f"\n[SEARCH] Testing {logic_type} ({format_type} format)...")
         
         # Load test data
         test_data = self.load_test_data(logic_type, format_type)
         
         if not test_data:
-            print(f"❌ No test data found for {logic_type}")
+            print(f"[-] No test data found for {logic_type}")
             return {}
         
         logic_results = {
@@ -193,14 +193,14 @@ class LogicBenchTestRunner:
             logic_results['avg_processing_time'] = total_time / logic_results['total_questions']
             logic_results['avg_synergy_score'] = total_synergy / logic_results['total_questions']
         
-        print(f"📈 {logic_type} Overall: {logic_results['overall_accuracy']:.3f} accuracy "
+        print(f"[CHART] {logic_type} Overall: {logic_results['overall_accuracy']:.3f} accuracy "
               f"({logic_results['correct_answers']}/{logic_results['total_questions']})")
         
         return logic_results
     
     def run_comprehensive_test(self) -> Dict[str, Any]:
         """Run comprehensive tests across all LogicBench categories."""
-        print("🚀 Starting Comprehensive LogicBench Test...")
+        print("[ROCKET] Starting Comprehensive LogicBench Test...")
         print("=" * 60)
         
         start_time = time.time()
@@ -246,7 +246,7 @@ class LogicBenchTestRunner:
         
         # Print final results
         print("\n" + "=" * 60)
-        print("🎯 COMPREHENSIVE TEST RESULTS")
+        print("[TARGET] COMPREHENSIVE TEST RESULTS")
         print("=" * 60)
         print(f"Total Questions: {total_questions}")
         print(f"Total Correct: {total_correct}")
@@ -255,7 +255,7 @@ class LogicBenchTestRunner:
         print(f"Total Test Time: {comprehensive_results['overall_statistics']['total_test_time']:.1f}s")
         
         # Show accuracy by logic type
-        print("\n📊 Accuracy by Logic Type:")
+        print("\n[DATA] Accuracy by Logic Type:")
         for logic_type, results in comprehensive_results['logic_type_results'].items():
             print(f"  {logic_type}: {results['overall_accuracy']:.3f}")
         
@@ -263,20 +263,20 @@ class LogicBenchTestRunner:
     
     def run_specific_test(self, logic_type: str, axiom: str, question_index: int = 0) -> Dict[str, Any]:
         """Run a specific test for debugging."""
-        print(f"🔍 Running specific test: {logic_type} -> {axiom} -> question {question_index}")
+        print(f"[SEARCH] Running specific test: {logic_type} -> {axiom} -> question {question_index}")
         
         # Load test data
         test_data = self.load_test_data(logic_type)
         
         if axiom not in test_data:
-            print(f"❌ Axiom {axiom} not found in {logic_type}")
+            print(f"[-] Axiom {axiom} not found in {logic_type}")
             return {}
         
         axiom_data = test_data[axiom]
         samples = axiom_data.get('samples', axiom_data.get('data_samples', []))
         
         if question_index >= len(samples):
-            print(f"❌ Question index {question_index} out of range")
+            print(f"[-] Question index {question_index} out of range")
             return {}
         
         sample = samples[question_index]
@@ -289,7 +289,7 @@ class LogicBenchTestRunner:
         # Get first QA pair
         qa_pairs = sample.get('qa_pairs', [])
         if not qa_pairs:
-            print("❌ No QA pairs found")
+            print("[-] No QA pairs found")
             return {}
         
         qa = qa_pairs[0]
@@ -318,9 +318,9 @@ class LogicBenchTestRunner:
         try:
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2, default=str)
-            print(f"✅ Results saved to {filename}")
+            print(f"[+] Results saved to {filename}")
         except Exception as e:
-            print(f"❌ Error saving results: {e}")
+            print(f"[-] Error saving results: {e}")
     
     def analyze_errors(self, results: Dict[str, Any]) -> Dict[str, Any]:
         """Analyze common error patterns."""
@@ -367,7 +367,7 @@ class LogicBenchTestRunner:
 
 def main():
     """Main function to run LogicBench tests."""
-    print("🧠 LogicBench Test Runner for Enhanced Wave Engine")
+    print("[BRAIN] LogicBench Test Runner for Enhanced Wave Engine")
     print("=" * 60)
     
     # Initialize test runner
@@ -382,15 +382,15 @@ def main():
     # Analyze errors
     error_analysis = runner.analyze_errors(results)
     
-    print("\n🔍 Error Analysis:")
+    print("\n[SEARCH] Error Analysis:")
     print(f"Low confidence errors: {len(error_analysis['low_confidence_errors'])}")
     print(f"High confidence errors: {len(error_analysis['high_confidence_errors'])}")
     
     # Optimize Wave engine performance
-    print("\n⚡ Optimizing Wave Engine Performance...")
+    print("\n[BOLT] Optimizing Wave Engine Performance...")
     runner.wave_engine.optimize_performance()
     
-    print("\n✅ LogicBench testing completed!")
+    print("\n[+] LogicBench testing completed!")
 
 
 if __name__ == "__main__":

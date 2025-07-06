@@ -311,9 +311,9 @@ class WaveMazeSolver:
         """Solve the maze using wave dynamics"""
         start_time = time.time()
         
-        print(f"🌊 Wave Engine Maze Solver Starting...")
+        print(f"[WAVE] Wave Engine Maze Solver Starting...")
         print(f"📍 Start: {self.start_pos}")
-        print(f"🎯 Goal: {self.goal_pos}")
+        print(f"[TARGET] Goal: {self.goal_pos}")
         print(f"📏 Maze Size: {self.width}x{self.height}")
         
         # Use wave-guided search
@@ -413,7 +413,7 @@ def benchmark_wave_solver():
     total_time = 0
     
     for name, maze_str in test_mazes:
-        print(f"\n🔍 Testing: {name}")
+        print(f"\n[SEARCH] Testing: {name}")
         print("-" * 30)
         
         solver = WaveMazeSolver(maze_str)
@@ -421,20 +421,20 @@ def benchmark_wave_solver():
         
         if result["solved"]:
             total_solved += 1
-            print(f"✅ SOLVED in {result['solve_time']:.3f}s")
+            print(f"[+] SOLVED in {result['solve_time']:.3f}s")
             print(f"📏 Path length: {result['path_length']}")
-            print(f"🧠 Cognitive experiences: {result['cognitive_experiences']}")
-            print(f"🌊 Active wave patterns: {result['active_waves']}")
+            print(f"[BRAIN] Cognitive experiences: {result['cognitive_experiences']}")
+            print(f"[WAVE] Active wave patterns: {result['active_waves']}")
             print(f"🎵 Resonance patterns: {result['wave_resonance_patterns']}")
             
             print("\n🗺️  Solution Visualization:")
             print(solver.visualize_solution())
         else:
-            print("❌ FAILED to solve")
+            print("[-] FAILED to solve")
         
         total_time += result["solve_time"]
     
-    print(f"\n🏆 BENCHMARK RESULTS")
+    print(f"\n[TROPHY] BENCHMARK RESULTS")
     print("=" * 50)
     print(f"Solved: {total_solved}/{len(test_mazes)} mazes")
     print(f"Success Rate: {total_solved/len(test_mazes)*100:.1f}%")

@@ -31,7 +31,7 @@ def run_benchmark():
     expected_answers = ["yes", "yes", "yes", "yes", "yes"]
     
     # Test Wave Engine
-    print("\n🌊 WAVE ENGINE PERFORMANCE")
+    print("\n[WAVE] WAVE ENGINE PERFORMANCE")
     print("-" * 50)
     
     wave_results = []
@@ -69,23 +69,23 @@ def run_benchmark():
             'response': predicted_answer
         })
         
-        status = "✅" if is_correct else "❌"
+        status = "[+]" if is_correct else "[-]"
         print(f"    {status} {response_time*1000:.1f}ms - Expected: {expected_answers[i]}, Got: {predicted_answer}")
     
     wave_accuracy = sum(1 for r in wave_results if r['correct']) / len(wave_results)
     wave_avg_time = sum(r['response_time_ms'] for r in wave_results) / len(wave_results)
     wave_throughput = len(test_queries) / wave_total_time
     
-    print(f"\n📊 Wave Engine Summary:")
-    print(f"  🎯 Accuracy: {wave_accuracy:.1%} ({sum(1 for r in wave_results if r['correct'])}/{len(wave_results)})")
-    print(f"  ⚡ Avg Response: {wave_avg_time:.1f}ms")
+    print(f"\n[DATA] Wave Engine Summary:")
+    print(f"  [TARGET] Accuracy: {wave_accuracy:.1%} ({sum(1 for r in wave_results if r['correct'])}/{len(wave_results)})")
+    print(f"  [BOLT] Avg Response: {wave_avg_time:.1f}ms")
     print(f"  🔥 Throughput: {wave_throughput:.1f} q/s")
     
     # Test Local LLaMA models
     models_to_test = ['llama3.2:1b', 'deepseek-r1:7b']  # Start with smaller models
     
     for model in models_to_test:
-        print(f"\n🦙 {model.upper()} PERFORMANCE")
+        print(f"\n[LLAMA] {model.upper()} PERFORMANCE")
         print("-" * 50)
         
         llama_results = []
@@ -117,11 +117,11 @@ def run_benchmark():
                         'response': response
                     })
                     
-                    status = "✅" if is_correct else "❌"
+                    status = "[+]" if is_correct else "[-]"
                     print(f"    {status} {response_time*1000:.0f}ms - Expected: {expected_answers[i]}")
                     print(f"    Response: {response[:100]}...")
                 else:
-                    print(f"    ❌ FAILED: {result.stderr}")
+                    print(f"    [-] FAILED: {result.stderr}")
                     llama_results.append({
                         'correct': False,
                         'response_time_ms': response_time * 1000,
@@ -129,14 +129,14 @@ def run_benchmark():
                     })
                     
             except subprocess.TimeoutExpired:
-                print(f"    ❌ TIMEOUT after 30s")
+                print(f"    [-] TIMEOUT after 30s")
                 llama_results.append({
                     'correct': False,
                     'response_time_ms': 30000,
                     'response': None
                 })
             except Exception as e:
-                print(f"    ❌ ERROR: {e}")
+                print(f"    [-] ERROR: {e}")
                 llama_results.append({
                     'correct': False,
                     'response_time_ms': 0,
@@ -148,11 +148,11 @@ def run_benchmark():
             llama_avg_time = sum(r['response_time_ms'] for r in llama_results if r['response_time_ms']) / successful_queries
             llama_throughput = successful_queries / llama_total_time if llama_total_time > 0 else 0
             
-            print(f"\n📊 {model} Summary:")
-            print(f"  🎯 Accuracy: {llama_accuracy:.1%} ({sum(1 for r in llama_results if r['correct'])}/{len(llama_results)})")
-            print(f"  ⚡ Avg Response: {llama_avg_time:.0f}ms")
+            print(f"\n[DATA] {model} Summary:")
+            print(f"  [TARGET] Accuracy: {llama_accuracy:.1%} ({sum(1 for r in llama_results if r['correct'])}/{len(llama_results)})")
+            print(f"  [BOLT] Avg Response: {llama_avg_time:.0f}ms")
             print(f"  🔥 Throughput: {llama_throughput:.3f} q/s")
-            print(f"  ✅ Success Rate: {successful_queries/len(test_queries):.1%}")
+            print(f"  [+] Success Rate: {successful_queries/len(test_queries):.1%}")
             
             # Head-to-head comparison
             print(f"\n⚔️ WAVE ENGINE vs {model.upper()}")
@@ -167,32 +167,32 @@ def run_benchmark():
             speed_advantage = llama_avg_time / wave_avg_time
             throughput_advantage = wave_throughput / llama_throughput if llama_throughput > 0 else float('inf')
             
-            print(f"\n🚀 PERFORMANCE ADVANTAGES:")
-            print(f"  ⚡ Wave Engine is {speed_advantage:.0f}x FASTER")
+            print(f"\n[ROCKET] PERFORMANCE ADVANTAGES:")
+            print(f"  [BOLT] Wave Engine is {speed_advantage:.0f}x FASTER")
             print(f"  🔥 Wave Engine has {throughput_advantage:.0f}x HIGHER throughput")
             
             accuracy_diff = wave_accuracy - llama_accuracy
             if accuracy_diff > 0:
-                print(f"  🎯 Wave Engine is {accuracy_diff:.1%} MORE accurate")
+                print(f"  [TARGET] Wave Engine is {accuracy_diff:.1%} MORE accurate")
             elif accuracy_diff < 0:
-                print(f"  🎯 {model} is {-accuracy_diff:.1%} more accurate")
+                print(f"  [TARGET] {model} is {-accuracy_diff:.1%} more accurate")
             else:
-                print(f"  🎯 Same accuracy")
+                print(f"  [TARGET] Same accuracy")
             
-            print(f"\n🏆 WINNER: ", end="")
+            print(f"\n[TROPHY] WINNER: ", end="")
             if wave_accuracy >= llama_accuracy:
-                print("🌊 WAVE ENGINE - Better or equal accuracy AND much faster!")
+                print("[WAVE] WAVE ENGINE - Better or equal accuracy AND much faster!")
             else:
-                print(f"🌊 WAVE ENGINE - Much faster, {model} slightly more accurate")
+                print(f"[WAVE] WAVE ENGINE - Much faster, {model} slightly more accurate")
         else:
-            print(f"\n❌ {model} failed all queries - cannot benchmark")
+            print(f"\n[-] {model} failed all queries - cannot benchmark")
     
     print(f"\n💡 KEY INSIGHTS:")
-    print(f"  🌊 Wave Engine: Ultra-fast logical reasoning (sub-millisecond)")
-    print(f"  🦙 Local LLaMA: Slower but more natural language generation")
-    print(f"  ⚡ Speed difference: 100x-1000x faster responses")
-    print(f"  🎯 Both systems can handle logical reasoning tasks")
-    print(f"  💾 Wave Engine uses minimal memory vs multi-GB LLaMA models")
+    print(f"  [WAVE] Wave Engine: Ultra-fast logical reasoning (sub-millisecond)")
+    print(f"  [LLAMA] Local LLaMA: Slower but more natural language generation")
+    print(f"  [BOLT] Speed difference: 100x-1000x faster responses")
+    print(f"  [TARGET] Both systems can handle logical reasoning tasks")
+    print(f"  [SAVE] Wave Engine uses minimal memory vs multi-GB LLaMA models")
 
 if __name__ == "__main__":
     run_benchmark() 

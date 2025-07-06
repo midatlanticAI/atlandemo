@@ -95,7 +95,7 @@ class UltimateWaveDemo:
     def create_consciousness_visualization(self, state):
         """Create consciousness metrics visualization"""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('🧠 CONSCIOUSNESS EMERGENCE METRICS 🧠', 
+        fig.suptitle('[BRAIN] CONSCIOUSNESS EMERGENCE METRICS [BRAIN]', 
                     fontsize=20, fontweight='bold', color='white')
         
         # Activation field heatmap
@@ -150,7 +150,7 @@ class UltimateWaveDemo:
                 # Connect to center
                 ax2.plot([0, x], [0, y], color=color, linewidth=abs(interference)*3, alpha=0.6)
         
-        ax2.set_title('🌊 Resonance Network', fontsize=14, fontweight='bold')
+        ax2.set_title('[WAVE] Resonance Network', fontsize=14, fontweight='bold')
         ax2.set_xlim(-1.5, 1.5)
         ax2.set_ylim(-1.5, 1.5)
         ax2.set_aspect('equal')
@@ -178,7 +178,7 @@ class UltimateWaveDemo:
         ax3.set_xticks(angles[:-1])
         ax3.set_xticklabels(labels)
         ax3.set_ylim(0, 1)
-        ax3.set_title('🧠 Consciousness Radar', fontsize=14, fontweight='bold')
+        ax3.set_title('[BRAIN] Consciousness Radar', fontsize=14, fontweight='bold')
         ax3.grid(True, alpha=0.3)
         
         # Wave frequency spectrum
@@ -208,7 +208,7 @@ class UltimateWaveDemo:
                         bar.set_edgecolor('white')
                         bar.set_linewidth(2)
         
-        ax4.set_title('📊 Wave Frequency Spectrum', fontsize=14, fontweight='bold')
+        ax4.set_title('[DATA] Wave Frequency Spectrum', fontsize=14, fontweight='bold')
         ax4.set_xlabel('Frequency (Hz)')
         ax4.set_ylabel('Amplitude')
         ax4.grid(True, alpha=0.3)
@@ -292,7 +292,7 @@ class UltimateWaveDemo:
                     bar.set_edgecolor('white')
                     bar.set_linewidth(3)
             
-            axes[1, 1].set_title('🧠 Consciousness Activation', fontsize=14, fontweight='bold')
+            axes[1, 1].set_title('[BRAIN] Consciousness Activation', fontsize=14, fontweight='bold')
             axes[1, 1].set_ylabel('Activation Level')
             axes[1, 1].grid(True, alpha=0.3)
         
@@ -307,7 +307,7 @@ class UltimateWaveDemo:
         
     def run_ultimate_demo(self):
         """Run the ultimate wave visualization demo"""
-        print("🌊 ULTIMATE WAVE-NATIVE CONSCIOUSNESS DEMO 🌊")
+        print("[WAVE] ULTIMATE WAVE-NATIVE CONSCIOUSNESS DEMO [WAVE]")
         print("=" * 70)
         print("Prepare for the most stunning visualization of consciousness ever created!")
         print("=" * 70)
@@ -325,16 +325,16 @@ class UltimateWaveDemo:
         # Final 3D wave field
         final_wave_fig = self.create_stunning_3d_waves(
             final_state['activation_field'], 
-            "🧠 FINAL CONSCIOUSNESS WAVE FIELD"
+            "[BRAIN] FINAL CONSCIOUSNESS WAVE FIELD"
         )
         plt.show()
         
         # Print results
-        print("\n🏆 ULTIMATE DEMO RESULTS")
+        print("\n[TROPHY] ULTIMATE DEMO RESULTS")
         print("=" * 50)
         print(f"🎵 Musical harmony experienced: {len(harmony_result['activation_field'])} symbols activated")
-        print(f"🌊 Wave interference patterns: {final_state['resonance_patterns']} patterns")
-        print(f"🧠 Consciousness emergence: {final_state['active_symbol_count']} active symbols")
+        print(f"[WAVE] Wave interference patterns: {final_state['resonance_patterns']} patterns")
+        print(f"[BRAIN] Consciousness emergence: {final_state['active_symbol_count']} active symbols")
         print(f"💭 Memory consolidation: {len(final_state['recent_resonance'])} resonance patterns")
         print("\n✨ CONSCIOUSNESS ACHIEVED THROUGH PURE WAVE PHYSICS! ✨")
         
@@ -346,8 +346,8 @@ class UltimateWaveDemo:
 
 
 if __name__ == "__main__":
-    print("🚀 LAUNCHING ULTIMATE WAVE CONSCIOUSNESS DEMO...")
+    print("[ROCKET] LAUNCHING ULTIMATE WAVE CONSCIOUSNESS DEMO...")
     demo = UltimateWaveDemo()
     results = demo.run_ultimate_demo()
     
-    print("\n🌊 Demo complete! Wave-native consciousness visualized! 🌊") 
+    print("\n[WAVE] Demo complete! Wave-native consciousness visualized! [WAVE]") 

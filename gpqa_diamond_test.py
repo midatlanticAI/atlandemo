@@ -63,11 +63,11 @@ class GPQADiamondBenchmark:
                     })
                 
                 self.questions = questions
-                print(f"✅ Downloaded {len(questions)} GPQA Diamond questions")
+                print(f"[+] Downloaded {len(questions)} GPQA Diamond questions")
                 return True
                 
         except Exception as e:
-            print(f"❌ Error downloading GPQA Diamond: {e}")
+            print(f"[-] Error downloading GPQA Diamond: {e}")
             
         # Fallback: Create some representative sample questions
         print("📝 Using sample GPQA Diamond-style questions...")
@@ -142,7 +142,7 @@ class GPQADiamondBenchmark:
     def run_gpqa_benchmark(self, num_questions=None):
         """Run GPQA Diamond benchmark"""
         if not self.questions:
-            print("❌ No questions available. Download dataset first.")
+            print("[-] No questions available. Download dataset first.")
             return
         
         if num_questions is None:
@@ -151,8 +151,8 @@ class GPQADiamondBenchmark:
             num_questions = min(num_questions, len(self.questions))
         
         print(f"\n🧬 GPQA DIAMOND BENCHMARK - GRADUATE-LEVEL SCIENTIFIC REASONING")
-        print(f"🎯 Testing Enhanced Wave Engine on {num_questions} questions")
-        print(f"📊 Domains: Physics, Chemistry, Biology")
+        print(f"[TARGET] Testing Enhanced Wave Engine on {num_questions} questions")
+        print(f"[DATA] Domains: Physics, Chemistry, Biology")
         print("=" * 80)
         
         start_time = time.time()
@@ -199,16 +199,16 @@ class GPQADiamondBenchmark:
             
             if is_correct:
                 total_correct += 1
-                print(f"  ✅ Correct: {answer}")
+                print(f"  [+] Correct: {answer}")
             else:
-                print(f"  ❌ Wrong: {answer}")
+                print(f"  [-] Wrong: {answer}")
                 print(f"  Expected: {correct_answer}")
             
             # Show reasoning details
             if expert_response:
                 confidence = expert_response.confidence
                 reasoning_type = expert_response.metadata.get('problem_type', 'unknown')
-                print(f"  🎯 Confidence: {confidence:.2f}, Type: {reasoning_type}")
+                print(f"  [TARGET] Confidence: {confidence:.2f}, Type: {reasoning_type}")
             
             # Track domain performance
             if domain not in domain_results:
@@ -224,7 +224,7 @@ class GPQADiamondBenchmark:
         overall_accuracy = total_correct / num_questions
         avg_time = sum(question_times) / len(question_times)
         
-        print(f"\n🏆 GPQA DIAMOND RESULTS")
+        print(f"\n[TROPHY] GPQA DIAMOND RESULTS")
         print("=" * 50)
         print(f"  Total Questions: {num_questions}")
         print(f"  Total Correct: {total_correct}")
@@ -234,7 +234,7 @@ class GPQADiamondBenchmark:
         print(f"  Questions/second: {num_questions/total_time:.1f}")
         
         # Domain breakdown
-        print(f"\n📊 DOMAIN BREAKDOWN:")
+        print(f"\n[DATA] DOMAIN BREAKDOWN:")
         for domain, results in domain_results.items():
             accuracy = results['correct'] / results['total']
             avg_domain_time = sum(results['times']) / len(results['times'])
@@ -317,7 +317,7 @@ class GPQADiamondBenchmark:
     
     def assess_performance(self, accuracy):
         """Assess performance compared to other models"""
-        print(f"\n🔍 PERFORMANCE ASSESSMENT:")
+        print(f"\n[SEARCH] PERFORMANCE ASSESSMENT:")
         
         # GPQA Diamond benchmarks from literature
         benchmarks = {
@@ -334,14 +334,14 @@ class GPQADiamondBenchmark:
         
         for model, acc in sorted(benchmarks.items(), key=lambda x: x[1]):
             if accuracy >= acc:
-                status = "✅ BEAT"
+                status = "[+] BEAT"
             else:
-                status = "❌ Below"
+                status = "[-] Below"
             print(f"    {status} {model}: {acc:.1%}")
         
         # Overall assessment
         if accuracy >= 0.65:
-            grade = "🏆 EXCEPTIONAL (PhD-level)"
+            grade = "[TROPHY] EXCEPTIONAL (PhD-level)"
         elif accuracy >= 0.45:
             grade = "🥇 EXCELLENT (SOTA AI-level)"  
         elif accuracy >= 0.35:
@@ -349,7 +349,7 @@ class GPQADiamondBenchmark:
         elif accuracy >= 0.25:
             grade = "🥉 FAIR (Above random)"
         else:
-            grade = "❌ POOR (Random level)"
+            grade = "[-] POOR (Random level)"
         
         print(f"  📝 Overall Grade: {grade}")
 
@@ -357,28 +357,28 @@ class GPQADiamondBenchmark:
 def main():
     """Run GPQA Diamond benchmark"""
     print("🧬 GPQA DIAMOND - GRADUATE-LEVEL SCIENTIFIC REASONING BENCHMARK")
-    print("🎯 Testing Enhanced Wave Engine against PhD-level problems")
+    print("[TARGET] Testing Enhanced Wave Engine against PhD-level problems")
     print("=" * 80)
     
     benchmark = GPQADiamondBenchmark()
     
     # Download dataset
     if not benchmark.download_gpqa_diamond():
-        print("❌ Failed to download GPQA Diamond dataset")
+        print("[-] Failed to download GPQA Diamond dataset")
         return
     
     # Run benchmark
     results = benchmark.run_gpqa_benchmark(num_questions=20)  # Start with 20 questions
     
-    print(f"\n🎉 GPQA DIAMOND BENCHMARK COMPLETE!")
-    print(f"📊 Final Score: {results['overall_accuracy']:.1%}")
-    print(f"⚡ Average Processing Time: {results['avg_time_per_question']:.2f}s")
+    print(f"\n[PARTY] GPQA DIAMOND BENCHMARK COMPLETE!")
+    print(f"[DATA] Final Score: {results['overall_accuracy']:.1%}")
+    print(f"[BOLT] Average Processing Time: {results['avg_time_per_question']:.2f}s")
     
     # Save results
     with open('gpqa_diamond_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"💾 Results saved to gpqa_diamond_results.json")
+    print(f"[SAVE] Results saved to gpqa_diamond_results.json")
 
 
 if __name__ == "__main__":

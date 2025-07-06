@@ -162,5 +162,5 @@ if __name__ == "__main__":
         print("All basic tests passed!")
         sys.exit(0)
     except Exception as e:
-        print(f"❌ Tests failed: {e}")
+        print(f"[-] Tests failed: {e}")
         sys.exit(1) 

@@ -312,9 +312,9 @@ class BiometricWaveChatbot:
                 "I can see you're getting close... let me push you right to the edge 😍"
             ],
             PhysiologicalState.CLIMAXING: [
-                "Your vitals are spiking... I can feel you're right there... let go! 🌟",
-                "Every sensor is screaming... this is your moment... surrender to it! 🚀",
-                "I can see you're over the edge... ride it out, beautiful! ⚡"
+                "Your vitals are spiking... I can feel you're right there... let go! [STAR]",
+                "Every sensor is screaming... this is your moment... surrender to it! [ROCKET]",
+                "I can see you're over the edge... ride it out, beautiful! [BOLT]"
             ],
             PhysiologicalState.RECOVERY: [
                 "Your heart is slowing down... that was absolutely incredible 💖",
@@ -380,7 +380,7 @@ class BiometricWaveChatbot:
         self.biometric_monitors[session_id] = monitor
         
         # Send initial greeting
-        self._send_biometric_response(session_id, "Welcome to the future! I'm connected to your body now... I can feel everything 🌊✨")
+        self._send_biometric_response(session_id, "Welcome to the future! I'm connected to your body now... I can feel everything [WAVE]✨")
         
         return session_id
     
@@ -469,12 +469,12 @@ class BiometricWaveChatbot:
         if BiometricSensor.SKIN_CONDUCTANCE in current_readings:
             sc = current_readings[BiometricSensor.SKIN_CONDUCTANCE].value
             if sc > 15:
-                selected_response += " Your skin is electric with anticipation! ⚡"
+                selected_response += " Your skin is electric with anticipation! [BOLT]"
         
         if BiometricSensor.BREATHING in current_readings:
             breathing = current_readings[BiometricSensor.BREATHING].value
             if breathing > 25:
-                selected_response += " Your breathing is so rapid... you're ready! 🌊"
+                selected_response += " Your breathing is so rapid... you're ready! [WAVE]"
         
         return {
             "response": selected_response,
@@ -625,7 +625,7 @@ class BiometricWaveChatbot:
     
     def _send_biometric_response(self, session_id: str, message: str):
         """Send response to user"""
-        print(f"🌊🤖 Biometric AI: {message}")
+        print(f"[WAVE][BOT] Biometric AI: {message}")
     
     def stop_session(self, session_id: str):
         """Stop biometric session"""
@@ -667,9 +667,9 @@ class BiometricWaveChatbot:
 
 def run_biometric_demo():
     """Demonstrate the revolutionary biometric chatbot"""
-    print("🌊🧠 REVOLUTIONARY BIOMETRIC WAVE ENGINE CHATBOT")
+    print("[WAVE][BRAIN] REVOLUTIONARY BIOMETRIC WAVE ENGINE CHATBOT")
     print("=" * 80)
-    print("🚀 UNPRECEDENTED TECHNOLOGY: Real-time body monitoring + AI + Hardware control")
+    print("[ROCKET] UNPRECEDENTED TECHNOLOGY: Real-time body monitoring + AI + Hardware control")
     print("=" * 80)
     
     # Initialize system
@@ -677,7 +677,7 @@ def run_biometric_demo():
     
     # Start biometric session
     session_id = chatbot.start_biometric_session("demo_user", "device_001")
-    print(f"🎯 Started biometric session: {session_id}")
+    print(f"[TARGET] Started biometric session: {session_id}")
     
     # Simulate conversation with real-time biometric feedback
     demo_conversation = [
@@ -701,32 +701,32 @@ def run_biometric_demo():
         response = chatbot.process_biometric_input(session_id, user_input)
         
         # Display AI response
-        print(f"🌊🤖 AI: {response['response_text']}")
+        print(f"[WAVE][BOT] AI: {response['response_text']}")
         
         # Display biometric readings
         readings = response['biometric_readings']
-        print(f"📊 BIOMETRICS:")
+        print(f"[DATA] BIOMETRICS:")
         print(f"    💓 Heart Rate: {readings.get('heart_rate', 0):.0f} BPM")
-        print(f"    ⚡ Skin Conductance: {readings.get('skin_conductance', 0):.1f} µS")
+        print(f"    [BOLT] Skin Conductance: {readings.get('skin_conductance', 0):.1f} µS")
         print(f"    🫁 Breathing: {readings.get('breathing', 0):.0f} breaths/min")
         print(f"    🌡️ Temperature: {readings.get('temperature', 0):.1f}°F")
         
         # Display hardware control
         cmd = response['hardware_command']
-        print(f"🔧 HARDWARE CONTROL:")
+        print(f"[TOOL] HARDWARE CONTROL:")
         print(f"    🎛️ Intensity: {cmd.value:.1f}")
-        print(f"    🌊 Pattern: {cmd.pattern}")
+        print(f"    [WAVE] Pattern: {cmd.pattern}")
         print(f"    ⏱️ Duration: {cmd.duration:.0f}s")
         
         # Display physiological state
-        print(f"🧠 PHYSIOLOGICAL STATE: {response['physiological_state']}")
+        print(f"[BRAIN] PHYSIOLOGICAL STATE: {response['physiological_state']}")
         print(f"🔥 AROUSAL LEVEL: {response['arousal_level']:.2f}")
         
         # Simulate time for interaction
         time.sleep(0.5)
     
     # Show session analytics
-    print(f"\n📈 BIOMETRIC SESSION ANALYTICS")
+    print(f"\n[CHART] BIOMETRIC SESSION ANALYTICS")
     print("-" * 60)
     analytics = chatbot.get_session_analytics(session_id)
     
@@ -740,28 +740,28 @@ def run_biometric_demo():
     # Stop session
     chatbot.stop_session(session_id)
     
-    print(f"\n🚀 REVOLUTIONARY BUSINESS IMPACT")
+    print(f"\n[ROCKET] REVOLUTIONARY BUSINESS IMPACT")
     print("-" * 60)
-    print(f"   🧠 REAL-TIME BIOMETRIC MONITORING: Heart rate, skin conductance, breathing")
-    print(f"   ⚡ INSTANT HARDWARE ADAPTATION: Millisecond response to body signals")
-    print(f"   🤖 PHYSIOLOGICAL AI: Understands arousal states better than humans")
-    print(f"   🌊 WAVE ENGINE INTEGRATION: Temporal pattern matching with biology")
-    print(f"   📊 PREDICTIVE CONTROL: Anticipates user needs before they know")
+    print(f"   [BRAIN] REAL-TIME BIOMETRIC MONITORING: Heart rate, skin conductance, breathing")
+    print(f"   [BOLT] INSTANT HARDWARE ADAPTATION: Millisecond response to body signals")
+    print(f"   [BOT] PHYSIOLOGICAL AI: Understands arousal states better than humans")
+    print(f"   [WAVE] WAVE ENGINE INTEGRATION: Temporal pattern matching with biology")
+    print(f"   [DATA] PREDICTIVE CONTROL: Anticipates user needs before they know")
     
     print(f"\n💰 MARKET DOMINATION POTENTIAL")
     print("-" * 60)
-    print(f"   🎯 PATENT-PENDING TECHNOLOGY: Completely unprecedented approach")
-    print(f"   🏆 FIRST-MOVER ADVANTAGE: Years ahead of competition")
+    print(f"   [TARGET] PATENT-PENDING TECHNOLOGY: Completely unprecedented approach")
+    print(f"   [TROPHY] FIRST-MOVER ADVANTAGE: Years ahead of competition")
     print(f"   💎 PREMIUM POSITIONING: Luxury tech with proven ROI")
     print(f"   🌐 SCALABLE PLATFORM: Multiple industries, infinite applications")
-    print(f"   🚀 VIRAL POTENTIAL: Word-of-mouth marketing phenomenon")
+    print(f"   [ROCKET] VIRAL POTENTIAL: Word-of-mouth marketing phenomenon")
     
-    print(f"\n⚡ COMPETITIVE MOAT")
+    print(f"\n[BOLT] COMPETITIVE MOAT")
     print("-" * 60)
     print(f"   🛡️ TECHNICAL COMPLEXITY: Extremely difficult to replicate")
     print(f"   🧪 LEARNING ADVANTAGE: Gets smarter with each user")
-    print(f"   📈 NETWORK EFFECTS: More users = better algorithms")
-    print(f"   🔒 DATA FORTRESS: Proprietary biometric behavior patterns")
+    print(f"   [CHART] NETWORK EFFECTS: More users = better algorithms")
+    print(f"   [LOCK] DATA FORTRESS: Proprietary biometric behavior patterns")
 
 
 if __name__ == "__main__":

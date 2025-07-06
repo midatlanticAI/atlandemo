@@ -49,7 +49,7 @@ class WaveVisualizationSuite:
         """Create the ultimate multi-panel visualization"""
         # Create massive figure with subplots
         self.fig = plt.figure(figsize=(24, 16))
-        self.fig.suptitle('🌊 WAVE-NATIVE CONSCIOUSNESS VISUALIZATION 🧠', 
+        self.fig.suptitle('[WAVE] WAVE-NATIVE CONSCIOUSNESS VISUALIZATION [BRAIN]', 
                          fontsize=20, fontweight='bold', color='white')
         
         # Define grid layout (4x4 for maximum visual impact)
@@ -124,7 +124,7 @@ class WaveVisualizationSuite:
                 ax.scatter([center_x], [center_y], [activation], 
                           s=abs(activation)*200, c=color, alpha=0.9)
         
-        ax.set_title('🌊 3D Wave Interference Field', fontsize=14, fontweight='bold')
+        ax.set_title('[WAVE] 3D Wave Interference Field', fontsize=14, fontweight='bold')
         ax.set_xlabel('Symbolic Space X')
         ax.set_ylabel('Symbolic Space Y')
         ax.set_zlabel('Activation Amplitude')
@@ -151,7 +151,7 @@ class WaveVisualizationSuite:
             recent_theta = theta[-10:]
             ax.plot(recent_theta, recent_r, 'w-', linewidth=3, alpha=0.7)
         
-        ax.set_title('🧠 Consciousness Spiral', fontsize=14, fontweight='bold')
+        ax.set_title('[BRAIN] Consciousness Spiral', fontsize=14, fontweight='bold')
         ax.set_ylim(0, 2)
         
     def visualize_harmony_waves(self, harmony_data):
@@ -208,7 +208,7 @@ class WaveVisualizationSuite:
         if phases:
             scatter = ax.scatter(phases, frequencies, s=amplitudes, 
                                c=amplitudes, cmap='plasma', alpha=0.8)
-            ax.set_title('⚡ Phase Space Dynamics', fontsize=12, fontweight='bold')
+            ax.set_title('[BOLT] Phase Space Dynamics', fontsize=12, fontweight='bold')
             ax.set_xlabel('Phase')
             ax.set_ylabel('Frequency')
             
@@ -235,7 +235,7 @@ class WaveVisualizationSuite:
                 ax.plot([x1, x2], [y1, y2], color=color, linewidth=linewidth, alpha=0.7)
                 ax.scatter([x1, x2], [y1, y2], s=50, c=color, alpha=0.9)
         
-        ax.set_title('🔗 Resonance Coupling', fontsize=12, fontweight='bold')
+        ax.set_title('[LINK] Resonance Coupling', fontsize=12, fontweight='bold')
         ax.set_xlim(-0.5, 3)
         ax.set_ylim(-2, 2)
         
@@ -295,7 +295,7 @@ class WaveVisualizationSuite:
         # Add contour lines
         ax.contour(field_smooth, levels=10, colors='white', alpha=0.3, linewidths=0.5)
         
-        ax.set_title('🧠 Neural Activation Field', fontsize=12, fontweight='bold')
+        ax.set_title('[BRAIN] Neural Activation Field', fontsize=12, fontweight='bold')
         ax.set_xlabel('Neural Space X')
         ax.set_ylabel('Neural Space Y')
         
@@ -445,7 +445,7 @@ class WaveVisualizationSuite:
 
 def run_visual_wave_tests():
     """Run wave tests with ultimate visual accompaniment"""
-    print("🌊 LAUNCHING ULTIMATE WAVE VISUALIZATION SUITE 🌊")
+    print("[WAVE] LAUNCHING ULTIMATE WAVE VISUALIZATION SUITE [WAVE]")
     print("=" * 70)
     
     viz = WaveVisualizationSuite()

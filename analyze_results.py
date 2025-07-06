@@ -6,7 +6,7 @@ def analyze_results():
     with open('self_surprise_results.json', 'r') as f:
         results = json.load(f)
     
-    print('🔍 DETAILED ANALYSIS OF PREDICTION ACCURACY ISSUE:')
+    print('[SEARCH] DETAILED ANALYSIS OF PREDICTION ACCURACY ISSUE:')
     print('='*50)
     
     # Check what symbols were actually predicted vs actual
@@ -27,7 +27,7 @@ def analyze_results():
         print()
     
     # Summary
-    print('🎯 SUMMARY:')
+    print('[TARGET] SUMMARY:')
     print(f'Effect Size: {results["effect_size"]:.3f}')
     print(f'Consistency Rate: {results["consistency_rate"]:.1%}')
     print(f'Evidence Strength: {results["evidence_count"]}/3')

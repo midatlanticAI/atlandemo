@@ -120,7 +120,7 @@ def experiment_1_novelty_receptors(n_trials=20):
             })
     
     # Analyze correlations
-    print('\n📊 NOVELTY RECEPTOR ANALYSIS:')
+    print('\n[DATA] NOVELTY RECEPTOR ANALYSIS:')
     print('='*40)
     
     # Group by condition
@@ -213,7 +213,7 @@ def experiment_2_habituation_test(n_repetitions=10):
     print(f'  Novel: entropy={novel_entropy:.3f}, symbols={novel_state.get("active_symbol_count", 0)}')
     
     # Analyze habituation pattern
-    print('\n📊 HABITUATION ANALYSIS:')
+    print('\n[DATA] HABITUATION ANALYSIS:')
     print('='*30)
     
     entropies = [r['entropy'] for r in habituation_results]
@@ -232,11 +232,11 @@ def experiment_2_habituation_test(n_repetitions=10):
     print(f'Entropy rebound (novel stimulus): {rebound:.3f}')
     
     if decline > 0.1 and rebound > 0.1:
-        print('✅ HABITUATION DETECTED: System adapts to repeated stimuli and rebounds with novelty')
+        print('[+] HABITUATION DETECTED: System adapts to repeated stimuli and rebounds with novelty')
     elif decline > 0.1:
         print('🤔 PARTIAL HABITUATION: System adapts but no clear rebound')
     else:
-        print('❌ NO HABITUATION: System does not adapt to repeated stimuli')
+        print('[-] NO HABITUATION: System does not adapt to repeated stimuli')
     
     return habituation_results, novel_result
 
@@ -304,7 +304,7 @@ def experiment_3_decision_making_test():
         print(f'  Preference: {choice_preference:.3f} (+ = explore bias)')
     
     # Compare conditions
-    print('\n📊 DECISION ANALYSIS:')
+    print('\n[DATA] DECISION ANALYSIS:')
     print('='*25)
     
     low_surprise_pref = [r['choice_preference'] for r in results if r['condition'] == 'low_surprise'][0]
@@ -317,7 +317,7 @@ def experiment_3_decision_making_test():
     print(f'Surprise effect on exploration: {surprise_effect:.3f}')
     
     if surprise_effect > 0.2:
-        print('✅ EXPLORATION BIAS: High surprise increases exploration tendency')
+        print('[+] EXPLORATION BIAS: High surprise increases exploration tendency')
     elif surprise_effect < -0.2:
         print('🔄 EXPLOITATION BIAS: High surprise increases exploitation tendency')
     else:
@@ -327,7 +327,7 @@ def experiment_3_decision_making_test():
 
 def run_next_generation_experiments():
     """Run all next-generation experiments"""
-    print('🌊 NEXT-GENERATION WAVE COGNITION EXPERIMENTS')
+    print('[WAVE] NEXT-GENERATION WAVE COGNITION EXPERIMENTS')
     print('='*70)
     print('Following ChatGPT\'s scientific guidance...')
     print()
@@ -338,11 +338,11 @@ def run_next_generation_experiments():
     decision_results = experiment_3_decision_making_test()
     
     # Summary
-    print('\n🎯 EXPERIMENT SUMMARY:')
+    print('\n[TARGET] EXPERIMENT SUMMARY:')
     print('='*30)
-    print('✅ Novelty Receptors: Tested semantic distance, valence, abstraction')
-    print('✅ Habituation: Tested adaptation to repeated stimuli')
-    print('✅ Decision Making: Tested surprise → exploration link')
+    print('[+] Novelty Receptors: Tested semantic distance, valence, abstraction')
+    print('[+] Habituation: Tested adaptation to repeated stimuli')
+    print('[+] Decision Making: Tested surprise → exploration link')
     
     return {
         'novelty_results': novelty_results,
@@ -362,6 +362,6 @@ if __name__ == "__main__":
     with open('next_generation_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"\n💾 Results saved to 'next_generation_results.json'")
-    print("🌊 Building on solid scientific foundations!")
-    print("🎯 Focus: What we can prove, not what we hoped to prove") 
+    print(f"\n[SAVE] Results saved to 'next_generation_results.json'")
+    print("[WAVE] Building on solid scientific foundations!")
+    print("[TARGET] Focus: What we can prove, not what we hoped to prove") 

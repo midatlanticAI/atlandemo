@@ -14,7 +14,7 @@ class WaveAgentCommittee:
     """Multiple wave agents working together"""
     
     def __init__(self, num_agents=3):
-        print(f"🌊 SPAWNING {num_agents} WAVE AGENTS")
+        print(f"[WAVE] SPAWNING {num_agents} WAVE AGENTS")
         self.agents = []
         self.num_agents = num_agents
         
@@ -182,16 +182,16 @@ class MultiAgentLogicBench:
     
     def run_multi_agent_benchmark(self, max_files=25, questions_per_file=40):
         """Run benchmark with agent committee"""
-        print(f"\n🚀 MULTI-AGENT LOGICBENCH BENCHMARK")
-        print(f"📊 {self.committee.num_agents} agents working together")
-        print(f"⚡ Target: Beat single-agent 65% with teamwork!")
+        print(f"\n[ROCKET] MULTI-AGENT LOGICBENCH BENCHMARK")
+        print(f"[DATA] {self.committee.num_agents} agents working together")
+        print(f"[BOLT] Target: Beat single-agent 65% with teamwork!")
         
         start_time = time.time()
         
         # Find all files
         all_files = self.find_all_logicbench_files()
         if not all_files:
-            print("❌ No LogicBench files found!")
+            print("[-] No LogicBench files found!")
             return None
         
         # Sample files
@@ -200,7 +200,7 @@ class MultiAgentLogicBench:
         else:
             test_files = all_files
         
-        print(f"🎯 Committee processing {len(test_files)} files...")
+        print(f"[TARGET] Committee processing {len(test_files)} files...")
         
         all_results = []
         logic_type_summary = {}
@@ -232,7 +232,7 @@ class MultiAgentLogicBench:
         overall_accuracy = self.total_correct / self.total_questions if self.total_questions > 0 else 0
         
         # Print results
-        print(f"\n🌊 MULTI-AGENT RESULTS:")
+        print(f"\n[WAVE] MULTI-AGENT RESULTS:")
         print(f"   Total Questions: {self.total_questions}")
         print(f"   Correct Answers: {self.total_correct}")
         print(f"   Committee Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
@@ -240,20 +240,20 @@ class MultiAgentLogicBench:
         print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n📈 COMMITTEE VS SINGLE AGENT:")
+        print(f"\n[CHART] COMMITTEE VS SINGLE AGENT:")
         baseline = 0.652  # Recent single-agent average
         if overall_accuracy > baseline:
             improvement = (overall_accuracy - baseline) * 100
-            print(f"   ✅ COMMITTEE WINS! (+{improvement:.1f} percentage points)")
+            print(f"   [+] COMMITTEE WINS! (+{improvement:.1f} percentage points)")
         else:
             decline = (baseline - overall_accuracy) * 100
-            print(f"   ❌ Single agent better (-{decline:.1f} percentage points)")
+            print(f"   [-] Single agent better (-{decline:.1f} percentage points)")
         
         if overall_accuracy > 0.69:
-            print(f"   🎉 BEAT 69% BENCHMARK!")
+            print(f"   [PARTY] BEAT 69% BENCHMARK!")
         
         # Logic type breakdown
-        print(f"\n🧠 COMMITTEE LOGIC BREAKDOWN:")
+        print(f"\n[BRAIN] COMMITTEE LOGIC BREAKDOWN:")
         for logic_type, summary in logic_type_summary.items():
             accuracy = summary['accuracy']
             print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%})")
@@ -336,13 +336,13 @@ class MultiAgentLogicBench:
             }
             
         except Exception as e:
-            print(f"❌ Committee failed on {file_path}: {e}")
+            print(f"[-] Committee failed on {file_path}: {e}")
             return None
 
 
 def main():
     """Run the multi-agent benchmark"""
-    print("🌊 WAVE AGENT COMMITTEE EXPERIMENT 🌊")
+    print("[WAVE] WAVE AGENT COMMITTEE EXPERIMENT [WAVE]")
     print("=" * 50)
     
     # Try different committee sizes
@@ -353,7 +353,7 @@ def main():
         results = benchmark.run_multi_agent_benchmark()
         
         if results:
-            print(f"\n📊 {num_agents}-Agent Summary:")
+            print(f"\n[DATA] {num_agents}-Agent Summary:")
             print(f"   Accuracy: {results['overall_accuracy']:.1%}")
             print(f"   Speed: {results['total_questions']/results['processing_time']:.1f} q/s")
 

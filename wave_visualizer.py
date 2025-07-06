@@ -18,7 +18,7 @@ class WaveFieldVisualizer:
     def __init__(self, engine):
         self.engine = engine
         self.fig, (self.ax1, self.ax2, self.ax3) = plt.subplots(3, 1, figsize=(12, 10))
-        self.fig.suptitle('🧠 Temporal Cognitive Wave Field - Live', fontsize=16)
+        self.fig.suptitle('[BRAIN] Temporal Cognitive Wave Field - Live', fontsize=16)
         
         # Wave field plot
         self.ax1.set_title('Active Symbol Waves')
@@ -132,7 +132,7 @@ class WaveFieldVisualizer:
 def run_live_wave_demo():
     """Run a live demonstration with wave visualization."""
     
-    print("🌊 Starting Live Wave Field Demonstration...")
+    print("[WAVE] Starting Live Wave Field Demonstration...")
     
     # Create engine
     engine = TemporalCognitionEngine()
@@ -183,7 +183,7 @@ def run_live_wave_demo():
     # Show initial state
     visualizer.update_visualization()
     
-    print("\n🧠 Wave Field Visualization Ready!")
+    print("\n[BRAIN] Wave Field Visualization Ready!")
     print("You should see:")
     print("• Top: Active symbol waves over time")
     print("• Middle: Interference patterns between concepts") 
@@ -194,7 +194,7 @@ def run_live_wave_demo():
         # Start live visualization
         visualizer.start_live_view(interval=2000)  # Update every 2 seconds
     except KeyboardInterrupt:
-        print("\n🌊 Wave visualization ended.")
+        print("\n[WAVE] Wave visualization ended.")
         plt.close('all')
 
 
@@ -249,7 +249,7 @@ def static_wave_analysis():
         time.sleep(0.1)
     
     # Analyze final state
-    print(f"\n🧠 Final Cognitive State:")
+    print(f"\n[BRAIN] Final Cognitive State:")
     state = engine.get_cognitive_state()
     print(f"  Total experiences: {state['total_experiences']}")
     print(f"  Active symbols: {state['active_symbol_count']}")
@@ -257,12 +257,12 @@ def static_wave_analysis():
     print(f"  Dream cycles: {state['replay_cycles']}")
     
     # Show top activations
-    print(f"\n📊 Top Symbol Activations:")
+    print(f"\n[DATA] Top Symbol Activations:")
     field = state['activation_field']
     sorted_field = sorted(field.items(), key=lambda x: abs(x[1]), reverse=True)
     
     for symbol, activation in sorted_field[:10]:
-        strength = "🔥" if abs(activation) > 0.5 else "⚡" if abs(activation) > 0.2 else "✨"
+        strength = "🔥" if abs(activation) > 0.5 else "[BOLT]" if abs(activation) > 0.2 else "✨"
         print(f"  {strength} {symbol}: {activation:.3f}")
     
     # Test generalization
@@ -281,9 +281,9 @@ def static_wave_analysis():
     print(f"  Fly activation: {fly_activation:.3f}")
     
     if abs(wings_activation) > 0.1 or abs(fly_activation) > 0.1:
-        print("  ✅ Generalization detected through wave resonance!")
+        print("  [+] Generalization detected through wave resonance!")
     else:
-        print("  ❌ No clear generalization pattern")
+        print("  [-] No clear generalization pattern")
 
 
 if __name__ == "__main__":
@@ -295,6 +295,6 @@ if __name__ == "__main__":
         try:
             run_live_wave_demo()
         except ImportError:
-            print("⚠️  matplotlib not available for live visualization")
+            print("[WARN]  matplotlib not available for live visualization")
             print("Running static analysis instead...\n")
             static_wave_analysis() 

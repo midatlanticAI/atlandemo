@@ -55,7 +55,7 @@ class WaveEngineSymphony:
                 'status': 'pending'
             },
             'cpp': {
-                'name': '⚡ C++',
+                'name': '[BOLT] C++',
                 'cmd': ['wave_engine_multi_lang/cpp/wave_engine.exe'],
                 'color': '\033[97m',  # White
                 'status': 'pending'
@@ -69,10 +69,10 @@ class WaveEngineSymphony:
         """Print the demo banner"""
         banner = """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                     🌊 ATLAN WAVE ENGINE SYMPHONY 🌊                         ║
+║                     [WAVE] ATLAN WAVE ENGINE SYMPHONY [WAVE]                         ║
 ║              Cross-Language Reasoning Orchestration Demo                     ║
 ║                                                                              ║
-║  🐍 Python  🟨 JavaScript  🦀 Rust  🐹 Go  💜 C#  ☕ Java  ⚡ C++          ║
+║  🐍 Python  🟨 JavaScript  🦀 Rust  🐹 Go  💜 C#  ☕ Java  [BOLT] C++          ║
 ║                                                                              ║
 ║              "One Engine, Seven Languages, Infinite Possibilities"          ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
@@ -97,11 +97,11 @@ class WaveEngineSymphony:
                 capture_output=True, text=True, timeout=60
             )
             if result.returncode == 0:
-                print("  ✅ Rust compiled successfully")
+                print("  [+] Rust compiled successfully")
             else:
-                print("  ⚠️ Rust compilation warning (continuing anyway)")
+                print("  [WARN] Rust compilation warning (continuing anyway)")
         except:
-            print("  ⚠️ Rust compilation skipped")
+            print("  [WARN] Rust compilation skipped")
         
         # Java compilation
         print("☕ Compiling Java...")
@@ -111,20 +111,20 @@ class WaveEngineSymphony:
                 capture_output=True, text=True, timeout=30
             )
             if result.returncode == 0:
-                print("  ✅ Java compiled successfully")
+                print("  [+] Java compiled successfully")
             else:
-                print("  ⚠️ Java compilation warning (continuing anyway)")
+                print("  [WARN] Java compilation warning (continuing anyway)")
         except:
-            print("  ⚠️ Java compilation skipped")
+            print("  [WARN] Java compilation skipped")
         
         # C++ compilation
-        print("⚡ Compiling C++...")
+        print("[BOLT] Compiling C++...")
         try:
             subprocess.run(['wave_engine_multi_lang/cpp/compile.bat'], 
                          capture_output=True, text=True, timeout=30)
-            print("  ✅ C++ compiled successfully")
+            print("  [+] C++ compiled successfully")
         except:
-            print("  ⚠️ C++ compilation skipped")
+            print("  [WARN] C++ compilation skipped")
         
         print("🔨 Compilation phase complete!")
     
@@ -155,7 +155,7 @@ class WaveEngineSymphony:
                         'data': result_data
                     }
                     
-                    print(f"{lang_info['color']}{lang_info['name']} ✅ Complete!\033[0m")
+                    print(f"{lang_info['color']}{lang_info['name']} [+] Complete!\033[0m")
                     return True
                 else:
                     error_msg = stderr.decode().strip()
@@ -163,7 +163,7 @@ class WaveEngineSymphony:
                         'status': 'error',
                         'error': error_msg[:100] + '...' if len(error_msg) > 100 else error_msg
                     }
-                    print(f"{lang_info['color']}{lang_info['name']} ⚠️ Warning (continuing...)\033[0m")
+                    print(f"{lang_info['color']}{lang_info['name']} [WARN] Warning (continuing...)\033[0m")
                     return False
                     
             except asyncio.TimeoutError:
@@ -180,7 +180,7 @@ class WaveEngineSymphony:
                 'status': 'failed',
                 'error': str(e)
             }
-            print(f"{lang_info['color']}{lang_info['name']} ❌ Failed (continuing...)\033[0m")
+            print(f"{lang_info['color']}{lang_info['name']} [-] Failed (continuing...)\033[0m")
             return False
     
     def extract_results(self, output):
@@ -230,7 +230,7 @@ class WaveEngineSymphony:
             tasks.append(task)
         
         # Run all languages concurrently with progress updates
-        print("🌊 Wave Engine instances launching across all platforms...")
+        print("[WAVE] Wave Engine instances launching across all platforms...")
         
         # Show real-time progress
         completed_count = 0
@@ -238,7 +238,7 @@ class WaveEngineSymphony:
             await task
             completed_count += 1
             progress = completed_count / len(tasks) * 100
-            print(f"📊 Symphony Progress: {progress:.1f}% ({completed_count}/{len(tasks)} languages)")
+            print(f"[DATA] Symphony Progress: {progress:.1f}% ({completed_count}/{len(tasks)} languages)")
         
         end_time = time.time()
         total_time = end_time - self.start_time
@@ -249,7 +249,7 @@ class WaveEngineSymphony:
     
     def display_results(self, total_time):
         """Display the symphony results"""
-        print("\n🏆 SYMPHONY PERFORMANCE REPORT")
+        print("\n[TROPHY] SYMPHONY PERFORMANCE REPORT")
         print("=" * 60)
         
         successful = 0
@@ -260,12 +260,12 @@ class WaveEngineSymphony:
             status = result['status']
             
             if status == 'success':
-                icon = "✅"
+                icon = "[+]"
                 successful += 1
             elif status in ['error', 'timeout']:
-                icon = "⚠️"
+                icon = "[WARN]"
             else:
-                icon = "❌"
+                icon = "[-]"
                 failed += 1
             
             print(f"{lang_info['color']}{icon} {lang_info['name']:15} {status.upper():10}\033[0m")
@@ -274,15 +274,15 @@ class WaveEngineSymphony:
             if 'data' in result and result['data']:
                 data = result['data']
                 if 'accuracy' in data:
-                    print(f"    📊 Accuracy: {data['accuracy']:.1f}%")
+                    print(f"    [DATA] Accuracy: {data['accuracy']:.1f}%")
                 if 'speed' in data:
-                    print(f"    ⚡ Speed: {data['speed']:.1f}")
+                    print(f"    [BOLT] Speed: {data['speed']:.1f}")
         
         print("-" * 60)
-        print(f"🎯 Symphony Results:")
-        print(f"   ✅ Successful: {successful}/{len(self.languages)} languages")
-        print(f"   ⚠️ Warnings: {len(self.languages) - successful - failed}")
-        print(f"   ❌ Failed: {failed}")
+        print(f"[TARGET] Symphony Results:")
+        print(f"   [+] Successful: {successful}/{len(self.languages)} languages")
+        print(f"   [WARN] Warnings: {len(self.languages) - successful - failed}")
+        print(f"   [-] Failed: {failed}")
         print(f"   ⏱️ Total Time: {total_time:.2f} seconds")
         print(f"   🌐 Cross-Platform Coverage: {successful/len(self.languages)*100:.1f}%")
     
@@ -315,15 +315,15 @@ class WaveEngineSymphony:
         ]
         
         for i, scenario in enumerate(scenarios, 1):
-            print(f"\n{i}. 🔗 {scenario['name']}")
+            print(f"\n{i}. [LINK] {scenario['name']}")
             print(f"   Flow: {scenario['flow']}")
             print(f"   Use: {scenario['description']}")
         
         print(f"\n💡 Key Advantages:")
-        print(f"   🚀 Single codebase, multiple platforms")
-        print(f"   ⚡ 58KB core, deployable anywhere")
+        print(f"   [ROCKET] Single codebase, multiple platforms")
+        print(f"   [BOLT] 58KB core, deployable anywhere")
         print(f"   🔄 Cross-language message passing")
-        print(f"   🌊 Consistent reasoning across stack")
+        print(f"   [WAVE] Consistent reasoning across stack")
     
     def save_results(self):
         """Save symphony results"""
@@ -340,7 +340,7 @@ class WaveEngineSymphony:
         with open('wave_symphony_results.json', 'w') as f:
             json.dump(report, f, indent=2)
         
-        print(f"\n💾 Symphony results saved to wave_symphony_results.json")
+        print(f"\n[SAVE] Symphony results saved to wave_symphony_results.json")
 
 
 async def main():
@@ -365,9 +365,9 @@ async def main():
     # Save results
     symphony.save_results()
     
-    print(f"\n🎉 ATLAN WAVE ENGINE SYMPHONY COMPLETE!")
-    print(f"🌊 Demonstrated: Cross-language reasoning orchestration")
-    print(f"🚀 Ready for: Production deployment across any tech stack")
+    print(f"\n[PARTY] ATLAN WAVE ENGINE SYMPHONY COMPLETE!")
+    print(f"[WAVE] Demonstrated: Cross-language reasoning orchestration")
+    print(f"[ROCKET] Ready for: Production deployment across any tech stack")
 
 
 if __name__ == "__main__":

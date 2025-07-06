@@ -11,7 +11,7 @@ from enhanced_wave_engine import EnhancedWaveEngine
 
 def test_single_question():
     """Test a single LogicBench question to verify everything works."""
-    print("🧠 Quick LogicBench Test - Wave Engine vs Logic!")
+    print("[BRAIN] Quick LogicBench Test - Wave Engine vs Logic!")
     print("=" * 60)
     
     # Initialize the enhanced Wave engine
@@ -30,31 +30,31 @@ def test_single_question():
     print(f"Context: {context['context']}")
     print(f"Question: {question}")
     print(f"Expected answer: {expected_answer}")
-    print("\n🌊 Processing with Wave Engine...")
+    print("\n[WAVE] Processing with Wave Engine...")
     
     # Process the question
     result = engine.process_query(question, context)
     
-    print(f"\n🎯 Results:")
+    print(f"\n[TARGET] Results:")
     print(f"Final answer: {result['final_answer']}")
     print(f"Correct: {result['final_answer'].lower() == expected_answer.lower()}")
     print(f"Processing time: {result['processing_time']:.3f}s")
     
     # Show detailed breakdown
     if result['expert_response']:
-        print(f"\n🤖 Expert Response:")
+        print(f"\n[BOT] Expert Response:")
         print(f"  Confidence: {result['expert_response'].confidence:.3f}")
         print(f"  Reasoning: {result['expert_response'].reasoning}")
         print(f"  Answer: {result['expert_response'].answer}")
     
     if result['wave_response']:
-        print(f"\n🌊 Wave Response:")
+        print(f"\n[WAVE] Wave Response:")
         print(f"  Confidence: {result['wave_response']['confidence']:.3f}")
         print(f"  Reasoning: {result['wave_response']['reasoning']}")
         print(f"  Answer: {result['wave_response']['wave_answer']}")
     
     if result['integrated_response']:
-        print(f"\n🔗 Integrated Response:")
+        print(f"\n[LINK] Integrated Response:")
         print(f"  Confidence: {result['integrated_response']['confidence']:.3f}")
         print(f"  Reasoning: {result['integrated_response']['reasoning']}")
         print(f"  Answer: {result['integrated_response']['answer']}")
@@ -65,7 +65,7 @@ def test_single_question():
 
 def test_multiple_questions():
     """Test multiple LogicBench questions."""
-    print("\n🚀 Testing Multiple Questions...")
+    print("\n[ROCKET] Testing Multiple Questions...")
     print("=" * 60)
     
     engine = EnhancedWaveEngine()
@@ -133,16 +133,16 @@ def test_multiple_questions():
         
         if is_correct:
             correct += 1
-            print(f"  ✅ CORRECT: {actual} (expected {expected})")
+            print(f"  [+] CORRECT: {actual} (expected {expected})")
         else:
-            print(f"  ❌ WRONG: {actual} (expected {expected})")
+            print(f"  [-] WRONG: {actual} (expected {expected})")
         
         # Show expert confidence
         if result['expert_response']:
-            print(f"  🤖 Expert confidence: {result['expert_response'].confidence:.3f}")
+            print(f"  [BOT] Expert confidence: {result['expert_response'].confidence:.3f}")
     
     accuracy = correct / total
-    print(f"\n📊 RESULTS:")
+    print(f"\n[DATA] RESULTS:")
     print(f"Correct: {correct}/{total}")
     print(f"Accuracy: {accuracy:.3f}")
     print(f"Grade: {'🥇 EXCELLENT' if accuracy > 0.9 else '🥈 GOOD' if accuracy > 0.7 else '🥉 NEEDS WORK'}")
@@ -152,21 +152,21 @@ def test_multiple_questions():
 
 def load_and_test_real_logicbench():
     """Load and test real LogicBench data if available."""
-    print("\n🔍 Testing Real LogicBench Data...")
+    print("\n[SEARCH] Testing Real LogicBench Data...")
     print("=" * 60)
     
     # Try to load actual LogicBench data
     logicbench_file = "logicbench/LogicBench(Eval)/BQA/first_order_logic/modus_ponens/data_instances.json"
     
     if not os.path.exists(logicbench_file):
-        print(f"❌ LogicBench data not found at {logicbench_file}")
+        print(f"[-] LogicBench data not found at {logicbench_file}")
         return False
     
     try:
         with open(logicbench_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        print(f"✅ Loaded LogicBench data: {data.get('type', 'unknown')} - {data.get('axiom', 'unknown')}")
+        print(f"[+] Loaded LogicBench data: {data.get('type', 'unknown')} - {data.get('axiom', 'unknown')}")
         
         engine = EnhancedWaveEngine()
         
@@ -195,27 +195,27 @@ def load_and_test_real_logicbench():
                     is_correct = actual.lower() == expected.lower()
                     if is_correct:
                         correct += 1
-                        print(f"  ✅ {actual}")
+                        print(f"  [+] {actual}")
                     else:
-                        print(f"  ❌ {actual} (expected {expected})")
+                        print(f"  [-] {actual} (expected {expected})")
                     
                     total += 1
         
         accuracy = correct / total if total > 0 else 0
-        print(f"\n📊 Real LogicBench Results:")
+        print(f"\n[DATA] Real LogicBench Results:")
         print(f"Accuracy: {accuracy:.3f} ({correct}/{total})")
         
         return accuracy > 0.7
         
     except Exception as e:
-        print(f"❌ Error loading LogicBench data: {e}")
+        print(f"[-] Error loading LogicBench data: {e}")
         return False
 
 
 def main():
     """Run the complete quick test."""
-    print("🚀 FULL-SCALE LOGICBENCH TEST")
-    print("🌊 Wave Engine with Logic Expert Module")
+    print("[ROCKET] FULL-SCALE LOGICBENCH TEST")
+    print("[WAVE] Wave Engine with Logic Expert Module")
     print("=" * 60)
     
     # Test 1: Single question
@@ -229,25 +229,25 @@ def main():
     
     # Final verdict
     print("\n" + "=" * 60)
-    print("🎯 FINAL VERDICT")
+    print("[TARGET] FINAL VERDICT")
     print("=" * 60)
     
     if single_success and multiple_accuracy > 0.8 and real_success:
         print("🥇 VICTORY! Wave Engine is ready for LogicBench!")
-        print("✅ Single question test: PASSED")
-        print(f"✅ Multiple questions: {multiple_accuracy:.3f} accuracy")
-        print("✅ Real LogicBench data: PASSED")
-        print("\n🚀 Ready for full LogicBench benchmark!")
+        print("[+] Single question test: PASSED")
+        print(f"[+] Multiple questions: {multiple_accuracy:.3f} accuracy")
+        print("[+] Real LogicBench data: PASSED")
+        print("\n[ROCKET] Ready for full LogicBench benchmark!")
     elif single_success and multiple_accuracy > 0.6:
         print("🥈 GOOD PROGRESS! Wave Engine shows promise")
-        print("✅ Single question test: PASSED")
-        print(f"⚠️  Multiple questions: {multiple_accuracy:.3f} accuracy")
-        print("⚠️  Real LogicBench data: needs work")
-        print("\n🔧 Need some tuning but on the right track!")
+        print("[+] Single question test: PASSED")
+        print(f"[WARN]  Multiple questions: {multiple_accuracy:.3f} accuracy")
+        print("[WARN]  Real LogicBench data: needs work")
+        print("\n[TOOL] Need some tuning but on the right track!")
     else:
         print("🥉 NEEDS WORK! Wave Engine needs debugging")
-        print("❌ Performance below expectations")
-        print("\n🔧 Time to debug and improve!")
+        print("[-] Performance below expectations")
+        print("\n[TOOL] Time to debug and improve!")
 
 
 if __name__ == "__main__":

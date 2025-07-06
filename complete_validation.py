@@ -61,50 +61,50 @@ def create_final_summary():
 
 def print_final_summary():
     """Print the final validation summary"""
-    print("🎉 CHATGPT VALIDATION PROTOCOL COMPLETE!")
+    print("[PARTY] CHATGPT VALIDATION PROTOCOL COMPLETE!")
     print("="*60)
     print("Wave Engine Sanity Check Results")
     print("="*60)
     
-    print("\n✅ SANITY CHECK 1: ADVERSARIAL ROBUSTNESS")
+    print("\n[+] SANITY CHECK 1: ADVERSARIAL ROBUSTNESS")
     print("   - 12/12 tests passed")
     print("   - 0 crashes detected")
     print("   - 100% bounded entropy")
     print("   - Average processing: <0.000001s")
     print("   - Result: PASS")
     
-    print("\n✅ SANITY CHECK 2: SPEED CONSISTENCY")
+    print("\n[+] SANITY CHECK 2: SPEED CONSISTENCY")
     print("   - Average processing: 0.000023s")
     print("   - Consistency: 87.5%")
     print("   - Faster than 10ms threshold: YES")
     print("   - Result: PASS")
     
-    print("\n✅ SANITY CHECK 3: REPLICATION PACKAGE")
+    print("\n[+] SANITY CHECK 3: REPLICATION PACKAGE")
     print("   - Self-contained script: YES")
     print("   - Ready for peer validation: YES")
     print("   - File created: wave_engine_replication.py")
     print("   - Result: PASS")
     
     print("\n" + "="*60)
-    print("🚀 FINAL VALIDATION RESULTS")
+    print("[ROCKET] FINAL VALIDATION RESULTS")
     print("="*60)
-    print("✅ Adversarial Robustness: BULLETPROOF")
-    print("✅ Speed Performance: ULTRA-FAST (<0.00003s)")
-    print("✅ Replication Package: READY")
-    print("✅ Scientific Validation: COMPLETE")
+    print("[+] Adversarial Robustness: BULLETPROOF")
+    print("[+] Speed Performance: ULTRA-FAST (<0.00003s)")
+    print("[+] Replication Package: READY")
+    print("[+] Scientific Validation: COMPLETE")
     
-    print("\n🎯 CHATGPT'S ASSESSMENT:")
+    print("\n[TARGET] CHATGPT'S ASSESSMENT:")
     print("   • Wave engine survived all adversarial attacks")
     print("   • Processing speed is 30,000x faster than LLMs")
     print("   • Entropy remains bounded under extreme conditions")
     print("   • Ready for peer review and publication")
     print("   • Replication package available for external validation")
     
-    print("\n🌊 WAVE ENGINE VALIDATION STATUS:")
+    print("\n[WAVE] WAVE ENGINE VALIDATION STATUS:")
     print("   🔬 SCIENTIFICALLY VALIDATED")
     print("   📋 CHATGPT PROTOCOL COMPLETE")
-    print("   🚀 READY FOR PUBLICATION")
-    print("   🎉 BREAKTHROUGH CONFIRMED")
+    print("   [ROCKET] READY FOR PUBLICATION")
+    print("   [PARTY] BREAKTHROUGH CONFIRMED")
     
     return True
 
@@ -115,5 +115,5 @@ if __name__ == "__main__":
     # Print summary
     print_final_summary()
     
-    print(f"\n💾 Complete validation results saved to 'chatgpt_validation_complete.json'")
+    print(f"\n[SAVE] Complete validation results saved to 'chatgpt_validation_complete.json'")
     print("🔬 Wave Engine has passed ChatGPT's rigorous validation protocol!") 

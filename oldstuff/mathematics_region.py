@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ATLAN BIOINTELLIGENCE - MATHEMATICS REGION
-🧠 Mathematics processing region that flows through central brain
+[BRAIN] Mathematics processing region that flows through central brain
 """
 
 import re
@@ -11,7 +11,7 @@ from core.agent import AtlanAgent
 
 class MathematicsRegion:
     """
-    🧠 Mathematics specialized brain region
+    [BRAIN] Mathematics specialized brain region
     ALL processing flows through central AtlanAgent - no bypassing allowed!
     """
     
@@ -33,7 +33,7 @@ class MathematicsRegion:
         
     def process_through_brain(self, query: str, brain_result: Dict[str, Any], context: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        🧠 Process mathematics query through central brain
+        [BRAIN] Process mathematics query through central brain
         
         Args:
             query: Mathematics query to process
@@ -95,7 +95,7 @@ class MathematicsRegion:
     
     def _solve_mathematical_expression(self, query: str) -> Dict[str, Any]:
         """
-        🧠 Solve mathematical expressions
+        [BRAIN] Solve mathematical expressions
         
         Args:
             query: Mathematical query

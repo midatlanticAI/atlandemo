@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ATLAN BIOINTELLIGENCE - LOGIC REGION
-🧠 Logic processing region that flows through central brain
+[BRAIN] Logic processing region that flows through central brain
 """
 
 import re
@@ -10,7 +10,7 @@ from core.agent import AtlanAgent
 
 class LogicRegion:
     """
-    🧠 Logic specialized brain region
+    [BRAIN] Logic specialized brain region
     ALL processing flows through central AtlanAgent - no bypassing allowed!
     """
     
@@ -41,7 +41,7 @@ class LogicRegion:
         
     def process_through_brain(self, query: str, brain_result: Dict[str, Any], context: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        🧠 Process logic query through central brain
+        [BRAIN] Process logic query through central brain
         
         Args:
             query: Logic query to process
@@ -103,7 +103,7 @@ class LogicRegion:
     
     def _analyze_logical_structure(self, query: str) -> Dict[str, Any]:
         """
-        🧠 Analyze logical structures and arguments
+        [BRAIN] Analyze logical structures and arguments
         
         Args:
             query: Logic query

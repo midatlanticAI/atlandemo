@@ -38,7 +38,7 @@ def teach_larger_quantities(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Larger quantities learned")
+    print(f"\n[+] Larger quantities learned")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
@@ -74,7 +74,7 @@ def teach_advanced_addition(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Advanced addition learned")
+    print(f"\n[+] Advanced addition learned")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
@@ -110,7 +110,7 @@ def teach_subtraction(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Subtraction learned")
+    print(f"\n[+] Subtraction learned")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
@@ -142,14 +142,14 @@ def teach_word_problems(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Word problems learned")
+    print(f"\n[+] Word problems learned")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def test_advanced_scaling(engine):
     """Test the engine on advanced mathematical problems."""
-    print("\n\n🔍 TESTING ADVANCED MATHEMATICAL SCALING")
+    print("\n\n[SEARCH] TESTING ADVANCED MATHEMATICAL SCALING")
     print("=" * 50)
     
     test_cases = [
@@ -249,16 +249,16 @@ def test_advanced_scaling(engine):
         results.append((description, test_type, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: {test_type} successful")
+            print(f"   [+] CORRECT: {test_type} successful")
         else:
-            print(f"   ❌ INCORRECT: {test_type} failed")
+            print(f"   [-] INCORRECT: {test_type} failed")
     
     return results
 
 
 def run_advanced_scaling_test():
     """Run the complete advanced mathematical scaling test."""
-    print("🚀 ADVANCED MATHEMATICAL SCALING TEST")
+    print("[ROCKET] ADVANCED MATHEMATICAL SCALING TEST")
     print("=" * 70)
     print("Testing limits of quantity-grounded temporal wave cognition")
     print("=" * 70)
@@ -294,7 +294,7 @@ def run_advanced_scaling_test():
             goals=["add"], surprise=0.3, satisfaction=0.7
         )
     
-    print("✅ Foundation established")
+    print("[+] Foundation established")
     
     # Now scale up
     teach_larger_quantities(engine)
@@ -308,7 +308,7 @@ def run_advanced_scaling_test():
     end_time = time.time()
     
     # Analysis
-    print("\n\n📊 ADVANCED SCALING RESULTS")
+    print("\n\n[DATA] ADVANCED SCALING RESULTS")
     print("=" * 70)
     
     # Group results by type
@@ -320,34 +320,34 @@ def run_advanced_scaling_test():
     correct_addition = sum(1 for r in addition_results if r[2])
     print(f"   Correct: {correct_addition}/{len(addition_results)}")
     for desc, _, success, activation in addition_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n➖ SUBTRACTION:")
     correct_subtraction = sum(1 for r in subtraction_results if r[2])
     print(f"   Correct: {correct_subtraction}/{len(subtraction_results)}")
     for desc, _, success, activation in subtraction_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n📝 WORD PROBLEMS:")
     correct_word = sum(1 for r in word_problem_results if r[2])
     print(f"   Correct: {correct_word}/{len(word_problem_results)}")
     for desc, _, success, activation in word_problem_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     # Overall assessment
     total_correct = sum(1 for r in results if r[2])
     total_tests = len(results)
     
-    print(f"\n🎯 OVERALL SCALING PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL SCALING PERFORMANCE:")
     print(f"   Total correct: {total_correct}/{total_tests} ({total_correct/total_tests*100:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE STATE:")
+    print(f"\n[BRAIN] FINAL COGNITIVE STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active symbols: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
@@ -355,15 +355,15 @@ def run_advanced_scaling_test():
     
     # Assessment
     if total_correct/total_tests >= 0.8:
-        print(f"\n🎉 EXCELLENT SCALING: System handles advanced mathematical reasoning!")
+        print(f"\n[PARTY] EXCELLENT SCALING: System handles advanced mathematical reasoning!")
     elif total_correct/total_tests >= 0.6:
         print(f"\n👍 GOOD SCALING: System shows promise for complex problems")
     elif total_correct/total_tests >= 0.4:
         print(f"\n🤔 PARTIAL SCALING: Some advanced capabilities emerging")
     else:
-        print(f"\n⚠️ LIMITED SCALING: System struggles with complexity")
+        print(f"\n[WARN] LIMITED SCALING: System struggles with complexity")
     
-    print(f"\n📈 SCALING ANALYSIS:")
+    print(f"\n[CHART] SCALING ANALYSIS:")
     print(f"   Addition scaling: {correct_addition}/{len(addition_results)} ({correct_addition/len(addition_results)*100:.1f}%)")
     print(f"   Subtraction scaling: {correct_subtraction}/{len(subtraction_results)} ({correct_subtraction/len(subtraction_results)*100:.1f}%)")
     print(f"   Word problem scaling: {correct_word}/{len(word_problem_results)} ({correct_word/len(word_problem_results)*100:.1f}%)")

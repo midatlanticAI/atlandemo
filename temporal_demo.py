@@ -12,7 +12,7 @@ from src.temporal_cognition import TemporalCognitionEngine
 def simulate_child_learning_experience():
     """Simulate a child learning through multi-modal experience over time."""
     
-    print("🧠 Initializing Temporal Cognition Engine...")
+    print("[BRAIN] Initializing Temporal Cognition Engine...")
     engine = TemporalCognitionEngine()
     
     print("\n🌱 Beginning experiential learning simulation...\n")
@@ -124,16 +124,16 @@ def analyze_emergent_patterns(engine):
     print(f"Dream Replay Cycles: {state['replay_cycles']}")
     print(f"Resonance Patterns Formed: {state['resonance_patterns']}")
     
-    print("\n📊 Current Activation Field:")
+    print("\n[DATA] Current Activation Field:")
     field = state['activation_field']
     # Sort by activation strength
     sorted_activations = sorted(field.items(), key=lambda x: abs(x[1]), reverse=True)
     
     for symbol, activation in sorted_activations[:10]:  # Top 10
-        strength = "🔥" if abs(activation) > 0.5 else "⚡" if abs(activation) > 0.2 else "✨"
+        strength = "🔥" if abs(activation) > 0.5 else "[BOLT]" if abs(activation) > 0.2 else "✨"
         print(f"  {strength} {symbol}: {activation:.3f}")
     
-    print("\n🌊 Recent Resonance Patterns:")
+    print("\n[WAVE] Recent Resonance Patterns:")
     recent = state['recent_resonance']
     for i, pattern in enumerate(recent[-5:], 1):  # Last 5 patterns
         symbols = " ↔ ".join(pattern['symbols'])
@@ -168,15 +168,15 @@ def test_temporal_generalization(engine):
     wing_activation = field.get('wings', 0)
     fly_activation = field.get('fly', 0)
     
-    print(f"\n🔍 Generalization Check:")
+    print(f"\n[SEARCH] Generalization Check:")
     print(f"  'wings' activation: {wing_activation:.3f}")
     print(f"  'fly' concept resonance: {fly_activation:.3f}")
     
     if abs(wing_activation) > 0.1 or abs(fly_activation) > 0.1:
-        print("  ✅ Temporal generalization detected!")
+        print("  [+] Temporal generalization detected!")
         print("  The engine is connecting butterfly wings to previous bird/flight experiences")
     else:
-        print("  ❌ No clear generalization yet")
+        print("  [-] No clear generalization yet")
         print("  More experience may be needed for pattern emergence")
 
 
@@ -184,7 +184,7 @@ def main():
     """Run the complete temporal cognition demonstration."""
     
     print("=" * 60)
-    print("🧠 TEMPORAL RESONANT COGNITIVE SUBSTRATE DEMO")
+    print("[BRAIN] TEMPORAL RESONANT COGNITIVE SUBSTRATE DEMO")
     print("   Experience as Waves | Meaning as Resonance")
     print("=" * 60)
     
@@ -199,7 +199,7 @@ def main():
         test_temporal_generalization(engine)
         
         print("\n" + "=" * 60)
-        print("🌟 DEMONSTRATION COMPLETE")
+        print("[STAR] DEMONSTRATION COMPLETE")
         print("\nKey Observations:")
         print("• Experience creates temporal waves, not static symbols")
         print("• Meaning emerges from wave interference patterns") 

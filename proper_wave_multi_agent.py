@@ -219,7 +219,7 @@ class WaveMultiAgentCommittee:
             'contradiction_detector'
         ]
         
-        print(f"🌊 SPAWNING {self.num_agents} WAVE-BASED AGENTS")
+        print(f"[WAVE] SPAWNING {self.num_agents} WAVE-BASED AGENTS")
         for i in range(self.num_agents):
             specialization = specializations[i % len(specializations)]
             agent = WaveBasedAgent(i, specialization, self.expert_registry)
@@ -231,7 +231,7 @@ class WaveMultiAgentCommittee:
         
         # Step 1: Each agent processes with Wave Engine
         agent_results = []
-        print(f"      🧠 Processing through {len(self.agents)} wave-based agents...")
+        print(f"      [BRAIN] Processing through {len(self.agents)} wave-based agents...")
         
         for i, agent in enumerate(self.agents):
             decision, confidence, reasoning = agent.wave_based_reasoning(
@@ -313,16 +313,16 @@ class ProperWaveMultiAgentBenchmark:
     
     def run_proper_benchmark(self, max_files=20, questions_per_file=30):
         """Run benchmark with proper Wave Engine processing"""
-        print(f"\n🌊 PROPER WAVE MULTI-AGENT BENCHMARK")
-        print(f"⚡ {self.committee.num_agents} agents using actual Wave Engine processing")
-        print(f"🎯 Target: Beat single-agent through proper cognitive collaboration!")
+        print(f"\n[WAVE] PROPER WAVE MULTI-AGENT BENCHMARK")
+        print(f"[BOLT] {self.committee.num_agents} agents using actual Wave Engine processing")
+        print(f"[TARGET] Target: Beat single-agent through proper cognitive collaboration!")
         
         start_time = time.time()
         
         # Find files
         all_files = self.find_all_logicbench_files()
         if not all_files:
-            print("❌ No LogicBench files found!")
+            print("[-] No LogicBench files found!")
             return None
         
         # Sample files (fewer because this is expensive)
@@ -364,7 +364,7 @@ class ProperWaveMultiAgentBenchmark:
         overall_accuracy = self.total_correct / self.total_questions if self.total_questions > 0 else 0
         
         # Print results
-        print(f"\n🌊 PROPER WAVE MULTI-AGENT RESULTS:")
+        print(f"\n[WAVE] PROPER WAVE MULTI-AGENT RESULTS:")
         print(f"   Total Questions: {self.total_questions}")
         print(f"   Correct Answers: {self.total_correct}")
         print(f"   Proper Wave Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
@@ -372,26 +372,26 @@ class ProperWaveMultiAgentBenchmark:
         print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n📊 PROPER WAVE VS BASELINES:")
+        print(f"\n[DATA] PROPER WAVE VS BASELINES:")
         baseline_single = 0.652
         baseline_performance = 0.656
         
         if overall_accuracy > baseline_performance:
             improvement = (overall_accuracy - baseline_performance) * 100
-            print(f"   ✅ BEAT PERFORMANCE AGENT! (+{improvement:.1f}pp)")
+            print(f"   [+] BEAT PERFORMANCE AGENT! (+{improvement:.1f}pp)")
         else:
             decline = (baseline_performance - overall_accuracy) * 100
-            print(f"   ❌ Performance agent better (-{decline:.1f}pp)")
+            print(f"   [-] Performance agent better (-{decline:.1f}pp)")
         
         if overall_accuracy > baseline_single:
             improvement = (overall_accuracy - baseline_single) * 100
-            print(f"   ✅ BEAT SINGLE AGENT! (+{improvement:.1f}pp)")
+            print(f"   [+] BEAT SINGLE AGENT! (+{improvement:.1f}pp)")
         else:
             decline = (baseline_single - overall_accuracy) * 100
-            print(f"   ❌ Single agent better (-{decline:.1f}pp)")
+            print(f"   [-] Single agent better (-{decline:.1f}pp)")
         
         # Logic type breakdown
-        print(f"\n🧠 PROPER WAVE LOGIC BREAKDOWN:")
+        print(f"\n[BRAIN] PROPER WAVE LOGIC BREAKDOWN:")
         for logic_type, summary in logic_type_summary.items():
             accuracy = summary['accuracy']
             print(f"   {logic_type}: {accuracy:.3f} ({accuracy:.1%})")
@@ -477,21 +477,21 @@ class ProperWaveMultiAgentBenchmark:
             }
             
         except Exception as e:
-            print(f"❌ Error processing {file_path}: {e}")
+            print(f"[-] Error processing {file_path}: {e}")
             return None
 
 
 def main():
     """Run the proper Wave Engine multi-agent benchmark"""
-    print("🌊 PROPER WAVE MULTI-AGENT EXPERIMENT 🌊")
-    print("⚡ Actually using Wave Engine processing (not shortcuts!)")
+    print("[WAVE] PROPER WAVE MULTI-AGENT EXPERIMENT [WAVE]")
+    print("[BOLT] Actually using Wave Engine processing (not shortcuts!)")
     print("=" * 60)
     
     benchmark = ProperWaveMultiAgentBenchmark(num_agents=5)
     results = benchmark.run_proper_benchmark()
     
     if results:
-        print(f"\n🎯 PROPER WAVE EXPERIMENT COMPLETE!")
+        print(f"\n[TARGET] PROPER WAVE EXPERIMENT COMPLETE!")
         print(f"   Through actual Wave Engine collaboration:")
         print(f"   Accuracy: {results['overall_accuracy']:.1%}")
         print(f"   Speed: {results['total_questions']/results['processing_time']:.1f} q/s")
@@ -503,9 +503,9 @@ def main():
         print(f"   Single Agent: 920 q/s (baseline)")
         
         if results['total_questions']/results['processing_time'] < 5000:
-            print(f"   ✅ PROPER IMPLEMENTATION: Speed indicates actual processing!")
+            print(f"   [+] PROPER IMPLEMENTATION: Speed indicates actual processing!")
         else:
-            print(f"   ❌ Still taking shortcuts somewhere...")
+            print(f"   [-] Still taking shortcuts somewhere...")
 
 
 if __name__ == "__main__":

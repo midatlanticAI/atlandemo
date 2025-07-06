@@ -523,7 +523,7 @@ class WaveTextLearningEngine:
 
 def demo_wave_text_learning():
     """Demonstrate the wave text learning system"""
-    print("🌊 WAVE TEXT LEARNING DEMO 🌊")
+    print("[WAVE] WAVE TEXT LEARNING DEMO [WAVE]")
     print("=" * 50)
     
     engine = WaveTextLearningEngine()
@@ -563,15 +563,15 @@ def demo_wave_text_learning():
         result = engine.learn_from_text(text, source=topic)
         
         if result.get('success'):
-            print(f"✅ Processed {result['sentences_processed']} sentences")
+            print(f"[+] Processed {result['sentences_processed']} sentences")
             print(f"📖 Learned {result['concepts_learned']} concepts")
-            print(f"🎯 Top concepts: {[c['concept'] for c in result['top_concepts'][:3]]}")
+            print(f"[TARGET] Top concepts: {[c['concept'] for c in result['top_concepts'][:3]]}")
             print(f"📝 Patterns: {result['patterns_found']}")
         else:
-            print(f"❌ Error: {result.get('error')}")
+            print(f"[-] Error: {result.get('error')}")
     
     # Show learning summary
-    print(f"\n🔍 Learning Summary:")
+    print(f"\n[SEARCH] Learning Summary:")
     summary = engine.get_learning_summary()
     print(f"Documents learned: {summary['total_documents']}")
     print(f"Concepts in knowledge base: {summary['total_concepts']}")

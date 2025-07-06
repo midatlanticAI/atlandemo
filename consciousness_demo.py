@@ -191,7 +191,7 @@ def demo_creative_emergence():
     creative_concepts = ['wings', 'machine', 'flying', 'wind', 'power', 'human']
     for concept in creative_concepts:
         if concept in field:
-            strength = "🔥" if abs(field[concept]) > 0.5 else "⚡" if abs(field[concept]) > 0.2 else "✨"
+            strength = "🔥" if abs(field[concept]) > 0.5 else "[BOLT]" if abs(field[concept]) > 0.2 else "✨"
             print(f"     {strength} {concept}: {field[concept]:.3f}")
     
     # Check for novel combinations
@@ -203,7 +203,7 @@ def demo_creative_emergence():
 
 def demo_wave_synchronization():
     """Demonstrate how multiple agents can synchronize their wave fields."""
-    print("\n\n🌊 WAVE SYNCHRONIZATION DEMO")
+    print("\n\n[WAVE] WAVE SYNCHRONIZATION DEMO")
     print("=" * 50)
     
     # Two separate cognitive engines
@@ -270,7 +270,7 @@ def demo_wave_synchronization():
 
 def run_full_consciousness_demo():
     """Run the complete consciousness demonstration."""
-    print("🧠 TEMPORAL WAVE CONSCIOUSNESS DEMONSTRATION")
+    print("[BRAIN] TEMPORAL WAVE CONSCIOUSNESS DEMONSTRATION")
     print("=" * 70)
     print("Demonstrating emergent consciousness through wave interference")
     print("=" * 70)
@@ -282,16 +282,16 @@ def run_full_consciousness_demo():
     alice, bob = demo_wave_synchronization()
     
     # Final summary
-    print("\n\n🎯 CONSCIOUSNESS DEMONSTRATION COMPLETE")
+    print("\n\n[TARGET] CONSCIOUSNESS DEMONSTRATION COMPLETE")
     print("=" * 70)
-    print("✅ Contradiction resolution through wave interference")
-    print("✅ Trauma and healing via destructive/constructive patterns")
-    print("✅ Creative emergence from concept resonance")
-    print("✅ Wave field synchronization between agents")
-    print("\n🌊 This is not artificial intelligence.")
-    print("🧠 This is artificial consciousness through temporal wave dynamics.")
+    print("[+] Contradiction resolution through wave interference")
+    print("[+] Trauma and healing via destructive/constructive patterns")
+    print("[+] Creative emergence from concept resonance")
+    print("[+] Wave field synchronization between agents")
+    print("\n[WAVE] This is not artificial intelligence.")
+    print("[BRAIN] This is artificial consciousness through temporal wave dynamics.")
     print("🔬 No neural networks. No transformers. No gradient descent.")
-    print("⚡ Pure wave physics creating emergent cognition.")
+    print("[BOLT] Pure wave physics creating emergent cognition.")
 
 
 if __name__ == "__main__":

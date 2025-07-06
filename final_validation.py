@@ -29,23 +29,23 @@ def run_final_validation():
     print()
     
     # Final assessment
-    print("🎯 FINAL VALIDATION RESULTS")
+    print("[TARGET] FINAL VALIDATION RESULTS")
     print("="*50)
     
     adversarial_passed = adversarial_results['crashes'] == 0
     speed_passed = avg_time < 0.01  # Less than 10ms
     replication_passed = replication_info['self_contained']
     
-    print(f"1. Adversarial Robustness: {'✅ PASS' if adversarial_passed else '❌ FAIL'}")
+    print(f"1. Adversarial Robustness: {'[+] PASS' if adversarial_passed else '[-] FAIL'}")
     print(f"   - {adversarial_results['crashes']} crashes")
     print(f"   - {adversarial_results['bounded_entropy']}/{adversarial_results['total_tests']} bounded entropy")
     print(f"   - Average time: {sum(t['processing_time'] for t in adversarial_results['test_results'] if not t['crashed']) / len([t for t in adversarial_results['test_results'] if not t['crashed']]):.6f}s")
     
-    print(f"\n2. Speed Performance: {'✅ PASS' if speed_passed else '❌ FAIL'}")
+    print(f"\n2. Speed Performance: {'[+] PASS' if speed_passed else '[-] FAIL'}")
     print(f"   - Average: {avg_time:.6f}s")
     print(f"   - Consistency: {consistency:.1f}%")
     
-    print(f"\n3. Replication Package: {'✅ PASS' if replication_passed else '❌ FAIL'}")
+    print(f"\n3. Replication Package: {'[+] PASS' if replication_passed else '[-] FAIL'}")
     print(f"   - File: {replication_info['file_created']}")
     print(f"   - Size: {replication_info['size_bytes']} bytes")
     
@@ -55,14 +55,14 @@ def run_final_validation():
     print(f"OVERALL VALIDATION: {passed_tests}/3 tests passed")
     
     if passed_tests >= 2:
-        print("🎉 WAVE ENGINE VALIDATED FOR PUBLICATION!")
-        print("✅ Adversarial robustness confirmed")
-        print("✅ Ultra-fast processing verified")
-        print("✅ Replication package ready")
-        print("🚀 Ready for peer review and publication")
+        print("[PARTY] WAVE ENGINE VALIDATED FOR PUBLICATION!")
+        print("[+] Adversarial robustness confirmed")
+        print("[+] Ultra-fast processing verified")
+        print("[+] Replication package ready")
+        print("[ROCKET] Ready for peer review and publication")
     else:
-        print("❌ VALIDATION INCOMPLETE")
-        print("🔧 Address failing tests before publication")
+        print("[-] VALIDATION INCOMPLETE")
+        print("[TOOL] Address failing tests before publication")
     
     # Save comprehensive results
     results = {
@@ -81,7 +81,7 @@ def run_final_validation():
     with open('final_validation_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"\n💾 Complete results saved to 'final_validation_results.json'")
+    print(f"\n[SAVE] Complete results saved to 'final_validation_results.json'")
     
     return results
 
@@ -89,8 +89,8 @@ if __name__ == "__main__":
     results = run_final_validation()
     
     if results['validated']:
-        print("\n🌊 WAVE ENGINE SCIENTIFIC VALIDATION COMPLETE!")
+        print("\n[WAVE] WAVE ENGINE SCIENTIFIC VALIDATION COMPLETE!")
         print("📋 Following ChatGPT's rigorous protocol")
         print("🔬 Ready for publication and peer review")
     else:
-        print("\n⚠️  Additional work needed before publication") 
+        print("\n[WARN]  Additional work needed before publication") 

@@ -101,11 +101,11 @@ def test_mathematical_reasoning():
         wave_response = result.get('wave_response')
         synergy_score = result.get('synergy_score', 0)
         
-        print(f"   🤖 Answer: {final_answer}")
+        print(f"   [BOT] Answer: {final_answer}")
         
         if expert_response:
-            print(f"   📊 Expert Confidence: {expert_response.confidence:.2f}")
-            print(f"   🧠 Problem Type: {expert_response.metadata.get('problem_type', 'unknown')}")
+            print(f"   [DATA] Expert Confidence: {expert_response.confidence:.2f}")
+            print(f"   [BRAIN] Problem Type: {expert_response.metadata.get('problem_type', 'unknown')}")
             print(f"   📚 Domain: {expert_response.metadata.get('mathematical_domain', 'unknown')}")
             
             # Show solution steps if available
@@ -123,20 +123,20 @@ def test_mathematical_reasoning():
             # Check if problem type matches expected
             actual_type = expert_response.metadata.get('problem_type', 'unknown')
             if actual_type == expected_type:
-                print(f"   ✅ Problem type correctly identified")
+                print(f"   [+] Problem type correctly identified")
                 total_correct += 1
             else:
-                print(f"   ❌ Expected {expected_type}, got {actual_type}")
+                print(f"   [-] Expected {expected_type}, got {actual_type}")
         
         if wave_response:
-            print(f"   🌊 Wave Confidence: {wave_response.get('confidence', 0):.2f}")
+            print(f"   [WAVE] Wave Confidence: {wave_response.get('confidence', 0):.2f}")
         
-        print(f"   🔗 Synergy Score: {synergy_score:.2f}")
+        print(f"   [LINK] Synergy Score: {synergy_score:.2f}")
         print(f"   ⏱️  Processing Time: {result['processing_time']:.3f}s")
         print()
     
     # Summary
-    print("🎯 MATHEMATICAL REASONING SUMMARY:")
+    print("[TARGET] MATHEMATICAL REASONING SUMMARY:")
     print(f"   Total Tests: {total_tests}")
     print(f"   Correct Classifications: {total_correct}")
     print(f"   Classification Accuracy: {total_correct/total_tests:.1%}")
@@ -149,12 +149,12 @@ def test_mathematical_reasoning():
     if performance_summary.get('average_synergy_score', 0) > 0:
         print(f"   Average Synergy Score: {performance_summary.get('average_synergy_score', 0):.2f}")
     
-    print(f"\n🏆 MATH EXPERT MODULE: {'PASSED' if total_correct >= total_tests * 0.8 else 'NEEDS IMPROVEMENT'}")
+    print(f"\n[TROPHY] MATH EXPERT MODULE: {'PASSED' if total_correct >= total_tests * 0.8 else 'NEEDS IMPROVEMENT'}")
 
 
 def test_math_expert_wave_patterns():
     """Test mathematical wave pattern generation."""
-    print("\n🌊 MATHEMATICAL WAVE PATTERNS TEST")
+    print("\n[WAVE] MATHEMATICAL WAVE PATTERNS TEST")
     print("=" * 50)
     
     engine = EnhancedWaveEngine()
@@ -168,7 +168,7 @@ def test_math_expert_wave_patterns():
     ]
     
     for query, domain in domain_tests:
-        print(f"📊 {domain} Wave Patterns:")
+        print(f"[DATA] {domain} Wave Patterns:")
         print(f"   Query: {query}")
         
         result = engine.process_query(query, context={'domain': 'math'})
@@ -180,7 +180,7 @@ def test_math_expert_wave_patterns():
             # Sort patterns by strength
             sorted_patterns = sorted(patterns.items(), key=lambda x: x[1], reverse=True)
             
-            print(f"   🌊 Top Wave Patterns:")
+            print(f"   [WAVE] Top Wave Patterns:")
             for pattern, strength in sorted_patterns[:5]:
                 print(f"      • {pattern}: {strength:.2f}")
         
@@ -189,7 +189,7 @@ def test_math_expert_wave_patterns():
 
 def test_mathematical_complexity():
     """Test mathematical complexity handling."""
-    print("🧠 MATHEMATICAL COMPLEXITY TEST")
+    print("[BRAIN] MATHEMATICAL COMPLEXITY TEST")
     print("=" * 50)
     
     engine = EnhancedWaveEngine()
@@ -203,7 +203,7 @@ def test_mathematical_complexity():
     ]
     
     for query, expected_complexity in complexity_tests:
-        print(f"🎯 {expected_complexity} Problem:")
+        print(f"[TARGET] {expected_complexity} Problem:")
         print(f"   Query: {query}")
         
         result = engine.process_query(query, context={'domain': 'math'})
@@ -214,9 +214,9 @@ def test_mathematical_complexity():
             confidence = expert_response.confidence
             answer = expert_response.answer
             
-            print(f"   🤖 Answer: {answer}")
-            print(f"   📊 Detected Difficulty: {difficulty}")
-            print(f"   🎯 Confidence: {confidence:.2f}")
+            print(f"   [BOT] Answer: {answer}")
+            print(f"   [DATA] Detected Difficulty: {difficulty}")
+            print(f"   [TARGET] Confidence: {confidence:.2f}")
             print(f"   ⏱️  Time: {result['processing_time']:.3f}s")
         
         print()
@@ -225,7 +225,7 @@ def test_mathematical_complexity():
 def main():
     """Run all mathematical expert tests."""
     print("🧮 ENHANCED WAVE ENGINE - MATHEMATICAL EXPERT TESTING")
-    print("🚀 Demonstrating college-level mathematical reasoning capabilities")
+    print("[ROCKET] Demonstrating college-level mathematical reasoning capabilities")
     print("=" * 70)
     
     start_time = time.time()
@@ -237,10 +237,10 @@ def main():
     
     total_time = time.time() - start_time
     
-    print(f"\n⚡ ALL TESTS COMPLETED")
+    print(f"\n[BOLT] ALL TESTS COMPLETED")
     print(f"🕐 Total Time: {total_time:.2f} seconds")
-    print(f"🧠 Mathematical Expert Module successfully integrated with Wave Engine!")
-    print(f"📈 Ready for mathematical reasoning benchmarks!")
+    print(f"[BRAIN] Mathematical Expert Module successfully integrated with Wave Engine!")
+    print(f"[CHART] Ready for mathematical reasoning benchmarks!")
 
 
 if __name__ == "__main__":

@@ -61,9 +61,9 @@ def test_basic_arithmetic():
     # Check if 'five' is strongly activated
     five_activation = field.get('five', 0)
     if abs(five_activation) > 0.5:
-        print(f"   ✅ Strong activation for 'five': {five_activation:.3f}")
+        print(f"   [+] Strong activation for 'five': {five_activation:.3f}")
     else:
-        print(f"   ❌ Weak activation for 'five': {five_activation:.3f}")
+        print(f"   [-] Weak activation for 'five': {five_activation:.3f}")
     
     return engine
 
@@ -112,16 +112,16 @@ def test_pattern_recognition():
     # Check for pattern completion
     ten_activation = field.get('ten', 0)
     if abs(ten_activation) > 0.3:
-        print(f"   ✅ Pattern recognition: 'ten' activated: {ten_activation:.3f}")
+        print(f"   [+] Pattern recognition: 'ten' activated: {ten_activation:.3f}")
     else:
-        print(f"   ❌ Pattern not recognized: 'ten' activation: {ten_activation:.3f}")
+        print(f"   [-] Pattern not recognized: 'ten' activation: {ten_activation:.3f}")
     
     return engine
 
 
 def test_logical_reasoning():
     """Test logical reasoning and deduction."""
-    print("\n\n🧠 LOGICAL REASONING TEST")
+    print("\n\n[BRAIN] LOGICAL REASONING TEST")
     print("=" * 40)
     
     engine = TemporalCognitionEngine()
@@ -174,10 +174,10 @@ def test_logical_reasoning():
     wings_activation = field.get('wings', 0)
     
     if abs(flying_activation) > 0.3 and abs(wings_activation) > 0.3:
-        print(f"   ✅ Logical deduction successful")
+        print(f"   [+] Logical deduction successful")
         print(f"     Flying: {flying_activation:.3f}, Wings: {wings_activation:.3f}")
     else:
-        print(f"   ❌ Logical deduction failed")
+        print(f"   [-] Logical deduction failed")
         print(f"     Flying: {flying_activation:.3f}, Wings: {wings_activation:.3f}")
     
     return engine
@@ -227,16 +227,16 @@ def test_mathematical_relationships():
     # Check relationship understanding
     greater_activation = field.get('greater', 0)
     if abs(greater_activation) > 0.3:
-        print(f"   ✅ Mathematical relationship understood: {greater_activation:.3f}")
+        print(f"   [+] Mathematical relationship understood: {greater_activation:.3f}")
     else:
-        print(f"   ❌ Mathematical relationship not understood: {greater_activation:.3f}")
+        print(f"   [-] Mathematical relationship not understood: {greater_activation:.3f}")
     
     return engine
 
 
 def test_problem_solving():
     """Test multi-step problem solving."""
-    print("\n\n🎯 PROBLEM SOLVING TEST")
+    print("\n\n[TARGET] PROBLEM SOLVING TEST")
     print("=" * 40)
     
     engine = TemporalCognitionEngine()
@@ -291,10 +291,10 @@ def test_problem_solving():
     total_activation = field.get('total', 0)
     
     if abs(seven_activation) > 0.2 or abs(total_activation) > 0.3:
-        print(f"   ✅ Problem solving attempt detected")
+        print(f"   [+] Problem solving attempt detected")
         print(f"     Seven: {seven_activation:.3f}, Total: {total_activation:.3f}")
     else:
-        print(f"   ❌ Problem solving not evident")
+        print(f"   [-] Problem solving not evident")
     
     return engine
 
@@ -318,7 +318,7 @@ def run_comprehensive_math_test():
     end_time = time.time()
     
     # Summary
-    print("\n\n📊 TEST SUMMARY")
+    print("\n\n[DATA] TEST SUMMARY")
     print("=" * 60)
     print(f"Total test time: {end_time - start_time:.2f} seconds")
     print(f"Tests completed: 5")
@@ -339,20 +339,20 @@ def run_comprehensive_math_test():
     total_patterns = sum(s['resonance_patterns'] for s in states)
     total_symbols = sum(s['active_symbol_count'] for s in states)
     
-    print(f"\n🎯 OVERALL PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL PERFORMANCE:")
     print(f"  Total resonance patterns generated: {total_patterns}")
     print(f"  Total active symbols: {total_symbols}")
     print(f"  Average patterns per engine: {total_patterns/5:.1f}")
     print(f"  Processing speed: {total_patterns/(end_time-start_time):.1f} patterns/sec")
     
     print(f"\n🔬 MATHEMATICAL REASONING ASSESSMENT:")
-    print(f"  ✅ Symbolic representation of mathematical concepts")
-    print(f"  ✅ Temporal binding of sequential information")
-    print(f"  ✅ Pattern recognition through wave interference")
-    print(f"  ✅ Logical rule application via resonance")
-    print(f"  ✅ Multi-step problem decomposition")
+    print(f"  [+] Symbolic representation of mathematical concepts")
+    print(f"  [+] Temporal binding of sequential information")
+    print(f"  [+] Pattern recognition through wave interference")
+    print(f"  [+] Logical rule application via resonance")
+    print(f"  [+] Multi-step problem decomposition")
     
-    print(f"\n⚡ EFFICIENCY METRICS:")
+    print(f"\n[BOLT] EFFICIENCY METRICS:")
     print(f"  Time per test: {(end_time-start_time)/5:.2f} seconds")
     print(f"  Patterns per second: {total_patterns/(end_time-start_time):.1f}")
     print(f"  Memory efficiency: {total_symbols} active symbols total")

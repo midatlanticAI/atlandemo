@@ -447,7 +447,7 @@ class RealWorldDeploymentBenchmark:
     def simulate_real_world_testing(self, scenario: ScenarioRequirements) -> Dict[str, Any]:
         """Simulate testing both systems in a real-world scenario"""
         
-        print(f"\n🎯 SCENARIO: {scenario.scenario_name}")
+        print(f"\n[TARGET] SCENARIO: {scenario.scenario_name}")
         print(f"📋 {scenario.description}")
         print(f"🏢 Context: {scenario.real_world_context}")
         print("-" * 80)
@@ -546,7 +546,7 @@ class RealWorldDeploymentBenchmark:
     def print_scenario_results(self, scenario: ScenarioRequirements, results: Dict[str, Any]):
         """Print detailed results for a scenario"""
         
-        print(f"\n📊 CONSTRAINT ANALYSIS")
+        print(f"\n[DATA] CONSTRAINT ANALYSIS")
         print(f"{'Constraint':<25} {'Requirement':<20} {'Wave Engine':<15} {'LLaMA 7B':<15} {'LLaMA 13B':<15} {'LLaMA 70B':<15}")
         print("-" * 110)
         
@@ -555,18 +555,18 @@ class RealWorldDeploymentBenchmark:
             ("Response Time", f"{scenario.constraints.max_response_time_ms}ms", "1ms", "2,500ms", "4,800ms", "12,000ms"),
             ("Power Budget", f"{scenario.constraints.max_power_consumption_w}W", "0.1W", "250W", "400W", "1,500W"),
             ("Hardware Cost", f"${scenario.constraints.max_hardware_cost_usd}", "$50", "$1,200", "$2,400", "$40,000"),
-            ("Offline Required", "Yes" if scenario.constraints.requires_offline else "No", "✅", "✅", "✅", "✅"),
-            ("Deterministic", "Yes" if scenario.constraints.requires_deterministic else "No", "✅", "❌", "❌", "❌"),
+            ("Offline Required", "Yes" if scenario.constraints.requires_offline else "No", "[+]", "[+]", "[+]", "[+]"),
+            ("Deterministic", "Yes" if scenario.constraints.requires_deterministic else "No", "[+]", "[-]", "[-]", "[-]"),
             ("Deploy Time", f"{scenario.constraints.max_deployment_time_hours}h", "0.5h", "8h", "12h", "40h")
         ]
         
         for constraint_name, requirement, wave, llama7b, llama13b, llama70b in constraints_data:
             print(f"{constraint_name:<25} {requirement:<20} {wave:<15} {llama7b:<15} {llama13b:<15} {llama70b:<15}")
         
-        print(f"\n🎯 VIABILITY ASSESSMENT")
+        print(f"\n[TARGET] VIABILITY ASSESSMENT")
         for system_name, result in results.items():
             viability = result['viability']
-            status = "✅ VIABLE" if viability['viable'] else "❌ NOT VIABLE"
+            status = "[+] VIABLE" if viability['viable'] else "[-] NOT VIABLE"
             score = viability['viability_score']
             
             print(f"\n{system_name}: {status} (Score: {score:.1f}/100)")
@@ -577,9 +577,9 @@ class RealWorldDeploymentBenchmark:
                     print(f"   • {issue}")
             
             if result['scenario_success']:
-                print(f"   ✅ Scenario Success: {result['overall_accuracy']:.1%} accuracy")
+                print(f"   [+] Scenario Success: {result['overall_accuracy']:.1%} accuracy")
             else:
-                print(f"   ❌ Scenario Failure: {result['overall_accuracy']:.1%} accuracy")
+                print(f"   [-] Scenario Failure: {result['overall_accuracy']:.1%} accuracy")
     
     def generate_deployment_recommendation(self, scenario: ScenarioRequirements, results: Dict[str, Any]) -> str:
         """Generate realistic deployment recommendation"""
@@ -588,15 +588,15 @@ class RealWorldDeploymentBenchmark:
         successful_systems = [name for name, result in results.items() if result['scenario_success']]
         
         if not viable_systems:
-            return f"❌ NO VIABLE SOLUTION: {scenario.scenario_name} constraints too strict for current AI systems"
+            return f"[-] NO VIABLE SOLUTION: {scenario.scenario_name} constraints too strict for current AI systems"
         
         if not successful_systems:
-            return f"⚠️ PARTIAL SOLUTIONS ONLY: Consider relaxing accuracy requirements or response time constraints"
+            return f"[WARN] PARTIAL SOLUTIONS ONLY: Consider relaxing accuracy requirements or response time constraints"
         
         # Find the best system
         best_system = max(successful_systems, key=lambda x: results[x]['overall_accuracy'])
         
-        recommendation = f"✅ RECOMMENDED: {best_system}\n"
+        recommendation = f"[+] RECOMMENDED: {best_system}\n"
         
         if best_system == "Wave Engine":
             recommendation += f"   • Meets all constraints with {results[best_system]['overall_accuracy']:.1%} accuracy\n"
@@ -647,7 +647,7 @@ class RealWorldDeploymentBenchmark:
     def print_overall_summary(self, all_results: Dict[str, Any]):
         """Print overall summary across all scenarios"""
         
-        print(f"\n🎯 OVERALL DEPLOYMENT SUMMARY")
+        print(f"\n[TARGET] OVERALL DEPLOYMENT SUMMARY")
         print("=" * 80)
         
         scenario_count = len(all_results)
@@ -678,31 +678,31 @@ class RealWorldDeploymentBenchmark:
                 if result['scenario_success']:
                     system_wins[system_name] += 1
         
-        print(f"📊 VIABILITY ACROSS {scenario_count} SCENARIOS:")
+        print(f"[DATA] VIABILITY ACROSS {scenario_count} SCENARIOS:")
         for system_name, count in viable_counts.items():
             percentage = (count / scenario_count) * 100
             print(f"   {system_name}: {count}/{scenario_count} ({percentage:.1f}%)")
         
-        print(f"\n🏆 SUCCESSFUL DEPLOYMENTS:")
+        print(f"\n[TROPHY] SUCCESSFUL DEPLOYMENTS:")
         for system_name, count in system_wins.items():
             percentage = (count / scenario_count) * 100
             print(f"   {system_name}: {count}/{scenario_count} ({percentage:.1f}%)")
         
         # Market segments analysis
-        print(f"\n🎯 MARKET SEGMENT ANALYSIS:")
+        print(f"\n[TARGET] MARKET SEGMENT ANALYSIS:")
         
         wave_engine_wins = system_wins['Wave Engine']
         total_llama_wins = system_wins['LLaMA 7B'] + system_wins['LLaMA 13B'] + system_wins['LLaMA 70B']
         
-        print(f"   🌊 Wave Engine Dominance: {wave_engine_wins}/{scenario_count} scenarios")
-        print(f"   🦙 LLaMA Advantage: {total_llama_wins}/{scenario_count} scenarios")
+        print(f"   [WAVE] Wave Engine Dominance: {wave_engine_wins}/{scenario_count} scenarios")
+        print(f"   [LLAMA] LLaMA Advantage: {total_llama_wins}/{scenario_count} scenarios")
         
         if wave_engine_wins > total_llama_wins:
-            print(f"\n✅ WAVE ENGINE WINS: Dominates real-world deployment scenarios")
+            print(f"\n[+] WAVE ENGINE WINS: Dominates real-world deployment scenarios")
             print(f"   • Key advantage: Meets strict deployment constraints")
             print(f"   • Best for: Edge computing, embedded systems, resource-constrained environments")
         else:
-            print(f"\n✅ LLaMA WINS: Better accuracy in permissive environments")
+            print(f"\n[+] LLaMA WINS: Better accuracy in permissive environments")
             print(f"   • Key advantage: Higher accuracy when resources available")
             print(f"   • Best for: Cloud computing, high-resource environments")
         
@@ -765,7 +765,7 @@ class RealWorldDeploymentBenchmark:
                 'scenarios': serializable_results
             }, f, indent=2)
         
-        print(f"\n💾 Comprehensive results saved to real_world_deployment_results.json")
+        print(f"\n[SAVE] Comprehensive results saved to real_world_deployment_results.json")
 
 
 def main():

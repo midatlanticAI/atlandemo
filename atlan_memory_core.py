@@ -366,7 +366,7 @@ class AtlanMemoryCore:
 
 def demo_memory_system():
     """Demonstrate the core memory system capabilities."""
-    print("🧠 ATLAN MEMORY CORE DEMO")
+    print("[BRAIN] ATLAN MEMORY CORE DEMO")
     print("=" * 40)
     
     # Create memory system
@@ -387,7 +387,7 @@ def demo_memory_system():
         idx = memory.add_memory(phrase, label="demo")
         print(f"   Added: {phrase} (index: {idx})")
     
-    print("\n🔍 Searching memories...")
+    print("\n[SEARCH] Searching memories...")
     search_queries = [
         "AI and technology",
         "beautiful weather",
@@ -400,12 +400,12 @@ def demo_memory_system():
         for idx, score, phrase in results:
             print(f"   → {score:.3f}: {phrase}")
     
-    print("\n📊 Memory Health Report:")
+    print("\n[DATA] Memory Health Report:")
     health = memory.memory_health_report()
     for key, value in health.items():
         print(f"   {key}: {value}")
     
-    print("\n✅ Demo complete! Memory system is working perfectly.")
+    print("\n[+] Demo complete! Memory system is working perfectly.")
 
 
 if __name__ == "__main__":

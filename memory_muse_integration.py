@@ -89,14 +89,14 @@ Respond naturally, incorporating relevant memories when appropriate."""
         prompt = self.generate_context_prompt(user_input)
         
         # Show what would be sent to LLM
-        print(f"\n🤖 {self.name} (Internal Processing):")
+        print(f"\n[BOT] {self.name} (Internal Processing):")
         print(f"   Prompt size: {len(prompt)} characters")
         print(f"   Memory count: {len(self.memory.memory)}")
         
         # Simulate AI response (in real system, this would go to LLM)
         response = self._simulate_ai_response(user_input, prompt)
         
-        print(f"\n🤖 {self.name}: {response}")
+        print(f"\n[BOT] {self.name}: {response}")
         
         # Remember the response too
         self.remember(response, "response")
@@ -122,7 +122,7 @@ Respond naturally, incorporating relevant memories when appropriate."""
         stats = self.memory.get_stats()
         health = self.memory.memory_health_report()
         
-        print(f"\n📊 {self.name} Memory Statistics:")
+        print(f"\n[DATA] {self.name} Memory Statistics:")
         print(f"   Total conversations: {self.conversation_count}")
         print(f"   Stored memories: {health['total_memories']}")
         print(f"   Memory utilization: {health['utilization']:.1%}")
@@ -191,7 +191,7 @@ def demonstrate_memory_muse_capabilities():
         response = muse.chat(query)
         
         # Show the relevant memories that were retrieved
-        print(f"\n🧠 Relevant memories retrieved:")
+        print(f"\n[BRAIN] Relevant memories retrieved:")
         memories = muse.recall(query, max_memories=3)
         for idx, score, phrase in memories:
             print(f"   → {score:.3f}: {phrase}")
@@ -199,14 +199,14 @@ def demonstrate_memory_muse_capabilities():
     # Show memory system health
     muse.memory_stats()
     
-    print("\n🎯 THE MISSING LINK SOLVED:")
+    print("\n[TARGET] THE MISSING LINK SOLVED:")
     print("=" * 40)
-    print("✅ Long-term memory without context window limits")
-    print("✅ Intelligent memory retrieval based on relevance")
-    print("✅ Self-improving through reinforcement learning")
-    print("✅ No external dependencies or complex infrastructure")
-    print("✅ Production-ready performance and scalability")
-    print("✅ Perfect for Memory Muse applications!")
+    print("[+] Long-term memory without context window limits")
+    print("[+] Intelligent memory retrieval based on relevance")
+    print("[+] Self-improving through reinforcement learning")
+    print("[+] No external dependencies or complex infrastructure")
+    print("[+] Production-ready performance and scalability")
+    print("[+] Perfect for Memory Muse applications!")
 
 
 def show_before_after_comparison():
@@ -215,7 +215,7 @@ def show_before_after_comparison():
     print("\n\n🔄 BEFORE vs AFTER COMPARISON")
     print("=" * 60)
     
-    print("❌ BEFORE (Traditional Memory Systems):")
+    print("[-] BEFORE (Traditional Memory Systems):")
     print("   • Context window fills up after ~100 messages")
     print("   • Need expensive vector databases (Pinecone, Weaviate)")
     print("   • Complex deployment (Docker, cloud services)")
@@ -223,7 +223,7 @@ def show_before_after_comparison():
     print("   • No learning or improvement over time")
     print("   • High latency and costs")
     
-    print("\n✅ AFTER (Atlan Memory Core):")
+    print("\n[+] AFTER (Atlan Memory Core):")
     print("   • Unlimited conversation history")
     print("   • Pure Python, no external dependencies")
     print("   • Single file deployment (58KB)")
@@ -231,7 +231,7 @@ def show_before_after_comparison():
     print("   • Self-improving through reinforcement learning")
     print("   • Millisecond search times")
     
-    print("\n🎯 PERFECT FOR MEMORY MUSE:")
+    print("\n[TARGET] PERFECT FOR MEMORY MUSE:")
     print("   • Focus on memory intelligence, not infrastructure")
     print("   • Build sophisticated memory behaviors")
     print("   • Deploy anywhere, no cloud lock-in")

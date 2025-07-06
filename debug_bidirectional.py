@@ -62,9 +62,9 @@ def debug_bidirectional_parsing():
             
             print(f"Result: {result}")
             print(f"Explanation: {explanation}")
-            print(f"Correct: {'✅' if result == test['expected'] else '❌'}")
+            print(f"Correct: {'[+]' if result == test['expected'] else '[-]'}")
         else:
-            print("❌ REGEX FAILED TO MATCH")
+            print("[-] REGEX FAILED TO MATCH")
 
 if __name__ == "__main__":
     debug_bidirectional_parsing() 

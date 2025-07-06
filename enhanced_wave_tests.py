@@ -39,7 +39,7 @@ class UltimateWaveTestSuite:
     def setup_epic_display(self):
         """Create the ultimate test visualization display"""
         self.fig = plt.figure(figsize=(20, 12))
-        self.fig.suptitle('🌊 ULTIMATE WAVE-NATIVE COGNITION TESTS 🧠', 
+        self.fig.suptitle('[WAVE] ULTIMATE WAVE-NATIVE COGNITION TESTS [BRAIN]', 
                          fontsize=24, fontweight='bold', color='white')
         
         # Create grid for multiple visualizations
@@ -255,7 +255,7 @@ class UltimateWaveTestSuite:
         ax.clear()
         
         if not activation_field:
-            ax.set_title('🧠 Neural Activation Field', fontsize=12, fontweight='bold')
+            ax.set_title('[BRAIN] Neural Activation Field', fontsize=12, fontweight='bold')
             return
         
         # Create 2D field
@@ -292,7 +292,7 @@ class UltimateWaveTestSuite:
                 ax.scatter([x], [y], s=abs(activation)*100, c=color, 
                           alpha=0.9, edgecolor='black')
         
-        ax.set_title('🧠 Neural Activation Field', fontsize=12, fontweight='bold')
+        ax.set_title('[BRAIN] Neural Activation Field', fontsize=12, fontweight='bold')
         ax.set_xlabel('Neural Space X')
         ax.set_ylabel('Neural Space Y')
         
@@ -302,7 +302,7 @@ class UltimateWaveTestSuite:
         ax.clear()
         
         if not metrics:
-            ax.set_title('🧠 Consciousness Metric', fontsize=12, fontweight='bold')
+            ax.set_title('[BRAIN] Consciousness Metric', fontsize=12, fontweight='bold')
             return
         
         # Create consciousness visualization
@@ -325,7 +325,7 @@ class UltimateWaveTestSuite:
         ax.set_xticks(angles[:-1])
         ax.set_xticklabels(labels)
         ax.set_ylim(0, 1)
-        ax.set_title('🧠 Consciousness Emergence', fontsize=12, fontweight='bold')
+        ax.set_title('[BRAIN] Consciousness Emergence', fontsize=12, fontweight='bold')
         ax.grid(True, alpha=0.3)
         
     def run_enhanced_harmony_test(self):
@@ -480,7 +480,7 @@ class UltimateWaveTestSuite:
         
     def run_ultimate_test_suite(self):
         """Run the ultimate enhanced test suite"""
-        print("🌊 ULTIMATE ENHANCED WAVE-NATIVE TEST SUITE 🌊")
+        print("[WAVE] ULTIMATE ENHANCED WAVE-NATIVE TEST SUITE [WAVE]")
         print("=" * 70)
         
         # Setup epic display
@@ -506,13 +506,13 @@ class UltimateWaveTestSuite:
         self.visualize_neural_field(final_state['activation_field'])
         
         # Summary
-        print("\n🏆 ULTIMATE TEST RESULTS")
+        print("\n[TROPHY] ULTIMATE TEST RESULTS")
         print("=" * 50)
-        print(f"🎵 Musical Harmony: {'✅ PASSED' if harmony_success else '❌ FAILED'}")
-        print(f"🔄 Rotation Phase: {'✅ PASSED' if rotation_success else '❌ FAILED'}")
-        print(f"🔊 Resonance Coupling: {'✅ PASSED' if resonance_success else '❌ FAILED'}")
-        print(f"\n🧠 Consciousness Metrics: {consciousness_metrics}")
-        print("\n🌊 WAVE-NATIVE COGNITION DEMONSTRATION COMPLETE! 🌊")
+        print(f"🎵 Musical Harmony: {'[+] PASSED' if harmony_success else '[-] FAILED'}")
+        print(f"🔄 Rotation Phase: {'[+] PASSED' if rotation_success else '[-] FAILED'}")
+        print(f"🔊 Resonance Coupling: {'[+] PASSED' if resonance_success else '[-] FAILED'}")
+        print(f"\n[BRAIN] Consciousness Metrics: {consciousness_metrics}")
+        print("\n[WAVE] WAVE-NATIVE COGNITION DEMONSTRATION COMPLETE! [WAVE]")
         
         # Keep display open
         plt.ioff()

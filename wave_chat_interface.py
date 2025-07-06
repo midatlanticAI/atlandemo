@@ -29,7 +29,7 @@ class WaveChatInterface:
             '/exit': self.quit_chat
         }
         
-        print("🌊 WAVE CHAT INTERFACE 🌊")
+        print("[WAVE] WAVE CHAT INTERFACE [WAVE]")
         print("=" * 50)
         print("Welcome to the Wave-Based Conversational AI!")
         print("Type '/help' for commands or just start chatting.")
@@ -38,7 +38,7 @@ class WaveChatInterface:
     
     def show_help(self):
         """Show help information"""
-        print("\n🔧 Available Commands:")
+        print("\n[TOOL] Available Commands:")
         print("  /help     - Show this help message")
         print("  /summary  - Show conversation summary")
         print("  /explain  - Explain the wave reasoning behind last response")
@@ -58,7 +58,7 @@ class WaveChatInterface:
         """Show conversation summary"""
         summary = self.engine.get_conversation_summary()
         
-        print("\n📊 Conversation Summary:")
+        print("\n[DATA] Conversation Summary:")
         print("-" * 30)
         
         if "message" in summary:
@@ -89,7 +89,7 @@ class WaveChatInterface:
     def explain_last_response(self):
         """Explain the wave reasoning behind the last response"""
         explanation = self.engine.explain_last_response()
-        print(f"\n🌊 Wave Reasoning Explanation:")
+        print(f"\n[WAVE] Wave Reasoning Explanation:")
         print("-" * 30)
         print(explanation)
         print()
@@ -98,7 +98,7 @@ class WaveChatInterface:
         """Show current wave state"""
         wave_state = self.engine.wave_engine.get_cognitive_state()
         
-        print(f"\n🌊 Current Wave State:")
+        print(f"\n[WAVE] Current Wave State:")
         print("-" * 30)
         print(f"Active symbols: {wave_state.get('active_symbol_count', 0)}")
         print(f"Total experiences: {wave_state.get('total_experiences', 0)}")
@@ -138,11 +138,11 @@ class WaveChatInterface:
             with open(filename, 'w') as f:
                 json.dump(conversation_data, f, indent=2, default=str)
             
-            print(f"\n💾 Conversation saved to: {filename}")
+            print(f"\n[SAVE] Conversation saved to: {filename}")
             print()
             
         except Exception as e:
-            print(f"\n❌ Error saving conversation: {e}")
+            print(f"\n[-] Error saving conversation: {e}")
             print()
     
     def load_conversation(self):
@@ -173,7 +173,7 @@ class WaveChatInterface:
                 
                 # Restore conversation history
                 self.engine.conversation_history = conversation_data.get('conversation_history', [])
-                print(f"\n✅ Conversation loaded from: {filename}")
+                print(f"\n[+] Conversation loaded from: {filename}")
                 print(f"Restored {len(self.engine.conversation_history)} conversation turns")
                 print()
             else:
@@ -181,19 +181,19 @@ class WaveChatInterface:
                 print()
                 
         except (ValueError, FileNotFoundError, json.JSONDecodeError) as e:
-            print(f"\n❌ Error loading conversation: {e}")
+            print(f"\n[-] Error loading conversation: {e}")
             print()
     
     def reset_conversation(self):
         """Reset conversation history"""
-        confirm = input("\n⚠️  Are you sure you want to reset the conversation? (y/N): ").strip().lower()
+        confirm = input("\n[WARN]  Are you sure you want to reset the conversation? (y/N): ").strip().lower()
         if confirm in ['y', 'yes']:
             self.engine.conversation_history = []
             self.engine.user_context = {}
             print("\n🔄 Conversation history reset.")
             print()
         else:
-            print("\n❌ Reset cancelled.")
+            print("\n[-] Reset cancelled.")
             print()
     
     def quit_chat(self):
@@ -211,7 +211,7 @@ class WaveChatInterface:
         if save_choice in ['y', 'yes']:
             self.save_conversation()
         
-        print("Goodbye! 🌊")
+        print("Goodbye! [WAVE]")
         sys.exit(0)
     
     def process_input(self, user_input: str):
@@ -227,7 +227,7 @@ class WaveChatInterface:
         else:
             # Handle chat message
             if user_input.strip():
-                print("🤖 ", end="", flush=True)
+                print("[BOT] ", end="", flush=True)
                 response = self.engine.chat(user_input, self.user_id)
                 print(response)
             print()
@@ -250,7 +250,7 @@ class WaveChatInterface:
                     self.quit_chat()
         
         except Exception as e:
-            print(f"\n❌ Unexpected error: {e}")
+            print(f"\n[-] Unexpected error: {e}")
             print("Chat session ended.")
 
 def main():

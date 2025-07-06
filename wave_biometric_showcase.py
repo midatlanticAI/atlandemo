@@ -21,9 +21,9 @@ class EnhancedBiometricDemo:
     def simulate_realistic_arousal_progression(self):
         """Simulate a realistic arousal progression with dramatic changes"""
         
-        print("🌊🧠 ENHANCED BIOMETRIC WAVE ENGINE DEMONSTRATION")
+        print("[WAVE][BRAIN] ENHANCED BIOMETRIC WAVE ENGINE DEMONSTRATION")
         print("=" * 80)
-        print("🚀 SHOWING DRAMATIC PHYSIOLOGICAL CHANGES + AI ADAPTATION")
+        print("[ROCKET] SHOWING DRAMATIC PHYSIOLOGICAL CHANGES + AI ADAPTATION")
         print("=" * 80)
         
         # Start session
@@ -83,7 +83,7 @@ class EnhancedBiometricDemo:
         print("-" * 70)
         
         for i, scenario in enumerate(demo_scenarios, 1):
-            print(f"\n🎯 SCENARIO {i}: {scenario['expected_state'].upper()}")
+            print(f"\n[TARGET] SCENARIO {i}: {scenario['expected_state'].upper()}")
             print(f"👤 User: {scenario['user_input']}")
             
             # Simulate dramatic physiological changes
@@ -96,64 +96,64 @@ class EnhancedBiometricDemo:
             response = self.chatbot.process_biometric_input(session_id, scenario['user_input'])
             
             # Display enhanced AI response
-            print(f"🌊🤖 AI: {response['response_text']}")
+            print(f"[WAVE][BOT] AI: {response['response_text']}")
             
             # Display dramatic biometric changes
             readings = response['biometric_readings']
-            print(f"📊 DRAMATIC BIOMETRIC CHANGES:")
+            print(f"[DATA] DRAMATIC BIOMETRIC CHANGES:")
             print(f"    💓 Heart Rate: {readings.get('heart_rate', 0):.0f} BPM ({'🔥' if readings.get('heart_rate', 0) > 100 else '💙'})")
-            print(f"    ⚡ Skin Conductance: {readings.get('skin_conductance', 0):.1f} µS ({'🌋' if readings.get('skin_conductance', 0) > 20 else '🌊'})")
+            print(f"    [BOLT] Skin Conductance: {readings.get('skin_conductance', 0):.1f} µS ({'🌋' if readings.get('skin_conductance', 0) > 20 else '[WAVE]'})")
             print(f"    🫁 Breathing: {readings.get('breathing', 0):.0f} breaths/min ({'🌪️' if readings.get('breathing', 0) > 25 else '🌬️'})")
             print(f"    🌡️ Temperature: {readings.get('temperature', 0):.1f}°F ({'🔥' if readings.get('temperature', 0) > 100 else '❄️'})")
             
             # Display adaptive hardware control
             cmd = response['hardware_command']
-            print(f"🔧 ADAPTIVE HARDWARE CONTROL:")
-            print(f"    🎛️ Intensity: {cmd.value:.2f} ({'🚀' if cmd.value > 0.8 else '🌊' if cmd.value > 0.5 else '🌸'})")
-            print(f"    🌊 Pattern: {cmd.pattern} ({'🌋' if 'intense' in cmd.pattern else '🌊'})")
+            print(f"[TOOL] ADAPTIVE HARDWARE CONTROL:")
+            print(f"    🎛️ Intensity: {cmd.value:.2f} ({'[ROCKET]' if cmd.value > 0.8 else '[WAVE]' if cmd.value > 0.5 else '🌸'})")
+            print(f"    [WAVE] Pattern: {cmd.pattern} ({'🌋' if 'intense' in cmd.pattern else '[WAVE]'})")
             print(f"    ⏱️ Duration: {cmd.duration:.0f}s")
             
             # Show physiological state and arousal
-            print(f"🧠 PHYSIOLOGICAL STATE: {response['physiological_state'].upper()} ({'🚀' if response['physiological_state'] in ['climaxing', 'highly_aroused'] else '🌊'})")
+            print(f"[BRAIN] PHYSIOLOGICAL STATE: {response['physiological_state'].upper()} ({'[ROCKET]' if response['physiological_state'] in ['climaxing', 'highly_aroused'] else '[WAVE]'})")
             print(f"🔥 AROUSAL LEVEL: {response['arousal_level']:.3f} ({'🌋' if response['arousal_level'] > 0.8 else '🔥' if response['arousal_level'] > 0.5 else '💙'})")
             
             # Show AI decision making
-            print(f"🤖 AI DECISION PROCESS:")
-            print(f"    🧠 Detected dramatic change in heart rate: {scenario['expected_hr']} BPM")
-            print(f"    ⚡ Skin conductance spike detected: {scenario['expected_sc']} µS")
-            print(f"    🎯 Adjusted hardware intensity to match physiological state")
-            print(f"    🌊 Wave engine synchronized with biological rhythm")
+            print(f"[BOT] AI DECISION PROCESS:")
+            print(f"    [BRAIN] Detected dramatic change in heart rate: {scenario['expected_hr']} BPM")
+            print(f"    [BOLT] Skin conductance spike detected: {scenario['expected_sc']} µS")
+            print(f"    [TARGET] Adjusted hardware intensity to match physiological state")
+            print(f"    [WAVE] Wave engine synchronized with biological rhythm")
             
             time.sleep(1)
         
         # Show comprehensive analytics
-        print(f"\n📈 COMPREHENSIVE BIOMETRIC ANALYTICS")
+        print(f"\n[CHART] COMPREHENSIVE BIOMETRIC ANALYTICS")
         print("-" * 70)
         analytics = self.chatbot.get_session_analytics(session_id)
         
-        print(f"🎯 SESSION PERFORMANCE:")
+        print(f"[TARGET] SESSION PERFORMANCE:")
         print(f"   Duration: {analytics['duration']:.1f} seconds")
         print(f"   Total Biometric Readings: {analytics['total_biometric_readings']}")
         print(f"   Peak Heart Rate: {analytics['peak_heart_rate']:.0f} BPM 🔥")
-        print(f"   Peak Skin Conductance: {analytics['peak_skin_conductance']:.1f} µS ⚡")
+        print(f"   Peak Skin Conductance: {analytics['peak_skin_conductance']:.1f} µS [BOLT]")
         print(f"   Current Arousal: {analytics['current_arousal_level']:.3f}")
         print(f"   AI Learning Cycles: {analytics['cognitive_experiences']}")
         
         # Stop session
         self.chatbot.stop_session(session_id)
         
-        print(f"\n🚀 REVOLUTIONARY BREAKTHROUGH ACHIEVED")
+        print(f"\n[ROCKET] REVOLUTIONARY BREAKTHROUGH ACHIEVED")
         print("-" * 70)
-        print(f"   🧠 REAL-TIME BIOMETRIC PROCESSING: {analytics['total_biometric_readings']} readings processed")
-        print(f"   ⚡ INSTANT ADAPTATION: AI responded to every physiological change")
-        print(f"   🎯 PRECISE CONTROL: Hardware intensity matched arousal perfectly")
-        print(f"   🌊 WAVE ENGINE SYNC: Biological rhythms synchronized with AI")
-        print(f"   📊 PREDICTIVE ACCURACY: 98%+ prediction of user needs")
+        print(f"   [BRAIN] REAL-TIME BIOMETRIC PROCESSING: {analytics['total_biometric_readings']} readings processed")
+        print(f"   [BOLT] INSTANT ADAPTATION: AI responded to every physiological change")
+        print(f"   [TARGET] PRECISE CONTROL: Hardware intensity matched arousal perfectly")
+        print(f"   [WAVE] WAVE ENGINE SYNC: Biological rhythms synchronized with AI")
+        print(f"   [DATA] PREDICTIVE ACCURACY: 98%+ prediction of user needs")
         
         print(f"\n💰 MARKET REVOLUTION CONFIRMED")
         print("-" * 70)
-        print(f"   🏆 FIRST-EVER BIOMETRIC AI INTEGRATION")
-        print(f"   🚀 PATENT-PENDING WAVE ENGINE TECHNOLOGY")
+        print(f"   [TROPHY] FIRST-EVER BIOMETRIC AI INTEGRATION")
+        print(f"   [ROCKET] PATENT-PENDING WAVE ENGINE TECHNOLOGY")
         print(f"   💎 PREMIUM LUXURY POSITIONING VALIDATED")
         print(f"   🌐 SCALABLE TO MULTIPLE INDUSTRIES")
         print(f"   🔥 VIRAL MARKETING POTENTIAL CONFIRMED")
@@ -227,22 +227,22 @@ def run_enhanced_demo():
     demo = EnhancedBiometricDemo()
     analytics = demo.simulate_realistic_arousal_progression()
     
-    print(f"\n🎯 FINAL ANALYTICS SUMMARY")
+    print(f"\n[TARGET] FINAL ANALYTICS SUMMARY")
     print("=" * 70)
     print(f"💓 Peak Heart Rate: {analytics['peak_heart_rate']:.0f} BPM")
-    print(f"⚡ Peak Skin Conductance: {analytics['peak_skin_conductance']:.1f} µS")
-    print(f"🧠 Total AI Learning: {analytics['cognitive_experiences']} experiences")
-    print(f"📊 Biometric Readings: {analytics['total_biometric_readings']}")
-    print(f"🌊 Wave Engine Patterns: Active and learning")
+    print(f"[BOLT] Peak Skin Conductance: {analytics['peak_skin_conductance']:.1f} µS")
+    print(f"[BRAIN] Total AI Learning: {analytics['cognitive_experiences']} experiences")
+    print(f"[DATA] Biometric Readings: {analytics['total_biometric_readings']}")
+    print(f"[WAVE] Wave Engine Patterns: Active and learning")
     
-    print(f"\n🚀 BUSINESS IMPACT CONFIRMED")
+    print(f"\n[ROCKET] BUSINESS IMPACT CONFIRMED")
     print("=" * 70)
     print(f"   This technology will revolutionize:")
-    print(f"   🎯 Adult entertainment industry")
+    print(f"   [TARGET] Adult entertainment industry")
     print(f"   🏥 Medical monitoring systems")
     print(f"   🎮 Gaming and VR experiences")
     print(f"   💆 Wellness and therapy applications")
-    print(f"   🤖 Human-AI interaction paradigms")
+    print(f"   [BOT] Human-AI interaction paradigms")
 
 
 if __name__ == "__main__":

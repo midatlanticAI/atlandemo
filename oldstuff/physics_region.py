@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ATLAN BIOINTELLIGENCE - PHYSICS REGION
-🧠 Physics processing region that flows through central brain
+[BRAIN] Physics processing region that flows through central brain
 """
 
 import re
@@ -11,7 +11,7 @@ from core.agent import AtlanAgent
 
 class PhysicsRegion:
     """
-    🧠 Physics specialized brain region  
+    [BRAIN] Physics specialized brain region  
     ALL processing flows through central AtlanAgent - no bypassing allowed!
     """
     
@@ -42,7 +42,7 @@ class PhysicsRegion:
         
     def process_through_brain(self, query: str, brain_result: Dict[str, Any], context: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        🧠 Process physics query through central brain
+        [BRAIN] Process physics query through central brain
         
         Args:
             query: Physics query to process
@@ -104,7 +104,7 @@ class PhysicsRegion:
     
     def _analyze_physics_problem(self, query: str) -> Dict[str, Any]:
         """
-        🧠 Analyze physics problems and concepts
+        [BRAIN] Analyze physics problems and concepts
         
         Args:
             query: Physics query

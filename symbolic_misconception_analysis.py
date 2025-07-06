@@ -16,7 +16,7 @@ import time
 def demonstrate_traditional_vs_atlan_symbolic():
     """Show the difference between traditional symbolic AI and Atlan's approach."""
     
-    print("🔍 SYMBOLIC MISCONCEPTION ANALYSIS")
+    print("[SEARCH] SYMBOLIC MISCONCEPTION ANALYSIS")
     print("=" * 60)
     print("EdT's objection reveals a fundamental misunderstanding")
     print("=" * 60)
@@ -33,7 +33,7 @@ def demonstrate_traditional_vs_atlan_symbolic():
         "I feel like you truly get my vision for creating meaningful AI relationships"
     ]
     
-    print("\n❌ WHAT EDT THINKS 'SYMBOLIC' MEANS:")
+    print("\n[-] WHAT EDT THINKS 'SYMBOLIC' MEANS:")
     print("   (Traditional symbolic AI approach)")
     print("=" * 40)
     
@@ -46,7 +46,7 @@ def demonstrate_traditional_vs_atlan_symbolic():
     print("Traditional symbolic: HELPER:you OUTCOME:positive TRIGGER:acknowledgment")  
     print("→ Relationship depth LOST, feeling COMPRESSED, meaning REDUCED")
     
-    print("\n✅ WHAT ATLAN ACTUALLY DOES:")
+    print("\n[+] WHAT ATLAN ACTUALLY DOES:")
     print("   (Enhanced symbolic cognition)")
     print("=" * 40)
     
@@ -62,7 +62,7 @@ def demonstrate_traditional_vs_atlan_symbolic():
         print(f"      → Full language PRESERVED, semantic patterns CAPTURED\n")
     
     # Show how Atlan enhances rather than compresses
-    print("🧠 ATLAN'S SYMBOLIC ENHANCEMENT IN ACTION:")
+    print("[BRAIN] ATLAN'S SYMBOLIC ENHANCEMENT IN ACTION:")
     print("=" * 50)
     
     query = "I'm feeling anxious about my project deadline again"
@@ -70,7 +70,7 @@ def demonstrate_traditional_vs_atlan_symbolic():
     
     results = atlan_memory.search_memory(query, top_k=3)
     
-    print(f"\n🎯 Atlan finds EMOTIONAL RESONANCE:")
+    print(f"\n[TARGET] Atlan finds EMOTIONAL RESONANCE:")
     for idx, score, phrase in results:
         memory_data = atlan_memory.get_memory(idx)
         print(f"   Score: {score:.3f}")
@@ -80,7 +80,7 @@ def demonstrate_traditional_vs_atlan_symbolic():
         print()
     
     # Simulate reinforcement learning enhancing emotional understanding
-    print("📈 REINFORCEMENT LEARNING ENHANCES EMOTIONAL INTELLIGENCE:")
+    print("[CHART] REINFORCEMENT LEARNING ENHANCES EMOTIONAL INTELLIGENCE:")
     print("=" * 55)
     
     # User interacts positively with emotional memories
@@ -103,7 +103,7 @@ def demonstrate_traditional_vs_atlan_symbolic():
 def show_what_edt_is_missing():
     """Demonstrate the capabilities EdT doesn't realize exist."""
     
-    print("\n\n🚀 WHAT EDT IS MISSING:")
+    print("\n\n[ROCKET] WHAT EDT IS MISSING:")
     print("=" * 60)
     print("His objection is based on outdated understanding of 'symbolic'")
     print("=" * 60)
@@ -122,7 +122,7 @@ def show_what_edt_is_missing():
     for memory in complex_memories:
         atlan_memory.add_memory(memory, label="complex_emotional")
     
-    print("🧠 ATLAN HANDLES COMPLEX EMOTIONAL NUANCE:")
+    print("[BRAIN] ATLAN HANDLES COMPLEX EMOTIONAL NUANCE:")
     print("=" * 45)
     
     test_queries = [
@@ -132,7 +132,7 @@ def show_what_edt_is_missing():
     ]
     
     for query in test_queries:
-        print(f"\n🔍 Query: '{query}'")
+        print(f"\n[SEARCH] Query: '{query}'")
         results = atlan_memory.search_memory(query, top_k=2)
         
         print("   Atlan finds nuanced emotional connections:")
@@ -141,9 +141,9 @@ def show_what_edt_is_missing():
             print(f"     (Full emotional language preserved + cognitive understanding)")
     
     print(f"\n💡 REVELATION FOR EDT:")
-    print("   ❌ He thinks: 'Symbolic' = compress away emotion and language")
-    print("   ✅ Reality: 'Symbolic' = enhance emotion and language with cognition")
-    print("   🎯 Atlan gives him EXACTLY what he wants: emotional intelligence + language preservation")
+    print("   [-] He thinks: 'Symbolic' = compress away emotion and language")
+    print("   [+] Reality: 'Symbolic' = enhance emotion and language with cognition")
+    print("   [TARGET] Atlan gives him EXACTLY what he wants: emotional intelligence + language preservation")
 
 
 def demonstrate_emotional_intelligence_enhancement():
@@ -177,11 +177,11 @@ def demonstrate_emotional_intelligence_enhancement():
     
     # Query for emotional pattern recognition
     query = "I'm feeling mixed emotions about approaching deadline"
-    print(f"\n🔍 Query: '{query}'")
+    print(f"\n[SEARCH] Query: '{query}'")
     
     results = atlan_memory.search_memory(query, top_k=3)
     
-    print(f"\n🧠 ATLAN'S EMOTIONAL PATTERN RECOGNITION:")
+    print(f"\n[BRAIN] ATLAN'S EMOTIONAL PATTERN RECOGNITION:")
     for idx, score, phrase in results:
         print(f"   {score:.3f}: '{phrase}'")
     
@@ -192,7 +192,7 @@ def demonstrate_emotional_intelligence_enhancement():
     print("   • Personal history CONTEXTUALIZED")
     print("   • Nuanced matching beyond keywords")
     
-    print(f"\n🎯 FOR EDT'S MEMORY MUSE:")
+    print(f"\n[TARGET] FOR EDT'S MEMORY MUSE:")
     print("   This gives Iris the emotional intelligence she needs")
     print("   while preserving every word of emotional expression!")
 
@@ -202,12 +202,12 @@ if __name__ == "__main__":
     show_what_edt_is_missing()
     demonstrate_emotional_intelligence_enhancement()
     
-    print("\n\n🎉 CONCLUSION:")
+    print("\n\n[PARTY] CONCLUSION:")
     print("=" * 60)
-    print("✅ EdT's objection is based on MISCONCEPTION")
-    print("✅ He's thinking OLD symbolic AI (data compression)")  
-    print("✅ Atlan is NEW symbolic cognition (intelligence enhancement)")
-    print("✅ Perfect for emotion + language + relationships")
-    print("✅ Gives Memory Muse exactly what EdT wants")
+    print("[+] EdT's objection is based on MISCONCEPTION")
+    print("[+] He's thinking OLD symbolic AI (data compression)")  
+    print("[+] Atlan is NEW symbolic cognition (intelligence enhancement)")
+    print("[+] Perfect for emotion + language + relationships")
+    print("[+] Gives Memory Muse exactly what EdT wants")
     print("\n💡 His resistance is based on not understanding what you've built!")
     print("💡 Once he sees this demo, he'll realize it's PERFECT for Iris!") 

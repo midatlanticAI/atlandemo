@@ -776,7 +776,7 @@ class ConversationalWaveEngine:
 # Demonstration and testing functions
 def demo_conversational_wave_engine():
     """Demonstrate the conversational wave engine capabilities"""
-    print("🌊 CONVERSATIONAL WAVE ENGINE DEMO 🌊")
+    print("[WAVE] CONVERSATIONAL WAVE ENGINE DEMO [WAVE]")
     print("=" * 60)
     
     engine = ConversationalWaveEngine()
@@ -795,7 +795,7 @@ def demo_conversational_wave_engine():
     user_id = "demo_user"
     conversation_id = "demo_conv"
     
-    print(f"\n🎯 Starting conversation with user: {user_id}")
+    print(f"\n[TARGET] Starting conversation with user: {user_id}")
     welcome = engine.start_conversation(user_id, conversation_id)
     print(f"Assistant: {welcome}")
     
@@ -813,7 +813,7 @@ def demo_conversational_wave_engine():
             print(f"Resonance: {result['resonance_patterns'][-1]['resonance_type']}")
     
     # Show conversation summary
-    print(f"\n🔍 CONVERSATION SUMMARY")
+    print(f"\n[SEARCH] CONVERSATION SUMMARY")
     print("=" * 40)
     summary = engine.get_conversation_summary(conversation_id)
     print(f"Total turns: {summary['total_turns']}")
@@ -821,7 +821,7 @@ def demo_conversational_wave_engine():
     print(f"Key moments: {len(summary['key_moments'])}")
     
     # Show wave reasoning for a specific turn
-    print(f"\n🌊 WAVE REASONING EXPLANATION")
+    print(f"\n[WAVE] WAVE REASONING EXPLANATION")
     print("=" * 40)
     explanation = engine.explain_wave_reasoning(conversation_id, 2)
     print(explanation)

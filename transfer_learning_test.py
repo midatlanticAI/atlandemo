@@ -48,7 +48,7 @@ def establish_foundation(engine):
         )
         time.sleep(0.02)
     
-    print(f"\n✅ Foundation established")
+    print(f"\n[+] Foundation established")
 
 
 def test_immediate_transfer(engine):
@@ -89,9 +89,9 @@ def test_immediate_transfer(engine):
         transfer_results.append((description, success, activation))
         
         if success:
-            print(f"   ✅ TRANSFER SUCCESS: {activation:.3f}")
+            print(f"   [+] TRANSFER SUCCESS: {activation:.3f}")
         else:
-            print(f"   ❌ TRANSFER FAILED: {activation:.3f}")
+            print(f"   [-] TRANSFER FAILED: {activation:.3f}")
             # Show what activated instead
             strong_activations = [(k, v) for k, v in result['activation_field'].items() 
                                 if abs(v) > 0.5 and k != expected]
@@ -154,16 +154,16 @@ def test_new_concept_learning(engine):
         concept_results.append((description, success, activation))
         
         if success:
-            print(f"   ✅ CONCEPT LEARNED: {activation:.3f}")
+            print(f"   [+] CONCEPT LEARNED: {activation:.3f}")
         else:
-            print(f"   ❌ CONCEPT UNCLEAR: {activation:.3f}")
+            print(f"   [-] CONCEPT UNCLEAR: {activation:.3f}")
     
     return concept_results
 
 
 def test_strategy_emergence(engine):
     """Test if strategies emerge from solid foundation."""
-    print("\n\n🧠 STRATEGY EMERGENCE TEST")
+    print("\n\n[BRAIN] STRATEGY EMERGENCE TEST")
     print("=" * 50)
     
     # Give strategy hints and see if they stick
@@ -215,9 +215,9 @@ def test_strategy_emergence(engine):
         strategy_results.append((description, success, activation))
         
         if success:
-            print(f"   ✅ STRATEGY APPLIED: {activation:.3f}")
+            print(f"   [+] STRATEGY APPLIED: {activation:.3f}")
         else:
-            print(f"   ❌ STRATEGY UNCLEAR: {activation:.3f}")
+            print(f"   [-] STRATEGY UNCLEAR: {activation:.3f}")
     
     return strategy_results
 
@@ -249,7 +249,7 @@ def run_transfer_test():
     end_time = time.time()
     
     # Comprehensive analysis
-    print("\n\n📊 TRANSFER LEARNING RESULTS")
+    print("\n\n[DATA] TRANSFER LEARNING RESULTS")
     print("=" * 70)
     
     # Calculate success rates
@@ -270,13 +270,13 @@ def run_transfer_test():
     overall_total = len(transfer_results) + len(concept_results) + len(strategy_results)
     overall_rate = overall_success / overall_total * 100
     
-    print(f"\n🎯 OVERALL TRANSFER LEARNING:")
+    print(f"\n[TARGET] OVERALL TRANSFER LEARNING:")
     print(f"   Total success: {overall_success}/{overall_total} ({overall_rate:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL TRANSFER STATE:")
+    print(f"\n[BRAIN] FINAL TRANSFER STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active concepts: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
@@ -286,17 +286,17 @@ def run_transfer_test():
     print(f"\n🔬 TRANSFER ANALYSIS:")
     
     if overall_rate >= 75:
-        print(f"   🎉 EXCELLENT TRANSFER LEARNING!")
+        print(f"   [PARTY] EXCELLENT TRANSFER LEARNING!")
         print(f"   Foundation breakthrough enabled genuine learning transfer!")
         print(f"   System shows authentic cognitive development!")
         
     elif overall_rate >= 60:
-        print(f"   🌟 GOOD TRANSFER LEARNING!")
+        print(f"   [STAR] GOOD TRANSFER LEARNING!")
         print(f"   Foundation provides solid base for new learning!")
         print(f"   System demonstrates meaningful cognitive progress!")
         
     elif overall_rate >= 40:
-        print(f"   📈 MODERATE TRANSFER LEARNING!")
+        print(f"   [CHART] MODERATE TRANSFER LEARNING!")
         print(f"   Foundation helps but transfer is limited!")
         print(f"   System shows some cognitive development!")
         
@@ -306,7 +306,7 @@ def run_transfer_test():
         print(f"   System needs more consolidation time!")
         
     else:
-        print(f"   ⚠️ MINIMAL TRANSFER LEARNING!")
+        print(f"   [WARN] MINIMAL TRANSFER LEARNING!")
         print(f"   Foundation may not be sufficiently solid!")
         print(f"   System needs deeper foundational work!")
     
@@ -328,7 +328,7 @@ def run_transfer_test():
     print(f"\n🎓 The foundation breakthrough test reveals:")
     print(f"   Whether solid foundations truly enable learning transfer,")
     print(f"   or if each concept must be learned independently.")
-    print(f"   This is the essence of authentic intelligence! 🌟")
+    print(f"   This is the essence of authentic intelligence! [STAR]")
 
 
 if __name__ == "__main__":

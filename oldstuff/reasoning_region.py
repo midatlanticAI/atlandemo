@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ATLAN BIOINTELLIGENCE - REASONING REGION
-🧠 Reasoning processing region that flows through central brain
+[BRAIN] Reasoning processing region that flows through central brain
 """
 
 from typing import Dict, Any, Optional, List
@@ -9,7 +9,7 @@ from core.agent import AtlanAgent
 
 class ReasoningRegion:
     """
-    🧠 Reasoning specialized brain region
+    [BRAIN] Reasoning specialized brain region
     ALL processing flows through central AtlanAgent - no bypassing allowed!
     """
     
@@ -24,7 +24,7 @@ class ReasoningRegion:
         
     def process_through_brain(self, query: str, brain_result: Dict[str, Any], context: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        🧠 Process reasoning query through central brain
+        [BRAIN] Process reasoning query through central brain
         
         Args:
             query: Reasoning query to process
@@ -87,7 +87,7 @@ class ReasoningRegion:
     
     def _analyze_reasoning_need(self, query: str, processing_mode: str, brain_result: Dict[str, Any]) -> Dict[str, Any]:
         """
-        🧠 Analyze reasoning needs and apply appropriate cognitive processes
+        [BRAIN] Analyze reasoning needs and apply appropriate cognitive processes
         
         Args:
             query: Reasoning query

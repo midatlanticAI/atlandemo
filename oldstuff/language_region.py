@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ATLAN BIOINTELLIGENCE - LANGUAGE REGION
-🧠 Language processing region that flows through central brain
+[BRAIN] Language processing region that flows through central brain
 """
 
 import re
@@ -10,7 +10,7 @@ from core.agent import AtlanAgent
 
 class LanguageRegion:
     """
-    🧠 Language specialized brain region
+    [BRAIN] Language specialized brain region
     ALL processing flows through central AtlanAgent - no bypassing allowed!
     """
     
@@ -25,7 +25,7 @@ class LanguageRegion:
         
     def process_through_brain(self, query: str, brain_result: Dict[str, Any], context: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        🧠 Process language query through central brain
+        [BRAIN] Process language query through central brain
         
         Args:
             query: Language query to process
@@ -87,7 +87,7 @@ class LanguageRegion:
     
     def _analyze_language_structure(self, query: str) -> Dict[str, Any]:
         """
-        🧠 Analyze language structures and patterns
+        [BRAIN] Analyze language structures and patterns
         
         Args:
             query: Language query

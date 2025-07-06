@@ -38,21 +38,21 @@ class ActualLocalLlamaBenchmark:
     def detect_local_llama(self):
         """Detect how user's local LLaMA is running"""
         
-        print("🔍 DETECTING LOCAL LLaMA SETUP")
+        print("[SEARCH] DETECTING LOCAL LLaMA SETUP")
         print("=" * 50)
         
         # Check for Ollama specifically
         try:
             result = subprocess.run(['ollama', 'list'], capture_output=True, text=True, timeout=5)
             if result.returncode == 0:
-                print(f"  ✅ Found Ollama with models:")
+                print(f"  [+] Found Ollama with models:")
                 print(f"  {result.stdout}")
                 self.llama_endpoint = ("Ollama", "ollama")
                 return True
         except:
-            print(f"  ❌ Ollama CLI not available")
+            print(f"  [-] Ollama CLI not available")
         
-        print(f"  ❌ No local LLaMA found. Please start your LLaMA server first.")
+        print(f"  [-] No local LLaMA found. Please start your LLaMA server first.")
         return False
     
     def query_ollama(self, query: str) -> dict:
@@ -82,9 +82,9 @@ class ActualLocalLlamaBenchmark:
                             'model': model
                         }
                     else:
-                        print(f"    ❌ {model} failed: {result.stderr}")
+                        print(f"    [-] {model} failed: {result.stderr}")
                 except Exception as e:
-                    print(f"    ❌ {model} error: {e}")
+                    print(f"    [-] {model} error: {e}")
                     continue
             
             # If all models failed, return error
@@ -164,7 +164,7 @@ class ActualLocalLlamaBenchmark:
     
     def benchmark_wave_engine(self):
         """Benchmark Wave Engine using actual working logic"""
-        print("\n🌊 WAVE ENGINE PERFORMANCE")
+        print("\n[WAVE] WAVE ENGINE PERFORMANCE")
         print("-" * 50)
         
         initial_memory = self.get_system_resources()['memory_mb']
@@ -172,7 +172,7 @@ class ActualLocalLlamaBenchmark:
         wave_results = []
         total_time = 0
         
-        print("⚡ Testing Wave Engine on logical reasoning queries...")
+        print("[BOLT] Testing Wave Engine on logical reasoning queries...")
         
         for i, query in enumerate(self.test_queries):
             print(f"\n  Query {i+1}: {query}")
@@ -208,7 +208,7 @@ class ActualLocalLlamaBenchmark:
                 'response_time_ms': response_time * 1000
             })
             
-            status = "✅" if is_correct else "❌"
+            status = "[+]" if is_correct else "[-]"
             print(f"    {status} {response_time*1000:.1f}ms - Expected: {self.expected_answers[i]}, Got: {predicted_answer}")
         
         final_memory = self.get_system_resources()['memory_mb']
@@ -226,21 +226,21 @@ class ActualLocalLlamaBenchmark:
             'results': wave_results
         }
         
-        print(f"\n📊 Wave Engine Summary:")
-        print(f"  🎯 Accuracy: {wave_summary['accuracy']:.1%} ({wave_summary['correct_answers']}/{wave_summary['total_queries']})")
-        print(f"  ⚡ Avg Response: {wave_summary['avg_response_time_ms']:.1f}ms")
+        print(f"\n[DATA] Wave Engine Summary:")
+        print(f"  [TARGET] Accuracy: {wave_summary['accuracy']:.1%} ({wave_summary['correct_answers']}/{wave_summary['total_queries']})")
+        print(f"  [BOLT] Avg Response: {wave_summary['avg_response_time_ms']:.1f}ms")
         print(f"  🔥 Throughput: {wave_summary['throughput_qps']:.1f} q/s")
-        print(f"  💾 Memory: {wave_summary['memory_usage_mb']:.1f}MB")
+        print(f"  [SAVE] Memory: {wave_summary['memory_usage_mb']:.1f}MB")
         
         return wave_summary
     
     def benchmark_local_llama(self):
         """Benchmark user's actual local LLaMA"""
-        print(f"\n🦙 LOCAL LLaMA PERFORMANCE")
+        print(f"\n[LLAMA] LOCAL LLaMA PERFORMANCE")
         print("-" * 50)
         
         if not self.llama_endpoint:
-            print("❌ No local LLaMA detected. Please start your LLaMA server first.")
+            print("[-] No local LLaMA detected. Please start your LLaMA server first.")
             return None
         
         name, endpoint = self.llama_endpoint
@@ -274,7 +274,7 @@ class ActualLocalLlamaBenchmark:
                     'model': result.get('model', 'unknown')
                 })
                 
-                status = "✅" if is_correct else "❌"
+                status = "[+]" if is_correct else "[-]"
                 print(f"    {status} {result['response_time_ms']:.0f}ms - Expected: {self.expected_answers[i]}")
                 print(f"    Model: {result.get('model', 'unknown')}")
                 print(f"    Response: {result['response'][:200]}...")
@@ -288,7 +288,7 @@ class ActualLocalLlamaBenchmark:
                     'error': result['error']
                 })
                 
-                print(f"    ❌ FAILED: {result['error']}")
+                print(f"    [-] FAILED: {result['error']}")
         
         final_memory = self.get_system_resources()['memory_mb']
         memory_usage = max(final_memory - initial_memory, 1000)  # LLaMA uses significant memory
@@ -308,16 +308,16 @@ class ActualLocalLlamaBenchmark:
                 'results': llama_results
             }
             
-            print(f"\n📊 Local LLaMA Summary:")
-            print(f"  🎯 Accuracy: {llama_summary['accuracy']:.1%} ({llama_summary['correct_answers']}/{llama_summary['total_queries']})")
-            print(f"  ⚡ Avg Response: {llama_summary['avg_response_time_ms']:.0f}ms")
+            print(f"\n[DATA] Local LLaMA Summary:")
+            print(f"  [TARGET] Accuracy: {llama_summary['accuracy']:.1%} ({llama_summary['correct_answers']}/{llama_summary['total_queries']})")
+            print(f"  [BOLT] Avg Response: {llama_summary['avg_response_time_ms']:.0f}ms")
             print(f"  🔥 Throughput: {llama_summary['throughput_qps']:.3f} q/s")
-            print(f"  💾 Memory: {llama_summary['memory_usage_mb']:.0f}MB")
-            print(f"  ✅ Success Rate: {llama_summary['success_rate']:.1%}")
+            print(f"  [SAVE] Memory: {llama_summary['memory_usage_mb']:.0f}MB")
+            print(f"  [+] Success Rate: {llama_summary['success_rate']:.1%}")
             
             return llama_summary
         else:
-            print("❌ No successful queries - unable to benchmark")
+            print("[-] No successful queries - unable to benchmark")
             return None
     
     def compare_systems(self, wave_results, llama_results):
@@ -326,7 +326,7 @@ class ActualLocalLlamaBenchmark:
         print("=" * 80)
         
         if not llama_results:
-            print("❌ Cannot compare - Local LLaMA benchmark failed")
+            print("[-] Cannot compare - Local LLaMA benchmark failed")
             return
         
         print(f"{'Metric':<25} {'Wave Engine':<20} {f'Local {self.current_model or \"LLaMA\"}':<25}")
@@ -348,20 +348,20 @@ class ActualLocalLlamaBenchmark:
         throughput_advantage = wave_results['throughput_qps'] / llama_results['throughput_qps'] if llama_results['throughput_qps'] > 0 else float('inf')
         memory_advantage = llama_results['memory_usage_mb'] / wave_results['memory_usage_mb']
         
-        print(f"\n🚀 PERFORMANCE ADVANTAGES:")
-        print(f"  ⚡ Wave Engine is {speed_advantage:.0f}x FASTER")
+        print(f"\n[ROCKET] PERFORMANCE ADVANTAGES:")
+        print(f"  [BOLT] Wave Engine is {speed_advantage:.0f}x FASTER")
         print(f"  🔥 Wave Engine has {throughput_advantage:.0f}x HIGHER throughput")
-        print(f"  💾 Wave Engine uses {memory_advantage:.0f}x LESS memory")
+        print(f"  [SAVE] Wave Engine uses {memory_advantage:.0f}x LESS memory")
         
         accuracy_diff = wave_results['accuracy'] - llama_results['accuracy']
         if accuracy_diff > 0:
-            print(f"  🎯 Wave Engine is {accuracy_diff:.1%} MORE accurate")
+            print(f"  [TARGET] Wave Engine is {accuracy_diff:.1%} MORE accurate")
         else:
-            print(f"  🎯 Local LLaMA is {-accuracy_diff:.1%} more accurate")
+            print(f"  [TARGET] Local LLaMA is {-accuracy_diff:.1%} more accurate")
         
         print(f"\n💡 DEPLOYMENT REALITY:")
-        print(f"  🌊 Wave Engine: Ready for immediate deployment anywhere")
-        print(f"  🦙 Local LLaMA: Requires your current {llama_results['memory_usage_mb']:.0f}MB+ setup")
+        print(f"  [WAVE] Wave Engine: Ready for immediate deployment anywhere")
+        print(f"  [LLAMA] Local LLaMA: Requires your current {llama_results['memory_usage_mb']:.0f}MB+ setup")
         
         # Save results
         self.save_comparison_results(wave_results, llama_results)
@@ -379,7 +379,7 @@ class ActualLocalLlamaBenchmark:
         with open('wave_vs_actual_llama_results.json', 'w') as f:
             json.dump(results, f, indent=2)
         
-        print(f"\n💾 Results saved to wave_vs_actual_llama_results.json")
+        print(f"\n[SAVE] Results saved to wave_vs_actual_llama_results.json")
     
     def run_full_comparison(self):
         """Run complete Wave Engine vs Local LLaMA comparison"""
@@ -390,7 +390,7 @@ class ActualLocalLlamaBenchmark:
         
         # Detect local LLaMA
         if not self.detect_local_llama():
-            print("\n❌ Setup Instructions:")
+            print("\n[-] Setup Instructions:")
             print("1. Start Ollama: ollama serve")
             print("2. Make sure you have one of these models:")
             print("   - ollama pull llama3.1:70b (you have this)")
@@ -405,13 +405,13 @@ class ActualLocalLlamaBenchmark:
         # Compare results
         self.compare_systems(wave_results, llama_results)
         
-        print(f"\n🏆 WINNER: ", end="")
+        print(f"\n[TROPHY] WINNER: ", end="")
         if llama_results and wave_results['accuracy'] >= llama_results['accuracy']:
-            print("🌊 WAVE ENGINE - Better accuracy AND faster!")
+            print("[WAVE] WAVE ENGINE - Better accuracy AND faster!")
         elif llama_results:
-            print("🌊 WAVE ENGINE - Much faster, comparable accuracy!")
+            print("[WAVE] WAVE ENGINE - Much faster, comparable accuracy!")
         else:
-            print("🌊 WAVE ENGINE - Only working system!")
+            print("[WAVE] WAVE ENGINE - Only working system!")
 
 
 def main():

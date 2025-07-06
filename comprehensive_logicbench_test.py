@@ -26,7 +26,7 @@ class ComprehensiveLogicBenchTest:
         logicbench_root = Path("logicbench/LogicBench(Eval)/BQA")
         
         if not logicbench_root.exists():
-            print(f"❌ LogicBench directory not found: {logicbench_root}")
+            print(f"[-] LogicBench directory not found: {logicbench_root}")
             return []
         
         test_files = []
@@ -55,7 +55,7 @@ class ComprehensiveLogicBenchTest:
             print(f"   📁 File: {file_path}")
             
             samples = data.get('samples', [])
-            print(f"   📊 Samples: {len(samples)}")
+            print(f"   [DATA] Samples: {len(samples)}")
             
             correct = 0
             total = 0
@@ -100,8 +100,8 @@ class ComprehensiveLogicBenchTest:
             
             accuracy = correct / total if total > 0 else 0
             
-            print(f"   ✅ Correct: {correct}/{total}")
-            print(f"   📈 Accuracy: {accuracy:.3f}")
+            print(f"   [+] Correct: {correct}/{total}")
+            print(f"   [CHART] Accuracy: {accuracy:.3f}")
             
             return {
                 'logic_type': logic_type,
@@ -113,7 +113,7 @@ class ComprehensiveLogicBenchTest:
             }
             
         except Exception as e:
-            print(f"   ❌ Error: {e}")
+            print(f"   [-] Error: {e}")
             return {
                 'logic_type': logic_type,
                 'axiom': axiom,
@@ -125,16 +125,16 @@ class ComprehensiveLogicBenchTest:
     
     def run_comprehensive_benchmark(self) -> Dict:
         """Run the complete LogicBench benchmark."""
-        print("🚀 COMPREHENSIVE LOGICBENCH BENCHMARK")
-        print("🧠 Wave Engine with Logic Expert Module")
-        print("🎯 Full evaluation across all logical reasoning types")
+        print("[ROCKET] COMPREHENSIVE LOGICBENCH BENCHMARK")
+        print("[BRAIN] Wave Engine with Logic Expert Module")
+        print("[TARGET] Full evaluation across all logical reasoning types")
         print("=" * 80)
         
         # Find all test files
         test_files = self.find_logicbench_files()
         
         if not test_files:
-            print("❌ No LogicBench files found!")
+            print("[-] No LogicBench files found!")
             return {}
         
         print(f"📁 Found {len(test_files)} test categories:")
@@ -192,14 +192,14 @@ class ComprehensiveLogicBenchTest:
     def print_comprehensive_report(self, results: Dict):
         """Print a comprehensive benchmark report."""
         print("\n" + "=" * 80)
-        print("🎯 COMPREHENSIVE LOGICBENCH BENCHMARK RESULTS")
+        print("[TARGET] COMPREHENSIVE LOGICBENCH BENCHMARK RESULTS")
         print("=" * 80)
         
         overall_accuracy = results['overall_accuracy']
         total_questions = results['total_questions']
         total_correct = results['total_correct']
         
-        print(f"📊 OVERALL PERFORMANCE:")
+        print(f"[DATA] OVERALL PERFORMANCE:")
         print(f"   Total Questions: {total_questions}")
         print(f"   Correct Answers: {total_correct}")
         print(f"   Overall Accuracy: {overall_accuracy:.3f}")
@@ -212,9 +212,9 @@ class ComprehensiveLogicBenchTest:
         elif overall_accuracy >= 0.7:
             grade = "🥉 GOOD"
         elif overall_accuracy >= 0.6:
-            grade = "⚠️ FAIR"
+            grade = "[WARN] FAIR"
         else:
-            grade = "❌ NEEDS IMPROVEMENT"
+            grade = "[-] NEEDS IMPROVEMENT"
         
         print(f"   Grade: {grade}")
         
@@ -227,7 +227,7 @@ class ComprehensiveLogicBenchTest:
             total = summary['total_questions']
             correct = summary['correct_answers']
             
-            print(f"\n   🧠 {logic_type.upper()}:")
+            print(f"\n   [BRAIN] {logic_type.upper()}:")
             print(f"      Questions: {total}")
             print(f"      Correct: {correct}")
             print(f"      Accuracy: {accuracy:.3f}")
@@ -237,11 +237,11 @@ class ComprehensiveLogicBenchTest:
             for axiom_result in summary['axioms']:
                 axiom = axiom_result['axiom']
                 axiom_accuracy = axiom_result['accuracy']
-                status = "✅" if axiom_accuracy >= 0.8 else "⚠️" if axiom_accuracy >= 0.6 else "❌"
+                status = "[+]" if axiom_accuracy >= 0.8 else "[WARN]" if axiom_accuracy >= 0.6 else "[-]"
                 print(f"        {status} {axiom}: {axiom_accuracy:.3f}")
         
         # Best and worst performing areas
-        print(f"\n🏆 BEST PERFORMING AREAS:")
+        print(f"\n[TROPHY] BEST PERFORMING AREAS:")
         best_axioms = []
         worst_axioms = []
         
@@ -259,30 +259,30 @@ class ComprehensiveLogicBenchTest:
         for i, (axiom, accuracy) in enumerate(best_axioms[:3]):
             print(f"      {i+1}. {axiom}: {accuracy:.3f}")
         
-        print(f"\n🔧 AREAS FOR IMPROVEMENT:")
+        print(f"\n[TOOL] AREAS FOR IMPROVEMENT:")
         print(f"   Bottom 3 axioms:")
         for i, (axiom, accuracy) in enumerate(worst_axioms[:3]):
             print(f"      {i+1}. {axiom}: {accuracy:.3f}")
         
         # Final verdict
-        print(f"\n🎯 FINAL VERDICT:")
+        print(f"\n[TARGET] FINAL VERDICT:")
         if overall_accuracy >= 0.85:
-            print("   🚀 VICTORY! Wave Engine dominates LogicBench!")
-            print("   ✅ Ready for production logical reasoning tasks")
+            print("   [ROCKET] VICTORY! Wave Engine dominates LogicBench!")
+            print("   [+] Ready for production logical reasoning tasks")
         elif overall_accuracy >= 0.75:
-            print("   🌟 STRONG PERFORMANCE! Wave Engine shows excellent promise")
-            print("   ✅ Competitive with state-of-the-art logical reasoning systems")
+            print("   [STAR] STRONG PERFORMANCE! Wave Engine shows excellent promise")
+            print("   [+] Competitive with state-of-the-art logical reasoning systems")
         elif overall_accuracy >= 0.65:
             print("   💪 SOLID FOUNDATION! Wave Engine demonstrates core capabilities")
-            print("   🔧 Some fine-tuning needed for expert-level performance")
+            print("   [TOOL] Some fine-tuning needed for expert-level performance")
         else:
-            print("   🔧 DEVELOPMENT STAGE! Wave Engine needs significant improvement")
+            print("   [TOOL] DEVELOPMENT STAGE! Wave Engine needs significant improvement")
             print("   📚 Focus on core logical reasoning patterns")
         
-        print(f"\n🧠 WAVE ENGINE VERDICT:")
-        print(f"   🌊 Temporal cognition + Expert modules = {overall_accuracy:.1%} accuracy")
-        print(f"   🤖 Logic expert module functioning at {overall_accuracy:.1%} effectiveness")
-        print(f"   ⚡ Wave interference patterns enabling logical reasoning")
+        print(f"\n[BRAIN] WAVE ENGINE VERDICT:")
+        print(f"   [WAVE] Temporal cognition + Expert modules = {overall_accuracy:.1%} accuracy")
+        print(f"   [BOT] Logic expert module functioning at {overall_accuracy:.1%} effectiveness")
+        print(f"   [BOLT] Wave interference patterns enabling logical reasoning")
         
         return results
 
@@ -291,16 +291,16 @@ class ComprehensiveLogicBenchTest:
         try:
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2, ensure_ascii=False)
-            print(f"\n💾 Results saved to: {filename}")
+            print(f"\n[SAVE] Results saved to: {filename}")
         except Exception as e:
-            print(f"❌ Error saving results: {e}")
+            print(f"[-] Error saving results: {e}")
 
 
 def main():
     """Run the comprehensive LogicBench benchmark."""
-    print("🚀 LAUNCHING COMPREHENSIVE LOGICBENCH BENCHMARK")
-    print("🌊 Wave Engine + Logic Expert Module")
-    print("🎯 Full evaluation - no half measures!")
+    print("[ROCKET] LAUNCHING COMPREHENSIVE LOGICBENCH BENCHMARK")
+    print("[WAVE] Wave Engine + Logic Expert Module")
+    print("[TARGET] Full evaluation - no half measures!")
     
     # Create test instance
     test_runner = ComprehensiveLogicBenchTest()
@@ -332,10 +332,10 @@ def main():
         else:
             print(f"   Avg time per question: N/A (no questions processed)")
         
-        print("\n🎉 COMPREHENSIVE LOGICBENCH BENCHMARK COMPLETE!")
+        print("\n[PARTY] COMPREHENSIVE LOGICBENCH BENCHMARK COMPLETE!")
         
     else:
-        print("❌ Benchmark failed to run!")
+        print("[-] Benchmark failed to run!")
 
 
 if __name__ == "__main__":

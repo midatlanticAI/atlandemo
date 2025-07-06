@@ -291,13 +291,13 @@ def demonstrate_memory_muse_integration():
     # Create cognitive middleware
     cognitive_layer = CognitiveMiddleware()
     
-    print("\n🔧 INTEGRATION APPROACH:")
-    print("✅ KEEPS EdT's existing Mongo + Qdrant + GraphDB")
-    print("✅ ADDS cognitive decision-making layer")
-    print("✅ REDUCES 8000 token prompts to ~4000 tokens") 
-    print("✅ PRESERVES emotion and language focus")
-    print("✅ ENHANCES interpersonal relationship handling")
-    print("✅ COMPATIBLE with 3-month launch timeline")
+    print("\n[TOOL] INTEGRATION APPROACH:")
+    print("[+] KEEPS EdT's existing Mongo + Qdrant + GraphDB")
+    print("[+] ADDS cognitive decision-making layer")
+    print("[+] REDUCES 8000 token prompts to ~4000 tokens") 
+    print("[+] PRESERVES emotion and language focus")
+    print("[+] ENHANCES interpersonal relationship handling")
+    print("[+] COMPATIBLE with 3-month launch timeline")
     
     # Simulate EdT's scenario
     print("\n📋 SIMULATION: EdT's Memory Muse Enhanced")
@@ -324,7 +324,7 @@ def demonstrate_memory_muse_integration():
     print(f"📚 Memories from EdT's systems: {len(existing_memories)} available")
     
     # COGNITIVE ENHANCEMENT LAYER
-    print(f"\n🧠 COGNITIVE MIDDLEWARE PROCESSING:")
+    print(f"\n[BRAIN] COGNITIVE MIDDLEWARE PROCESSING:")
     
     # 1. Enhance memory retrieval with cognitive relevance
     enhanced_memories = cognitive_layer.enhance_memory_retrieval(
@@ -332,7 +332,7 @@ def demonstrate_memory_muse_integration():
     )
     
     print(f"   ✨ Cognitive relevance scoring applied")
-    print(f"   📊 Top 3 cognitively relevant memories:")
+    print(f"   [DATA] Top 3 cognitively relevant memories:")
     for i, memory_data in enumerate(enhanced_memories[:3]):
         print(f"      {i+1}. Score: {memory_data['cognitive_score']:.3f} - {memory_data['original_memory'][:60]}...")
     
@@ -342,10 +342,10 @@ def demonstrate_memory_muse_integration():
     )
     
     print(f"\n📏 CONTEXT OPTIMIZATION:")
-    print(f"   🎯 Token budget: 4000 (down from EdT's 8000 average)")
-    print(f"   📊 Tokens used: {token_count:.0f}")
-    print(f"   ✅ Memories included: {len(selected_memories)}/{len(existing_memories)}")
-    print(f"   🚀 Efficiency: {len(selected_memories)/len(existing_memories)*100:.1f}%")
+    print(f"   [TARGET] Token budget: 4000 (down from EdT's 8000 average)")
+    print(f"   [DATA] Tokens used: {token_count:.0f}")
+    print(f"   [+] Memories included: {len(selected_memories)}/{len(existing_memories)}")
+    print(f"   [ROCKET] Efficiency: {len(selected_memories)/len(existing_memories)*100:.1f}%")
     
     # 3. Cognitive decision layer
     iris_personality = {"empathy_level": 0.8, "support_mode": True}
@@ -353,9 +353,9 @@ def demonstrate_memory_muse_integration():
         user_query, selected_memories, iris_personality
     )
     
-    print(f"\n🎯 COGNITIVE DECISIONS:")
+    print(f"\n[TARGET] COGNITIVE DECISIONS:")
     print(f"   🎭 Emotion focus: {cognitive_decisions['primary_emotion_focus']}")
-    print(f"   🤝 Relational approach: {cognitive_decisions['relational_approach']}")
+    print(f"   [SHAKE] Relational approach: {cognitive_decisions['relational_approach']}")
     print(f"   🎨 Response tone: {cognitive_decisions['response_tone']}")
     
     # 4. Show final optimized prompt structure
@@ -372,41 +372,41 @@ def demonstrate_memory_muse_integration():
         cognitive_decisions, user_feedback, response_effectiveness
     )
     
-    print(f"\n🧠 REINFORCEMENT LEARNING:")
-    print(f"   📈 Pattern reinforcement: {learning_result['pattern_reinforcement']}")
-    print(f"   🎯 Cognitive adaptation: Applied")
-    print(f"   📊 System getting smarter: ✅")
+    print(f"\n[BRAIN] REINFORCEMENT LEARNING:")
+    print(f"   [CHART] Pattern reinforcement: {learning_result['pattern_reinforcement']}")
+    print(f"   [TARGET] Cognitive adaptation: Applied")
+    print(f"   [DATA] System getting smarter: [+]")
     
     # Show integration stats
     stats = cognitive_layer.get_integration_stats()
-    print(f"\n📊 INTEGRATION HEALTH:")
-    print(f"   🧠 Cognitive patterns learned: {stats['cognitive_memories']}")
-    print(f"   ⚡ System efficiency: {stats['integration_health']}")
-    print(f"   🎯 Perfect for EdT's needs: ✅")
+    print(f"\n[DATA] INTEGRATION HEALTH:")
+    print(f"   [BRAIN] Cognitive patterns learned: {stats['cognitive_memories']}")
+    print(f"   [BOLT] System efficiency: {stats['integration_health']}")
+    print(f"   [TARGET] Perfect for EdT's needs: [+]")
 
 
 def show_value_proposition():
     """Show the specific value for EdT's Memory Muse system."""
     
-    print("\n\n🎯 VALUE PROPOSITION FOR EDT'S MEMORY MUSE")
+    print("\n\n[TARGET] VALUE PROPOSITION FOR EDT'S MEMORY MUSE")
     print("=" * 60)
     
-    print("❌ WHAT WE'RE NOT DOING (EdT's concerns addressed):")
+    print("[-] WHAT WE'RE NOT DOING (EdT's concerns addressed):")
     print("   • NOT replacing his Mongo/Qdrant/GraphDB architecture")
     print("   • NOT compressing language/emotion into symbols") 
     print("   • NOT disrupting his 3-month launch timeline")
     print("   • NOT focusing on math/puzzles instead of relationships")
     print("   • NOT requiring massive architectural changes")
     
-    print("\n✅ WHAT WE'RE PROVIDING (EdT's wishes fulfilled):")
-    print("   • 🧠 Local decision-maker (his exact request)")
-    print("   • 🚀 LLM cognitive enhancement (more than auto-complete)")
-    print("   • 🎯 Thought/cognition layer between memory and response")
+    print("\n[+] WHAT WE'RE PROVIDING (EdT's wishes fulfilled):")
+    print("   • [BRAIN] Local decision-maker (his exact request)")
+    print("   • [ROCKET] LLM cognitive enhancement (more than auto-complete)")
+    print("   • [TARGET] Thought/cognition layer between memory and response")
     print("   • 📏 50% token reduction (8000 → 4000 average)")
     print("   • 🎭 Preserves emotion and language focus")
-    print("   • 🤝 Enhances interpersonal relationship handling")
-    print("   • 📈 Reinforcement learning for continuous improvement")
-    print("   • ⚡ Easy integration as middleware component")
+    print("   • [SHAKE] Enhances interpersonal relationship handling")
+    print("   • [CHART] Reinforcement learning for continuous improvement")
+    print("   • [BOLT] Easy integration as middleware component")
     
     print("\n🎊 PERFECT TIMING:")
     print("   • EdT is 3 months from launch")

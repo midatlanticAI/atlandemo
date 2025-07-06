@@ -94,7 +94,7 @@ def kindergarten_math(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Kindergarten math completed")
+    print(f"\n[+] Kindergarten math completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
     print(f"   Active symbols: {state['active_symbol_count']}")
@@ -214,14 +214,14 @@ def first_grade_math(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ First grade math completed")
+    print(f"\n[+] First grade math completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def test_grade_level_math(engine, grade_level):
     """Test mathematical understanding at specific grade level."""
-    print(f"\n\n🔍 TESTING {grade_level.upper()} LEVEL MATHEMATICS")
+    print(f"\n\n[SEARCH] TESTING {grade_level.upper()} LEVEL MATHEMATICS")
     print("=" * 50)
     
     if grade_level == "kindergarten":
@@ -274,9 +274,9 @@ def test_grade_level_math(engine, grade_level):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: {description}")
+            print(f"   [+] CORRECT: {description}")
         else:
-            print(f"   ❌ INCORRECT: {description}")
+            print(f"   [-] INCORRECT: {description}")
     
     return results
 
@@ -304,34 +304,34 @@ def run_proper_curriculum():
     end_time = time.time()
     
     # Analysis
-    print("\n\n📊 CURRICULUM RESULTS")
+    print("\n\n[DATA] CURRICULUM RESULTS")
     print("=" * 70)
     
     print(f"\n🎒 KINDERGARTEN LEVEL:")
     k_correct = sum(1 for _, success, _ in k_results if success)
     print(f"   Correct: {k_correct}/{len(k_results)} ({k_correct/len(k_results)*100:.1f}%)")
     for desc, success, activation in k_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n📚 FIRST GRADE LEVEL:")
     first_correct = sum(1 for _, success, _ in first_results if success)
     print(f"   Correct: {first_correct}/{len(first_results)} ({first_correct/len(first_results)*100:.1f}%)")
     for desc, success, activation in first_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     # Overall assessment
     total_correct = k_correct + first_correct
     total_tests = len(k_results) + len(first_results)
     
-    print(f"\n🎯 OVERALL CURRICULUM PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL CURRICULUM PERFORMANCE:")
     print(f"   Total correct: {total_correct}/{total_tests} ({total_correct/total_tests*100:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE STATE:")
+    print(f"\n[BRAIN] FINAL COGNITIVE STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active symbols: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
@@ -339,7 +339,7 @@ def run_proper_curriculum():
     
     # Assessment
     if total_correct/total_tests >= 0.9:
-        print(f"\n🎉 EXCELLENT: Proper curriculum achieves outstanding results!")
+        print(f"\n[PARTY] EXCELLENT: Proper curriculum achieves outstanding results!")
         print(f"   Step-by-step learning following natural development works!")
     elif total_correct/total_tests >= 0.7:
         print(f"\n👍 GOOD: Proper curriculum shows strong improvement")
@@ -348,9 +348,9 @@ def run_proper_curriculum():
         print(f"\n🤔 MODERATE: Some improvement with proper curriculum")
         print(f"   Foundation building helps but needs refinement")
     else:
-        print(f"\n⚠️ LIMITED: Curriculum approach needs adjustment")
+        print(f"\n[WARN] LIMITED: Curriculum approach needs adjustment")
     
-    print(f"\n📈 CURRICULUM ANALYSIS:")
+    print(f"\n[CHART] CURRICULUM ANALYSIS:")
     print(f"   Kindergarten mastery: {k_correct}/{len(k_results)} ({k_correct/len(k_results)*100:.1f}%)")
     print(f"   First grade mastery: {first_correct}/{len(first_results)} ({first_correct/len(first_results)*100:.1f}%)")
     

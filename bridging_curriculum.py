@@ -150,7 +150,7 @@ def bridge_to_first_grade(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Bridging curriculum completed")
+    print(f"\n[+] Bridging curriculum completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
     print(f"   Active symbols: {state['active_symbol_count']}")
@@ -158,7 +158,7 @@ def bridge_to_first_grade(engine):
 
 def test_bridging_success(engine):
     """Test the bridging curriculum effectiveness."""
-    print(f"\n\n🔍 TESTING BRIDGING SUCCESS")
+    print(f"\n\n[SEARCH] TESTING BRIDGING SUCCESS")
     print("=" * 50)
     
     test_cases = [
@@ -209,9 +209,9 @@ def test_bridging_success(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: {description}")
+            print(f"   [+] CORRECT: {description}")
         else:
-            print(f"   ❌ INCORRECT: {description}")
+            print(f"   [-] INCORRECT: {description}")
     
     return results
 
@@ -265,7 +265,7 @@ def run_bridging_curriculum():
     end_time = time.time()
     
     # Analysis
-    print("\n\n📊 BRIDGING CURRICULUM RESULTS")
+    print("\n\n[DATA] BRIDGING CURRICULUM RESULTS")
     print("=" * 70)
     
     # Categorize results
@@ -278,7 +278,7 @@ def run_bridging_curriculum():
     if k_results:
         print(f"   Correct: {k_correct}/{len(k_results)} ({k_correct/len(k_results)*100:.1f}%)")
         for desc, success, activation in k_results:
-            status = "✅" if success else "❌"
+            status = "[+]" if success else "[-]"
             print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n🌉 BRIDGE CONCEPTS:")
@@ -286,7 +286,7 @@ def run_bridging_curriculum():
     if bridge_results:
         print(f"   Correct: {bridge_correct}/{len(bridge_results)} ({bridge_correct/len(bridge_results)*100:.1f}%)")
         for desc, success, activation in bridge_results:
-            status = "✅" if success else "❌"
+            status = "[+]" if success else "[-]"
             print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n📚 FIRST GRADE STRATEGIES:")
@@ -294,20 +294,20 @@ def run_bridging_curriculum():
     if first_results:
         print(f"   Correct: {first_correct}/{len(first_results)} ({first_correct/len(first_results)*100:.1f}%)")
         for desc, success, activation in first_results:
-            status = "✅" if success else "❌"
+            status = "[+]" if success else "[-]"
             print(f"   {status} {desc}: {activation:.3f}")
     
     # Overall assessment
     total_correct = sum(1 for _, success, _ in results if success)
     total_tests = len(results)
     
-    print(f"\n🎯 OVERALL BRIDGING PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL BRIDGING PERFORMANCE:")
     print(f"   Total correct: {total_correct}/{total_tests} ({total_correct/total_tests*100:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE STATE:")
+    print(f"\n[BRAIN] FINAL COGNITIVE STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active symbols: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
@@ -315,10 +315,10 @@ def run_bridging_curriculum():
     
     # Assessment
     if total_correct/total_tests >= 0.9:
-        print(f"\n🎉 EXCELLENT: Bridging curriculum achieves outstanding results!")
+        print(f"\n[PARTY] EXCELLENT: Bridging curriculum achieves outstanding results!")
         print(f"   Systematic scaffolding approach works brilliantly!")
     elif total_correct/total_tests >= 0.8:
-        print(f"\n🌟 VERY GOOD: Bridging curriculum shows strong performance")
+        print(f"\n[STAR] VERY GOOD: Bridging curriculum shows strong performance")
         print(f"   Careful step-by-step progression is highly effective")
     elif total_correct/total_tests >= 0.7:
         print(f"\n👍 GOOD: Bridging curriculum shows solid improvement")
@@ -327,10 +327,10 @@ def run_bridging_curriculum():
         print(f"\n🤔 MODERATE: Some improvement with bridging")
         print(f"   Scaffolding helps but needs refinement")
     else:
-        print(f"\n⚠️ LIMITED: Bridging approach needs adjustment")
+        print(f"\n[WARN] LIMITED: Bridging approach needs adjustment")
     
     # Progression analysis
-    print(f"\n📈 BRIDGING ANALYSIS:")
+    print(f"\n[CHART] BRIDGING ANALYSIS:")
     if k_results:
         print(f"   Foundation mastery: {k_correct}/{len(k_results)} ({k_correct/len(k_results)*100:.1f}%)")
     if bridge_results:
@@ -344,18 +344,18 @@ def run_bridging_curriculum():
         bridge_rate = bridge_correct/len(bridge_results) if bridge_results else 0
         first_rate = first_correct/len(first_results) if first_results else 0
         
-        print(f"\n🔍 LEARNING PROGRESSION:")
+        print(f"\n[SEARCH] LEARNING PROGRESSION:")
         print(f"   Foundation → Bridge: {k_rate:.1%} → {bridge_rate:.1%}")
         print(f"   Bridge → Strategy: {bridge_rate:.1%} → {first_rate:.1%}")
         
         if bridge_rate > k_rate and first_rate > bridge_rate:
-            print(f"   🎯 IDEAL: Smooth progression across all levels")
+            print(f"   [TARGET] IDEAL: Smooth progression across all levels")
         elif bridge_rate > k_rate:
-            print(f"   📈 GOOD: Strong bridge building, strategy needs work")
+            print(f"   [CHART] GOOD: Strong bridge building, strategy needs work")
         elif first_rate > bridge_rate:
             print(f"   🤔 MIXED: Foundation to bridge gap, but strategy improvement")
         else:
-            print(f"   ⚠️ CHALLENGE: Difficulty with complexity transitions")
+            print(f"   [WARN] CHALLENGE: Difficulty with complexity transitions")
 
 
 if __name__ == "__main__":

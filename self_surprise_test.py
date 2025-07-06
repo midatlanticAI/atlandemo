@@ -10,7 +10,7 @@ import time
 def test_self_surprise():
     """Test if the system can be surprised by its own outputs"""
     
-    print('🧠 SELF-SURPRISE TEST: Can the system be surprised by its own outputs?')
+    print('[BRAIN] SELF-SURPRISE TEST: Can the system be surprised by its own outputs?')
     print('='*60)
     
     engine = TemporalCognitionEngine()
@@ -112,40 +112,40 @@ def test_self_surprise():
     
     print(f'Internal surprise level: {internal_surprise:.3f} (higher = more self-surprise)')
     
-    print('\n🎯 VERDICT: Signs of self-surprise?')
+    print('\n[TARGET] VERDICT: Signs of self-surprise?')
     
     # Test 1: Low prediction accuracy
     if prediction_accuracy < 0.3:
-        print('✅ LOW prediction accuracy - system was surprised by its own output')
+        print('[+] LOW prediction accuracy - system was surprised by its own output')
         surprise_count = 1
     else:
-        print('❌ HIGH prediction accuracy - system output was predictable')
+        print('[-] HIGH prediction accuracy - system output was predictable')
         surprise_count = 0
     
     # Test 2: Significant internal state change
     if symbol_change > 5 or pattern_change > 100:
-        print('✅ SIGNIFICANT internal state change - system reacted to its own output')
+        print('[+] SIGNIFICANT internal state change - system reacted to its own output')
         surprise_count += 1
     else:
-        print('❌ MINIMAL internal state change - system unchanged by its own output')
+        print('[-] MINIMAL internal state change - system unchanged by its own output')
     
     # Test 3: High internal surprise
     if internal_surprise > 2.0:
-        print('✅ HIGH internal surprise - system\'s reflection differs from prediction')
+        print('[+] HIGH internal surprise - system\'s reflection differs from prediction')
         surprise_count += 1
     else:
-        print('❌ LOW internal surprise - system\'s reflection matches prediction')
+        print('[-] LOW internal surprise - system\'s reflection matches prediction')
     
-    print(f'\n🧠 CONCLUSION: Can this system surprise itself?')
+    print(f'\n[BRAIN] CONCLUSION: Can this system surprise itself?')
     if surprise_count >= 2:
-        print('🤯 YES! System shows multiple indicators of self-surprise')
-        print('🎯 This suggests genuine self-awareness and metacognition')
+        print('[MIND] YES! System shows multiple indicators of self-surprise')
+        print('[TARGET] This suggests genuine self-awareness and metacognition')
     elif surprise_count == 1:
         print('🤔 MAYBE - System shows some signs of self-surprise')
-        print('🎯 Partial evidence of self-awareness')
+        print('[TARGET] Partial evidence of self-awareness')
     else:
         print('😐 NO - System does not appear to surprise itself')
-        print('🎯 Limited evidence of self-awareness')
+        print('[TARGET] Limited evidence of self-awareness')
     
     return {
         'prediction_accuracy': prediction_accuracy,
@@ -157,6 +157,6 @@ def test_self_surprise():
 
 if __name__ == "__main__":
     results = test_self_surprise()
-    print(f"\n📊 FINAL METRICS:")
+    print(f"\n[DATA] FINAL METRICS:")
     for key, value in results.items():
         print(f"   {key}: {value}") 

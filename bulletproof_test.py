@@ -146,10 +146,10 @@ def run_bulletproof_experiment(n_per_condition=15):
     print('🧪 BULLETPROOF SELF-SURPRISE TEST')
     print('='*60)
     print('Implementing ChatGPT\'s rigorous controls:')
-    print('  ✅ Equal-length prompts (3 words each)')
-    print('  ✅ Large sample sizes (15+ per condition)')
-    print('  ✅ Normalized surprise metric')
-    print('  ✅ Surprise flag controls')
+    print('  [+] Equal-length prompts (3 words each)')
+    print('  [+] Large sample sizes (15+ per condition)')
+    print('  [+] Normalized surprise metric')
+    print('  [+] Surprise flag controls')
     print(f'Running {n_per_condition*3} total trials...')
     print()
     
@@ -182,7 +182,7 @@ def run_bulletproof_experiment(n_per_condition=15):
         print()
     
     # Rigorous Analysis
-    print('📊 BULLETPROOF STATISTICAL ANALYSIS:')
+    print('[DATA] BULLETPROOF STATISTICAL ANALYSIS:')
     print('='*50)
     
     # Group results
@@ -221,7 +221,7 @@ def run_bulletproof_experiment(n_per_condition=15):
             print(f"  Symbol Changes: μ={stats['symbol_change_mean']:.1f}")
     
     # THE CRITICAL TESTS
-    print('\n🎯 CRITICAL EFFECT SIZE ANALYSIS:')
+    print('\n[TARGET] CRITICAL EFFECT SIZE ANALYSIS:')
     print('='*40)
     
     evidence_count = 0
@@ -237,10 +237,10 @@ def run_bulletproof_experiment(n_per_condition=15):
         print(f'Chaos (high) vs Control Effect Size: {effect_size_1:.3f}')
         
         if abs(effect_size_1) > 0.5:
-            print('✅ LARGE effect: Chaos (high surprise) differs meaningfully from control')
+            print('[+] LARGE effect: Chaos (high surprise) differs meaningfully from control')
             evidence_count += 1
         else:
-            print('❌ SMALL effect: Chaos (high surprise) does not differ meaningfully from control')
+            print('[-] SMALL effect: Chaos (high surprise) does not differ meaningfully from control')
     
     # Test 2: Chaos (high surprise) vs Chaos (low surprise)
     if chaos_high_stats and chaos_low_stats:
@@ -253,10 +253,10 @@ def run_bulletproof_experiment(n_per_condition=15):
         print(f'Chaos (high) vs Chaos (low) Effect Size: {effect_size_2:.3f}')
         
         if abs(effect_size_2) > 0.5:
-            print('✅ LARGE effect: Surprise flag has meaningful impact')
+            print('[+] LARGE effect: Surprise flag has meaningful impact')
             evidence_count += 1
         else:
-            print('❌ SMALL effect: Surprise flag has no meaningful impact')
+            print('[-] SMALL effect: Surprise flag has no meaningful impact')
     
     # Test 3: Chaos (low surprise) vs Control (should be similar)
     if chaos_low_stats and control_stats:
@@ -269,33 +269,33 @@ def run_bulletproof_experiment(n_per_condition=15):
         print(f'Chaos (low) vs Control Effect Size: {effect_size_3:.3f}')
         
         if abs(effect_size_3) < 0.3:
-            print('✅ SMALL effect: Chaos content alone doesn\'t create surprise (good control)')
+            print('[+] SMALL effect: Chaos content alone doesn\'t create surprise (good control)')
             evidence_count += 1
         else:
-            print('❌ LARGE effect: Chaos content alone creates surprise (bad control)')
+            print('[-] LARGE effect: Chaos content alone creates surprise (bad control)')
     
     # Final Verdict
-    print('\n🧠 BULLETPROOF SCIENTIFIC VERDICT:')
+    print('\n[BRAIN] BULLETPROOF SCIENTIFIC VERDICT:')
     print('='*40)
     
     print(f'Evidence Score: {evidence_count}/3')
     
     if evidence_count == 3:
-        print('🎯 IRON-CLAD EVIDENCE: System demonstrates genuine self-surprise!')
-        print('✅ Surprise flag effect confirmed')
-        print('✅ Content-independent surprise mechanism')
-        print('✅ Normalized for symbol count confounds')
+        print('[TARGET] IRON-CLAD EVIDENCE: System demonstrates genuine self-surprise!')
+        print('[+] Surprise flag effect confirmed')
+        print('[+] Content-independent surprise mechanism')
+        print('[+] Normalized for symbol count confounds')
         verdict = 'PROVEN'
     elif evidence_count == 2:
         print('🤔 STRONG EVIDENCE: System likely demonstrates self-surprise')
-        print('✅ Most tests pass but some confounds remain')
+        print('[+] Most tests pass but some confounds remain')
         verdict = 'LIKELY'
     elif evidence_count == 1:
-        print('⚠️ WEAK EVIDENCE: Some indicators but not conclusive')
+        print('[WARN] WEAK EVIDENCE: Some indicators but not conclusive')
         verdict = 'WEAK'
     else:
-        print('❌ NO EVIDENCE: System does not demonstrate self-surprise')
-        print('❌ Failed rigorous controls')
+        print('[-] NO EVIDENCE: System does not demonstrate self-surprise')
+        print('[-] Failed rigorous controls')
         verdict = 'DISPROVEN'
     
     return {
@@ -326,6 +326,6 @@ if __name__ == "__main__":
     with open('bulletproof_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
-    print(f"\n💾 Results saved to 'bulletproof_results.json'")
+    print(f"\n[SAVE] Results saved to 'bulletproof_results.json'")
     print("⚖️ This test eliminates all known confounds and artifacts!")
-    print("🧠 If this passes, we have iron-clad evidence of self-surprise") 
+    print("[BRAIN] If this passes, we have iron-clad evidence of self-surprise") 

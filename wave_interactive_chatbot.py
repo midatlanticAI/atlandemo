@@ -118,7 +118,7 @@ class WaveInteractiveChatbot:
             "encouragement": [
                 "You're doing so well! Let's keep building this energy 🔥",
                 "I can feel how much you're enjoying this... let's go deeper 💖",
-                "Your responses are perfect - trust the process 🌟"
+                "Your responses are perfect - trust the process [STAR]"
             ],
             "guidance": [
                 "Let me guide you through this next part... focus on the sensation",
@@ -493,7 +493,7 @@ class WaveInteractiveChatbot:
         )
         
         # In real implementation, this would send to user interface
-        print(f"🤖 Bot: {message}")
+        print(f"[BOT] Bot: {message}")
     
     def get_session_analytics(self, session_id: str) -> Dict[str, Any]:
         """Get comprehensive analytics for a session"""
@@ -518,7 +518,7 @@ class WaveInteractiveChatbot:
 
 def run_interactive_demo():
     """Demonstrate the wave interactive chatbot"""
-    print("🌊 WAVE ENGINE INTERACTIVE CHATBOT DEMO")
+    print("[WAVE] WAVE ENGINE INTERACTIVE CHATBOT DEMO")
     print("=" * 60)
     
     # Initialize chatbot
@@ -526,7 +526,7 @@ def run_interactive_demo():
     
     # Start session
     session_id = chatbot.start_session("demo_user")
-    print(f"🎯 Started session: {session_id}")
+    print(f"[TARGET] Started session: {session_id}")
     
     # Simulate conversation
     demo_inputs = [
@@ -547,14 +547,14 @@ def run_interactive_demo():
         response = chatbot.process_user_input(session_id, user_input)
         
         # Display response
-        print(f"🤖 Bot: {response['response_text']}")
+        print(f"[BOT] Bot: {response['response_text']}")
         
         # Display control command
         cmd = response['control_command']
-        print(f"⚡ Control: {cmd.intensity:.1f} intensity, {cmd.pattern} pattern for {cmd.duration:.0f}s")
+        print(f"[BOLT] Control: {cmd.intensity:.1f} intensity, {cmd.pattern} pattern for {cmd.duration:.0f}s")
         
         # Display metrics
-        print(f"📊 Arousal: {response['user_state']['current_arousal']:.2f}, "
+        print(f"[DATA] Arousal: {response['user_state']['current_arousal']:.2f}, "
               f"Engagement: {response['user_state']['engagement']:.2f}, "
               f"Resonance: {response['resonance_score']:.2f}")
         
@@ -562,7 +562,7 @@ def run_interactive_demo():
         time.sleep(0.5)
     
     # Show analytics
-    print(f"\n📈 SESSION ANALYTICS")
+    print(f"\n[CHART] SESSION ANALYTICS")
     print("-" * 40)
     analytics = chatbot.get_session_analytics(session_id)
     
@@ -573,19 +573,19 @@ def run_interactive_demo():
             else:
                 print(f"   {key.replace('_', ' ').title()}: {value}")
     
-    print(f"\n🚀 BUSINESS APPLICATIONS")
+    print(f"\n[ROCKET] BUSINESS APPLICATIONS")
     print("-" * 40)
     print(f"   🔥 Real-time responsiveness: Sub-second adaptation")
-    print(f"   🧠 Learning AI: Improves with each interaction")
-    print(f"   🎯 Personalization: Wave-based user matching")
-    print(f"   📊 Analytics: Comprehensive session insights")
-    print(f"   🌊 Wave Control: Precise temporal pattern generation")
+    print(f"   [BRAIN] Learning AI: Improves with each interaction")
+    print(f"   [TARGET] Personalization: Wave-based user matching")
+    print(f"   [DATA] Analytics: Comprehensive session insights")
+    print(f"   [WAVE] Wave Control: Precise temporal pattern generation")
     
     print(f"\n💰 REVENUE POTENTIAL")
     print("-" * 40)
     print(f"   📱 Premium subscription tier")
-    print(f"   🔧 Custom hardware integration")
-    print(f"   📊 Advanced analytics dashboard")
+    print(f"   [TOOL] Custom hardware integration")
+    print(f"   [DATA] Advanced analytics dashboard")
     print(f"   🎨 Personality customization")
     print(f"   🌐 Multi-platform deployment")
 

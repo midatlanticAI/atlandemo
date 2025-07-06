@@ -51,8 +51,8 @@ class EnhancedWaveEngine:
         math_expert = MathExpertModule()
         self.expert_registry.register_expert(math_expert)
         
-        print("🧠 Enhanced Wave Engine initialized with expert modules")
-        print(f"   ✅ {len(self.expert_registry.experts)} experts registered")
+        print("[BRAIN] Enhanced Wave Engine initialized with expert modules")
+        print(f"   [+] {len(self.expert_registry.experts)} experts registered")
     
     def process_query(self, query: str, context: Dict[str, Any] = None, 
                      use_wave_cognition: bool = True, 

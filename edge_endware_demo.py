@@ -22,7 +22,7 @@ class EdgeEndwareDemo:
                 'reasoning': 'Local pattern recognition, anomaly detection'
             },
             'edge_layer': {
-                'name': '🔧 Smart Equipment',
+                'name': '[TOOL] Smart Equipment',
                 'devices': ['Industrial Robot', 'Smart HVAC', 'Medical Device', 'Autonomous Vehicle'],
                 'specs': '58KB footprint, ~10MB RAM, ARM/x86',
                 'languages': ['Rust', 'C++', 'Go'],
@@ -55,16 +55,16 @@ class EdgeEndwareDemo:
         """Print the full spectrum banner"""
         banner = """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                    🌊 ATLAN WAVE ENGINE SPECTRUM 🌊                          ║
+║                    [WAVE] ATLAN WAVE ENGINE SPECTRUM [WAVE]                          ║
 ║              From Smart Sensors to Cloud Infrastructure                      ║
 ║                                                                              ║
-║  📟 Sensors → 🔧 Equipment → 🌐 Gateways → ☁️ Fog → 🌩️ Cloud              ║
+║  📟 Sensors → [TOOL] Equipment → 🌐 Gateways → ☁️ Fog → 🌩️ Cloud              ║
 ║                                                                              ║
 ║            "Reasoning Everywhere, From 1KB RAM to Infinite Scale"           ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
         """
         print(banner)
-        print("🎯 Demonstrating universal reasoning deployment across all computing layers")
+        print("[TARGET] Demonstrating universal reasoning deployment across all computing layers")
         print("=" * 80)
         
     def demonstrate_sensor_layer(self):
@@ -97,8 +97,8 @@ class EdgeEndwareDemo:
         for scenario in scenarios:
             print(f"  {scenario['device']}")
             print(f"    💭 Reasoning: {scenario['reasoning']}")
-            print(f"    💾 Memory: {scenario['footprint']}")
-            print(f"    🎯 Decision: {scenario['decision']}")
+            print(f"    [SAVE] Memory: {scenario['footprint']}")
+            print(f"    [TARGET] Decision: {scenario['decision']}")
             print()
     
     def demonstrate_edge_layer(self):
@@ -109,7 +109,7 @@ class EdgeEndwareDemo:
         
         scenarios = [
             {
-                'device': '🤖 Industrial Robot',
+                'device': '[BOT] Industrial Robot',
                 'reasoning': 'Safety-critical motion planning',
                 'coordination': 'Communicates with 12 sensors + central controller',
                 'decision': 'Emergency stop: Human detected in work zone'
@@ -130,9 +130,9 @@ class EdgeEndwareDemo:
         
         for scenario in scenarios:
             print(f"  {scenario['device']}")
-            print(f"    🧠 Logic: {scenario['reasoning']}")
-            print(f"    🔗 Network: {scenario['coordination']}")
-            print(f"    ⚡ Action: {scenario['decision']}")
+            print(f"    [BRAIN] Logic: {scenario['reasoning']}")
+            print(f"    [LINK] Network: {scenario['coordination']}")
+            print(f"    [BOLT] Action: {scenario['decision']}")
             print()
     
     def demonstrate_gateway_layer(self):
@@ -164,8 +164,8 @@ class EdgeEndwareDemo:
         
         for scenario in scenarios:
             print(f"  {scenario['device']}")
-            print(f"    🎯 Purpose: {scenario['reasoning']}")
-            print(f"    📊 Scale: {scenario['scale']}")
+            print(f"    [TARGET] Purpose: {scenario['reasoning']}")
+            print(f"    [DATA] Scale: {scenario['scale']}")
             print(f"    🔄 Decision: {scenario['decision']}")
             print()
     
@@ -199,8 +199,8 @@ class EdgeEndwareDemo:
         for scenario in scenarios:
             print(f"  {scenario['device']}")
             print(f"    🌐 Function: {scenario['reasoning']}")
-            print(f"    🎯 Scope: {scenario['scope']}")
-            print(f"    🚀 Action: {scenario['decision']}")
+            print(f"    [TARGET] Scope: {scenario['scope']}")
+            print(f"    [ROCKET] Action: {scenario['decision']}")
             print()
     
     def demonstrate_cloud_layer(self):
@@ -223,7 +223,7 @@ class EdgeEndwareDemo:
                 'decision': 'Auto-scaling: Deploy reasoning pods to handle spike'
             },
             {
-                'device': '⚡ Serverless Functions',
+                'device': '[BOLT] Serverless Functions',
                 'reasoning': 'Event-driven logic processing',
                 'scale': 'Elastic scaling, pay-per-execution',
                 'decision': 'Cold start optimization: Pre-warm reasoning modules'
@@ -233,8 +233,8 @@ class EdgeEndwareDemo:
         for scenario in scenarios:
             print(f"  {scenario['device']}")
             print(f"    🌍 Mission: {scenario['reasoning']}")
-            print(f"    📈 Scale: {scenario['scale']}")
-            print(f"    ⚡ Decision: {scenario['decision']}")
+            print(f"    [CHART] Scale: {scenario['scale']}")
+            print(f"    [BOLT] Decision: {scenario['decision']}")
             print()
     
     def show_communication_flows(self):
@@ -250,7 +250,7 @@ class EdgeEndwareDemo:
             },
             {
                 'name': 'Predictive Maintenance',
-                'flow': '⚙️ Machine Sensor → 🤖 Robot → 🏭 Factory → 🏢 Regional → ☁️ Analytics Cloud',
+                'flow': '⚙️ Machine Sensor → [BOT] Robot → 🏭 Factory → 🏢 Regional → ☁️ Analytics Cloud',
                 'reasoning': 'Vibration anomaly → Robot diagnosis → Factory scheduling → Regional parts → Global optimization'
             },
             {
@@ -273,22 +273,22 @@ class EdgeEndwareDemo:
     
     def show_technical_advantages(self):
         """Show technical advantages of the approach"""
-        print(f"\n🏆 TECHNICAL ADVANTAGES")
+        print(f"\n[TROPHY] TECHNICAL ADVANTAGES")
         print("-" * 50)
         
         advantages = [
             {
-                'feature': '🎯 Universal Footprint',
+                'feature': '[TARGET] Universal Footprint',
                 'benefit': '58KB core runs identically everywhere',
                 'impact': 'Same reasoning logic from sensor to cloud'
             },
             {
-                'feature': '⚡ Edge Intelligence',
+                'feature': '[BOLT] Edge Intelligence',
                 'benefit': 'Decisions made locally, no cloud dependency',
                 'impact': 'Sub-millisecond response, works offline'
             },
             {
-                'feature': '🔗 Seamless Integration',
+                'feature': '[LINK] Seamless Integration',
                 'benefit': 'Native support in 7+ languages',
                 'impact': 'Integrate into any existing tech stack'
             },
@@ -360,10 +360,10 @@ class EdgeEndwareDemo:
             total_market += size_num
             
             print(f"  {market['sector']}: {market['size']}")
-            print(f"    🎯 {market['opportunity']}")
+            print(f"    [TARGET] {market['opportunity']}")
             print()
         
-        print(f"  📊 Total Addressable Market: ${total_market/1000:.1f}T+")
+        print(f"  [DATA] Total Addressable Market: ${total_market/1000:.1f}T+")
     
     def run_full_demo(self):
         """Run the complete endware demo"""
@@ -385,9 +385,9 @@ class EdgeEndwareDemo:
         # Market opportunities
         self.show_market_opportunities()
         
-        print(f"\n🎉 SPECTRUM DEMONSTRATION COMPLETE!")
-        print(f"🌊 Atlan Wave Engine: Reasoning everywhere, from 1KB to infinite scale")
-        print(f"🚀 Ready to revolutionize distributed intelligence")
+        print(f"\n[PARTY] SPECTRUM DEMONSTRATION COMPLETE!")
+        print(f"[WAVE] Atlan Wave Engine: Reasoning everywhere, from 1KB to infinite scale")
+        print(f"[ROCKET] Ready to revolutionize distributed intelligence")
 
 
 def main():

@@ -11,7 +11,7 @@ from src.temporal_cognition import TemporalCognitionEngine
 
 def diagnose_learning_gaps(engine):
     """Diagnose specific learning gaps and readiness levels."""
-    print("🔍 DIAGNOSTIC ASSESSMENT")
+    print("[SEARCH] DIAGNOSTIC ASSESSMENT")
     print("=" * 50)
     
     diagnostic_tests = [
@@ -37,7 +37,7 @@ def diagnose_learning_gaps(engine):
     
     results = {}
     for level_name, tests in diagnostic_tests:
-        print(f"\n📊 {level_name} Level Assessment")
+        print(f"\n[DATA] {level_name} Level Assessment")
         correct = 0
         total = len(tests)
         
@@ -53,9 +53,9 @@ def diagnose_learning_gaps(engine):
             success = abs(activation) > 0.5
             if success:
                 correct += 1
-                print(f"   ✅ {description}: {activation:.3f}")
+                print(f"   [+] {description}: {activation:.3f}")
             else:
-                print(f"   ❌ {description}: {activation:.3f}")
+                print(f"   [-] {description}: {activation:.3f}")
         
         percentage = correct / total * 100
         results[level_name] = (correct, total, percentage)
@@ -66,7 +66,7 @@ def diagnose_learning_gaps(engine):
 
 def targeted_remediation(engine, gaps):
     """Provide targeted remediation for identified gaps."""
-    print("\n\n🎯 TARGETED REMEDIATION")
+    print("\n\n[TARGET] TARGETED REMEDIATION")
     print("=" * 50)
     
     # If foundation is weak, focus there
@@ -139,7 +139,7 @@ def targeted_remediation(engine, gaps):
 
 def gradual_complexity_increase(engine):
     """Gradually increase complexity based on demonstrated mastery."""
-    print("\n\n📈 GRADUAL COMPLEXITY INCREASE")
+    print("\n\n[CHART] GRADUAL COMPLEXITY INCREASE")
     print("=" * 50)
     
     # Level 1: Single digit mastery
@@ -163,9 +163,9 @@ def gradual_complexity_increase(engine):
         activation = result['activation_field'].get(expected, 0)
         if abs(activation) > 0.5:
             level1_success += 1
-            print(f"   ✅ {description}: {activation:.3f}")
+            print(f"   [+] {description}: {activation:.3f}")
         else:
-            print(f"   ❌ {description}: {activation:.3f}")
+            print(f"   [-] {description}: {activation:.3f}")
     
     level1_rate = level1_success / len(level1_problems)
     print(f"\nLevel 1 Mastery: {level1_success}/{len(level1_problems)} ({level1_rate*100:.1f}%)")
@@ -192,9 +192,9 @@ def gradual_complexity_increase(engine):
             activation = result['activation_field'].get(expected, 0)
             if abs(activation) > 0.5:
                 level2_success += 1
-                print(f"   ✅ {description}: {activation:.3f}")
+                print(f"   [+] {description}: {activation:.3f}")
             else:
-                print(f"   ❌ {description}: {activation:.3f}")
+                print(f"   [-] {description}: {activation:.3f}")
         
         level2_rate = level2_success / len(level2_problems)
         print(f"\nLevel 2 Mastery: {level2_success}/{len(level2_problems)} ({level2_rate*100:.1f}%)")
@@ -206,7 +206,7 @@ def gradual_complexity_increase(engine):
 
 def run_adaptive_system():
     """Run the complete adaptive learning system."""
-    print("🧠 ADAPTIVE LEARNING SYSTEM")
+    print("[BRAIN] ADAPTIVE LEARNING SYSTEM")
     print("=" * 60)
     print("Identifying gaps and building systematic foundations")
     print("=" * 60)
@@ -243,7 +243,7 @@ def run_adaptive_system():
     gaps_after = diagnose_learning_gaps(engine)
     
     # Show improvement
-    print("\n📊 LEARNING PROGRESS")
+    print("\n[DATA] LEARNING PROGRESS")
     print("=" * 30)
     for level in ["Foundation", "Automaticity", "Strategy"]:
         before = gaps[level][2]
@@ -256,23 +256,23 @@ def run_adaptive_system():
     
     # Final assessment
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL ADAPTIVE STATE:")
+    print(f"\n[BRAIN] FINAL ADAPTIVE STATE:")
     print(f"   Experiences: {final_state['total_experiences']}")
     print(f"   Active concepts: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
     print(f"   Dream cycles: {final_state['replay_cycles']}")
     
-    print(f"\n🎯 ADAPTIVE LEARNING RESULTS:")
+    print(f"\n[TARGET] ADAPTIVE LEARNING RESULTS:")
     overall_improvement = sum(gaps_after[level][2] - gaps[level][2] for level in gaps) / len(gaps)
     print(f"   Average improvement: {overall_improvement:+.1f}%")
     print(f"   Level 1 mastery: {level1_rate*100:.1f}%")
     print(f"   Level 2 readiness: {level2_rate*100:.1f}%")
     
     if overall_improvement > 10:
-        print(f"\n🎉 Significant learning progress achieved!")
+        print(f"\n[PARTY] Significant learning progress achieved!")
         print(f"   Adaptive remediation successfully addressed gaps!")
     elif overall_improvement > 0:
-        print(f"\n📈 Positive learning progress detected!")
+        print(f"\n[CHART] Positive learning progress detected!")
         print(f"   Continue systematic foundation building!")
     else:
         print(f"\n🤔 Learning progress limited.")

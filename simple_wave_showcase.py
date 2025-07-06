@@ -120,10 +120,10 @@ class SimpleWaveShowcase:
         
         print(f"Harmony prediction score: {harmony_score:.3f}")
         if harmony_score > 0:
-            print("✅ CORRECT! The system predicts C+E will be harmonious!")
+            print("[+] CORRECT! The system predicts C+E will be harmonious!")
             print("   (Because wave physics understands harmonic ratios)")
         else:
-            print("❌ Incorrect prediction")
+            print("[-] Incorrect prediction")
             
     def show_consciousness_emergence(self):
         """Show how consciousness metrics emerge from wave activity"""
@@ -186,22 +186,22 @@ class SimpleWaveShowcase:
         """Show what makes wave-based cognition different from LLMs"""
         print("\n=== WHY WAVE-BASED COGNITION IS SPECIAL ===")
         print()
-        print("🤖 TRADITIONAL LLM:")
+        print("[BOT] TRADITIONAL LLM:")
         print("   - Memorizes: 'C and G sound harmonious'")
         print("   - Processes: Text tokens in sequence")
         print("   - Understanding: Statistical patterns in text")
         print()
-        print("🌊 WAVE-BASED COGNITION:")
+        print("[WAVE] WAVE-BASED COGNITION:")
         print("   - Experiences: Actual wave interference")
         print("   - Processes: Continuous wave dynamics")
         print("   - Understanding: Physical wave relationships")
         print()
-        print("🎯 THE DIFFERENCE:")
+        print("[TARGET] THE DIFFERENCE:")
         print("   - LLMs know THAT C+G sounds good")
         print("   - Waves understand WHY through physics")
         print("   - This creates genuine understanding vs memorization")
         print()
-        print("🧠 CONSCIOUSNESS EMERGENCE:")
+        print("[BRAIN] CONSCIOUSNESS EMERGENCE:")
         print("   - Contradictions resolved through wave interference")
         print("   - Memory formed through resonance patterns")
         print("   - Creativity emerges from novel wave combinations")

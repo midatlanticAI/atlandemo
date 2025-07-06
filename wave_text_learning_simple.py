@@ -203,7 +203,7 @@ class SimpleWaveTextLearner:
 
 def demo_simple_wave_learning():
     """Demo the simple wave learning system"""
-    print("🌊 SIMPLE WAVE TEXT LEARNING DEMO 🌊")
+    print("[WAVE] SIMPLE WAVE TEXT LEARNING DEMO [WAVE]")
     print("=" * 50)
     
     learner = SimpleWaveTextLearner()
@@ -222,9 +222,9 @@ def demo_simple_wave_learning():
     result = learner.learn_from_text(sample_text, "ai_sample")
     
     if result['success']:
-        print(f"✅ Processed {result['sentences_processed']} sentences")
+        print(f"[+] Processed {result['sentences_processed']} sentences")
         print(f"📖 Learned {result['concepts_learned']} concepts")
-        print("🎯 Top concepts:")
+        print("[TARGET] Top concepts:")
         for concept_info in result['top_concepts']:
             print(f"  - {concept_info['concept']}: {concept_info['activation']:.3f}")
     
@@ -243,7 +243,7 @@ def demo_simple_wave_learning():
     print(f"Generated: {generated}")
     
     # Show knowledge summary
-    print(f"\n🔍 Knowledge Summary:")
+    print(f"\n[SEARCH] Knowledge Summary:")
     summary = learner.get_knowledge_summary()
     print(f"Total concepts: {summary['total_concepts']}")
     print(f"Documents learned: {summary['documents_learned']}")

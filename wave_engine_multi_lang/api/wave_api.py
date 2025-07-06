@@ -277,7 +277,7 @@ def wave_detect_contradictions(statements: List[str]) -> bool:
 # Main entry point
 def main():
     """Demo the Wave API"""
-    print("🌊 Universal Wave Engine API Demo")
+    print("[WAVE] Universal Wave Engine API Demo")
     print("=" * 50)
     
     api = UniversalWaveAPI()

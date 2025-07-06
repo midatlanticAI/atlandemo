@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ATLAN BIOINTELLIGENCE - COMMUNICATION REGION
-🧠 Communication processing region that flows through central brain
+[BRAIN] Communication processing region that flows through central brain
 """
 
 from typing import Dict, Any, Optional, List
@@ -9,7 +9,7 @@ from core.agent import AtlanAgent
 
 class CommunicationRegion:
     """
-    🧠 Communication specialized brain region
+    [BRAIN] Communication specialized brain region
     ALL processing flows through central AtlanAgent - no bypassing allowed!
     """
     
@@ -24,7 +24,7 @@ class CommunicationRegion:
         
     def process_through_brain(self, query: str, brain_result: Dict[str, Any], context: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        🧠 Process communication query through central brain
+        [BRAIN] Process communication query through central brain
         
         Args:
             query: Communication query to process
@@ -87,7 +87,7 @@ class CommunicationRegion:
     
     def _analyze_communication_need(self, query: str, mood_score: float) -> Dict[str, Any]:
         """
-        🧠 Analyze communication needs and respond appropriately
+        [BRAIN] Analyze communication needs and respond appropriately
         
         Args:
             query: Communication query

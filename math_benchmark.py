@@ -24,8 +24,8 @@ class MathBenchmark:
     def run_math_benchmark(self, questions_per_domain=20):
         """Run comprehensive mathematical benchmark"""
         print(f"🧮 MATHBENCH - COMPREHENSIVE MATHEMATICAL REASONING BENCHMARK")
-        print(f"🎯 Testing Enhanced Wave Engine mathematical capabilities")
-        print(f"📊 {questions_per_domain} questions per domain")
+        print(f"[TARGET] Testing Enhanced Wave Engine mathematical capabilities")
+        print(f"[DATA] {questions_per_domain} questions per domain")
         print("=" * 70)
         
         start_time = time.time()
@@ -68,21 +68,21 @@ class MathBenchmark:
                 
                 if is_correct:
                     domain_correct += 1
-                    print(f"    ✅ Correct: {answer}")
+                    print(f"    [+] Correct: {answer}")
                 else:
-                    print(f"    ❌ Wrong: {answer} (Expected: {expected_answer})")
+                    print(f"    [-] Wrong: {answer} (Expected: {expected_answer})")
                 
                 # Show confidence and problem type
                 if expert_response:
                     confidence = expert_response.confidence
                     problem_type = expert_response.metadata.get('problem_type', 'unknown')
-                    print(f"    🎯 Confidence: {confidence:.2f}, Type: {problem_type}")
+                    print(f"    [TARGET] Confidence: {confidence:.2f}, Type: {problem_type}")
             
             # Domain summary
             domain_accuracy = domain_correct / domain_total
             avg_time = sum(domain_times) / len(domain_times)
             
-            print(f"\n  📊 {domain_name.upper()} RESULTS:")
+            print(f"\n  [DATA] {domain_name.upper()} RESULTS:")
             print(f"    Correct: {domain_correct}/{domain_total} ({domain_accuracy:.1%})")
             print(f"    Average Time: {avg_time:.3f}s")
             print(f"    Questions/sec: {1/avg_time:.1f}")
@@ -104,7 +104,7 @@ class MathBenchmark:
         total_time = end_time - start_time
         overall_accuracy = self.total_correct / self.total_questions
         
-        print(f"\n🏆 MATHBENCH OVERALL RESULTS")
+        print(f"\n[TROPHY] MATHBENCH OVERALL RESULTS")
         print("=" * 50)
         print(f"  Total Questions: {self.total_questions}")
         print(f"  Total Correct: {self.total_correct}")
@@ -113,7 +113,7 @@ class MathBenchmark:
         print(f"  Questions/second: {self.total_questions/total_time:.1f}")
         
         # Domain breakdown
-        print(f"\n📊 DOMAIN BREAKDOWN:")
+        print(f"\n[DATA] DOMAIN BREAKDOWN:")
         for domain, results in self.domain_results.items():
             accuracy = results['accuracy']
             print(f"  {domain:20}: {accuracy:.3f} ({accuracy:.1%})")
@@ -384,7 +384,7 @@ class MathBenchmark:
     
     def analyze_performance(self):
         """Analyze performance patterns"""
-        print(f"\n🔍 PERFORMANCE ANALYSIS:")
+        print(f"\n[SEARCH] PERFORMANCE ANALYSIS:")
         
         # Find strongest and weakest domains
         accuracies = [(domain, results['accuracy']) for domain, results in self.domain_results.items()]
@@ -393,16 +393,16 @@ class MathBenchmark:
         best_domain, best_acc = accuracies[0]
         worst_domain, worst_acc = accuracies[-1]
         
-        print(f"  🏆 Strongest Domain: {best_domain} ({best_acc:.1%})")
-        print(f"  🎯 Weakest Domain: {worst_domain} ({worst_acc:.1%})")
-        print(f"  📈 Performance Range: {(best_acc - worst_acc)*100:.1f} percentage points")
+        print(f"  [TROPHY] Strongest Domain: {best_domain} ({best_acc:.1%})")
+        print(f"  [TARGET] Weakest Domain: {worst_domain} ({worst_acc:.1%})")
+        print(f"  [CHART] Performance Range: {(best_acc - worst_acc)*100:.1f} percentage points")
         
         # Speed analysis
         speeds = [(domain, 1/results['avg_time']) for domain, results in self.domain_results.items()]
         speeds.sort(key=lambda x: x[1], reverse=True)
         
         fastest_domain, fastest_speed = speeds[0]
-        print(f"  ⚡ Fastest Domain: {fastest_domain} ({fastest_speed:.1f} q/s)")
+        print(f"  [BOLT] Fastest Domain: {fastest_domain} ({fastest_speed:.1f} q/s)")
         
         # Overall assessment
         overall_acc = self.total_correct / self.total_questions
@@ -421,16 +421,16 @@ class MathBenchmark:
 def main():
     """Run the MathBench benchmark"""
     print("🧮 MATHBENCH - MATHEMATICAL REASONING BENCHMARK")
-    print("🎯 Comprehensive evaluation of Enhanced Wave Engine math capabilities")
+    print("[TARGET] Comprehensive evaluation of Enhanced Wave Engine math capabilities")
     print("=" * 70)
     
     benchmark = MathBenchmark()
     results = benchmark.run_math_benchmark(questions_per_domain=15)
     
-    print(f"\n🎉 MATHBENCH COMPLETE!")
-    print(f"📊 Overall Performance: {results['overall_accuracy']:.1%}")
-    print(f"⚡ Processing Speed: {results['total_questions']/results['processing_time']:.1f} q/s")
-    print(f"🧠 Mathematical Expert Module: {'PASSED' if results['overall_accuracy'] >= 0.75 else 'NEEDS WORK'}")
+    print(f"\n[PARTY] MATHBENCH COMPLETE!")
+    print(f"[DATA] Overall Performance: {results['overall_accuracy']:.1%}")
+    print(f"[BOLT] Processing Speed: {results['total_questions']/results['processing_time']:.1f} q/s")
+    print(f"[BRAIN] Mathematical Expert Module: {'PASSED' if results['overall_accuracy'] >= 0.75 else 'NEEDS WORK'}")
 
 
 if __name__ == "__main__":

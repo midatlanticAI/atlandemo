@@ -11,7 +11,7 @@ from src.temporal_cognition import TemporalCognitionEngine
 
 def teach_number_sense_foundations(engine):
     """Phase 1: Deep number sense - the foundation of all mathematics."""
-    print("🎯 PHASE 1: BUILDING DEEP NUMBER SENSE")
+    print("[TARGET] PHASE 1: BUILDING DEEP NUMBER SENSE")
     print("=" * 60)
     
     # Subitizing mastery - instant recognition
@@ -70,7 +70,7 @@ def teach_number_sense_foundations(engine):
         )
         time.sleep(0.02)
     
-    print(f"\n✅ Number sense foundations complete")
+    print(f"\n[+] Number sense foundations complete")
 
 
 def teach_addition_mastery(engine):
@@ -162,12 +162,12 @@ def teach_addition_mastery(engine):
         )
         time.sleep(0.02)
     
-    print(f"\n✅ Addition mastery complete")
+    print(f"\n[+] Addition mastery complete")
 
 
 def teach_strategic_thinking(engine):
     """Phase 3: Strategic thinking - counting on, decomposition, patterns."""
-    print("\n\n🧠 PHASE 3: STRATEGIC MATHEMATICAL THINKING")
+    print("\n\n[BRAIN] PHASE 3: STRATEGIC MATHEMATICAL THINKING")
     print("=" * 60)
     
     # Counting on strategy
@@ -235,7 +235,7 @@ def teach_strategic_thinking(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Strategic thinking complete")
+    print(f"\n[+] Strategic thinking complete")
 
 
 def teach_subtraction_mastery(engine):
@@ -296,7 +296,7 @@ def teach_subtraction_mastery(engine):
         )
         time.sleep(0.03)
     
-    print(f"\n✅ Subtraction mastery complete")
+    print(f"\n[+] Subtraction mastery complete")
 
 
 def teach_number_patterns(engine):
@@ -361,7 +361,7 @@ def teach_number_patterns(engine):
         )
         time.sleep(0.02)
     
-    print(f"\n✅ Number patterns complete")
+    print(f"\n[+] Number patterns complete")
 
 
 def conduct_journeyman_assessment(engine):
@@ -396,7 +396,7 @@ def conduct_journeyman_assessment(engine):
     category_results = {}
     
     for category_name, tests in test_categories:
-        print(f"\n🔍 {category_name.upper()} ASSESSMENT")
+        print(f"\n[SEARCH] {category_name.upper()} ASSESSMENT")
         print("-" * 40)
         
         category_correct = 0
@@ -426,9 +426,9 @@ def conduct_journeyman_assessment(engine):
             success = abs(expected_activation) > 0.5
             if success:
                 category_correct += 1
-                print(f"   ✅ CORRECT: {description}")
+                print(f"   [+] CORRECT: {description}")
             else:
-                print(f"   ❌ INCORRECT: {description}")
+                print(f"   [-] INCORRECT: {description}")
             
             all_results.append((f"{category_name}: {description}", success, expected_activation))
         
@@ -440,7 +440,7 @@ def conduct_journeyman_assessment(engine):
 
 def run_master_curriculum():
     """Run the complete master mathematical curriculum."""
-    print("🎯 MASTER MATHEMATICAL TEACHER")
+    print("[TARGET] MASTER MATHEMATICAL TEACHER")
     print("=" * 80)
     print("The complete journey from foundations to journeyman mathematical mastery")
     print("Following nature's own curriculum for mathematical understanding")
@@ -479,19 +479,19 @@ def run_master_curriculum():
     total_tests = len(all_results)
     overall_percentage = total_correct / total_tests * 100
     
-    print(f"\n📊 COMPREHENSIVE RESULTS:")
+    print(f"\n[DATA] COMPREHENSIVE RESULTS:")
     for category, (correct, total) in category_results.items():
         percentage = correct / total * 100
-        status = "🎯" if percentage >= 80 else "📈" if percentage >= 60 else "⚠️"
+        status = "[TARGET]" if percentage >= 80 else "[CHART]" if percentage >= 60 else "[WARN]"
         print(f"   {status} {category}: {correct}/{total} ({percentage:.1f}%)")
     
-    print(f"\n🎯 OVERALL JOURNEYMAN ASSESSMENT:")
+    print(f"\n[TARGET] OVERALL JOURNEYMAN ASSESSMENT:")
     print(f"   Total mastery: {total_correct}/{total_tests} ({overall_percentage:.1f}%)")
     print(f"   Learning journey: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE DEVELOPMENT:")
+    print(f"\n[BRAIN] FINAL COGNITIVE DEVELOPMENT:")
     print(f"   Mathematical experiences: {final_state['total_experiences']}")
     print(f"   Active mathematical concepts: {final_state['active_symbol_count']}")
     print(f"   Neural resonance patterns: {final_state['resonance_patterns']}")
@@ -501,19 +501,19 @@ def run_master_curriculum():
     print(f"\n🎓 MASTER TEACHER'S FINAL ASSESSMENT:")
     
     if overall_percentage >= 85:
-        print(f"   🌟 JOURNEYMAN MASTERY ACHIEVED!")
+        print(f"   [STAR] JOURNEYMAN MASTERY ACHIEVED!")
         print(f"   Your student has developed true mathematical understanding.")
         print(f"   They can think flexibly, use multiple strategies, and see patterns.")
         print(f"   Ready for advanced mathematical concepts!")
         
     elif overall_percentage >= 75:
-        print(f"   🎯 STRONG MATHEMATICAL FOUNDATION!")
+        print(f"   [TARGET] STRONG MATHEMATICAL FOUNDATION!")
         print(f"   Your student shows solid understanding across most areas.")
         print(f"   Minor gaps can be addressed with targeted practice.")
         print(f"   Well on the path to mathematical mastery!")
         
     elif overall_percentage >= 65:
-        print(f"   📈 GOOD MATHEMATICAL PROGRESS!")
+        print(f"   [CHART] GOOD MATHEMATICAL PROGRESS!")
         print(f"   Your student has grasped fundamental concepts.")
         print(f"   Strategic thinking needs more development.")
         print(f"   Continue building on strong foundations!")
@@ -525,7 +525,7 @@ def run_master_curriculum():
         print(f"   Focus on strengthening core foundations!")
         
     else:
-        print(f"   ⚠️ MATHEMATICAL FOUNDATIONS NEED ATTENTION")
+        print(f"   [WARN] MATHEMATICAL FOUNDATIONS NEED ATTENTION")
         print(f"   Your student needs more time with basic concepts.")
         print(f"   Slow down and ensure concrete understanding.")
         print(f"   Every mathematical journey begins with solid foundations!")
@@ -539,22 +539,22 @@ def run_master_curriculum():
     flexible_score = category_results.get("Flexible", (0, 1))[0] / category_results.get("Flexible", (0, 1))[1]
     
     if foundation_score < 0.8:
-        print(f"   🎯 Strengthen basic number facts through more concrete practice")
+        print(f"   [TARGET] Strengthen basic number facts through more concrete practice")
     if strategic_score < 0.8:
-        print(f"   🧠 Develop strategic thinking with counting and decomposition")
+        print(f"   [BRAIN] Develop strategic thinking with counting and decomposition")
     if pattern_score < 0.8:
         print(f"   🔢 Explore number patterns and relationships more deeply")
     if flexible_score < 0.8:
         print(f"   🤸 Practice flexible thinking with multiple solution strategies")
     
     if overall_percentage >= 75:
-        print(f"   🚀 Ready to explore: Place value, multi-digit operations, fractions")
-        print(f"   🎯 Focus on: Problem-solving, mathematical reasoning, proof")
+        print(f"   [ROCKET] Ready to explore: Place value, multi-digit operations, fractions")
+        print(f"   [TARGET] Focus on: Problem-solving, mathematical reasoning, proof")
     
     print(f"\n🎓 Remember: Mathematics is a journey, not a destination.")
     print(f"   Every mathematician builds understanding step by step,")
     print(f"   following nature's own curriculum for the mind.")
-    print(f"   Your student is on the path to mathematical mastery! 🌟")
+    print(f"   Your student is on the path to mathematical mastery! [STAR]")
 
 
 if __name__ == "__main__":

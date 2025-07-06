@@ -19,9 +19,9 @@ class TargetedLogicBenchTest:
         
     def run_targeted_test(self):
         """Run test focusing on propositional and first-order logic"""
-        print("🎯 TARGETED LOGICBENCH TEST")
-        print("📊 Focusing on high-performing logic types")
-        print("⚡ Target: Beat 69% focusing on our strengths!")
+        print("[TARGET] TARGETED LOGICBENCH TEST")
+        print("[DATA] Focusing on high-performing logic types")
+        print("[BOLT] Target: Beat 69% focusing on our strengths!")
         
         start_time = time.time()
         
@@ -31,13 +31,13 @@ class TargetedLogicBenchTest:
         all_results = []
         
         for logic_type in target_types:
-            print(f"\n🧠 Testing {logic_type}...")
+            print(f"\n[BRAIN] Testing {logic_type}...")
             
             # Get files for this logic type
             base_path = Path(f"logicbench/LogicBench(Eval)/BQA/{logic_type}")
             
             if not base_path.exists():
-                print(f"❌ Path not found: {base_path}")
+                print(f"[-] Path not found: {base_path}")
                 continue
                 
             # Process all axioms for this logic type
@@ -62,7 +62,7 @@ class TargetedLogicBenchTest:
         overall_accuracy = self.total_correct / self.total_questions if self.total_questions > 0 else 0
         
         # Print results
-        print(f"\n🎯 TARGETED TEST RESULTS:")
+        print(f"\n[TARGET] TARGETED TEST RESULTS:")
         print(f"   Total Questions: {self.total_questions}")
         print(f"   Correct Answers: {self.total_correct}")
         print(f"   Overall Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
@@ -70,18 +70,18 @@ class TargetedLogicBenchTest:
         print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n📈 PERFORMANCE COMPARISON:")
+        print(f"\n[CHART] PERFORMANCE COMPARISON:")
         if overall_accuracy > 0.69:
             improvement = (overall_accuracy - 0.69) * 100
-            print(f"   ✅ BEAT 69% BENCHMARK! (+{improvement:.1f} percentage points)")
+            print(f"   [+] BEAT 69% BENCHMARK! (+{improvement:.1f} percentage points)")
         else:
             gap = (0.69 - overall_accuracy) * 100
-            print(f"   ❌ Below 69% benchmark (-{gap:.1f} percentage points)")
+            print(f"   [-] Below 69% benchmark (-{gap:.1f} percentage points)")
         
         if overall_accuracy >= 0.84:
-            print(f"   🏆 APPROACHING SOTA! (84-87% range)")
+            print(f"   [TROPHY] APPROACHING SOTA! (84-87% range)")
         elif overall_accuracy >= 0.75:
-            print(f"   🌟 STRONG PERFORMANCE! Getting close to SOTA")
+            print(f"   [STAR] STRONG PERFORMANCE! Getting close to SOTA")
         
         return {
             'overall_accuracy': overall_accuracy,
@@ -140,7 +140,7 @@ class TargetedLogicBenchTest:
             }
             
         except Exception as e:
-            print(f"❌ Error processing {file_path}: {e}")
+            print(f"[-] Error processing {file_path}: {e}")
             return None
     
     def quick_reasoning(self, question: str, context_text: str, logic_type: str, axiom: str):
@@ -214,11 +214,11 @@ def main():
     test = TargetedLogicBenchTest()
     results = test.run_targeted_test()
     
-    print(f"\n🎯 TARGETED TEST COMPLETE!")
+    print(f"\n[TARGET] TARGETED TEST COMPLETE!")
     if results and results['overall_accuracy'] > 0.69:
-        print(f"🏆 MISSION ACCOMPLISHED! Beat 69% benchmark!")
+        print(f"[TROPHY] MISSION ACCOMPLISHED! Beat 69% benchmark!")
     else:
-        print(f"📈 Good progress, but still working toward 69%")
+        print(f"[CHART] Good progress, but still working toward 69%")
 
 
 if __name__ == "__main__":

@@ -159,9 +159,9 @@ class WaveHashMiner:
         best_score = float('-inf')
         best_nonce = 0
         
-        print(f"🌊 Wave-Guided Bitcoin Mining Started")
-        print(f"🎯 Target: {self.difficulty} leading zeros")
-        print(f"📊 Max attempts: {max_attempts}")
+        print(f"[WAVE] Wave-Guided Bitcoin Mining Started")
+        print(f"[TARGET] Target: {self.difficulty} leading zeros")
+        print(f"[DATA] Max attempts: {max_attempts}")
         
         while attempts < max_attempts:
             # Wave-guided nonce selection
@@ -200,11 +200,11 @@ class WaveHashMiner:
                     else:
                         break
                 
-                print(f"🎯 New best: nonce={nonce}, zeros={leading_zeros}, score={interference_score:.4f}")
+                print(f"[TARGET] New best: nonce={nonce}, zeros={leading_zeros}, score={interference_score:.4f}")
             
             if is_valid:
                 mining_time = time.time() - start_time
-                print(f"✅ BLOCK MINED! 🎉")
+                print(f"[+] BLOCK MINED! [PARTY]")
                 print(f"🔑 Winning nonce: {nonce}")
                 print(f"#️⃣  Hash: {hash_result}")
                 print(f"⏱️  Time: {mining_time:.2f}s")
@@ -231,10 +231,10 @@ class WaveHashMiner:
             if attempts % 1000 == 0:
                 elapsed = time.time() - start_time
                 hash_rate = attempts / elapsed
-                print(f"📊 Progress: {attempts}/{max_attempts} attempts, {hash_rate:.0f} H/s")
+                print(f"[DATA] Progress: {attempts}/{max_attempts} attempts, {hash_rate:.0f} H/s")
         
         mining_time = time.time() - start_time
-        print(f"❌ Mining failed after {max_attempts} attempts")
+        print(f"[-] Mining failed after {max_attempts} attempts")
         
         return {
             "success": False,
@@ -256,8 +256,8 @@ class TraditionalMiner:
         """Traditional brute-force mining"""
         start_time = time.time()
         
-        print(f"⚡ Traditional Brute-Force Mining Started")
-        print(f"🎯 Target: {self.difficulty} leading zeros")
+        print(f"[BOLT] Traditional Brute-Force Mining Started")
+        print(f"[TARGET] Target: {self.difficulty} leading zeros")
         
         for nonce in range(max_attempts):
             block.nonce = nonce
@@ -265,7 +265,7 @@ class TraditionalMiner:
             
             if block.is_valid_proof():
                 mining_time = time.time() - start_time
-                print(f"✅ BLOCK MINED! 🎉")
+                print(f"[+] BLOCK MINED! [PARTY]")
                 print(f"🔑 Winning nonce: {nonce}")
                 print(f"#️⃣  Hash: {hash_result}")
                 print(f"⏱️  Time: {mining_time:.2f}s")
@@ -283,10 +283,10 @@ class TraditionalMiner:
             if nonce % 1000 == 0:
                 elapsed = time.time() - start_time
                 hash_rate = nonce / elapsed if elapsed > 0 else 0
-                print(f"📊 Progress: {nonce}/{max_attempts} attempts, {hash_rate:.0f} H/s")
+                print(f"[DATA] Progress: {nonce}/{max_attempts} attempts, {hash_rate:.0f} H/s")
         
         mining_time = time.time() - start_time
-        print(f"❌ Mining failed after {max_attempts} attempts")
+        print(f"[-] Mining failed after {max_attempts} attempts")
         
         return {
             "success": False,
@@ -309,7 +309,7 @@ def create_test_block() -> BitcoinBlock:
 
 def bitcoin_mining_showdown():
     """Epic showdown: Wave Engine vs Traditional Mining"""
-    print("🏆 BITCOIN MINING SHOWDOWN: WAVE ENGINE VS TRADITIONAL")
+    print("[TROPHY] BITCOIN MINING SHOWDOWN: WAVE ENGINE VS TRADITIONAL")
     print("=" * 70)
     
     # Create test block
@@ -335,7 +335,7 @@ def bitcoin_mining_showdown():
     wave_result = wave_miner.wave_guided_mining(test_block.copy(), max_attempts)
     
     # Compare results
-    print(f"\n🏆 FINAL RESULTS")
+    print(f"\n[TROPHY] FINAL RESULTS")
     print("=" * 70)
     
     print(f"Traditional Mining:")
@@ -357,15 +357,15 @@ def bitcoin_mining_showdown():
     # Determine winner
     if traditional_result['success'] and wave_result['success']:
         if wave_result['time'] < traditional_result['time']:
-            print(f"\n🎉 WAVE ENGINE WINS! {wave_result['time']:.2f}s vs {traditional_result['time']:.2f}s")
+            print(f"\n[PARTY] WAVE ENGINE WINS! {wave_result['time']:.2f}s vs {traditional_result['time']:.2f}s")
         else:
-            print(f"\n🎉 TRADITIONAL WINS! {traditional_result['time']:.2f}s vs {wave_result['time']:.2f}s")
+            print(f"\n[PARTY] TRADITIONAL WINS! {traditional_result['time']:.2f}s vs {wave_result['time']:.2f}s")
     elif wave_result['success']:
-        print(f"\n🎉 WAVE ENGINE WINS! (Only successful method)")
+        print(f"\n[PARTY] WAVE ENGINE WINS! (Only successful method)")
     elif traditional_result['success']:
-        print(f"\n🎉 TRADITIONAL WINS! (Only successful method)")
+        print(f"\n[PARTY] TRADITIONAL WINS! (Only successful method)")
     else:
-        print(f"\n🤝 TIE! (Both failed)")
+        print(f"\n[SHAKE] TIE! (Both failed)")
     
     # Reality check
     print(f"\n💡 REALITY CHECK:")

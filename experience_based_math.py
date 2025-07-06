@@ -37,7 +37,7 @@ def teach_addition_through_experience(engine):
         )
         time.sleep(0.05)  # Small delay to separate experiences
     
-    print(f"\n✅ Addition experiences completed")
+    print(f"\n[+] Addition experiences completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
     print(f"   Active symbols: {state['active_symbol_count']}")
@@ -45,7 +45,7 @@ def teach_addition_through_experience(engine):
 
 def test_addition_discovery(engine):
     """Test if the engine discovered addition through experience."""
-    print("\n\n🔍 TESTING ADDITION DISCOVERY")
+    print("\n\n[SEARCH] TESTING ADDITION DISCOVERY")
     print("=" * 50)
     
     # Test problems the engine hasn't seen before
@@ -83,9 +83,9 @@ def test_addition_discovery(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: Strong activation for '{expected}'")
+            print(f"   [+] CORRECT: Strong activation for '{expected}'")
         else:
-            print(f"   ❌ INCORRECT: Weak activation for '{expected}'")
+            print(f"   [-] INCORRECT: Weak activation for '{expected}'")
     
     return results
 
@@ -124,14 +124,14 @@ def teach_sequence_through_experience(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Sequence experiences completed")
+    print(f"\n[+] Sequence experiences completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def test_sequence_discovery(engine):
     """Test if the engine discovered sequence patterns."""
-    print("\n\n🔍 TESTING SEQUENCE DISCOVERY")
+    print("\n\n[SEARCH] TESTING SEQUENCE DISCOVERY")
     print("=" * 50)
     
     test_cases = [
@@ -166,16 +166,16 @@ def test_sequence_discovery(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: Pattern recognition successful")
+            print(f"   [+] CORRECT: Pattern recognition successful")
         else:
-            print(f"   ❌ INCORRECT: Pattern not recognized")
+            print(f"   [-] INCORRECT: Pattern not recognized")
     
     return results
 
 
 def teach_comparison_through_experience(engine):
     """Teach comparison operations through experience."""
-    print("\n\n📊 TEACHING COMPARISON THROUGH EXPERIENCE")
+    print("\n\n[DATA] TEACHING COMPARISON THROUGH EXPERIENCE")
     print("=" * 50)
     
     comparison_experiences = [
@@ -202,14 +202,14 @@ def teach_comparison_through_experience(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Comparison experiences completed")
+    print(f"\n[+] Comparison experiences completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def test_comparison_discovery(engine):
     """Test if the engine discovered comparison operations."""
-    print("\n\n🔍 TESTING COMPARISON DISCOVERY")
+    print("\n\n[SEARCH] TESTING COMPARISON DISCOVERY")
     print("=" * 50)
     
     test_cases = [
@@ -244,16 +244,16 @@ def test_comparison_discovery(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: Comparison reasoning successful")
+            print(f"   [+] CORRECT: Comparison reasoning successful")
         else:
-            print(f"   ❌ INCORRECT: Comparison reasoning failed")
+            print(f"   [-] INCORRECT: Comparison reasoning failed")
     
     return results
 
 
 def run_experience_based_learning():
     """Run the complete experience-based learning demonstration."""
-    print("🧠 EXPERIENCE-BASED MATHEMATICAL LEARNING")
+    print("[BRAIN] EXPERIENCE-BASED MATHEMATICAL LEARNING")
     print("=" * 70)
     print("Teaching mathematical operations through repeated experience")
     print("=" * 70)
@@ -276,48 +276,48 @@ def run_experience_based_learning():
     end_time = time.time()
     
     # Analysis
-    print("\n\n📊 EXPERIENCE-BASED LEARNING RESULTS")
+    print("\n\n[DATA] EXPERIENCE-BASED LEARNING RESULTS")
     print("=" * 70)
     
     print(f"\n🧮 ADDITION DISCOVERY:")
     correct_addition = sum(1 for _, success, _ in addition_results if success)
     print(f"   Correct: {correct_addition}/{len(addition_results)}")
     for desc, success, activation in addition_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n🔢 SEQUENCE DISCOVERY:")
     correct_sequence = sum(1 for _, success, _ in sequence_results if success)
     print(f"   Correct: {correct_sequence}/{len(sequence_results)}")
     for desc, success, activation in sequence_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
-    print(f"\n📊 COMPARISON DISCOVERY:")
+    print(f"\n[DATA] COMPARISON DISCOVERY:")
     correct_comparison = sum(1 for _, success, _ in comparison_results if success)
     print(f"   Correct: {correct_comparison}/{len(comparison_results)}")
     for desc, success, activation in comparison_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     # Overall assessment
     total_correct = correct_addition + correct_sequence + correct_comparison
     total_tests = len(addition_results) + len(sequence_results) + len(comparison_results)
     
-    print(f"\n🎯 OVERALL PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL PERFORMANCE:")
     print(f"   Total correct: {total_correct}/{total_tests} ({total_correct/total_tests*100:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE STATE:")
+    print(f"\n[BRAIN] FINAL COGNITIVE STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active symbols: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
     print(f"   Dream cycles: {final_state['replay_cycles']}")
     
     if total_correct/total_tests > 0.5:
-        print(f"\n🎉 SUCCESS: Engine discovered mathematical operations through experience!")
+        print(f"\n[PARTY] SUCCESS: Engine discovered mathematical operations through experience!")
         print(f"   Wave interference learned operational patterns from repeated exposure")
     else:
         print(f"\n🤔 PARTIAL SUCCESS: Some operational discovery, but needs refinement")

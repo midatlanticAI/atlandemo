@@ -308,7 +308,7 @@ class HumanLikeCommittee:
             "Synthesis_Agent"           # Combines insights like human judgment
         ]
         
-        print("🧠 SPAWNING HUMAN-LIKE AGENTS")
+        print("[BRAIN] SPAWNING HUMAN-LIKE AGENTS")
         for i, role in enumerate(roles):
             agent = HumanLikeSimulator(i, role)
             agent.engine = self.shared_engine
@@ -363,16 +363,16 @@ class HumanLikeLogicBench:
     
     def run_human_benchmark(self, max_files=25, questions_per_file=40):
         """Run benchmark with human-like reasoning"""
-        print(f"\n🧠 HUMAN-LIKE SIMULATION BENCHMARK")
+        print(f"\n[BRAIN] HUMAN-LIKE SIMULATION BENCHMARK")
         print(f"💭 Agents use world knowledge and intuition like biological intelligence")
-        print(f"🎯 Target: Match human performance on nm_logic!")
+        print(f"[TARGET] Target: Match human performance on nm_logic!")
         
         start_time = time.time()
         
         # Find files
         all_files = self.find_all_logicbench_files()
         if not all_files:
-            print("❌ No LogicBench files found!")
+            print("[-] No LogicBench files found!")
             return None
         
         # Sample files
@@ -413,7 +413,7 @@ class HumanLikeLogicBench:
         overall_accuracy = self.total_correct / self.total_questions if self.total_questions > 0 else 0
         
         # Print results
-        print(f"\n🧠 HUMAN-LIKE RESULTS:")
+        print(f"\n[BRAIN] HUMAN-LIKE RESULTS:")
         print(f"   Total Questions: {self.total_questions}")
         print(f"   Correct Answers: {self.total_correct}")
         print(f"   Human-like Accuracy: {overall_accuracy:.3f} ({overall_accuracy:.1%})")
@@ -421,14 +421,14 @@ class HumanLikeLogicBench:
         print(f"   Questions/second: {self.total_questions/elapsed_time:.1f}")
         
         # Performance comparison
-        print(f"\n🧠 HUMAN-LIKE VS SINGLE AGENT:")
+        print(f"\n[BRAIN] HUMAN-LIKE VS SINGLE AGENT:")
         baseline = 0.652  # Single-agent baseline
         if overall_accuracy > baseline:
             improvement = (overall_accuracy - baseline) * 100
-            print(f"   ✅ HUMAN-LIKE WINS! (+{improvement:.1f} percentage points)")
+            print(f"   [+] HUMAN-LIKE WINS! (+{improvement:.1f} percentage points)")
         else:
             decline = (baseline - overall_accuracy) * 100
-            print(f"   ❌ Single agent better (-{decline:.1f} percentage points)")
+            print(f"   [-] Single agent better (-{decline:.1f} percentage points)")
         
         # Special focus on nm_logic
         if 'nm_logic' in logic_type_summary:
@@ -436,7 +436,7 @@ class HumanLikeLogicBench:
             print(f"\n💡 NM_LOGIC BREAKTHROUGH:")
             print(f"   Human-like nm_logic: {nm_accuracy:.3f} ({nm_accuracy:.1%})")
             if nm_accuracy > 0.5:
-                print(f"   🎉 BEAT 50% NM_LOGIC BASELINE!")
+                print(f"   [PARTY] BEAT 50% NM_LOGIC BASELINE!")
         
         # Logic type breakdown
         print(f"\n💭 HUMAN-LIKE LOGIC BREAKDOWN:")
@@ -521,13 +521,13 @@ class HumanLikeLogicBench:
             }
             
         except Exception as e:
-            print(f"❌ Human reasoning failed on {file_path}: {e}")
+            print(f"[-] Human reasoning failed on {file_path}: {e}")
             return None
 
 
 def main():
     """Run the human-like simulation benchmark"""
-    print("🧠 HUMAN-LIKE WAVE AGENT EXPERIMENT 🧠")
+    print("[BRAIN] HUMAN-LIKE WAVE AGENT EXPERIMENT [BRAIN]")
     print("💭 World knowledge and intuition like biological intelligence")
     print("=" * 60)
     
@@ -535,7 +535,7 @@ def main():
     results = benchmark.run_human_benchmark()
     
     if results:
-        print(f"\n🎯 HUMAN-LIKE EXPERIMENT COMPLETE!")
+        print(f"\n[TARGET] HUMAN-LIKE EXPERIMENT COMPLETE!")
         print(f"   Through world knowledge and intuition:")
         print(f"   Accuracy: {results['overall_accuracy']:.1%}")
         print(f"   Speed: {results['total_questions']/results['processing_time']:.1f} q/s")

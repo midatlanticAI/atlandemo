@@ -33,7 +33,7 @@ class MinimalWaveEngine:
 
 def replication_test():
     """Run basic replication test"""
-    print("🌊 Wave Engine Replication Test")
+    print("[WAVE] Wave Engine Replication Test")
     print("="*40)
     
     engine = MinimalWaveEngine()
@@ -72,9 +72,9 @@ if __name__ == "__main__":
     
     # Validation check
     if result['avg_processing_time'] < 0.01:
-        print("✅ VALIDATION PASSED: Ultra-fast processing confirmed")
+        print("[+] VALIDATION PASSED: Ultra-fast processing confirmed")
     else:
-        print("❌ VALIDATION FAILED: Processing too slow")
+        print("[-] VALIDATION FAILED: Processing too slow")
         
     print("\n🔬 Peer validation package ready!")
     print("📋 This minimal wave engine demonstrates:")

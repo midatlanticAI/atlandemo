@@ -429,7 +429,7 @@ Respond as Iris with emotional intelligence, drawing from memories while maintai
 def demonstrate_atlan_memory_muse_engine():
     """Demonstrate the complete Atlan engine for Memory Muse."""
     
-    print("🧠 ATLAN ENGINE - MEMORY MUSE EDITION")
+    print("[BRAIN] ATLAN ENGINE - MEMORY MUSE EDITION")
     print("=" * 60)
     print("Complete cognitive architecture optimized for companion AI")
     print("=" * 60)
@@ -437,12 +437,12 @@ def demonstrate_atlan_memory_muse_engine():
     # Create Atlan engine
     atlan = AtlanMemoryMuseEngine()
     
-    print("\n🔧 ENGINE COMPONENTS:")
-    print("✅ Cognitive Memory System (with reinforcement learning)")
-    print("✅ Emotional Intelligence Engine (mood tracking & analysis)")
-    print("✅ Personality Evolution Engine (companion trait development)")
-    print("✅ Cognitive Decision Engine (response strategy optimization)")
-    print("✅ Memory Muse Integration Layer (token optimization)")
+    print("\n[TOOL] ENGINE COMPONENTS:")
+    print("[+] Cognitive Memory System (with reinforcement learning)")
+    print("[+] Emotional Intelligence Engine (mood tracking & analysis)")
+    print("[+] Personality Evolution Engine (companion trait development)")
+    print("[+] Cognitive Decision Engine (response strategy optimization)")
+    print("[+] Memory Muse Integration Layer (token optimization)")
     
     # Simulate EdT's companion AI scenarios
     print("\n📱 MEMORY MUSE SIMULATION:")
@@ -463,13 +463,13 @@ def demonstrate_atlan_memory_muse_engine():
         # Process through Atlan engine
         result = atlan.process_interaction(scenario)
         
-        print(f"\n🧠 Atlan Cognitive Processing:")
+        print(f"\n[BRAIN] Atlan Cognitive Processing:")
         print(f"   💭 Emotional Analysis: {result['emotional_analysis']['mood_score']:.2f}")
         if result['emotional_analysis']['emotions_detected']:
             print(f"   🎭 Emotions: {', '.join(result['emotional_analysis']['emotions_detected'])}")
         
-        print(f"   🤖 Personality Traits: {', '.join(result['personality_traits'].keys())}")
-        print(f"   🎯 Response Strategy: {result['cognitive_strategy']['primary_category']}")
+        print(f"   [BOT] Personality Traits: {', '.join(result['personality_traits'].keys())}")
+        print(f"   [TARGET] Response Strategy: {result['cognitive_strategy']['primary_category']}")
         print(f"   📚 Relevant Memories: {len(result['relevant_memories'])}")
         print(f"   🎫 Token Count: {result['token_count']:.0f}")
         
@@ -482,15 +482,15 @@ def demonstrate_atlan_memory_muse_engine():
             print("-" * 40)
     
     # Show system evolution
-    print(f"\n📊 ATLAN ENGINE STATISTICS:")
+    print(f"\n[DATA] ATLAN ENGINE STATISTICS:")
     state = atlan.get_system_state()
-    print(f"   🎯 Conversations Processed: {state['conversations_processed']}")
-    print(f"   🧠 Cognitive Cycles: {state['cognitive_cycles']}")
-    print(f"   📈 Learning Events: {state['learning_events']}")
+    print(f"   [TARGET] Conversations Processed: {state['conversations_processed']}")
+    print(f"   [BRAIN] Cognitive Cycles: {state['cognitive_cycles']}")
+    print(f"   [CHART] Learning Events: {state['learning_events']}")
     print(f"   🎭 Emotional Intelligence: {state['emotional_intelligence']['status'] if 'status' in state['emotional_intelligence'] else 'Active'}")
-    print(f"   🤖 Dominant Personality: {', '.join(state['dominant_personality'])}")
-    print(f"   💾 Memory System: {state['memory_system']['memory_size']} memories stored")
-    print(f"   ✅ Memory Muse Ready: {state['memory_muse_ready']}")
+    print(f"   [BOT] Dominant Personality: {', '.join(state['dominant_personality'])}")
+    print(f"   [SAVE] Memory System: {state['memory_system']['memory_size']} memories stored")
+    print(f"   [+] Memory Muse Ready: {state['memory_muse_ready']}")
 
 
 def show_atlan_vs_traditional_comparison():
@@ -499,7 +499,7 @@ def show_atlan_vs_traditional_comparison():
     print("\n\n⚔️ ATLAN ENGINE VS TRADITIONAL AI")
     print("=" * 60)
     
-    print("❌ TRADITIONAL APPROACH:")
+    print("[-] TRADITIONAL APPROACH:")
     print("   • Static personality (no evolution)")
     print("   • Basic sentiment analysis")  
     print("   • Simple keyword matching")
@@ -507,15 +507,15 @@ def show_atlan_vs_traditional_comparison():
     print("   • Memory as data storage only")
     print("   • Context window limitations")
     
-    print("\n✅ ATLAN ENGINE APPROACH:")
-    print("   • 🧠 Dynamic personality evolution")
+    print("\n[+] ATLAN ENGINE APPROACH:")
+    print("   • [BRAIN] Dynamic personality evolution")
     print("   • 🎭 Advanced emotional intelligence")
-    print("   • 🔍 Cognitive pattern recognition") 
-    print("   • 🎯 Strategic response planning")
+    print("   • [SEARCH] Cognitive pattern recognition") 
+    print("   • [TARGET] Strategic response planning")
     print("   • 💭 Memory as cognitive enhancement")
     print("   • 📏 Intelligent context optimization")
     
-    print("\n🎯 PERFECT FOR MEMORY MUSE:")
+    print("\n[TARGET] PERFECT FOR MEMORY MUSE:")
     print("   • Gives Iris true cognitive abilities")
     print("   • Preserves EdT's emotion/language focus")
     print("   • Solves context window issues")
@@ -527,11 +527,11 @@ if __name__ == "__main__":
     demonstrate_atlan_memory_muse_engine()
     show_atlan_vs_traditional_comparison()
     
-    print("\n🎉 CONCLUSION:")
+    print("\n[PARTY] CONCLUSION:")
     print("=" * 60)
-    print("🚀 Complete Atlan cognitive engine ready for Memory Muse")
-    print("🧠 Demonstrates true AI cognition, not just memory storage")  
+    print("[ROCKET] Complete Atlan cognitive engine ready for Memory Muse")
+    print("[BRAIN] Demonstrates true AI cognition, not just memory storage")  
     print("🎭 Perfect for companion AI with emotional intelligence")
-    print("⚡ Optimized for EdT's specific requirements")
+    print("[BOLT] Optimized for EdT's specific requirements")
     print("🔥 Shows power without revealing full architecture")
-    print("\n💎 Ready to blow EdT's mind! 🤯") 
+    print("\n💎 Ready to blow EdT's mind! [MIND]") 

@@ -328,7 +328,7 @@ def create_demo_users() -> List[UserProfile]:
 
 def run_personalization_demo():
     """Demonstrate the wave-based personalization system"""
-    print("🌊 WAVE ENGINE CONTENT PERSONALIZATION DEMO")
+    print("[WAVE] WAVE ENGINE CONTENT PERSONALIZATION DEMO")
     print("=" * 60)
     
     # Initialize system
@@ -348,7 +348,7 @@ def run_personalization_demo():
     print(f"👥 Created {len(users)} user profiles")
     
     # Generate recommendations for each user
-    print(f"\n🎯 PERSONALIZED RECOMMENDATIONS")
+    print(f"\n[TARGET] PERSONALIZED RECOMMENDATIONS")
     print("-" * 40)
     
     for user in users:
@@ -357,7 +357,7 @@ def run_personalization_demo():
         print(f"   Mood: {user.current_mood:.1f}, Attention: {user.attention_span:.1f}")
         
         recommendations = engine.generate_recommendations(user.user_id, 3)
-        print(f"   🎯 Top Recommendations:")
+        print(f"   [TARGET] Top Recommendations:")
         
         for i, (content_id, score) in enumerate(recommendations, 1):
             content = engine.content_database[content_id]
@@ -365,7 +365,7 @@ def run_personalization_demo():
             print(f"         Tags: {', '.join(content.tags[:3])}")
     
     # Simulate user interactions
-    print(f"\n📊 SIMULATING USER INTERACTIONS")
+    print(f"\n[DATA] SIMULATING USER INTERACTIONS")
     print("-" * 40)
     
     for user in users:
@@ -388,7 +388,7 @@ def run_personalization_demo():
             print(f"   {user.user_id} watched {content_id} for {engagement_duration:.1f}min (satisfaction: {satisfaction:.2f})")
     
     # System insights
-    print(f"\n📈 SYSTEM INSIGHTS")
+    print(f"\n[CHART] SYSTEM INSIGHTS")
     print("-" * 40)
     insights = engine.get_system_insights()
     
@@ -398,18 +398,18 @@ def run_personalization_demo():
         else:
             print(f"   {key.replace('_', ' ').title()}: {value}")
     
-    print(f"\n🚀 BUSINESS POTENTIAL")
+    print(f"\n[ROCKET] BUSINESS POTENTIAL")
     print("-" * 40)
     print(f"   💰 Improved Engagement: +{insights['avg_satisfaction']*30:.0f}% retention")
-    print(f"   🎯 Personalization Score: {insights['avg_satisfaction']*100:.0f}%")
-    print(f"   ⚡ AI Learning Cycles: {insights['cognitive_experiences']}")
-    print(f"   🌊 Active Wave Patterns: {insights['active_patterns']}")
+    print(f"   [TARGET] Personalization Score: {insights['avg_satisfaction']*100:.0f}%")
+    print(f"   [BOLT] AI Learning Cycles: {insights['cognitive_experiences']}")
+    print(f"   [WAVE] Active Wave Patterns: {insights['active_patterns']}")
     
     print(f"\n✨ COMPETITIVE ADVANTAGES:")
-    print(f"   🧠 Real-time learning from user behavior")
-    print(f"   🌊 Wave-based content matching (patent pending!)")
-    print(f"   📊 Temporal engagement optimization")
-    print(f"   🎯 Sub-second recommendation generation")
+    print(f"   [BRAIN] Real-time learning from user behavior")
+    print(f"   [WAVE] Wave-based content matching (patent pending!)")
+    print(f"   [DATA] Temporal engagement optimization")
+    print(f"   [TARGET] Sub-second recommendation generation")
     print(f"   🔮 Predictive user mood detection")
 
 

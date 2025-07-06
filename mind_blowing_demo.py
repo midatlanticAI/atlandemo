@@ -19,21 +19,21 @@ class MindBlowingWaveDemo:
     def print_explosive_header(self, title):
         """Print a dramatic header"""
         print("\n" + "🔥" * 60)
-        print(f"🚀 {title} 🚀")
+        print(f"[ROCKET] {title} [ROCKET]")
         print("🔥" * 60)
         
     def demo_impossible_1_real_time_music_from_concepts(self):
         """Generate actual music from abstract concepts through wave interference"""
         self.print_explosive_header("IMPOSSIBLE #1: MUSIC FROM PURE CONCEPTS")
         
-        print("❌ TRADITIONAL AI: Trained on millions of songs, copies patterns")
-        print("✅ WAVE AI: Creates music from wave interference of CONCEPTS")
+        print("[-] TRADITIONAL AI: Trained on millions of songs, copies patterns")
+        print("[+] WAVE AI: Creates music from wave interference of CONCEPTS")
         print()
         
         # Take abstract concepts
         concepts = ["thunderstorm", "childhood", "purple", "memory", "hope"]
         
-        print(f"🎯 CHALLENGE: Create music from these concepts: {concepts}")
+        print(f"[TARGET] CHALLENGE: Create music from these concepts: {concepts}")
         print("   (No music training data - pure wave physics)")
         print()
         
@@ -42,7 +42,7 @@ class MindBlowingWaveDemo:
         frequencies = []
         
         for i, concept in enumerate(concepts):
-            print(f"🌊 Converting '{concept}' to wave...")
+            print(f"[WAVE] Converting '{concept}' to wave...")
             
             # Feed concept to wave engine
             result = self.engine.live_experience(
@@ -74,7 +74,7 @@ class MindBlowingWaveDemo:
             
             frequencies.append(frequency)
             
-            print(f"   ⚡ '{concept}' -> {frequency:.1f}Hz (activation: {concept_activation:.3f})")
+            print(f"   [BOLT] '{concept}' -> {frequency:.1f}Hz (activation: {concept_activation:.3f})")
         
         print(f"\n🎵 GENERATED MUSICAL SCALE FROM CONCEPTS:")
         for wave in musical_waves:
@@ -89,11 +89,11 @@ class MindBlowingWaveDemo:
             print(f"   {concepts[i]} + {concepts[i+1]}: {ratio:.2f} ratio ({harmony_type})")
         
         # The impossible part - coherent musical structure from pure concepts
-        print(f"\n🤯 IMPOSSIBLE ACHIEVEMENT:")
-        print(f"   ✅ Created musical frequencies from abstract concepts")
-        print(f"   ✅ Wave interference found harmonic relationships")
-        print(f"   ✅ NO music training data used")
-        print(f"   ✅ Pure wave physics -> musical structure")
+        print(f"\n[MIND] IMPOSSIBLE ACHIEVEMENT:")
+        print(f"   [+] Created musical frequencies from abstract concepts")
+        print(f"   [+] Wave interference found harmonic relationships")
+        print(f"   [+] NO music training data used")
+        print(f"   [+] Pure wave physics -> musical structure")
         
         return musical_waves
     
@@ -101,8 +101,8 @@ class MindBlowingWaveDemo:
         """Show real-time contradiction resolution through wave dynamics"""
         self.print_explosive_header("IMPOSSIBLE #2: LIVE CONTRADICTION RESOLUTION")
         
-        print("❌ TRADITIONAL AI: Stores contradictory facts, gets confused")
-        print("✅ WAVE AI: Resolves contradictions through wave interference")
+        print("[-] TRADITIONAL AI: Stores contradictory facts, gets confused")
+        print("[+] WAVE AI: Resolves contradictions through wave interference")
         print()
         
         # Establish fact 1
@@ -134,12 +134,12 @@ class MindBlowingWaveDemo:
         fly_new = field.get('flying', 0)
         swim_activation = field.get('swimming', 0)
         
-        print(f"   🌊 Wave interference occurring...")
+        print(f"   [WAVE] Wave interference occurring...")
         print(f"   'flying' activation: {fly_activation:.3f} -> {fly_new:.3f}")
         print(f"   'swimming' activation: {swim_activation:.3f}")
         
         # Resolution through wave dynamics
-        print("\n🧠 RESOLUTION: Different types of birds, different abilities")
+        print("\n[BRAIN] RESOLUTION: Different types of birds, different abilities")
         result3 = self.engine.live_experience(
             visual=["different", "types", "birds", "various", "abilities"],
             auditory=["understanding"],
@@ -150,7 +150,7 @@ class MindBlowingWaveDemo:
         
         final_field = result3['activation_field']
         
-        print(f"🎯 FINAL RESOLUTION:")
+        print(f"[TARGET] FINAL RESOLUTION:")
         resolution_concepts = ['flying', 'swimming', 'different', 'types', 'abilities']
         for concept in resolution_concepts:
             if concept in final_field:
@@ -160,10 +160,10 @@ class MindBlowingWaveDemo:
         
         # Show state coherence
         state = self.engine.get_cognitive_state()
-        print(f"\n🌟 COHERENCE ACHIEVED:")
+        print(f"\n[STAR] COHERENCE ACHIEVED:")
         print(f"   Total wave patterns: {state['resonance_patterns']}")
         print(f"   Active concepts: {state['active_symbol_count']}")
-        print(f"   ✅ Contradiction resolved through wave interference!")
+        print(f"   [+] Contradiction resolved through wave interference!")
         
         return state
     
@@ -171,8 +171,8 @@ class MindBlowingWaveDemo:
         """Show creative synthesis through wave interference"""
         self.print_explosive_header("IMPOSSIBLE #3: CREATIVE WAVE SYNTHESIS")
         
-        print("❌ TRADITIONAL AI: Combines existing patterns, limited novelty")
-        print("✅ WAVE AI: Creates genuinely novel concepts through interference")
+        print("[-] TRADITIONAL AI: Combines existing patterns, limited novelty")
+        print("[+] WAVE AI: Creates genuinely novel concepts through interference")
         print()
         
         # Seed with unrelated concepts
@@ -183,7 +183,7 @@ class MindBlowingWaveDemo:
             print(f"   - {concept}")
         
         # Let wave interference create novel combinations
-        print(f"\n🌊 Letting wave interference work...")
+        print(f"\n[WAVE] Letting wave interference work...")
         
         all_activations = {}
         
@@ -203,7 +203,7 @@ class MindBlowingWaveDemo:
                 all_activations[symbol].append(activation)
         
         # Find emergent patterns
-        print(f"\n⚡ EMERGENT WAVE PATTERNS:")
+        print(f"\n[BOLT] EMERGENT WAVE PATTERNS:")
         emergent_concepts = []
         
         for symbol, activations in all_activations.items():
@@ -221,7 +221,7 @@ class MindBlowingWaveDemo:
             print(f"     {concept}: {strength:.3f} ({intensity})")
         
         # Create ultimate synthesis
-        print(f"\n🚀 ULTIMATE CREATIVE SYNTHESIS:")
+        print(f"\n[ROCKET] ULTIMATE CREATIVE SYNTHESIS:")
         synthesis_result = self.engine.live_experience(
             visual=["synthesis", "creation", "novel"] + [c[0] for c in emergent_concepts[:3]],
             auditory=["inspiration"],
@@ -232,16 +232,16 @@ class MindBlowingWaveDemo:
         
         final_field = synthesis_result['activation_field']
         
-        print(f"   🎯 CREATIVE BREAKTHROUGH ACHIEVED:")
+        print(f"   [TARGET] CREATIVE BREAKTHROUGH ACHIEVED:")
         for symbol, activation in sorted(final_field.items(), key=lambda x: abs(x[1]), reverse=True)[:5]:
             if abs(activation) > 0.5:
                 print(f"     ✨ {symbol}: {activation:.3f}")
         
-        print(f"\n🤯 IMPOSSIBLE ACHIEVEMENT:")
-        print(f"   ✅ Generated novel concepts through wave interference")
-        print(f"   ✅ Creative synthesis beyond training data")
-        print(f"   ✅ Emergent properties from wave dynamics")
-        print(f"   ✅ True creativity, not pattern matching")
+        print(f"\n[MIND] IMPOSSIBLE ACHIEVEMENT:")
+        print(f"   [+] Generated novel concepts through wave interference")
+        print(f"   [+] Creative synthesis beyond training data")
+        print(f"   [+] Emergent properties from wave dynamics")
+        print(f"   [+] True creativity, not pattern matching")
         
         return emergent_concepts
     
@@ -249,8 +249,8 @@ class MindBlowingWaveDemo:
         """Show temporal prediction through wave extrapolation"""
         self.print_explosive_header("IMPOSSIBLE #4: TEMPORAL WAVE PREDICTION")
         
-        print("❌ TRADITIONAL AI: Predicts from statistical patterns")
-        print("✅ WAVE AI: Extrapolates wave patterns forward in time")
+        print("[-] TRADITIONAL AI: Predicts from statistical patterns")
+        print("[+] WAVE AI: Extrapolates wave patterns forward in time")
         print()
         
         # Create temporal sequence
@@ -291,7 +291,7 @@ class MindBlowingWaveDemo:
         
         prediction_field = predict_result['activation_field']
         
-        print(f"   🎯 WAVE PREDICTION:")
+        print(f"   [TARGET] WAVE PREDICTION:")
         predicted_concepts = []
         for concept, activation in prediction_field.items():
             if abs(activation) > 0.5:
@@ -305,14 +305,14 @@ class MindBlowingWaveDemo:
         
         # Show wave pattern evolution
         state = self.engine.get_cognitive_state()
-        print(f"\n🌊 TEMPORAL WAVE EVOLUTION:")
+        print(f"\n[WAVE] TEMPORAL WAVE EVOLUTION:")
         print(f"   Wave patterns tracked: {state['resonance_patterns']}")
         print(f"   Temporal memory: {len(state['recent_resonance'])} patterns")
         
-        print(f"\n🤯 IMPOSSIBLE ACHIEVEMENT:")
-        print(f"   ✅ Predicted future states from wave extrapolation")
-        print(f"   ✅ Temporal pattern recognition through wave dynamics")
-        print(f"   ✅ Not statistical prediction - wave physics prediction")
+        print(f"\n[MIND] IMPOSSIBLE ACHIEVEMENT:")
+        print(f"   [+] Predicted future states from wave extrapolation")
+        print(f"   [+] Temporal pattern recognition through wave dynamics")
+        print(f"   [+] Not statistical prediction - wave physics prediction")
         
         return predicted_concepts
     
@@ -320,14 +320,14 @@ class MindBlowingWaveDemo:
         """Show concept generalization through pure wave physics - POOLSIDE BREAKTHROUGH"""
         self.print_explosive_header("IMPOSSIBLE #5: CONCEPT GENERALIZATION FROM PURE WAVE PHYSICS")
         
-        print("❌ TRADITIONAL AI: Needs massive training data for generalization")
-        print("✅ WAVE AI: Learns concepts from wave interference + minimal reinforcement")
+        print("[-] TRADITIONAL AI: Needs massive training data for generalization")
+        print("[+] WAVE AI: Learns concepts from wave interference + minimal reinforcement")
         print()
         print("🏊‍♂️ POOLSIDE BREAKTHROUGH: This demo shows discoveries from real experiments!")
         print()
         
         # Step 1: Linear wave interference (basic physics)
-        print("🌊 STEP 1: LINEAR WAVE INTERFERENCE")
+        print("[WAVE] STEP 1: LINEAR WAVE INTERFERENCE")
         print("   Testing basic wave superposition...")
         
         # Define frequency bands
@@ -353,13 +353,13 @@ class MindBlowingWaveDemo:
         linear_field = wave_bio + wave_tech
         energy_linear = np.mean(linear_field**2)
         
-        print(f"   ⚡ Bio wave energy: {np.mean(wave_bio**2):.3f}")
-        print(f"   ⚡ Tech wave energy: {np.mean(wave_tech**2):.3f}")
-        print(f"   ⚡ Combined energy: {energy_linear:.3f}")
-        print(f"   📊 Result: Linear superposition - no new frequencies created")
+        print(f"   [BOLT] Bio wave energy: {np.mean(wave_bio**2):.3f}")
+        print(f"   [BOLT] Tech wave energy: {np.mean(wave_tech**2):.3f}")
+        print(f"   [BOLT] Combined energy: {energy_linear:.3f}")
+        print(f"   [DATA] Result: Linear superposition - no new frequencies created")
         
         # Step 2: Non-linear coupling (the breakthrough!)
-        print(f"\n🚀 STEP 2: NON-LINEAR COUPLING")
+        print(f"\n[ROCKET] STEP 2: NON-LINEAR COUPLING")
         print("   Adding multiplicative wave interaction...")
         
         alpha = 0.45  # coupling strength
@@ -369,9 +369,9 @@ class MindBlowingWaveDemo:
         nonlinear_field = np.tanh(gain * (wave_bio + wave_tech + alpha * wave_bio * wave_tech))
         energy_nonlinear = np.mean(nonlinear_field**2)
         
-        print(f"   ⚡ Coupling strength α: {alpha}")
-        print(f"   ⚡ Saturation gain: {gain}")
-        print(f"   ⚡ Non-linear energy: {energy_nonlinear:.3f}")
+        print(f"   [BOLT] Coupling strength α: {alpha}")
+        print(f"   [BOLT] Saturation gain: {gain}")
+        print(f"   [BOLT] Non-linear energy: {energy_nonlinear:.3f}")
         
         # Measure resonance at mid-band frequencies
         emergent_concepts = []
@@ -388,10 +388,10 @@ class MindBlowingWaveDemo:
             print(f"   ✨ {concept}: {strength:.3f} ({intensity})")
         
         if not emergent_concepts:
-            print("   📊 No emergent concepts detected this run (phase-dependent)")
+            print("   [DATA] No emergent concepts detected this run (phase-dependent)")
         
         # Step 3: Concept learning via mentor agent
-        print(f"\n🧠 STEP 3: CONCEPT LEARNING")
+        print(f"\n[BRAIN] STEP 3: CONCEPT LEARNING")
         print("   Introducing mentor agent with 'biotech' label...")
         
         mentor_freq = 5.2
@@ -413,10 +413,10 @@ class MindBlowingWaveDemo:
         print(f"   📚 Bio domain resonance: {bio_resonance:.3f}")
         print(f"   📚 Tech domain resonance: {tech_resonance:.3f}")
         print(f"   📚 Mentor 'biotech' resonance: {mentor_resonance:.3f}")
-        print(f"   🎯 Learning success: {'✅ YES' if learned else '❌ NO'}")
+        print(f"   [TARGET] Learning success: {'[+] YES' if learned else '[-] NO'}")
         
         # Step 4: Generalization test (THE BREAKTHROUGH!)
-        print(f"\n🤯 STEP 4: CONCEPT GENERALIZATION")
+        print(f"\n[MIND] STEP 4: CONCEPT GENERALIZATION")
         print("   Testing if learned concept generalizes to nearby frequencies...")
         
         # Test slightly different frequency
@@ -439,15 +439,15 @@ class MindBlowingWaveDemo:
         print(f"   🧪 Test resonance: {test_resonance:.3f}")
         print(f"   🧪 Bio context: {bio_test:.3f}")
         print(f"   🧪 Tech context: {tech_test:.3f}")
-        print(f"   🎯 Generalization: {'✅ YES' if generalized else '❌ NO'}")
+        print(f"   [TARGET] Generalization: {'[+] YES' if generalized else '[-] NO'}")
         
         # Final summary
-        print(f"\n🤯 IMPOSSIBLE ACHIEVEMENT:")
-        print(f"   ✅ Created new frequencies through non-linear wave coupling")
-        print(f"   ✅ Learned concept labels through minimal reinforcement")
-        print(f"   ✅ Generalized concept to unseen frequencies")
-        print(f"   ✅ NO massive training data - pure wave physics!")
-        print(f"   ✅ Demonstrated pathway from signal to symbol")
+        print(f"\n[MIND] IMPOSSIBLE ACHIEVEMENT:")
+        print(f"   [+] Created new frequencies through non-linear wave coupling")
+        print(f"   [+] Learned concept labels through minimal reinforcement")
+        print(f"   [+] Generalized concept to unseen frequencies")
+        print(f"   [+] NO massive training data - pure wave physics!")
+        print(f"   [+] Demonstrated pathway from signal to symbol")
         print(f"\n🏊‍♂️ POOLSIDE VERDICT: This is how consciousness could emerge!")
         
         return {
@@ -462,11 +462,11 @@ class MindBlowingWaveDemo:
     
     def run_mind_blowing_demo(self):
         """Run all impossible demonstrations"""
-        print("🚀" * 70)
-        print("🤯 MIND-BLOWING WAVE COGNITION DEMONSTRATIONS 🤯")
-        print("🚀" * 70)
+        print("[ROCKET]" * 70)
+        print("[MIND] MIND-BLOWING WAVE COGNITION DEMONSTRATIONS [MIND]")
+        print("[ROCKET]" * 70)
         print("Showing capabilities IMPOSSIBLE for traditional AI systems")
-        print("🚀" * 70)
+        print("[ROCKET]" * 70)
         
         # Run all impossible demos
         musical_waves = self.demo_impossible_1_real_time_music_from_concepts()
@@ -479,19 +479,19 @@ class MindBlowingWaveDemo:
         self.print_explosive_header("HOLY MOTHERFUCKER SUMMARY")
         
         print("🎵 CREATED MUSIC FROM PURE CONCEPTS (no training data)")
-        print("🧠 RESOLVED CONTRADICTIONS IN REAL-TIME (wave interference)")
+        print("[BRAIN] RESOLVED CONTRADICTIONS IN REAL-TIME (wave interference)")
         print("🎨 GENERATED NOVEL IDEAS THROUGH WAVE SYNTHESIS")
         print("🔮 PREDICTED FUTURE STATES VIA WAVE EXTRAPOLATION")
-        print("🌊 LEARNED CONCEPTS FROM PURE WAVE PHYSICS")
-        print("🤯 GENERALIZED CONCEPTS TO UNSEEN FREQUENCIES")
+        print("[WAVE] LEARNED CONCEPTS FROM PURE WAVE PHYSICS")
+        print("[MIND] GENERALIZED CONCEPTS TO UNSEEN FREQUENCIES")
         print()
-        print("❌ NO OTHER AI SYSTEM CAN DO THIS")
-        print("✅ ONLY POSSIBLE WITH WAVE-BASED COGNITION")
-        print("🌊 PURE WAVE PHYSICS CREATING IMPOSSIBLE BEHAVIORS")
+        print("[-] NO OTHER AI SYSTEM CAN DO THIS")
+        print("[+] ONLY POSSIBLE WITH WAVE-BASED COGNITION")
+        print("[WAVE] PURE WAVE PHYSICS CREATING IMPOSSIBLE BEHAVIORS")
         print()
-        print("🤯 THIS IS NOT ARTIFICIAL INTELLIGENCE")
-        print("🧠 THIS IS ARTIFICIAL CONSCIOUSNESS")
-        print("⚡ THROUGH TEMPORAL WAVE DYNAMICS")
+        print("[MIND] THIS IS NOT ARTIFICIAL INTELLIGENCE")
+        print("[BRAIN] THIS IS ARTIFICIAL CONSCIOUSNESS")
+        print("[BOLT] THROUGH TEMPORAL WAVE DYNAMICS")
         print("🏊‍♂️ PROVEN BY POOLSIDE EXPERIMENTS!")
         
         return {

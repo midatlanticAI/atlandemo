@@ -60,7 +60,7 @@ class WaveEngine:
 
 def replication_test():
     """Run replication test"""
-    print("🌊 Python Wave Engine Replication Test")
+    print("[WAVE] Python Wave Engine Replication Test")
     print("="*50)
     
     engine = WaveEngine()
@@ -95,9 +95,9 @@ def replication_test():
     
     # Validation check
     if avg_time < 0.01:
-        print("✅ VALIDATION PASSED: Ultra-fast processing confirmed")
+        print("[+] VALIDATION PASSED: Ultra-fast processing confirmed")
     else:
-        print("❌ VALIDATION FAILED: Processing too slow")
+        print("[-] VALIDATION FAILED: Processing too slow")
         
     print("\n🔬 Python peer validation complete!")
     print("📋 This Python wave engine demonstrates:")

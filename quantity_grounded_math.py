@@ -108,7 +108,7 @@ def teach_quantity_recognition(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Quantity recognition phase completed")
+    print(f"\n[+] Quantity recognition phase completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
     print(f"   Active symbols: {state['active_symbol_count']}")
@@ -116,7 +116,7 @@ def teach_quantity_recognition(engine):
 
 def test_quantity_recognition(engine):
     """Test if the engine learned quantity recognition."""
-    print("\n\n🔍 TESTING QUANTITY RECOGNITION")
+    print("\n\n[SEARCH] TESTING QUANTITY RECOGNITION")
     print("=" * 50)
     
     test_cases = [
@@ -148,9 +148,9 @@ def test_quantity_recognition(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: Quantity recognized")
+            print(f"   [+] CORRECT: Quantity recognized")
         else:
-            print(f"   ❌ INCORRECT: Quantity not recognized")
+            print(f"   [-] INCORRECT: Quantity not recognized")
     
     return results
 
@@ -194,14 +194,14 @@ def teach_counting_sequence(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Counting sequence phase completed")
+    print(f"\n[+] Counting sequence phase completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def teach_quantity_relationships(engine):
     """Phase 3: Teach relationships between quantities."""
-    print("\n\n📊 PHASE 3: QUANTITY RELATIONSHIPS")
+    print("\n\n[DATA] PHASE 3: QUANTITY RELATIONSHIPS")
     print("=" * 50)
     
     # Teach more/less relationships
@@ -233,7 +233,7 @@ def teach_quantity_relationships(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Quantity relationships phase completed")
+    print(f"\n[+] Quantity relationships phase completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
@@ -266,14 +266,14 @@ def teach_quantity_operations(engine):
         )
         time.sleep(0.05)
     
-    print(f"\n✅ Quantity operations phase completed")
+    print(f"\n[+] Quantity operations phase completed")
     state = engine.get_cognitive_state()
     print(f"   Resonance patterns: {state['resonance_patterns']}")
 
 
 def test_quantity_operations(engine):
     """Test if the engine learned quantity-based operations."""
-    print("\n\n🔍 TESTING QUANTITY OPERATIONS")
+    print("\n\n[SEARCH] TESTING QUANTITY OPERATIONS")
     print("=" * 50)
     
     test_cases = [
@@ -308,16 +308,16 @@ def test_quantity_operations(engine):
         results.append((description, success, expected_activation))
         
         if success:
-            print(f"   ✅ CORRECT: Quantity addition successful")
+            print(f"   [+] CORRECT: Quantity addition successful")
         else:
-            print(f"   ❌ INCORRECT: Quantity addition failed")
+            print(f"   [-] INCORRECT: Quantity addition failed")
     
     return results
 
 
 def run_quantity_grounded_learning():
     """Run the complete quantity-grounded learning sequence."""
-    print("🧠 QUANTITY-GROUNDED MATHEMATICAL LEARNING")
+    print("[BRAIN] QUANTITY-GROUNDED MATHEMATICAL LEARNING")
     print("=" * 70)
     print("Teaching math through natural developmental sequence")
     print("=" * 70)
@@ -344,50 +344,50 @@ def run_quantity_grounded_learning():
     end_time = time.time()
     
     # Analysis
-    print("\n\n📊 QUANTITY-GROUNDED LEARNING RESULTS")
+    print("\n\n[DATA] QUANTITY-GROUNDED LEARNING RESULTS")
     print("=" * 70)
     
     print(f"\n🔢 QUANTITY RECOGNITION:")
     correct_quantity = sum(1 for _, success, _ in quantity_results if success)
     print(f"   Correct: {correct_quantity}/{len(quantity_results)}")
     for desc, success, activation in quantity_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     print(f"\n🧮 QUANTITY OPERATIONS:")
     correct_operations = sum(1 for _, success, _ in operation_results if success)
     print(f"   Correct: {correct_operations}/{len(operation_results)}")
     for desc, success, activation in operation_results:
-        status = "✅" if success else "❌"
+        status = "[+]" if success else "[-]"
         print(f"   {status} {desc}: {activation:.3f}")
     
     # Overall assessment
     total_correct = correct_quantity + correct_operations
     total_tests = len(quantity_results) + len(operation_results)
     
-    print(f"\n🎯 OVERALL PERFORMANCE:")
+    print(f"\n[TARGET] OVERALL PERFORMANCE:")
     print(f"   Total correct: {total_correct}/{total_tests} ({total_correct/total_tests*100:.1f}%)")
     print(f"   Learning time: {end_time - start_time:.2f} seconds")
     
     # Final cognitive state
     final_state = engine.get_cognitive_state()
-    print(f"\n🧠 FINAL COGNITIVE STATE:")
+    print(f"\n[BRAIN] FINAL COGNITIVE STATE:")
     print(f"   Total experiences: {final_state['total_experiences']}")
     print(f"   Active symbols: {final_state['active_symbol_count']}")
     print(f"   Resonance patterns: {final_state['resonance_patterns']}")
     print(f"   Dream cycles: {final_state['replay_cycles']}")
     
     # Show top symbol activations
-    print(f"\n📊 TOP SYMBOL ACTIVATIONS:")
+    print(f"\n[DATA] TOP SYMBOL ACTIVATIONS:")
     field = engine.experience_stream.get_current_activation_field()
     if field:
         sorted_field = sorted(field.items(), key=lambda x: abs(x[1]), reverse=True)
         for symbol, activation in sorted_field[:10]:
-            strength = "🔥" if abs(activation) > 1.0 else "⚡" if abs(activation) > 0.5 else "✨"
+            strength = "🔥" if abs(activation) > 1.0 else "[BOLT]" if abs(activation) > 0.5 else "✨"
             print(f"   {strength} {symbol}: {activation:.3f}")
     
     if total_correct/total_tests > 0.7:
-        print(f"\n🎉 BREAKTHROUGH: Quantity-grounded learning achieved!")
+        print(f"\n[PARTY] BREAKTHROUGH: Quantity-grounded learning achieved!")
         print(f"   Engine learned mathematics through natural developmental sequence")
         print(f"   Concrete quantities → Abstract numbers → Operations")
     else:

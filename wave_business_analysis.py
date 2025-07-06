@@ -271,7 +271,7 @@ class BiometricWaveEngineBusinessAnalysis:
         """Generate comprehensive business analysis report"""
         report = []
         
-        report.append("🚀 BIOMETRIC WAVE ENGINE - COMPREHENSIVE BUSINESS ANALYSIS")
+        report.append("[ROCKET] BIOMETRIC WAVE ENGINE - COMPREHENSIVE BUSINESS ANALYSIS")
         report.append("=" * 80)
         
         # Hardware Analysis
@@ -279,7 +279,7 @@ class BiometricWaveEngineBusinessAnalysis:
         report.append("-" * 50)
         
         for device in self.device_configurations:
-            report.append(f"\n🎯 {device.name} ({device.target_market.value.title()})")
+            report.append(f"\n[TARGET] {device.name} ({device.target_market.value.title()})")
             report.append(f"   Component Cost: ${device.total_component_cost():,.2f}")
             report.append(f"   Manufacturing: ${device.manufacturing_cost:,.2f}")
             report.append(f"   Total Cost: ${device.total_manufacturing_cost():,.2f}")
@@ -292,7 +292,7 @@ class BiometricWaveEngineBusinessAnalysis:
         report.append("-" * 50)
         
         for market, data in self.market_analysis.items():
-            report.append(f"\n📊 {market.value.title().replace('_', ' ')} Market")
+            report.append(f"\n[DATA] {market.value.title().replace('_', ' ')} Market")
             report.append(f"   Total Market Size: ${data['market_size_billion']:.1f}B")
             report.append(f"   Addressable Market: {data['addressable_market_percent']:.1f}%")
             report.append(f"   Growth Rate: {data['growth_rate_percent']:.1f}% annually")
@@ -306,7 +306,7 @@ class BiometricWaveEngineBusinessAnalysis:
         
         for year, data in self.financial_projections.items():
             year_num = year.split('_')[1]
-            report.append(f"\n📈 Year {year_num}")
+            report.append(f"\n[CHART] Year {year_num}")
             report.append(f"   Revenue: ${data['revenue']:,.0f}")
             report.append(f"   Cost of Goods Sold: ${data['cost_of_goods_sold']:,.0f}")
             report.append(f"   Gross Profit: ${data['gross_profit']:,.0f}")
@@ -339,7 +339,7 @@ class BiometricWaveEngineBusinessAnalysis:
         report.append(f"   TOTAL INVESTMENT REQUIRED: ${total_investment:,.0f}")
         
         # ROI Analysis
-        report.append(f"\n📊 ROI ANALYSIS")
+        report.append(f"\n[DATA] ROI ANALYSIS")
         report.append("-" * 50)
         
         year_3_profit = self.financial_projections["year_3"]["net_profit"]
@@ -350,7 +350,7 @@ class BiometricWaveEngineBusinessAnalysis:
         report.append(f"   Payback Period: {total_investment / year_3_profit:.1f} years")
         
         # Risk Analysis
-        report.append(f"\n⚠️ RISK ANALYSIS")
+        report.append(f"\n[WARN] RISK ANALYSIS")
         report.append("-" * 50)
         report.append(f"   🔴 HIGH RISK: Regulatory approval for medical claims")
         report.append(f"   🟡 MEDIUM RISK: Component supply chain disruptions")
@@ -359,14 +359,14 @@ class BiometricWaveEngineBusinessAnalysis:
         report.append(f"   🟢 LOW RISK: Technical feasibility (proven technology)")
         
         # Competitive Advantages
-        report.append(f"\n🏆 COMPETITIVE ADVANTAGES")
+        report.append(f"\n[TROPHY] COMPETITIVE ADVANTAGES")
         report.append("-" * 50)
-        report.append(f"   🌊 Patent-pending wave engine technology")
-        report.append(f"   🧠 First-mover advantage in biometric AI")
-        report.append(f"   ⚡ Real-time processing capability")
-        report.append(f"   📊 Comprehensive biometric monitoring")
-        report.append(f"   🔒 Proprietary learning algorithms")
-        report.append(f"   🎯 Multiple market applications")
+        report.append(f"   [WAVE] Patent-pending wave engine technology")
+        report.append(f"   [BRAIN] First-mover advantage in biometric AI")
+        report.append(f"   [BOLT] Real-time processing capability")
+        report.append(f"   [DATA] Comprehensive biometric monitoring")
+        report.append(f"   [LOCK] Proprietary learning algorithms")
+        report.append(f"   [TARGET] Multiple market applications")
         
         return "\n".join(report)
     
@@ -397,7 +397,7 @@ def run_business_analysis():
     print(analyzer.generate_comprehensive_report())
     
     # Break-even analysis
-    print(f"\n🎯 BREAK-EVEN ANALYSIS")
+    print(f"\n[TARGET] BREAK-EVEN ANALYSIS")
     print("-" * 50)
     break_even = analyzer.calculate_break_even_analysis()
     
@@ -406,14 +406,14 @@ def run_business_analysis():
     print(f"   Contribution Margin: ${break_even['contribution_margin']:,.2f}")
     print(f"   Contribution Margin %: {break_even['contribution_margin_percent']:.1f}%")
     
-    print(f"\n🚀 BUSINESS OPPORTUNITY SUMMARY")
+    print(f"\n[ROCKET] BUSINESS OPPORTUNITY SUMMARY")
     print("=" * 50)
     print(f"   💎 PREMIUM POSITIONING: $1,300 flagship device")
-    print(f"   🎯 MULTIPLE MARKETS: Adult, Medical, Gaming")
-    print(f"   📈 HIGH GROWTH: 15-25% annual market growth")
+    print(f"   [TARGET] MULTIPLE MARKETS: Adult, Medical, Gaming")
+    print(f"   [CHART] HIGH GROWTH: 15-25% annual market growth")
     print(f"   💰 STRONG MARGINS: 75%+ gross margin")
-    print(f"   🏆 FIRST-MOVER: Patent-pending technology")
-    print(f"   🚀 SCALABLE: Software + Hardware platform")
+    print(f"   [TROPHY] FIRST-MOVER: Patent-pending technology")
+    print(f"   [ROCKET] SCALABLE: Software + Hardware platform")
     
     return analyzer
 

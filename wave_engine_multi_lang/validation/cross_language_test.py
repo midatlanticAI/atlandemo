@@ -23,7 +23,7 @@ class CrossLanguageValidator:
         
     def run_validation(self):
         """Run comprehensive validation across all languages"""
-        print("🌊 CROSS-LANGUAGE WAVE ENGINE VALIDATION")
+        print("[WAVE] CROSS-LANGUAGE WAVE ENGINE VALIDATION")
         print("="*70)
         print("Testing wave engine implementations across multiple languages")
         print("Validating consistency, performance, and algorithm correctness")
@@ -78,15 +78,15 @@ class CrossLanguageValidator:
             
             if result['avg_processing_time'] < 0.01:
                 self.validation_passed += 1
-                print("✅ Python implementation: PASSED")
+                print("[+] Python implementation: PASSED")
             else:
                 self.validation_failed += 1
-                print("❌ Python implementation: FAILED")
+                print("[-] Python implementation: FAILED")
                 
         except Exception as e:
             self.results['python'] = {'status': 'ERROR', 'error': str(e), 'available': False}
             self.validation_failed += 1
-            print(f"❌ Python implementation: ERROR - {e}")
+            print(f"[-] Python implementation: ERROR - {e}")
     
     def test_javascript(self):
         """Test JavaScript implementation"""
@@ -113,7 +113,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_passed += 1
-                    print("✅ JavaScript implementation: PASSED")
+                    print("[+] JavaScript implementation: PASSED")
                 else:
                     self.results['javascript'] = {
                         'status': 'FAILED',
@@ -121,7 +121,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_failed += 1
-                    print("❌ JavaScript implementation: FAILED")
+                    print("[-] JavaScript implementation: FAILED")
             else:
                 self.results['javascript'] = {
                     'status': 'ERROR',
@@ -129,7 +129,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print(f"❌ JavaScript implementation: ERROR - {result.stderr}")
+                print(f"[-] JavaScript implementation: ERROR - {result.stderr}")
                 
         except subprocess.TimeoutExpired:
             self.results['javascript'] = {
@@ -137,14 +137,14 @@ class CrossLanguageValidator:
                 'available': False
             }
             self.validation_failed += 1
-            print("❌ JavaScript implementation: TIMEOUT")
+            print("[-] JavaScript implementation: TIMEOUT")
         except FileNotFoundError:
             self.results['javascript'] = {
                 'status': 'NODE_NOT_FOUND',
                 'available': False
             }
             self.validation_failed += 1
-            print("❌ JavaScript implementation: Node.js not found")
+            print("[-] JavaScript implementation: Node.js not found")
     
     def test_java(self):
         """Test Java implementation"""
@@ -182,7 +182,7 @@ class CrossLanguageValidator:
                             'available': True
                         }
                         self.validation_passed += 1
-                        print("✅ Java implementation: PASSED")
+                        print("[+] Java implementation: PASSED")
                     else:
                         self.results['java'] = {
                             'status': 'FAILED',
@@ -190,7 +190,7 @@ class CrossLanguageValidator:
                             'available': True
                         }
                         self.validation_failed += 1
-                        print("❌ Java implementation: FAILED")
+                        print("[-] Java implementation: FAILED")
                 else:
                     self.results['java'] = {
                         'status': 'RUNTIME_ERROR',
@@ -198,7 +198,7 @@ class CrossLanguageValidator:
                         'available': False
                     }
                     self.validation_failed += 1
-                    print(f"❌ Java implementation: RUNTIME ERROR - {run_result.stderr}")
+                    print(f"[-] Java implementation: RUNTIME ERROR - {run_result.stderr}")
             else:
                 self.results['java'] = {
                     'status': 'COMPILE_ERROR',
@@ -206,7 +206,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print(f"❌ Java implementation: COMPILE ERROR - {compile_result.stderr}")
+                print(f"[-] Java implementation: COMPILE ERROR - {compile_result.stderr}")
                 
         except Exception as e:
             self.results['java'] = {
@@ -215,11 +215,11 @@ class CrossLanguageValidator:
                 'available': False
             }
             self.validation_failed += 1
-            print(f"❌ Java implementation: ERROR - {e}")
+            print(f"[-] Java implementation: ERROR - {e}")
     
     def test_cpp(self):
         """Test C++ implementation"""
-        print("\n⚡ Testing C++ Implementation")
+        print("\n[BOLT] Testing C++ Implementation")
         print("-" * 40)
         
         try:
@@ -273,7 +273,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print("❌ C++ implementation: No compiler found")
+                print("[-] C++ implementation: No compiler found")
                 print("   💡 To install C++ compiler:")
                 print("   • Visual Studio Build Tools: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022")
                 print("   • MinGW-w64: https://www.mingw-w64.org/downloads/")
@@ -292,7 +292,7 @@ class CrossLanguageValidator:
                             'available': True
                         }
                         self.validation_passed += 1
-                        print("✅ C++ implementation: PASSED")
+                        print("[+] C++ implementation: PASSED")
                     else:
                         self.results['cpp'] = {
                             'status': 'FAILED',
@@ -300,7 +300,7 @@ class CrossLanguageValidator:
                             'available': True
                         }
                         self.validation_failed += 1
-                        print("❌ C++ implementation: FAILED")
+                        print("[-] C++ implementation: FAILED")
                 else:
                     # Standard compilation - need to run executable
                     run_result = subprocess.run(
@@ -320,7 +320,7 @@ class CrossLanguageValidator:
                                 'available': True
                             }
                             self.validation_passed += 1
-                            print("✅ C++ implementation: PASSED")
+                            print("[+] C++ implementation: PASSED")
                         else:
                             self.results['cpp'] = {
                                 'status': 'FAILED',
@@ -328,7 +328,7 @@ class CrossLanguageValidator:
                                 'available': True
                             }
                             self.validation_failed += 1
-                            print("❌ C++ implementation: FAILED")
+                            print("[-] C++ implementation: FAILED")
                     else:
                         self.results['cpp'] = {
                             'status': 'RUNTIME_ERROR',
@@ -336,7 +336,7 @@ class CrossLanguageValidator:
                             'available': False
                         }
                         self.validation_failed += 1
-                        print(f"❌ C++ implementation: RUNTIME ERROR - {run_result.stderr}")
+                        print(f"[-] C++ implementation: RUNTIME ERROR - {run_result.stderr}")
             else:
                 self.results['cpp'] = {
                     'status': 'COMPILE_ERROR',
@@ -344,7 +344,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print(f"❌ C++ implementation: COMPILE ERROR - {compile_result.stderr}")
+                print(f"[-] C++ implementation: COMPILE ERROR - {compile_result.stderr}")
                 
         except Exception as e:
             self.results['cpp'] = {
@@ -353,7 +353,7 @@ class CrossLanguageValidator:
                 'available': False
             }
             self.validation_failed += 1
-            print(f"❌ C++ implementation: ERROR - {e}")
+            print(f"[-] C++ implementation: ERROR - {e}")
     
     def test_rust(self):
         """Test Rust implementation"""
@@ -373,7 +373,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print("❌ Rust implementation: Rust not found")
+                print("[-] Rust implementation: Rust not found")
                 print("   💡 To install Rust:")
                 print("   • Visit: https://rustup.rs/")
                 print("   • Run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
@@ -398,7 +398,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_passed += 1
-                    print("✅ Rust implementation: PASSED")
+                    print("[+] Rust implementation: PASSED")
                 else:
                     self.results['rust'] = {
                         'status': 'FAILED',
@@ -406,7 +406,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_failed += 1
-                    print("❌ Rust implementation: FAILED")
+                    print("[-] Rust implementation: FAILED")
             else:
                 self.results['rust'] = {
                     'status': 'ERROR',
@@ -414,7 +414,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print(f"❌ Rust implementation: ERROR - {run_result.stderr}")
+                print(f"[-] Rust implementation: ERROR - {run_result.stderr}")
                 
         except Exception as e:
             self.results['rust'] = {
@@ -423,7 +423,7 @@ class CrossLanguageValidator:
                 'available': False
             }
             self.validation_failed += 1
-            print(f"❌ Rust implementation: ERROR - {e}")
+            print(f"[-] Rust implementation: ERROR - {e}")
     
     def test_go(self):
         """Test Go implementation"""
@@ -451,7 +451,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_passed += 1
-                    print("✅ Go implementation: PASSED")
+                    print("[+] Go implementation: PASSED")
                 else:
                     self.results['go'] = {
                         'status': 'FAILED',
@@ -459,7 +459,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_failed += 1
-                    print("❌ Go implementation: FAILED")
+                    print("[-] Go implementation: FAILED")
             else:
                 self.results['go'] = {
                     'status': 'ERROR',
@@ -467,7 +467,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print(f"❌ Go implementation: ERROR - {run_result.stderr}")
+                print(f"[-] Go implementation: ERROR - {run_result.stderr}")
                 
         except Exception as e:
             self.results['go'] = {
@@ -476,7 +476,7 @@ class CrossLanguageValidator:
                 'available': False
             }
             self.validation_failed += 1
-            print(f"❌ Go implementation: ERROR - {e}")
+            print(f"[-] Go implementation: ERROR - {e}")
     
     def test_csharp(self):
         """Test C# implementation"""
@@ -496,7 +496,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print("❌ C# implementation: .NET SDK not found")
+                print("[-] C# implementation: .NET SDK not found")
                 print("   💡 To install .NET SDK:")
                 print("   • Visit: https://dotnet.microsoft.com/download")
                 print("   • Download and install the latest .NET SDK")
@@ -520,7 +520,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_passed += 1
-                    print("✅ C# implementation: PASSED")
+                    print("[+] C# implementation: PASSED")
                 else:
                     self.results['csharp'] = {
                         'status': 'FAILED',
@@ -528,7 +528,7 @@ class CrossLanguageValidator:
                         'available': True
                     }
                     self.validation_failed += 1
-                    print("❌ C# implementation: FAILED")
+                    print("[-] C# implementation: FAILED")
             else:
                 self.results['csharp'] = {
                     'status': 'ERROR',
@@ -536,7 +536,7 @@ class CrossLanguageValidator:
                     'available': False
                 }
                 self.validation_failed += 1
-                print(f"❌ C# implementation: ERROR - {run_result.stderr}")
+                print(f"[-] C# implementation: ERROR - {run_result.stderr}")
                 
         except Exception as e:
             self.results['csharp'] = {
@@ -545,11 +545,11 @@ class CrossLanguageValidator:
                 'available': False
             }
             self.validation_failed += 1
-            print(f"❌ C# implementation: ERROR - {e}")
+            print(f"[-] C# implementation: ERROR - {e}")
     
     def compare_results(self):
         """Compare results across languages"""
-        print("\n🔍 CROSS-LANGUAGE COMPARISON")
+        print("\n[SEARCH] CROSS-LANGUAGE COMPARISON")
         print("="*50)
         
         passed_implementations = []
@@ -561,25 +561,25 @@ class CrossLanguageValidator:
             else:
                 failed_implementations.append(lang)
         
-        print(f"✅ Passed implementations: {len(passed_implementations)}")
+        print(f"[+] Passed implementations: {len(passed_implementations)}")
         for lang in passed_implementations:
             print(f"   • {lang.upper()}")
         
-        print(f"❌ Failed implementations: {len(failed_implementations)}")
+        print(f"[-] Failed implementations: {len(failed_implementations)}")
         for lang in failed_implementations:
             print(f"   • {lang.upper()}: {self.results[lang]['status']}")
     
     def generate_report(self):
         """Generate comprehensive validation report"""
-        print("\n📊 VALIDATION REPORT")
+        print("\n[DATA] VALIDATION REPORT")
         print("="*50)
         
         total_languages = len(self.results)
         success_rate = (self.validation_passed / total_languages) * 100
         
-        print(f"🎯 Overall Success Rate: {success_rate:.1f}%")
-        print(f"✅ Passed: {self.validation_passed}")
-        print(f"❌ Failed: {self.validation_failed}")
+        print(f"[TARGET] Overall Success Rate: {success_rate:.1f}%")
+        print(f"[+] Passed: {self.validation_passed}")
+        print(f"[-] Failed: {self.validation_failed}")
         print(f"📋 Total Languages Tested: {total_languages}")
         
         # Save detailed results
@@ -596,12 +596,12 @@ class CrossLanguageValidator:
                 'timestamp': time.time()
             }, f, indent=2)
         
-        print(f"\n💾 Detailed report saved to: {report_path}")
+        print(f"\n[SAVE] Detailed report saved to: {report_path}")
         
         if success_rate >= 80:
-            print("🎉 VALIDATION SUCCESSFUL: Multi-language implementation validated!")
+            print("[PARTY] VALIDATION SUCCESSFUL: Multi-language implementation validated!")
         else:
-            print("⚠️  VALIDATION INCOMPLETE: Some implementations need attention")
+            print("[WARN]  VALIDATION INCOMPLETE: Some implementations need attention")
 
 if __name__ == "__main__":
     validator = CrossLanguageValidator()
