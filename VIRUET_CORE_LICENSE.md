@@ -85,7 +85,9 @@ This license is governed by the laws of Puerto Rico and the United States.
 
 For commercial licensing inquiries:
 **Johnathan Scott Viruet**  
-Email: [Contact Information]
+Email: john@midatlantic.ai  
+Phone: (540) 604-3368  
+Location: Locust Grove, Virginia
 
 ---
 

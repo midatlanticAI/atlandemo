@@ -60,7 +60,10 @@ This technology may **NOT** be used for:
 
 For commercial licensing opportunities, contact:
 **Johnathan Scott Viruet**  
-Patent Holder and Inventor
+Patent Holder and Inventor  
+**Email:** john@midatlantic.ai  
+**Phone:** (540) 604-3368  
+**Location:** Locust Grove, Virginia
 
 ### 📋 PATENT CLAIMS
 
