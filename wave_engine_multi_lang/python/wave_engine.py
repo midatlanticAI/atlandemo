@@ -3,6 +3,19 @@
 Python Wave Engine Implementation
 Ultra-fast wave-based cognition engine
 Reference implementation for cross-language validation
+
+🔐 PATENT PENDING - PROTECTED TECHNOLOGY
+U.S. Patent Application No. 63/839,719
+Filed: January 7, 2025
+Title: "Wave-Based Synthetic Intelligence System and Method"
+Inventor: Johnathan Scott Viruet
+
+⚠️ PATENT PROTECTION NOTICE:
+This software implements patented and patent-pending wave-based AI algorithms.
+Commercial use requires explicit licensing agreement.
+Research and educational use permitted under license terms.
+
+Copyright (c) 2025 Johnathan Scott Viruet. All rights reserved.
 """
 
 import time
