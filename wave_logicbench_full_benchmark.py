@@ -3,6 +3,7 @@ import random
 import time
 from pathlib import Path
 from typing import Dict, Any, List, Tuple, Generator
+import hashlib  # NEW: for dataset integrity verification
 
 from enhanced_wave_engine import EnhancedWaveEngine
 
@@ -123,6 +124,8 @@ class WaveLogicBenchBenchmark:
     # Public API
     # ------------------------------------------------------------------
     def run(self):
+        # Verify dataset integrity if hash file is present
+        self._verify_dataset_integrity()
         safe_print("[BENCH] Wave Engine full LogicBench (Eval) run")
         start = time.time()
 
@@ -157,6 +160,51 @@ class WaveLogicBenchBenchmark:
         with open("wave_logicbench_full_results.json", "w", encoding="utf-8") as f:
             json.dump(self.results, f, indent=2)
         safe_print("[SAVE] Detailed metrics written to wave_logicbench_full_results.json")
+
+    # ------------------------------------------------------------------
+    # Dataset integrity verification
+    # ------------------------------------------------------------------
+    def _verify_dataset_integrity(self):
+        """If logicbench_hashes.txt exists, ensure all listed files match size and sha256."""
+        hash_file = Path("logicbench_hashes.txt")
+        if not hash_file.exists():
+            safe_print("[WARN] logicbench_hashes.txt not found; skipping integrity check")
+            return
+
+        mismatches = []
+        for line in hash_file.read_text().splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            try:
+                sha, size_str, rel_path = line.split(maxsplit=2)
+                expected_size = int(size_str)
+            except ValueError:
+                safe_print(f"[WARN] Malformed line in hash file: {line}")
+                continue
+
+            file_path = Path(rel_path)
+            if not file_path.exists():
+                mismatches.append(f"missing:{rel_path}")
+                continue
+            actual_size = file_path.stat().st_size
+            if actual_size != expected_size:
+                mismatches.append(f"size:{rel_path}")
+                continue
+            # compute sha256
+            h = hashlib.sha256()
+            with open(file_path, "rb") as f:
+                for chunk in iter(lambda: f.read(8192), b""):
+                    h.update(chunk)
+            if h.hexdigest() != sha:
+                mismatches.append(f"hash:{rel_path}")
+
+        if mismatches:
+            safe_print("[FAIL] Dataset integrity check failed:")
+            for m in mismatches:
+                safe_print(f"   - {m}")
+            raise SystemExit(1)
+        safe_print("[DATA] Dataset integrity verified (logicbench_hashes.txt)")
 
     # ------------------------------------------------------------------
     # Helpers
