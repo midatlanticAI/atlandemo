@@ -34,7 +34,7 @@ def compile_yaml():
     for entry in data:
         vec = text_to_vector(entry["text"].lower())
         store.append({"id": entry["id"], "vec": vec, "text": entry["text"]})
-    OUTPUT_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=2))
+    OUTPUT_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[+] Compiled {len(store)} seed items → {OUTPUT_PATH}")
 
 
