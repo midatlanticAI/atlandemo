@@ -248,3 +248,32 @@ For questions about the VTRFM architecture or implementation details, please ref
 ---
 
 *"The mind is not a vessel to be filled, but a fire to be kindled."* - Plutarch 
+
+# Wave Engine (Patent Pending)
+> 102 KB wave-based cognitive engine — ~5 000× faster than transformer LLMs, zero dependencies, runs anywhere.
+
+**START HERE**
+1. Clone the repo `git clone https://github.com/midatlanticAI/atlandemo.git`
+2. 30-second demo `python simple_wave_showcase.py`
+3. Chatbot demo `python wave_interactive_chatbot.py`
+4. Reproduce benchmarks `python quick_logicbench_test.py` (results saved to `wave_vs_ollama_results.json`)
+
+*Core algorithm:* [`enhanced_wave_engine.py`](enhanced_wave_engine.py) (~17 KB).  
+*Full engine footprint:* < 102 KB (see files listed in `simple_live_demo.py`).
+
+### What Wave Engine **IS**
+• Pure trigonometric wave-interference reasoning (no neural nets, no attention, no GPUs).  
+• Deterministic, explainable, reproducible.  
+• Early MVP (5 days old) released for peer review & community hacking.
+
+### What Wave Engine **IS NOT (YET)**
+• A drop-in loader for existing LLM weights.  
+• A polished ChatGPT-style UI.  
+• Production-hardened code (expect TODOs & rough edges).
+
+### Licensing & Patent Notice
+This repository is MIT-licensed **for personal & research use only**.  
+Commercial use requires a separate license — covered by U.S. Provisional Patent **63/839,719** filed 07 Jan 2025.  
+Contact **john@midatlantic.ai | +1-540-604-3368** for commercial inquiries.
+
+For a full technical deep dive, continue reading below. 
