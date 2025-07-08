@@ -13,7 +13,13 @@ import os
 import time
 from pathlib import Path
 
+# Wave engine chatbot core
 from wave_interactive_chatbot import WaveInteractiveChatbot
+# Seed knowledge lookup
+try:
+    from wave_seed_runtime import nearest_paragraph
+except ImportError:
+    nearest_paragraph = lambda prompt: None  # fallback
 
 MEMORY_PATH = Path("wave_chat_memory.json")
 
@@ -69,8 +75,14 @@ def main():
         if not user_input:
             continue
 
-        response_data = bot.process_user_input(session_id, user_input)
-        print(f"Bot> {response_data['response_text']}\n")
+        seed = nearest_paragraph(user_input)
+        if seed:
+            print(f"Bot> {seed}\n")
+            # Still record interaction for memory
+            response_data = bot.process_user_input(session_id, user_input)
+        else:
+            response_data = bot.process_user_input(session_id, user_input)
+            print(f"Bot> {response_data['response_text']}\n")
 
         # Persist memory
         save_memory(list(bot.conversation_history))
