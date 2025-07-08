@@ -30,9 +30,15 @@ def load_memory():
 
 
 def save_memory(history):
+    def _default(obj):
+        """JSON serializer for objects not serializable by default"""
+        if hasattr(obj, "__dict__"):
+            return obj.__dict__
+        return str(obj)
+
     try:
         with MEMORY_PATH.open("w", encoding="utf-8") as f:
-            json.dump(history, f, ensure_ascii=False, indent=2)
+            json.dump(history, f, ensure_ascii=False, indent=2, default=_default)
     except Exception as e:
         print(f"[!] Failed to save memory: {e}")
 
