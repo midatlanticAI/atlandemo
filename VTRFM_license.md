@@ -2,23 +2,23 @@
 ## Exclusive Research & Development License
 
 **License Version:** 2.0  
-**Effective Date:** January 7, 2025  
-**Expiration Date:** January 7, 2027  
+**Effective Date:** July 7, 2025  
+**Expiration Date:** July 7, 2027  
 **Licensor:** Johnathan Scott Viruet  
-**Technology:** Viruet Core (including Atlan Memory Core, Wave Engine, and all associated algorithms)
+**Technology:** VTRFM (including Atlan Memory Core, Wave Engine, and all associated algorithms)
 
 ## 🔐 PATENT PROTECTION NOTICE
 
-**PATENT PENDING:** This technology is protected by U.S. Patent Application No. 63/839,719 filed January 7, 2025, entitled "Wave-Based Synthetic Intelligence System and Method."
+**PATENT PENDING:** This technology is protected by U.S. Patent Application No. 63/839,719 filed July 7, 2025, entitled "Wave-Based Synthetic Intelligence System and Method."
 
-**PRIORITY DATE:** January 7, 2025, 4:48:33 PM ET  
+**PRIORITY DATE:** July 7, 2025, 4:48:33 PM ET  
 **ADDITIONAL PATENTS:** Additional patent applications may be filed for specific implementations and optimizations.
 
 ---
 
 ## GRANT OF LICENSE
 
-This license grants permission to use, study, modify, and distribute the Viruet Core technology **EXCLUSIVELY FOR RESEARCH AND DEVELOPMENT PURPOSES** under the following strict conditions:
+This license grants permission to use, study, modify, and distribute the VTRFM technology **EXCLUSIVELY FOR RESEARCH AND DEVELOPMENT PURPOSES** under the following strict conditions:
 
 ## PERMITTED USES
 - ✅ Academic research and study
@@ -58,7 +58,7 @@ Any commercial use requires:
 
 All use must include clear attribution:
 ```
-This technology incorporates Viruet Core algorithms developed by Johnathan Scott Viruet.
+This technology incorporates VTRFM Core algorithms developed by Johnathan Scott Viruet.
 Licensed for research use only. Commercial use prohibited without explicit permission.
 ```
 
@@ -73,7 +73,7 @@ IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY DAMAGES ARISING FROM USE OF THI
 ## TERMINATION
 
 This license automatically terminates:
-- Upon expiration date (December 17, 2026)
+- Upon expiration date (July, 7 2027)
 - Upon any violation of terms
 - Upon written notice from licensor
 
@@ -91,6 +91,6 @@ Location: Locust Grove, Virginia
 
 ---
 
-**© 2024 Johnathan Scott Viruet. All Rights Reserved.**
+**© 2025 Johnathan Scott Viruet. All Rights Reserved.**
 
 *This license protects innovative AI technology while enabling research collaboration.* 

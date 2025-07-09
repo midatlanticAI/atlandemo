@@ -201,13 +201,42 @@ class EnhancedWaveEngine:
         # Look for strong positive or negative activations
         positive_activations = {k: v for k, v in activation_field.items() if v > 0.5}
         negative_activations = {k: v for k, v in activation_field.items() if v < -0.5}
-        
-        # Simple heuristic for yes/no questions
-        if context and any('answer' in qa.get('question', '').lower() for qa in context.get('qa_pairs', [])):
-            if len(positive_activations) > len(negative_activations):
-                return "yes"
-            else:
+
+        # Enhanced heuristic for yes/no questions with contradiction handling
+        # We compute weighted sums of positive vs negative activations; negatives get a slight boost
+        yes_no_pattern = any(word in query.lower() for word in [
+            'can', 'does', 'do', 'is', 'are', "won't", "can't", 'cannot', 'will']
+        ) and '?' in query
+
+        if yes_no_pattern:
+            # Quick contradiction check: if context explicitly negates the subject performing the action
+            if context and 'context' in context:
+                ctx_text = context['context'].lower()
+                # crude subject extraction: first noun-like word in query after modal/verb
+                tokens = query.lower().replace('?', '').split()
+                if tokens:
+                    try:
+                        subj_index = next(i for i, t in enumerate(tokens) if t in ['can', 'does', 'do', 'is', 'are', 'will', "won't", "can't", 'cannot']) + 1
+                        subject_token = tokens[subj_index] if subj_index < len(tokens) else ''
+                    except StopIteration:
+                        subject_token = ''
+                else:
+                    subject_token = ''
+                neg_keywords = ["cannot", "can't", "doesn't", "does not", "do not", "won't", "isn't", "is not", "aren't", "are not", "not"]
+                if subject_token and any(neg_kw in ctx_text for neg_kw in neg_keywords):
+                    return "no"
+
+            pos_sum = sum(abs(v) for v in positive_activations.values())
+            neg_sum = sum(abs(v) for v in negative_activations.values()) * 1.2  # give negatives override weight
+
+            if neg_sum > pos_sum:
                 return "no"
+            if pos_sum > neg_sum:
+                return "yes"
+            # If tie, fall back to count comparison
+            if len(positive_activations) >= len(negative_activations):
+                return "yes"
+            return "no"
         
         # For other questions, return most activated concept
         if activation_field:

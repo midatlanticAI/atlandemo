@@ -1,4 +1,4 @@
-# VTRFM Source Code Archive – April 2025
+# VTRFM Wave-Based Cognitive Architecture
 
 **Inventor:** Johnathan Scott Viruet
 
@@ -8,41 +8,81 @@
 **Title:** "Wave-Based Synthetic Micro Intelligence System and Method"  
 **Status:** PATENT PENDING - All Rights Reserved
 
-⚠️ **PATENT PROTECTION NOTICE:** Pending U.S. patent applications protect this technology. Commercial use requires an explicit licensing agreement.
+ **PATENT PROTECTION NOTICE:** Pending U.S. patent applications protect this technology. 
+Commercial use requires an explicit licensing agreement.
+## Summary
+A deterministic, wave-based cognitive engine offering orders-of-magnitude improvements in speed, size, and energy efficiency over transformer-based LLMs for logical and symbolic reasoning. Designed for edge, remote, and sensitive computing environments where resource constraints and interpretability are paramount.
 
-## 🌊 BREAKTHROUGH: Wave Engine Small Deployable Specialty AI
+---
 
-**Revolutionary AI Performance**: The **Viruet Temporal Resonance Frequency Model** achieves unprecedented speed:
+## Key Metrics: LLM vs. Wave Engine
 
-- **⚡ 3,068x faster** than LlaMA 3.2 (verified benchmark)
-- **🎯 Same accuracy** with microsecond response times  
-- **📦 105KB algorithm** vs gigabyte models
-- **🌍 Universal** - works in 7+ programming languages
+| Metric                | Transformer LLM (LLaMA 3.2 1B) | Wave Engine (Atlan) |
+|----------------------|-------------------------------|---------------------|
+| Inference Time       | ~24.5s                        | ~0.008s             |
+| Model Size           | ~1.3GB                        | ~104KB              |
+| Energy Use           | 100–300W (GPU)                | <1W (CPU)           |
+| Memory Usage         | 4–8GB RAM                     | <1MB                |
+| Reasoning Basis      | Probabilistic                 | Deterministic, Symbolic |
+| Output Nature        | Stochastic, Generative        | Deterministic, Symbolic |
+| Accuracy (LogicBench)| 69%                           | 65.9%               |
 
-### 🚀 Quick Benchmark
-```bash
-# See the performance yourself
-python wave_vs_ollama_benchmark.py
+---
 
-# Test all 7 languages  
-cd wave_engine_multi_lang && python validation/cross_language_test.py
+## How It Works
+The Wave Engine encodes symbols as unique frequencies and computes semantic relationships via constructive and destructive interference patterns. This deterministic process enables:
+- Direct symbolic grounding (frequency-symbol bijection)
+- Interpretable, reproducible reasoning
+- Ultra-low resource requirements
+
+**Architecture Diagram:**
+```
+flowchart TD
+    Input["Input Phrase"] --> Encoding["Symbol-to-Frequency Encoding"]
+    Encoding --> Wave["Wave Interference Engine"]
+    Wave --> Reasoning["Resonance/Pattern Detection"]
+    Reasoning --> Output["Deterministic Answer"]
 ```
 
-### 📊 Latest Results
-- **Wave Engine**: 0.01s (1,279 questions/second)
-- **LlaMA 3.2**: 23.98s (0.4 questions/second)  
-- **Performance Advantage**: **3,068x faster!**
+---
 
-**👉 [Explore Wave Engine Implementation →](wave_engine_multi_lang/)**
+## Quickstart
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/midatlanticAI/atlandemo.git
+   cd atlandemo
+   ```
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the benchmark:
+   ```sh
+   python wave_vs_ollama_benchmark.py
+   ```
+4. Review results in `wave_vs_ollama_results.json`.
 
-### 💼 COMMERCIAL LICENSING AVAILABLE
-**Want to use this breakthrough technology commercially?**
-- **3,068x faster** than traditional AI systems
-- **Edge computing ready** - runs on microcontrollers
-- **Deterministic behavior** for safety-critical applications
-- **Real-time performance** with sub-millisecond responses
+---
 
-**Contact:** Johnathan Scott Viruet for licensing opportunities
+## Documentation & Links
+- [Whitepaper (PDF)](link-to-whitepaper) *(coming soon)*
+- [Landing Page / Press Kit](link-to-landing-page) *(coming soon)*
+- Contact: info@midatlantic.ai
+
+---
+
+## Acknowledgments
+Comparative analysis and scientific positioning by Claude and ChatGPT. For licensing, research, or partnership inquiries, contact Johnathan Viruet at Mid-Atlantic AI.
+
+# License
+
+This project is licensed under the VTRFM Research & Development License. All use is subject to the terms in [VTRFM_license.md](./VTRFM_license.md).
+
+**Commercial use is strictly prohibited without explicit written permission from Johnathan Scott Viruet.**
+
+For research and non-commercial use only. See VTRFM_license.md for full terms.
+
+---
 
 
 
