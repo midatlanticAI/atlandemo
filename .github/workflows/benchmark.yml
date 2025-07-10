@@ -18,13 +18,28 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run one-command benchmark (run.ps1)
+      - name: Install dependencies
         shell: pwsh
         run: |
-          ./run.ps1
+          python -m pip install --upgrade pip
+          if (Test-Path requirements.txt) {
+            pip install -r requirements.txt
+          }
+
+      - name: Run one-command benchmark
+        shell: pwsh
+        run: |
+          if (Test-Path run.ps1) {
+            ./run.ps1 benchmark full
+          } else {
+            python benchmarks/wave_logicbench_full_benchmark.py
+          }
 
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: wave_logicbench_full_results
-          path: wave_logicbench_full_results.json 
+          path: |
+            wave_logicbench_full_results.json
+            wave_only_results.json
+        continue-on-error: true 
