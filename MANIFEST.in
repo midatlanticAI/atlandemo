@@ -1,0 +1,14 @@
+include VERSION
+include LICENSE
+include VTRFM_CORE_LICENSE.md
+include README.md
+include requirements.txt
+
+recursive-include docs *
+recursive-include examples *
+recursive-include tests *
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.so
+recursive-exclude * *.dll 
