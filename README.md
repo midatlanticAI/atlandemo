@@ -47,27 +47,48 @@ flowchart TD
 ---
 
 ## Quickstart
-1. Clone the repository:
+
+1. **Clone the repository:**
    ```sh
    git clone https://github.com/midatlanticAI/atlandemo.git
    cd atlandemo
    ```
-2. Install dependencies:
+
+2. **Install dependencies:**
    ```sh
    pip install -r requirements.txt
    ```
-3. Run the benchmark:
-   ```sh
-   python wave_vs_ollama_benchmark.py
-   ```
-4. Review results in `wave_vs_ollama_results.json`.
+
+3. **Run available benchmarks and sample tests:**
+
+   - **Wave vs. Ollama LLMs (Competitive Benchmark):**
+     ```sh
+     python wave_vs_ollama_benchmark.py
+     ```
+     *Results saved to* `wave_vs_ollama_results.json`
+
+   - **Wave Engine only, sample-based LogicBench test:**
+     ```sh
+     python wave_logicbench_wave_only.py --samples 500
+     ```
+     *Results saved to* `wave_only_results.json`  
+     *(You can adjust `--samples` to control the number of questions.)*
+
+   - **Wave Engine full LogicBench benchmark (all families and types):**
+     ```sh
+     python wave_logicbench_full_benchmark.py
+     ```
+     *Results saved to* `wave_logicbench_full_results.json`
+
+4. **Review results:**  
+   Open the corresponding `.json` results file for detailed outputs and accuracy metrics.
 
 ---
 
 ## Documentation & Links
 - [Whitepaper (PDF)](link-to-whitepaper) *(coming soon)*
 - [Landing Page / Press Kit](link-to-landing-page) *(coming soon)*
-- Contact: info@midatlantic.ai
+- Contact: john@midatlantic.ai
 
 ---
 
@@ -76,7 +97,7 @@ Comparative analysis and scientific positioning by Claude and ChatGPT. For licen
 
 # License
 
-This project is licensed under the VTRFM Research & Development License. All use is subject to the terms in [VTRFM_license.md](./VTRFM_license.md).
+This project is licensed under the VTRFM License. All use is subject to the terms in [VTRFM_license.md](./VTRFM_license.md).
 
 **Commercial use is strictly prohibited without explicit written permission from Johnathan Scott Viruet.**
 
