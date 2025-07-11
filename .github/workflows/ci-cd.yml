@@ -145,12 +145,15 @@ jobs:
     
     - name: Run LogicBench benchmark
       run: |
-        python benchmarks/wave_logicbench_full_benchmark.py > benchmark_results.txt
+        python wave_logicbench_full_benchmark.py > benchmark_results.txt
       continue-on-error: true
-    
+    - name: Run LogicBench Sample benchmark
+      run: |
+        python wave_logicbench_wave_only.py > benchmark_results.txt
+      continue-on-error: true
     - name: Run Ollama benchmark
       run: |
-        python benchmarks/wave_vs_ollama_benchmark.py >> benchmark_results.txt
+        python wave_vs_ollama_benchmark.py >> benchmark_results.txt
       continue-on-error: true
     
     - name: Upload benchmark results
