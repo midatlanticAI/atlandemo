@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WaveEngineNamespace
-build_property.ProjectDir = C:\Users\jviru\atlandemo\wave_engine_multi_lang\csharp\
+build_property.ProjectDir = C:\Users\jviru\atlandemo2\atlandemo\wave_engine_multi_lang\csharp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

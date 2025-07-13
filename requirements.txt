@@ -1,4 +1,8 @@
 numpy
+matplotlib
+soundfile
+librosa
+scikit-learn
 requests
 aiohttp
 typing_extensions 

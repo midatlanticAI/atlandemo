@@ -25,6 +25,7 @@ class WaveLogicBenchBenchmark:
     def __init__(self):
         self.wave_engine = EnhancedWaveEngine()
         self.results: Dict[str, Dict[str, Any]] = {}
+        self.detailed_metrics = {}  # NEW: Track per-family and per-axiom
 
     # ---------------------------------------------------------------------
     # Data loading helpers
@@ -124,7 +125,6 @@ class WaveLogicBenchBenchmark:
     # Public API
     # ------------------------------------------------------------------
     def run(self):
-        # Verify dataset integrity if hash file is present
         self._verify_dataset_integrity()
         safe_print("[BENCH] Wave Engine full LogicBench (Eval) run")
         start = time.time()
@@ -132,30 +132,55 @@ class WaveLogicBenchBenchmark:
         total_correct = 0
         total_questions = 0
 
+        # NEW: Initialize detailed trackers
+        family_metrics = {family: {'correct': 0, 'total': 0} for family in self.TASK_FAMILIES}
+        axiom_metrics = {}
+
         for task_type, logic_family, path in self._iter_json_files():
             with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
             axiom = data.get("axiom", path.parent.name)
+
+            # Init axiom if new
+            if axiom not in axiom_metrics:
+                axiom_metrics[axiom] = {'correct': 0, 'total': 0}
+
             for sample in data.get("samples", []):
                 if task_type == "BQA":
                     answers = self._eval_bqa_sample(sample, logic_family, axiom)
-                    total_correct += sum(a["correct"] for a in answers)
-                    total_questions += len(answers)
+                    correct_count = sum(a["correct"] for a in answers)
+                    q_count = len(answers)
                 else:  # MCQA
                     result = self._eval_mcqa_sample(sample, logic_family, axiom)
-                    total_correct += 1 if result["correct"] else 0
-                    total_questions += 1
+                    correct_count = 1 if result["correct"] else 0
+                    q_count = 1
+
+                total_correct += correct_count
+                total_questions += q_count
+                family_metrics[logic_family]['correct'] += correct_count
+                family_metrics[logic_family]['total'] += q_count
+                axiom_metrics[axiom]['correct'] += correct_count
+                axiom_metrics[axiom]['total'] += q_count
 
         elapsed = time.time() - start
         accuracy = total_correct / total_questions if total_questions else 0.0
         safe_print(f"[DONE] Questions: {total_questions}, Correct: {total_correct}, Accuracy: {accuracy*100:.2f}%, Time: {elapsed:.2f}s")
 
-        # save raw metrics
+        # NEW: Compute accuracies
+        for family in family_metrics:
+            fm = family_metrics[family]
+            fm['accuracy'] = fm['correct'] / fm['total'] if fm['total'] else 0.0
+        for ax in axiom_metrics:
+            am = axiom_metrics[ax]
+            am['accuracy'] = am['correct'] / am['total'] if am['total'] else 0.0
+
         self.results = {
             "total_questions": total_questions,
             "total_correct": total_correct,
             "accuracy": accuracy,
             "time_seconds": elapsed,
+            "family_metrics": family_metrics,
+            "axiom_metrics": axiom_metrics
         }
         with open("wave_logicbench_full_results.json", "w", encoding="utf-8") as f:
             json.dump(self.results, f, indent=2)
