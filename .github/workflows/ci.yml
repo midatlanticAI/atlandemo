@@ -2,36 +2,32 @@ name: CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-
-      - name: Install system packages
-        run: sudo apt-get update ; sudo apt-get install -y ffmpeg libsndfile1
-
-      - name: Install Python deps
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # test dependencies
-          pip install pytest
-
-      - name: Run unit tests
-        run: pytest -q
-
-      - name: Run acoustic batch classify on sample clips
-        run: |
-          python simulations/batch_classify.py samples --frame-size 1024 --hop-size 512 --top-k 5 
+          pip install pytest pytest-cov mypy ruff
+      - name: Lint with ruff
+        run: ruff .
+      - name: Type check with mypy (ignore missing imports)
+        run: mypy --ignore-missing-imports src expert_modules tools
+      - name: Run tests with coverage
+        run: pytest --cov=src --cov=expert_modules --cov=tools --cov-report=xml --cov-fail-under=60
+      - name: Upload coverage to actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml 

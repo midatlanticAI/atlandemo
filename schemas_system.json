@@ -1,0 +1,65 @@
+[
+  {
+    "symbols": [
+      "down_sweep",
+      "humpback4"
+    ],
+    "count": 12,
+    "cumulative_strength": 11.873969410981747,
+    "last_seen": 1752417503.3083832
+  },
+  {
+    "symbols": [
+      "humpback4",
+      "k6"
+    ],
+    "count": 12,
+    "cumulative_strength": 12.837300262008826,
+    "last_seen": 1752417503.3083832
+  },
+  {
+    "symbols": [
+      "down_sweep",
+      "k6"
+    ],
+    "count": 12,
+    "cumulative_strength": 13.35048206053929,
+    "last_seen": 1752417503.3083832
+  },
+  {
+    "symbols": [
+      "BlueJay",
+      "humpback4"
+    ],
+    "count": 6,
+    "cumulative_strength": 4.937881068979791,
+    "last_seen": 1752417503.3083832
+  },
+  {
+    "symbols": [
+      "BlueJay",
+      "down_sweep"
+    ],
+    "count": 6,
+    "cumulative_strength": 5.823828574390099,
+    "last_seen": 1752417503.3083832
+  },
+  {
+    "symbols": [
+      "BlueJay",
+      "k6"
+    ],
+    "count": 6,
+    "cumulative_strength": 6.414393718537333,
+    "last_seen": 1752417503.3083832
+  },
+  {
+    "symbols": [
+      "accuracy_70",
+      "eval"
+    ],
+    "count": 2,
+    "cumulative_strength": 1.590842310915918,
+    "last_seen": 1752417503.3083832
+  }
+]

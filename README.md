@@ -1,109 +1,27 @@
-# VTRFM Wave-Based Cognitive Architecture
+# Atlan Wave-Engine
 
-**Inventor:** Johnathan Scott Viruet
+[![CI](https://github.com/<ORG>/<REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/<ORG>/<REPO>/actions/workflows/ci.yml)
+[![Coverage Status](https://img.shields.io/badge/coverage-auto-important)](./coverage.xml)
 
-## 🔐 PATENT PENDING - PROTECTED INNOVATION
-**U.S. Patent Application No. 63/839,719**  
-**Filed:** July 7, 2025  
-**Title:** "Wave-Based Synthetic Micro Intelligence System and Method"  
-**Status:** PATENT PENDING - All Rights Reserved
+The Atlan Wave-Engine is a deterministic, cross-modal cognition core capable of logic reasoning, vision classification, acoustic event detection and EEG schema formation – all without gradient-based training.
 
- **PATENT PROTECTION NOTICE:** Pending U.S. patent applications protect this technology. 
-Commercial use requires an explicit licensing agreement.
-## Summary
-A deterministic, wave-based cognitive engine offering orders-of-magnitude improvements in speed, size, and energy efficiency over transformer-based LLMs for logical and symbolic reasoning. Designed for edge, remote, and sensitive computing environments where resource constraints and interpretability are paramount.
+## Quick-Start
 
----
+```bash
+# Clone and install
+python -m pip install -r requirements.txt
 
-## Key Metrics: LLM vs. Wave Engine
+# Run LogicBench slice (full corpus takes <3 s on CPU)
+python simulations/wave_logicbench_full_benchmark.py --results wave_logicbench_results.json
 
-| Metric                | Transformer LLM (LLaMA 3.2 1B) | Wave Engine (Atlan) |
-|----------------------|-------------------------------|---------------------|
-| Inference Time       | ~24.5s                        | ~0.008s             |
-| Model Size           | ~1.3GB                        | ~104KB              |
-| Energy Use           | 100–300W (GPU)                | <1W (CPU)           |
-| Memory Usage         | 4–8GB RAM                     | <1MB                |
-| Reasoning Basis      | Probabilistic                 | Deterministic, Symbolic |
-| Output Nature        | Stochastic, Generative        | Deterministic, Symbolic |
-| Accuracy (LogicBench)| 69%                           | 65.9%               |
+# MNIST deterministic classifier
+python simulations/mnist_pixel_classifier.py --k 170
 
----
-
-## How It Works
-The Wave Engine encodes symbols as unique frequencies and computes semantic relationships via constructive and destructive interference patterns. This deterministic process enables:
-- Direct symbolic grounding (frequency-symbol bijection)
-- Interpretable, reproducible reasoning
-- Ultra-low resource requirements
-
-**Architecture Diagram:**
-```
-flowchart TD
-    Input["Input Phrase"] --> Encoding["Symbol-to-Frequency Encoding"]
-    Encoding --> Wave["Wave Interference Engine"]
-    Wave --> Reasoning["Resonance/Pattern Detection"]
-    Reasoning --> Output["Deterministic Answer"]
+# Dolphin click-train sanity check
+python -m tools.acoustic_sanity --file samples/bottlenose.wav
 ```
 
----
-
-## Quickstart
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/midatlanticAI/atlandemo.git
-   cd atlandemo
-   ```
-
-2. **Install dependencies:**
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-3. **Run available benchmarks and sample tests:**
-
-   - **Wave vs. Ollama LLMs (Competitive Benchmark):**
-     ```sh
-     python wave_vs_ollama_benchmark.py
-     ```
-     *Results saved to* `wave_vs_ollama_results.json`
-
-   - **Wave Engine only, sample-based LogicBench test:**
-     ```sh
-     python wave_logicbench_wave_only.py --samples 500
-     ```
-     *Results saved to* `wave_only_results.json`  
-     *(You can adjust `--samples` to control the number of questions.)*
-
-   - **Wave Engine full LogicBench benchmark (all families and types):**
-     ```sh
-     python wave_logicbench_full_benchmark.py
-     ```
-     *Results saved to* `wave_logicbench_full_results.json`
-
-4. **Review results:**  
-   Open the corresponding `.json` results file for detailed outputs and accuracy metrics.
-
----
-
-## Documentation & Links
-- [Whitepaper (PDF)](link-to-whitepaper) *(coming soon)*
-- [Landing Page / Press Kit](link-to-landing-page) *(coming soon)*
-- Contact: john@midatlantic.ai
-
----
-
-## Acknowledgments
-Comparative analysis and scientific positioning by Claude and ChatGPT. For licensing, research, or partnership inquiries, contact Johnathan Viruet at Mid-Atlantic AI.
-
-# License
-
-This project is licensed under the VTRFM License. All use is subject to the terms in [VTRFM_license.md](./VTRFM_license.md).
-
-**Commercial use is strictly prohibited without explicit written permission from Johnathan Scott Viruet.**
-
-For research and non-commercial use only. See VTRFM_license.md for full terms.
-
----
+Full architecture docs are in `ARCHITECTURE.md`. Benchmark tables live in `docs/benchmarks.md`.
 
 
 

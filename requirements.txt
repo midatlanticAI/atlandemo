@@ -3,6 +3,7 @@ matplotlib
 soundfile
 librosa
 scikit-learn
+scipy
 requests
 aiohttp
 typing_extensions 

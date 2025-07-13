@@ -6,10 +6,15 @@ Cognition emerges from harmonic resonance, not computation.
 
 import time
 import math
+import hashlib
 from typing import Dict, List, Optional, Any, Tuple
 from collections import deque
 from dataclasses import dataclass
 from enum import Enum
+from .schemas import Schema
+
+from .cog_config import CogConfig
+from .schema_store import SchemaStore, JsonSchemaStore, SQLiteSchemaStore
 
 
 class ResonanceType(Enum):
@@ -93,13 +98,31 @@ class TemporalWave:
 
 class ExperienceStream:
     """Manages the temporal flow of experience frames and their resonant interactions."""
-    
-    def __init__(self, max_frames: int = 1000):
+
+    def __init__(self, config: CogConfig, max_frames: int = 1000):
+        self.config = config
+
         self.frames: deque = deque(maxlen=max_frames)
         self.active_waves: Dict[str, TemporalWave] = {}
         self.resonance_patterns: List[Dict] = []
-        self.consolidation_threshold = 0.7
-        
+
+        # Consolidation parameters
+        self.consolidation_threshold = config.consolidation_threshold
+        self.schema_support_threshold = config.schema_support_threshold
+        self.max_schemas = config.max_schemas
+
+        # Persistence backend selection
+        if config.store_backend == "sqlite":
+            self.store: SchemaStore = SQLiteSchemaStore(config.store_path)
+        else:
+            self.store = JsonSchemaStore(config.store_path)
+
+        self.schemas: Dict[Tuple[str, str], Schema] = self.store.load()
+
+        # Save throttling
+        self._unsaved_changes = 0
+        self._save_frequency = max(1, config.save_frequency)
+
     def add_experience(self, frame: ExperienceFrame):
         """Add a new experience frame and update wave dynamics."""
         self.frames.append(frame)
@@ -142,10 +165,14 @@ class ExperienceStream:
         satisfaction_factor = 1.0 + abs(frame.satisfaction)
         return base_amplitude * mood_factor * surprise_factor * satisfaction_factor
     
+    def _stable_hash_1000(self, text: str) -> int:
+        """Return a stable 0-999 hash value for *text* using MD5 (deterministic across runs)."""
+        digest = hashlib.md5(text.encode("utf-8")).hexdigest()
+        return int(digest[:6], 16) % 1000  # 24-bit slice → 0-999
+
     def _calculate_phase(self, symbol: str, frame: ExperienceFrame) -> float:
-        """Calculate wave phase based on context and timing."""
-        # Use symbol hash and frame properties to create phase
-        symbol_hash = hash(symbol) % 1000
+        """Calculate wave phase deterministically (no runtime randomness)."""
+        symbol_hash = self._stable_hash_1000(symbol)
         mood_phase = frame.mood * math.pi
         return (symbol_hash / 1000.0 * 2 * math.pi + mood_phase) % (2 * math.pi)
     
@@ -187,10 +214,58 @@ class ExperienceStream:
             del self.active_waves[symbol]
     
     def _consolidate_patterns(self):
-        """Identify and consolidate recurring resonance patterns."""
-        # This is where symbolic abstraction emerges from temporal patterns
-        # For now, we track patterns - later this becomes belief formation
-        pass
+        """Promote frequently recurring resonance patterns into stable schemas.
+
+        The method scans recent `resonance_patterns`, aggregates counts per
+        symbol pair, and stores them in `self.schemas`.  A pair is considered a
+        *schema* once it has appeared `schema_support_threshold` times.  Old or
+        weak schemas are pruned to keep the store bounded.
+        """
+        if not self.resonance_patterns:
+            return
+
+        recent_patterns = self.resonance_patterns[-20:]  # only the most recent bursts
+        for p in recent_patterns:
+            symbols = tuple(sorted(p["symbols"]))  # deterministic ordering
+            strength = abs(float(p["interference"]))
+            ts = p["timestamp"]
+
+            schema = self.schemas.get(symbols)
+            if schema:
+                schema.register_observation(strength, ts)
+            else:
+                self.schemas[symbols] = Schema(symbols=symbols, count=1, cumulative_strength=strength, last_seen=ts)
+
+        # Prune schemas if we exceed the max allowed
+        if len(self.schemas) > self.max_schemas:
+            # Drop the schemas with the lowest counts first
+            sorted_items = sorted(self.schemas.items(), key=lambda kv: kv[1].count)
+            for kv in sorted_items[: len(self.schemas) - self.max_schemas]:
+                self.schemas.pop(kv[0], None)
+
+        # Throttled persistence
+        self._unsaved_changes += 1
+        if self._unsaved_changes >= self._save_frequency:
+            try:
+                self.store.save(self.schemas)
+                self._unsaved_changes = 0
+            except Exception as e:
+                print(f"[ExperienceStream] Warning: failed to persist schemas: {e}")
+
+    def get_schema_summary(self, min_count: int = 3, top_k: int = 10) -> List[Dict]:
+        """Return a summary of the strongest schemas for inspection or export."""
+        qualified = [s for s in self.schemas.values() if s.count >= min_count]
+        qualified.sort(key=lambda s: (s.count, s.avg_strength), reverse=True)
+        summary = [
+            {
+                "symbols": s.symbols,
+                "count": s.count,
+                "avg_strength": round(s.avg_strength, 3),
+                "last_seen": s.last_seen,
+            }
+            for s in qualified[:top_k]
+        ]
+        return summary
     
     def get_current_activation_field(self) -> Dict[str, float]:
         """Get the current activation levels of all symbols."""
@@ -211,8 +286,21 @@ class ExperienceStream:
 class TemporalCognitionEngine:
     """Main engine that orchestrates temporal resonant cognition."""
     
-    def __init__(self):
-        self.experience_stream = ExperienceStream()
+    def __init__(self, config: Optional[CogConfig] = None):
+        """Create a cognition engine.
+
+        Args:
+            config: Optional CogConfig; if None, defaults are used.
+        """
+
+        from random import seed as _seed
+
+        self.config = config or CogConfig()
+
+        if self.config.deterministic and self.config.seed is not None:
+            _seed(self.config.seed)
+
+        self.experience_stream = ExperienceStream(self.config)
         self.replay_cycles = 0
         self.dream_frequency = 5  # Every 5 experiences, trigger replay
         
@@ -259,23 +347,34 @@ class TemporalCognitionEngine:
     def _dream_replay(self):
         """Simulate dream-like replay of recent experiences for consolidation."""
         self.replay_cycles += 1
-        
-        # In a full implementation, this would:
-        # 1. Replay recent high-activation patterns
-        # 2. Allow wave interference without new input
-        # 3. Consolidate recurring patterns into stable beliefs
-        # 4. Prune weak or contradictory patterns
-        
-        # For now, we just mark that replay occurred
-        print(f"Dream replay cycle {self.replay_cycles} - consolidating {len(self.experience_stream.active_waves)} active patterns")
+
+        # Reinforce active waves that belong to the most frequent schemas
+        top_schemas = sorted(
+            self.experience_stream.schemas.values(),
+            key=lambda s: s.count,
+            reverse=True,
+        )[:5]
+
+        for schema in top_schemas:
+            for sym in schema.symbols:
+                if sym in self.experience_stream.active_waves:
+                    wave = self.experience_stream.active_waves[sym]
+                    wave.amplitude = min(wave.amplitude * 1.1, 3.0)  # bounded growth
+
+        print(
+            f"Dream replay cycle {self.replay_cycles} | reinforced {len(top_schemas)} schemas, active waves: {len(self.experience_stream.active_waves)}"
+        )
     
     def get_cognitive_state(self) -> Dict[str, Any]:
         """Get comprehensive view of current cognitive state."""
-        return {
+        state = {
             "total_experiences": len(self.experience_stream.frames),
             "active_symbol_count": len(self.experience_stream.active_waves),
             "replay_cycles": self.replay_cycles,
             "activation_field": self.experience_stream.get_current_activation_field(),
             "resonance_patterns": len(self.experience_stream.resonance_patterns),
-            "recent_resonance": self.experience_stream.get_resonance_summary()
-        } 
+            "recent_resonance": self.experience_stream.get_resonance_summary(),
+            "schemas": self.experience_stream.get_schema_summary(),
+        }
+
+        return state 
