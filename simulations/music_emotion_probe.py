@@ -72,16 +72,24 @@ def analyse_file(path: Path, plot: bool = False) -> None:
         return
 
     logger.info("Loading %s", path)
-    y, sr = librosa.load(path, sr=None, mono=True)
+    y, sr_orig = librosa.load(path, sr=None, mono=True)
+
+    # Downsample to 200 Hz to make low-frequency band-pass filtering stable
+    target_sr = 200  # Hz, sufficient for <= 50 Hz content
+    if sr_orig != target_sr:
+        y = librosa.resample(y, orig_sr=sr_orig, target_sr=target_sr, res_type="kaiser_fast")
+        sr = target_sr
+    else:
+        sr = sr_orig
 
     # Extract band envelopes
     env_theta = _band_envelope(y, sr, 4.0, 8.0)  # theta band
     env_gamma = _band_envelope(y, sr, 30.0, 50.0)  # gamma band
 
-    # Match engine's ~1 s window; assume default ~50 ms frame => 20 frames/window
-    # Our data is raw samples; choose 1 s moving avg -> window = sr samples
-    env_theta_ma = _moving_average(env_theta, window=sr)
-    env_gamma_ma = _moving_average(env_gamma, window=sr)
+    # Match engine's ~1 s integration window: with sr=200 Hz ⇒ 200 samples ≈ 1 s
+    window_samples = sr  # 1-second window at downsampled rate
+    env_theta_ma = _moving_average(env_theta, window=window_samples)
+    env_gamma_ma = _moving_average(env_gamma, window=window_samples)
 
     # Robust scaling: divide by median absolute deviation to get dimensionless unit
     def _scale_clip(x: np.ndarray) -> np.ndarray:
