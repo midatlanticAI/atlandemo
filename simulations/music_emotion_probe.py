@@ -77,7 +77,12 @@ def analyse_file(path: Path, plot: bool = False) -> None:
     # Downsample to 200 Hz to make low-frequency band-pass filtering stable
     target_sr = 200  # Hz, sufficient for <= 50 Hz content
     if sr_orig != target_sr:
-        y = librosa.resample(y, orig_sr=sr_orig, target_sr=target_sr, res_type="kaiser_fast")
+        # Use polyphase resampling to avoid external dependency
+        import math
+        gcd = math.gcd(sr_orig, target_sr)
+        up = target_sr // gcd
+        down = sr_orig // gcd
+        y = sps.resample_poly(y, up, down)
         sr = target_sr
     else:
         sr = sr_orig
