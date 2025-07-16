@@ -56,13 +56,13 @@ class ExperienceFrame:
 class TemporalWave:
     """Represents a wave of activation spreading through symbolic space over time."""
     
-    def __init__(self, symbol: str, frequency: float, amplitude: float, phase: float = 0.0):
+    def __init__(self, symbol: str, frequency: float, amplitude: float, phase: float = 0.0, decay_rate: float = 0.01):
         self.symbol = symbol
         self.frequency = frequency  # How fast it oscillates
         self.amplitude = amplitude  # How strong it is
         self.phase = phase         # Where in the cycle it starts
         self.birth_time = time.time()
-        self.decay_rate = 0.01     # How fast it fades
+        self.decay_rate = decay_rate  # How fast it fades (can be tuned per wave)
     
     def get_activation(self, current_time: float) -> float:
         """Calculate current wave activation based on time."""
@@ -134,21 +134,58 @@ class ExperienceStream:
         """Generate temporal waves from the symbolic content of a frame."""
         current_time = time.time()
         
-        for symbol in frame.get_all_symbols():
+        symbols_to_process = list(frame.get_all_symbols())
+
+        # Banded emotion encoding ---------------------------------------
+        # Theta-band (6 Hz) valence marker: phase encodes sign, amplitude encodes magnitude
+        if abs(frame.mood) >= 0.05:
+            symbols_to_process.append("valence_marker")
+        # Gamma-band (40 Hz) arousal marker: amplitude encodes arousal
+        if frame.arousal >= 0.05:
+            symbols_to_process.append("arousal_marker")
+        
+        # magnitude symbols (very low freq, constant amplitude)
+        if abs(frame.mood) >= 0.05:
+            symbols_to_process.append("valence_mag")
+        if frame.arousal >= 0.05:
+            symbols_to_process.append("arousal_mag")
+        
+        for symbol in symbols_to_process:
             # Calculate wave properties based on frame characteristics
-            frequency = self._calculate_frequency(symbol, frame)
-            amplitude = self._calculate_amplitude(symbol, frame)
-            phase = self._calculate_phase(symbol, frame)
+            if symbol == "valence_marker":
+                frequency = 6.0  # theta band
+                amplitude = abs(frame.mood)
+                phase = 0.0 if frame.mood > 0 else math.pi
+            elif symbol == "arousal_marker":
+                frequency = 40.0  # gamma band
+                amplitude = frame.arousal
+                phase = 0.0  # phase not used for arousal
+            elif symbol == "valence_mag":
+                frequency = 0.001  # quasi-DC
+                amplitude = abs(frame.mood)
+                phase = math.pi / 2  # sin = 1 -> activation ~ amplitude
+            elif symbol == "arousal_mag":
+                frequency = 0.001
+                amplitude = frame.arousal
+                phase = math.pi / 2
+            else:
+                frequency = self._calculate_frequency(symbol, frame)
+                amplitude = self._calculate_amplitude(symbol, frame)
+                phase = self._calculate_phase(symbol, frame)
+            # Decay rate inversely proportional to arousal (high arousal → slower decay)
+            decay_rate = 0.0025 * (1.0 - frame.arousal) + 0.0005
             
             # Create or update wave
             if symbol in self.active_waves:
                 # Reinforce existing wave
                 existing_wave = self.active_waves[symbol]
                 existing_wave.amplitude = min(2.0, existing_wave.amplitude + amplitude * 0.5)
+                # Nudge phase toward current mood so memory drifts with affect
+                existing_wave.phase = (existing_wave.phase + frame.mood * 0.02) % (2 * math.pi)
                 existing_wave.birth_time = current_time  # Reset decay
             else:
-                # Create new wave
-                self.active_waves[symbol] = TemporalWave(symbol, frequency, amplitude, phase)
+                # Create new wave with arousal-informed decay
+                self.active_waves[symbol] = TemporalWave(symbol, frequency, amplitude, phase, decay_rate)
     
     def _calculate_frequency(self, symbol: str, frame: ExperienceFrame) -> float:
         """Calculate wave frequency based on arousal and attention."""
@@ -158,12 +195,10 @@ class ExperienceStream:
         return base_frequency * arousal_factor * attention_factor
     
     def _calculate_amplitude(self, symbol: str, frame: ExperienceFrame) -> float:
-        """Calculate wave amplitude based on mood, surprise, and satisfaction."""
-        base_amplitude = 0.5
-        mood_factor = 1.0 + abs(frame.mood)
-        surprise_factor = 1.0 + frame.surprise
-        satisfaction_factor = 1.0 + abs(frame.satisfaction)
-        return base_amplitude * mood_factor * surprise_factor * satisfaction_factor
+        """Return base + k*arousal (linear)."""
+        base_amplitude = 0.2
+        k = 1.5
+        return base_amplitude + k * frame.arousal
     
     def _stable_hash_1000(self, text: str) -> int:
         """Return a stable 0-999 hash value for *text* using MD5 (deterministic across runs)."""
@@ -171,10 +206,24 @@ class ExperienceStream:
         return int(digest[:6], 16) % 1000  # 24-bit slice → 0-999
 
     def _calculate_phase(self, symbol: str, frame: ExperienceFrame) -> float:
-        """Calculate wave phase deterministically (no runtime randomness)."""
-        symbol_hash = self._stable_hash_1000(symbol)
-        mood_phase = frame.mood * math.pi
-        return (symbol_hash / 1000.0 * 2 * math.pi + mood_phase) % (2 * math.pi)
+        """Phase anchors valence: 0 rad for positive, π for negative (±0.1 band).
+
+        A small deterministic symbol-specific offset (≤π/2) is added so that
+        identical-valence symbols are not perfectly phase-locked, preventing
+        total reinforcement runaway.
+        """
+        # Anchor by mood sign
+        if frame.mood >= 0.1:
+            base_phase = 0.0
+        elif frame.mood <= -0.1:
+            base_phase = math.pi
+        else:  # near-neutral – assign pseudo-random offset in ±π/4
+            jitter = (self._stable_hash_1000(symbol) / 1000.0 - 0.5) * (math.pi / 2)
+            return (jitter) % (2 * math.pi)
+
+        # Add bounded symbol-specific offset to break perfect synchrony (≤π/8, centred at 0)
+        offset = (self._stable_hash_1000(symbol) / 1000.0 - 0.5) * (math.pi / 16)
+        return (base_phase + offset) % (2 * math.pi)
     
     def _update_wave_interference(self):
         """Calculate interference patterns between all active waves."""
@@ -303,6 +352,11 @@ class TemporalCognitionEngine:
         self.experience_stream = ExperienceStream(self.config)
         self.replay_cycles = 0
         self.dream_frequency = 5  # Every 5 experiences, trigger replay
+
+        # Rolling windows for integrated emotion
+        from collections import deque as _dq
+        self._valence_hist = _dq(maxlen=20)  # ~20 frames window
+        self._arousal_hist = _dq(maxlen=20)
         
     def live_experience(self, 
                        visual: List[str] = None,
@@ -332,6 +386,13 @@ class TemporalCognitionEngine:
         )
         
         self.experience_stream.add_experience(frame)
+
+        # Update rolling emotion integrators (simple moving average)
+        self._valence_hist.append(mood)
+        self._arousal_hist.append(arousal)
+
+        val_integrated = sum(self._valence_hist) / len(self._valence_hist)
+        ar_integrated = sum(self._arousal_hist) / len(self._arousal_hist)
         
         # Trigger replay/consolidation periodically
         if len(self.experience_stream.frames) % self.dream_frequency == 0:
@@ -341,7 +402,9 @@ class TemporalCognitionEngine:
             "frame_count": len(self.experience_stream.frames),
             "active_waves": len(self.experience_stream.active_waves),
             "activation_field": self.experience_stream.get_current_activation_field(),
-            "recent_resonance": self.experience_stream.get_resonance_summary()
+            "recent_resonance": self.experience_stream.get_resonance_summary(),
+            "valence_integrated": val_integrated,
+            "arousal_integrated": ar_integrated,
         }
     
     def _dream_replay(self):
@@ -378,3 +441,13 @@ class TemporalCognitionEngine:
         }
 
         return state 
+
+    def get_emotion_state(self):
+        """Return current integrated valence and arousal."""
+        if self._valence_hist:
+            v = sum(self._valence_hist) / len(self._valence_hist)
+            a = sum(self._arousal_hist) / len(self._arousal_hist)
+        else:
+            v = 0.0
+            a = 0.0
+        return {"valence": v, "arousal": a} 

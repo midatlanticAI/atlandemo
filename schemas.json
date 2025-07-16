@@ -1,0 +1,902 @@
+[
+  {
+    "symbols": [
+      "delight",
+      "joy"
+    ],
+    "count": 319,
+    "cumulative_strength": 682.000983620387,
+    "last_seen": 1752629124.0913408
+  },
+  {
+    "symbols": [
+      "object",
+      "value"
+    ],
+    "count": 46,
+    "cumulative_strength": 47.15273305102416,
+    "last_seen": 1752627152.987825
+  },
+  {
+    "symbols": [
+      "joy",
+      "object"
+    ],
+    "count": 113,
+    "cumulative_strength": 116.01766403916538,
+    "last_seen": 1752629124.0948822
+  },
+  {
+    "symbols": [
+      "joy",
+      "logic"
+    ],
+    "count": 44,
+    "cumulative_strength": 45.756825182647844,
+    "last_seen": 1752627326.128086
+  },
+  {
+    "symbols": [
+      "input",
+      "joy"
+    ],
+    "count": 172,
+    "cumulative_strength": 402.78661296869564,
+    "last_seen": 1752627732.988482
+  },
+  {
+    "symbols": [
+      "delight",
+      "laughter"
+    ],
+    "count": 174,
+    "cumulative_strength": 215.86813860551896,
+    "last_seen": 1752629124.0836554
+  },
+  {
+    "symbols": [
+      "delight",
+      "symbol"
+    ],
+    "count": 139,
+    "cumulative_strength": 140.2518934182946,
+    "last_seen": 1752629124.0851681
+  },
+  {
+    "symbols": [
+      "logic",
+      "object"
+    ],
+    "count": 10,
+    "cumulative_strength": 13.318968233577966,
+    "last_seen": 1752626823.1453354
+  },
+  {
+    "symbols": [
+      "input",
+      "object"
+    ],
+    "count": 142,
+    "cumulative_strength": 150.44375108835496,
+    "last_seen": 1752627864.2490854
+  },
+  {
+    "symbols": [
+      "logic",
+      "value"
+    ],
+    "count": 595,
+    "cumulative_strength": 513.1173791276457,
+    "last_seen": 1752671978.415175
+  },
+  {
+    "symbols": [
+      "input",
+      "value"
+    ],
+    "count": 245,
+    "cumulative_strength": 362.8307147606781,
+    "last_seen": 1752627733.0468369
+  },
+  {
+    "symbols": [
+      "input",
+      "logic"
+    ],
+    "count": 110,
+    "cumulative_strength": 93.88641489339635,
+    "last_seen": 1752671978.29565
+  },
+  {
+    "symbols": [
+      "delight",
+      "input"
+    ],
+    "count": 69,
+    "cumulative_strength": 90.32190081387103,
+    "last_seen": 1752627864.2179103
+  },
+  {
+    "symbols": [
+      "memory",
+      "object"
+    ],
+    "count": 96,
+    "cumulative_strength": 81.50966359451279,
+    "last_seen": 1752629124.1183004
+  },
+  {
+    "symbols": [
+      "data",
+      "value"
+    ],
+    "count": 217,
+    "cumulative_strength": 204.29434597089067,
+    "last_seen": 1752627864.2798707
+  },
+  {
+    "symbols": [
+      "node",
+      "value"
+    ],
+    "count": 194,
+    "cumulative_strength": 501.3544774437032,
+    "last_seen": 1752626823.2410333
+  },
+  {
+    "symbols": [
+      "data",
+      "logic"
+    ],
+    "count": 124,
+    "cumulative_strength": 125.00089693837933,
+    "last_seen": 1752627864.2753177
+  },
+  {
+    "symbols": [
+      "logic",
+      "node"
+    ],
+    "count": 98,
+    "cumulative_strength": 80.79953872762634,
+    "last_seen": 1752671978.29565
+  },
+  {
+    "symbols": [
+      "data",
+      "input"
+    ],
+    "count": 279,
+    "cumulative_strength": 319.7495211918257,
+    "last_seen": 1752627864.2586668
+  },
+  {
+    "symbols": [
+      "input",
+      "memory"
+    ],
+    "count": 113,
+    "cumulative_strength": 93.42999197094558,
+    "last_seen": 1752671978.2989054
+  },
+  {
+    "symbols": [
+      "input",
+      "node"
+    ],
+    "count": 500,
+    "cumulative_strength": 641.4014084599564,
+    "last_seen": 1752671978.2989054
+  },
+  {
+    "symbols": [
+      "data",
+      "node"
+    ],
+    "count": 202,
+    "cumulative_strength": 242.02930515349018,
+    "last_seen": 1752629187.0223567
+  },
+  {
+    "symbols": [
+      "input",
+      "system"
+    ],
+    "count": 421,
+    "cumulative_strength": 501.3078579833326,
+    "last_seen": 1752627864.2879267
+  },
+  {
+    "symbols": [
+      "memory",
+      "system"
+    ],
+    "count": 182,
+    "cumulative_strength": 170.65120710274718,
+    "last_seen": 1752627864.2879267
+  },
+  {
+    "symbols": [
+      "logic",
+      "system"
+    ],
+    "count": 190,
+    "cumulative_strength": 162.61807388576452,
+    "last_seen": 1752671978.3675246
+  },
+  {
+    "symbols": [
+      "memory",
+      "node"
+    ],
+    "count": 100,
+    "cumulative_strength": 86.7969527982568,
+    "last_seen": 1752671978.3004284
+  },
+  {
+    "symbols": [
+      "node",
+      "system"
+    ],
+    "count": 320,
+    "cumulative_strength": 383.5305161020123,
+    "last_seen": 1752671978.3050027
+  },
+  {
+    "symbols": [
+      "logic",
+      "state"
+    ],
+    "count": 182,
+    "cumulative_strength": 152.97614142128813,
+    "last_seen": 1752671978.2972822
+  },
+  {
+    "symbols": [
+      "frequency",
+      "input"
+    ],
+    "count": 253,
+    "cumulative_strength": 239.11207633864876,
+    "last_seen": 1752671978.2989054
+  },
+  {
+    "symbols": [
+      "input",
+      "state"
+    ],
+    "count": 238,
+    "cumulative_strength": 246.88371866863298,
+    "last_seen": 1752671978.3004284
+  },
+  {
+    "symbols": [
+      "frequency",
+      "memory"
+    ],
+    "count": 306,
+    "cumulative_strength": 266.7803645689563,
+    "last_seen": 1752671978.3004284
+  },
+  {
+    "symbols": [
+      "memory",
+      "state"
+    ],
+    "count": 161,
+    "cumulative_strength": 145.14203592128942,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "frequency",
+      "node"
+    ],
+    "count": 463,
+    "cumulative_strength": 606.217319580349,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "node",
+      "state"
+    ],
+    "count": 449,
+    "cumulative_strength": 691.1960541627997,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "frequency",
+      "system"
+    ],
+    "count": 397,
+    "cumulative_strength": 776.8208494632732,
+    "last_seen": 1752628049.7042341
+  },
+  {
+    "symbols": [
+      "state",
+      "system"
+    ],
+    "count": 252,
+    "cumulative_strength": 753.4100144242711,
+    "last_seen": 1752627291.5547788
+  },
+  {
+    "symbols": [
+      "frequency",
+      "state"
+    ],
+    "count": 705,
+    "cumulative_strength": 1252.701478489282,
+    "last_seen": 1752671978.3050027
+  },
+  {
+    "symbols": [
+      "data",
+      "system"
+    ],
+    "count": 530,
+    "cumulative_strength": 592.3685874323921,
+    "last_seen": 1752671978.3303084
+  },
+  {
+    "symbols": [
+      "data",
+      "wave"
+    ],
+    "count": 219,
+    "cumulative_strength": 213.59780216097252,
+    "last_seen": 1752629186.9892948
+  },
+  {
+    "symbols": [
+      "node",
+      "wave"
+    ],
+    "count": 489,
+    "cumulative_strength": 625.3229367805498,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "node",
+      "output"
+    ],
+    "count": 189,
+    "cumulative_strength": 384.3962111065946,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "output",
+      "system"
+    ],
+    "count": 497,
+    "cumulative_strength": 870.6658078541911,
+    "last_seen": 1752629187.0162547
+  },
+  {
+    "symbols": [
+      "output",
+      "wave"
+    ],
+    "count": 482,
+    "cumulative_strength": 1113.6713290533096,
+    "last_seen": 1752627291.5547788
+  },
+  {
+    "symbols": [
+      "memory",
+      "output"
+    ],
+    "count": 23,
+    "cumulative_strength": 24.175745940359075,
+    "last_seen": 1752627291.5705767
+  },
+  {
+    "symbols": [
+      "node",
+      "phase"
+    ],
+    "count": 784,
+    "cumulative_strength": 1356.356743854535,
+    "last_seen": 1752671978.4075685
+  },
+  {
+    "symbols": [
+      "phase",
+      "system"
+    ],
+    "count": 624,
+    "cumulative_strength": 972.8880451607365,
+    "last_seen": 1752671978.366007
+  },
+  {
+    "symbols": [
+      "phase",
+      "wave"
+    ],
+    "count": 1910,
+    "cumulative_strength": 2772.9491665829373,
+    "last_seen": 1752671978.444273
+  },
+  {
+    "symbols": [
+      "output",
+      "phase"
+    ],
+    "count": 849,
+    "cumulative_strength": 1868.9269747397714,
+    "last_seen": 1752671978.306525
+  },
+  {
+    "symbols": [
+      "system",
+      "wave"
+    ],
+    "count": 463,
+    "cumulative_strength": 695.6883757332894,
+    "last_seen": 1752671978.3401675
+  },
+  {
+    "symbols": [
+      "frequency",
+      "output"
+    ],
+    "count": 333,
+    "cumulative_strength": 769.3916146670964,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "output",
+      "state"
+    ],
+    "count": 467,
+    "cumulative_strength": 1300.2690292172565,
+    "last_seen": 1752629186.9862735
+  },
+  {
+    "symbols": [
+      "memory",
+      "wave"
+    ],
+    "count": 342,
+    "cumulative_strength": 283.79093920175706,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "memory",
+      "phase"
+    ],
+    "count": 717,
+    "cumulative_strength": 695.4683077683851,
+    "last_seen": 1752671978.3034704
+  },
+  {
+    "symbols": [
+      "frequency",
+      "phase"
+    ],
+    "count": 1165,
+    "cumulative_strength": 1740.5888883160092,
+    "last_seen": 1752671978.413656
+  },
+  {
+    "symbols": [
+      "state",
+      "wave"
+    ],
+    "count": 891,
+    "cumulative_strength": 1359.3841332461182,
+    "last_seen": 1752671978.3050027
+  },
+  {
+    "symbols": [
+      "phase",
+      "state"
+    ],
+    "count": 1193,
+    "cumulative_strength": 2160.592139352864,
+    "last_seen": 1752671978.3050027
+  },
+  {
+    "symbols": [
+      "frequency",
+      "wave"
+    ],
+    "count": 882,
+    "cumulative_strength": 1157.070537538029,
+    "last_seen": 1752671978.410613
+  },
+  {
+    "symbols": [
+      "frequency",
+      "sorrow"
+    ],
+    "count": 101,
+    "cumulative_strength": 223.36545447728741,
+    "last_seen": 1752626823.1777687
+  },
+  {
+    "symbols": [
+      "frequency",
+      "grief"
+    ],
+    "count": 111,
+    "cumulative_strength": 135.02511677676097,
+    "last_seen": 1752627291.5547788
+  },
+  {
+    "symbols": [
+      "frequency",
+      "tears"
+    ],
+    "count": 112,
+    "cumulative_strength": 221.9375387850655,
+    "last_seen": 1752627291.6441774
+  },
+  {
+    "symbols": [
+      "sorrow",
+      "state"
+    ],
+    "count": 145,
+    "cumulative_strength": 225.1436260304807,
+    "last_seen": 1752626823.1777687
+  },
+  {
+    "symbols": [
+      "grief",
+      "state"
+    ],
+    "count": 211,
+    "cumulative_strength": 389.7719447202523,
+    "last_seen": 1752627291.5547788
+  },
+  {
+    "symbols": [
+      "state",
+      "tears"
+    ],
+    "count": 155,
+    "cumulative_strength": 243.46721798374583,
+    "last_seen": 1752627733.0221696
+  },
+  {
+    "symbols": [
+      "grief",
+      "wave"
+    ],
+    "count": 304,
+    "cumulative_strength": 540.8892548280508,
+    "last_seen": 1752627326.140273
+  },
+  {
+    "symbols": [
+      "output",
+      "sorrow"
+    ],
+    "count": 760,
+    "cumulative_strength": 1095.7344144354493,
+    "last_seen": 1752629187.0142326
+  },
+  {
+    "symbols": [
+      "grief",
+      "output"
+    ],
+    "count": 490,
+    "cumulative_strength": 934.7618390713868,
+    "last_seen": 1752629187.0142326
+  },
+  {
+    "symbols": [
+      "output",
+      "tears"
+    ],
+    "count": 774,
+    "cumulative_strength": 1111.8432543228657,
+    "last_seen": 1752629187.0147393
+  },
+  {
+    "symbols": [
+      "grief",
+      "phase"
+    ],
+    "count": 668,
+    "cumulative_strength": 1257.3194376161396,
+    "last_seen": 1752671978.3080506
+  },
+  {
+    "symbols": [
+      "sorrow",
+      "tears"
+    ],
+    "count": 1446,
+    "cumulative_strength": 3703.749584456357,
+    "last_seen": 1752671978.3303084
+  },
+  {
+    "symbols": [
+      "grief",
+      "sorrow"
+    ],
+    "count": 706,
+    "cumulative_strength": 994.5823267093757,
+    "last_seen": 1752671978.3303084
+  },
+  {
+    "symbols": [
+      "grief",
+      "tears"
+    ],
+    "count": 736,
+    "cumulative_strength": 1071.155033311953,
+    "last_seen": 1752671978.3303084
+  },
+  {
+    "symbols": [
+      "tears",
+      "wave"
+    ],
+    "count": 208,
+    "cumulative_strength": 323.1586862689786,
+    "last_seen": 1752627864.2566504
+  },
+  {
+    "symbols": [
+      "output",
+      "rage"
+    ],
+    "count": 102,
+    "cumulative_strength": 219.72966950645792,
+    "last_seen": 1752629187.0162547
+  },
+  {
+    "symbols": [
+      "anger",
+      "output"
+    ],
+    "count": 100,
+    "cumulative_strength": 355.33972872064857,
+    "last_seen": 1752614687.292378
+  },
+  {
+    "symbols": [
+      "phase",
+      "rage"
+    ],
+    "count": 518,
+    "cumulative_strength": 692.8803306279891,
+    "last_seen": 1752671978.4019775
+  },
+  {
+    "symbols": [
+      "anger",
+      "phase"
+    ],
+    "count": 959,
+    "cumulative_strength": 1929.4095971850443,
+    "last_seen": 1752671978.398442
+  },
+  {
+    "symbols": [
+      "irritation",
+      "phase"
+    ],
+    "count": 1273,
+    "cumulative_strength": 2706.9102721931954,
+    "last_seen": 1752629187.1133802
+  },
+  {
+    "symbols": [
+      "rage",
+      "sorrow"
+    ],
+    "count": 179,
+    "cumulative_strength": 253.37095088017247,
+    "last_seen": 1752627864.2506032
+  },
+  {
+    "symbols": [
+      "anger",
+      "sorrow"
+    ],
+    "count": 305,
+    "cumulative_strength": 436.1961905677181,
+    "last_seen": 1752627864.2516136
+  },
+  {
+    "symbols": [
+      "irritation",
+      "sorrow"
+    ],
+    "count": 306,
+    "cumulative_strength": 546.2886141688398,
+    "last_seen": 1752627864.2516136
+  },
+  {
+    "symbols": [
+      "grief",
+      "rage"
+    ],
+    "count": 297,
+    "cumulative_strength": 702.6691778312764,
+    "last_seen": 1752671978.3318245
+  },
+  {
+    "symbols": [
+      "anger",
+      "grief"
+    ],
+    "count": 303,
+    "cumulative_strength": 1053.7931796586108,
+    "last_seen": 1752671978.3318245
+  },
+  {
+    "symbols": [
+      "grief",
+      "irritation"
+    ],
+    "count": 305,
+    "cumulative_strength": 599.8024083017386,
+    "last_seen": 1752671978.3318245
+  },
+  {
+    "symbols": [
+      "irritation",
+      "tears"
+    ],
+    "count": 610,
+    "cumulative_strength": 1210.865864649233,
+    "last_seen": 1752628049.7289739
+  },
+  {
+    "symbols": [
+      "anger",
+      "tears"
+    ],
+    "count": 579,
+    "cumulative_strength": 1044.5709624012998,
+    "last_seen": 1752628049.7289739
+  },
+  {
+    "symbols": [
+      "anger",
+      "irritation"
+    ],
+    "count": 1299,
+    "cumulative_strength": 3123.4111798289164,
+    "last_seen": 1752671978.3829136
+  },
+  {
+    "symbols": [
+      "irritation",
+      "wave"
+    ],
+    "count": 985,
+    "cumulative_strength": 1837.86883437818,
+    "last_seen": 1752629187.1118715
+  },
+  {
+    "symbols": [
+      "anger",
+      "wave"
+    ],
+    "count": 993,
+    "cumulative_strength": 1810.6592628749174,
+    "last_seen": 1752671978.392373
+  },
+  {
+    "symbols": [
+      "phase",
+      "sorrow"
+    ],
+    "count": 296,
+    "cumulative_strength": 528.2621147249286,
+    "last_seen": 1752671978.306525
+  },
+  {
+    "symbols": [
+      "phase",
+      "tears"
+    ],
+    "count": 490,
+    "cumulative_strength": 874.5082149023015,
+    "last_seen": 1752671978.306525
+  },
+  {
+    "symbols": [
+      "rage",
+      "wave"
+    ],
+    "count": 381,
+    "cumulative_strength": 383.2613601953284,
+    "last_seen": 1752671978.381384
+  },
+  {
+    "symbols": [
+      "anger",
+      "relaxation"
+    ],
+    "count": 1007,
+    "cumulative_strength": 2192.5639602502433,
+    "last_seen": 1752671978.3938947
+  },
+  {
+    "symbols": [
+      "anger",
+      "peace"
+    ],
+    "count": 914,
+    "cumulative_strength": 1792.6923618148746,
+    "last_seen": 1752671978.3938947
+  },
+  {
+    "symbols": [
+      "calm",
+      "irritation"
+    ],
+    "count": 860,
+    "cumulative_strength": 1414.7212541885433,
+    "last_seen": 1752629187.0923793
+  },
+  {
+    "symbols": [
+      "irritation",
+      "relaxation"
+    ],
+    "count": 1073,
+    "cumulative_strength": 2194.037255292447,
+    "last_seen": 1752671978.3712416
+  },
+  {
+    "symbols": [
+      "joy",
+      "value"
+    ],
+    "count": 35,
+    "cumulative_strength": 35.380248306765985,
+    "last_seen": 1752627326.128086
+  },
+  {
+    "symbols": [
+      "joy",
+      "memory"
+    ],
+    "count": 44,
+    "cumulative_strength": 44.015312973878025,
+    "last_seen": 1752627326.128086
+  },
+  {
+    "symbols": [
+      "logic",
+      "phase"
+    ],
+    "count": 1212,
+    "cumulative_strength": 1179.518396259006,
+    "last_seen": 1752671978.415175
+  },
+  {
+    "symbols": [
+      "phase",
+      "value"
+    ],
+    "count": 608,
+    "cumulative_strength": 589.371193420689,
+    "last_seen": 1752671978.415175
+  },
+  {
+    "symbols": [
+      "frequency",
+      "joy"
+    ],
+    "count": 53,
+    "cumulative_strength": 50.85812830499389,
+    "last_seen": 1752671978.3050027
+  }
+]
