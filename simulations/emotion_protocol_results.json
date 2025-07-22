@@ -1,0 +1,22 @@
+{
+  "E1": {
+    "samples": 500,
+    "pearson_valence_instant": 0.356689337452069,
+    "pearson_arousal_instant": -0.13138923921191675,
+    "pearson_valence_integrated": 0.9306188769284629,
+    "pearson_arousal_integrated": 0.8950368033050372
+  },
+  "E2": {
+    "pairs": 100,
+    "mean_abs_valence_after_cancel": 0.9999999997585557
+  },
+  "E3": {
+    "steps": 20,
+    "pearson_mood_vs_activation": 0.5898580194821219
+  },
+  "E4": {
+    "pearson_valence_instant": 0.356689337452069,
+    "pearson_valence_integrated": 0.9306188769284629,
+    "gain": 0.5739295394763939
+  }
+}
