@@ -1,0 +1,902 @@
+[
+  {
+    "symbols": [
+      "arousal_mag",
+      "valence_mag"
+    ],
+    "count": 515,
+    "cumulative_strength": 1970.95985491414,
+    "last_seen": 1752673461.1248121
+  },
+  {
+    "symbols": [
+      "laughter",
+      "valence_mag"
+    ],
+    "count": 9,
+    "cumulative_strength": 9.380984874202323,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "object",
+      "valence_mag"
+    ],
+    "count": 36,
+    "cumulative_strength": 35.1326296082621,
+    "last_seen": 1752673460.9796996
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "value"
+    ],
+    "count": 119,
+    "cumulative_strength": 113.89478914048348,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "logic",
+      "valence_mag"
+    ],
+    "count": 30,
+    "cumulative_strength": 33.26791370326898,
+    "last_seen": 1752673461.0168674
+  },
+  {
+    "symbols": [
+      "input",
+      "valence_mag"
+    ],
+    "count": 5,
+    "cumulative_strength": 4.692043536890207,
+    "last_seen": 1752673460.935167
+  },
+  {
+    "symbols": [
+      "joy",
+      "valence_mag"
+    ],
+    "count": 22,
+    "cumulative_strength": 24.778835970253006,
+    "last_seen": 1752673460.9520512
+  },
+  {
+    "symbols": [
+      "delight",
+      "valence_mag"
+    ],
+    "count": 34,
+    "cumulative_strength": 42.53842660903432,
+    "last_seen": 1752673460.9535737
+  },
+  {
+    "symbols": [
+      "valence_mag",
+      "valence_marker"
+    ],
+    "count": 696,
+    "cumulative_strength": 701.816205210112,
+    "last_seen": 1752673461.1248121
+  },
+  {
+    "symbols": [
+      "arousal_marker",
+      "valence_mag"
+    ],
+    "count": 819,
+    "cumulative_strength": 802.3715578093842,
+    "last_seen": 1752673461.1248121
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "logic"
+    ],
+    "count": 101,
+    "cumulative_strength": 106.60725492231211,
+    "last_seen": 1752673461.0275896
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "delight"
+    ],
+    "count": 48,
+    "cumulative_strength": 53.47681367856618,
+    "last_seen": 1752673460.9535737
+  },
+  {
+    "symbols": [
+      "data",
+      "valence_mag"
+    ],
+    "count": 37,
+    "cumulative_strength": 39.30370536566942,
+    "last_seen": 1752673460.9951136
+  },
+  {
+    "symbols": [
+      "memory",
+      "valence_mag"
+    ],
+    "count": 108,
+    "cumulative_strength": 111.6532740059552,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "node",
+      "valence_mag"
+    ],
+    "count": 34,
+    "cumulative_strength": 38.34798663286337,
+    "last_seen": 1752673460.9890375
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "input"
+    ],
+    "count": 34,
+    "cumulative_strength": 32.53665265949113,
+    "last_seen": 1752673460.939662
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "joy"
+    ],
+    "count": 44,
+    "cumulative_strength": 44.49150113668786,
+    "last_seen": 1752673460.9520512
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "data"
+    ],
+    "count": 73,
+    "cumulative_strength": 71.39025317907115,
+    "last_seen": 1752673460.9951136
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "memory"
+    ],
+    "count": 177,
+    "cumulative_strength": 184.89146189407865,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "node"
+    ],
+    "count": 69,
+    "cumulative_strength": 70.15067466045488,
+    "last_seen": 1752673460.9890375
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "valence_marker"
+    ],
+    "count": 755,
+    "cumulative_strength": 790.7024871136357,
+    "last_seen": 1752673461.1248121
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "arousal_marker"
+    ],
+    "count": 863,
+    "cumulative_strength": 845.7509679750392,
+    "last_seen": 1752673461.1248121
+  },
+  {
+    "symbols": [
+      "system",
+      "valence_mag"
+    ],
+    "count": 23,
+    "cumulative_strength": 21.919105284014336,
+    "last_seen": 1752673460.9581516
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "system"
+    ],
+    "count": 32,
+    "cumulative_strength": 29.446915646544042,
+    "last_seen": 1752673460.9581516
+  },
+  {
+    "symbols": [
+      "frequency",
+      "valence_mag"
+    ],
+    "count": 50,
+    "cumulative_strength": 52.42943175241273,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "state",
+      "valence_mag"
+    ],
+    "count": 35,
+    "cumulative_strength": 38.47050168897621,
+    "last_seen": 1752673461.0168674
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "laughter"
+    ],
+    "count": 40,
+    "cumulative_strength": 37.35151031737956,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "frequency"
+    ],
+    "count": 106,
+    "cumulative_strength": 109.8484286152597,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "state"
+    ],
+    "count": 109,
+    "cumulative_strength": 110.0222288602085,
+    "last_seen": 1752673461.0255651
+  },
+  {
+    "symbols": [
+      "valence_mag",
+      "wave"
+    ],
+    "count": 63,
+    "cumulative_strength": 59.96195555948891,
+    "last_seen": 1752673461.1018732
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "wave"
+    ],
+    "count": 141,
+    "cumulative_strength": 138.39128336584136,
+    "last_seen": 1752673461.1018732
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "object"
+    ],
+    "count": 96,
+    "cumulative_strength": 87.73993921327556,
+    "last_seen": 1752673460.9781787
+  },
+  {
+    "symbols": [
+      "output",
+      "valence_mag"
+    ],
+    "count": 22,
+    "cumulative_strength": 19.976738868835703,
+    "last_seen": 1752673460.9581516
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "output"
+    ],
+    "count": 43,
+    "cumulative_strength": 37.96325789357805,
+    "last_seen": 1752673460.9581516
+  },
+  {
+    "symbols": [
+      "phase",
+      "valence_mag"
+    ],
+    "count": 80,
+    "cumulative_strength": 82.05203213840689,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "phase"
+    ],
+    "count": 142,
+    "cumulative_strength": 143.2937583913788,
+    "last_seen": 1752673461.103405
+  },
+  {
+    "symbols": [
+      "logic",
+      "memory"
+    ],
+    "count": 28,
+    "cumulative_strength": 21.68573422987709,
+    "last_seen": 1752673461.0679557
+  },
+  {
+    "symbols": [
+      "frequency",
+      "logic"
+    ],
+    "count": 16,
+    "cumulative_strength": 12.342417477578024,
+    "last_seen": 1752673461.0368738
+  },
+  {
+    "symbols": [
+      "logic",
+      "state"
+    ],
+    "count": 8,
+    "cumulative_strength": 5.86188935075549,
+    "last_seen": 1752673460.939662
+  },
+  {
+    "symbols": [
+      "logic",
+      "wave"
+    ],
+    "count": 54,
+    "cumulative_strength": 43.6178724709658,
+    "last_seen": 1752673461.0602899
+  },
+  {
+    "symbols": [
+      "logic",
+      "phase"
+    ],
+    "count": 97,
+    "cumulative_strength": 89.4060312742679,
+    "last_seen": 1752673461.084335
+  },
+  {
+    "symbols": [
+      "frequency",
+      "phase"
+    ],
+    "count": 17,
+    "cumulative_strength": 13.24991058279018,
+    "last_seen": 1752673461.037876
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "symbol"
+    ],
+    "count": 19,
+    "cumulative_strength": 15.664497663047491,
+    "last_seen": 1752673460.956631
+  },
+  {
+    "symbols": [
+      "memory",
+      "phase"
+    ],
+    "count": 27,
+    "cumulative_strength": 22.762672772948772,
+    "last_seen": 1752673461.084838
+  },
+  {
+    "symbols": [
+      "phase",
+      "wave"
+    ],
+    "count": 72,
+    "cumulative_strength": 58.93650873380339,
+    "last_seen": 1752673461.0618908
+  },
+  {
+    "symbols": [
+      "delight",
+      "logic"
+    ],
+    "count": 2,
+    "cumulative_strength": 1.5547426527389596,
+    "last_seen": 1752673460.939662
+  },
+  {
+    "symbols": [
+      "phase",
+      "state"
+    ],
+    "count": 6,
+    "cumulative_strength": 4.947441692809912,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "laughter",
+      "phase"
+    ],
+    "count": 27,
+    "cumulative_strength": 44.898722534391354,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "joy",
+      "phase"
+    ],
+    "count": 34,
+    "cumulative_strength": 57.04609459894347,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "delight",
+      "phase"
+    ],
+    "count": 34,
+    "cumulative_strength": 57.22374228639554,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "frequency",
+      "state"
+    ],
+    "count": 3,
+    "cumulative_strength": 2.245979177808156,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "frequency",
+      "laughter"
+    ],
+    "count": 3,
+    "cumulative_strength": 2.3067517477599777,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "frequency",
+      "joy"
+    ],
+    "count": 4,
+    "cumulative_strength": 3.1418138668595583,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "delight",
+      "frequency"
+    ],
+    "count": 4,
+    "cumulative_strength": 3.1672259847373057,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "joy",
+      "state"
+    ],
+    "count": 5,
+    "cumulative_strength": 3.8886816443743455,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "delight",
+      "state"
+    ],
+    "count": 7,
+    "cumulative_strength": 5.792998602553621,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "input",
+      "phase"
+    ],
+    "count": 9,
+    "cumulative_strength": 7.4969145333370415,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "laughter",
+      "wave"
+    ],
+    "count": 10,
+    "cumulative_strength": 8.782994611478053,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "joy",
+      "wave"
+    ],
+    "count": 10,
+    "cumulative_strength": 8.82847951960741,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "delight",
+      "wave"
+    ],
+    "count": 11,
+    "cumulative_strength": 9.595772620224267,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "node",
+      "phase"
+    ],
+    "count": 8,
+    "cumulative_strength": 5.932575056108883,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "delight",
+      "joy"
+    ],
+    "count": 55,
+    "cumulative_strength": 122.99960565077187,
+    "last_seen": 1752673460.9520512
+  },
+  {
+    "symbols": [
+      "joy",
+      "memory"
+    ],
+    "count": 2,
+    "cumulative_strength": 1.5124896796611782,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "delight",
+      "memory"
+    ],
+    "count": 2,
+    "cumulative_strength": 1.525197365149094,
+    "last_seen": 1752673460.941179
+  },
+  {
+    "symbols": [
+      "laughter",
+      "state"
+    ],
+    "count": 4,
+    "cumulative_strength": 3.166006098784859,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "joy",
+      "laughter"
+    ],
+    "count": 49,
+    "cumulative_strength": 107.82407151953427,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "delight",
+      "laughter"
+    ],
+    "count": 53,
+    "cumulative_strength": 117.46241937632183,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "input",
+      "laughter"
+    ],
+    "count": 7,
+    "cumulative_strength": 6.17058966803371,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "input",
+      "joy"
+    ],
+    "count": 9,
+    "cumulative_strength": 8.370807346426117,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "delight",
+      "input"
+    ],
+    "count": 9,
+    "cumulative_strength": 8.42670107617832,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "joy",
+      "node"
+    ],
+    "count": 8,
+    "cumulative_strength": 6.442140814149269,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "delight",
+      "node"
+    ],
+    "count": 9,
+    "cumulative_strength": 8.478237940811367,
+    "last_seen": 1752673460.948835
+  },
+  {
+    "symbols": [
+      "laughter",
+      "node"
+    ],
+    "count": 7,
+    "cumulative_strength": 5.710409708273774,
+    "last_seen": 1752673460.9426982
+  },
+  {
+    "symbols": [
+      "data",
+      "phase"
+    ],
+    "count": 10,
+    "cumulative_strength": 12.193690436053627,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "data",
+      "laughter"
+    ],
+    "count": 27,
+    "cumulative_strength": 46.34715527838748,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "data",
+      "joy"
+    ],
+    "count": 43,
+    "cumulative_strength": 69.60824949020716,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "data",
+      "delight"
+    ],
+    "count": 43,
+    "cumulative_strength": 69.82299645448691,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "laughter",
+      "object"
+    ],
+    "count": 20,
+    "cumulative_strength": 21.69073100917618,
+    "last_seen": 1752673460.948835
+  },
+  {
+    "symbols": [
+      "laughter",
+      "system"
+    ],
+    "count": 10,
+    "cumulative_strength": 9.882960764007498,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "laughter",
+      "valence_marker"
+    ],
+    "count": 43,
+    "cumulative_strength": 41.902237762096924,
+    "last_seen": 1752673460.9520512
+  },
+  {
+    "symbols": [
+      "arousal_marker",
+      "laughter"
+    ],
+    "count": 43,
+    "cumulative_strength": 41.902237762096924,
+    "last_seen": 1752673460.9520512
+  },
+  {
+    "symbols": [
+      "joy",
+      "object"
+    ],
+    "count": 20,
+    "cumulative_strength": 21.768524517941447,
+    "last_seen": 1752673460.948835
+  },
+  {
+    "symbols": [
+      "joy",
+      "system"
+    ],
+    "count": 10,
+    "cumulative_strength": 9.923627205236514,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "joy",
+      "valence_marker"
+    ],
+    "count": 45,
+    "cumulative_strength": 44.46921379383671,
+    "last_seen": 1752673460.9535737
+  },
+  {
+    "symbols": [
+      "arousal_marker",
+      "joy"
+    ],
+    "count": 45,
+    "cumulative_strength": 44.46921379383671,
+    "last_seen": 1752673460.9535737
+  },
+  {
+    "symbols": [
+      "delight",
+      "object"
+    ],
+    "count": 20,
+    "cumulative_strength": 21.874919757983108,
+    "last_seen": 1752673460.948835
+  },
+  {
+    "symbols": [
+      "delight",
+      "system"
+    ],
+    "count": 10,
+    "cumulative_strength": 9.97925952818826,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "delight",
+      "valence_marker"
+    ],
+    "count": 48,
+    "cumulative_strength": 47.62320380642267,
+    "last_seen": 1752673460.9535737
+  },
+  {
+    "symbols": [
+      "arousal_marker",
+      "delight"
+    ],
+    "count": 51,
+    "cumulative_strength": 51.62139134898278,
+    "last_seen": 1752673460.955103
+  },
+  {
+    "symbols": [
+      "laughter",
+      "output"
+    ],
+    "count": 23,
+    "cumulative_strength": 24.646445191301375,
+    "last_seen": 1752673460.948835
+  },
+  {
+    "symbols": [
+      "joy",
+      "output"
+    ],
+    "count": 22,
+    "cumulative_strength": 23.277543921384012,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "delight",
+      "output"
+    ],
+    "count": 22,
+    "cumulative_strength": 23.396606019715815,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "laughter",
+      "symbol"
+    ],
+    "count": 23,
+    "cumulative_strength": 23.660840287215656,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "joy",
+      "symbol"
+    ],
+    "count": 23,
+    "cumulative_strength": 23.751717966339452,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "delight",
+      "symbol"
+    ],
+    "count": 23,
+    "cumulative_strength": 23.876018459033986,
+    "last_seen": 1752673460.9473107
+  },
+  {
+    "symbols": [
+      "output",
+      "phase"
+    ],
+    "count": 11,
+    "cumulative_strength": 9.703609155505022,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "phase",
+      "valence_marker"
+    ],
+    "count": 16,
+    "cumulative_strength": 13.326818615120583,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "arousal_marker",
+      "phase"
+    ],
+    "count": 16,
+    "cumulative_strength": 13.326818615120583,
+    "last_seen": 1752673460.9503574
+  },
+  {
+    "symbols": [
+      "paradox",
+      "valence_mag"
+    ],
+    "count": 590,
+    "cumulative_strength": 595.581573283979,
+    "last_seen": 1752673461.1248121
+  },
+  {
+    "symbols": [
+      "arousal_mag",
+      "paradox"
+    ],
+    "count": 584,
+    "cumulative_strength": 589.434319332954,
+    "last_seen": 1752673461.1248121
+  }
+]

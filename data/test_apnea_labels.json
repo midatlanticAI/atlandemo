@@ -1,0 +1,29 @@
+{
+  "sr": 25,
+  "rle": [
+    {
+      "label": "obstructive",
+      "count": 500
+    },
+    {
+      "label": "central",
+      "count": 500
+    },
+    {
+      "label": "obstructive",
+      "count": 500
+    },
+    {
+      "label": "central",
+      "count": 500
+    },
+    {
+      "label": "obstructive",
+      "count": 500
+    },
+    {
+      "label": "central",
+      "count": 500
+    }
+  ]
+}
