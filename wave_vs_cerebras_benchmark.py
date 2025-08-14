@@ -30,6 +30,15 @@ def safe_print(text):
 
 
 class WaveVsCerebrasBenchmark:
+    """
+    Benchmark harness comparing the Wave engine to a Cerebras-hosted model.
+
+    Note: the Wave engine under test is not a hand-written rule system. It runs a
+    temporal wave-based cognition core that produces numeric activation fields,
+    selects expert modules dynamically via a registry and confidence thresholds,
+    and integrates wave/expert outputs using weighted fusion. Simple heuristics
+    only backstop when no expert meets the confidence threshold.
+    """
     def __init__(self, api_key: str = None, api_base: str = None, timeout_s: float = 10.0, max_tokens: int = 8):
         self.wave_engine = EnhancedWaveEngine()
         self.cb = CerebrasClient(api_key=api_key, api_base=api_base, timeout_s=timeout_s)
