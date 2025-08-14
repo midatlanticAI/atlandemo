@@ -12,6 +12,7 @@ Env vars:
 from typing import Any, Dict, List, Optional
 import os
 import requests
+import time
 
 
 def _safe_get_env(name: str, default: Optional[str] = None) -> Optional[str]:
@@ -55,7 +56,7 @@ class CerebrasClient:
         Call chat completions; falls back to plain completions if unavailable.
         Returns text or "error".
         """
-        # Try chat-completions first
+        # Try chat-completions first with basic retries
         url_chat = f"{self.api_base}/chat/completions"
         payload_chat: Dict[str, Any] = {
             "model": model,
@@ -64,44 +65,70 @@ class CerebrasClient:
             "temperature": temperature,
             "stream": False,
         }
-        try:
-            r = requests.post(url_chat, headers=self._headers(), json=payload_chat, timeout=self.timeout_s)
-            if r.status_code == 200:
-                data = r.json()
-                # OpenAI-compatible: choices[0].message.content
+        resp = self._post_with_retries(url_chat, payload_chat)
+        if isinstance(resp, requests.Response):
+            if resp.status_code == 200:
+                try:
+                    data = resp.json()
+                except Exception as e:
+                    return f"error: invalid_json {type(e).__name__}"
                 choices = data.get("choices", [])
                 if choices and isinstance(choices[0], dict):
                     msg = choices[0].get("message", {})
                     if isinstance(msg, dict):
                         return (msg.get("content") or "").strip()
-                # Some providers return "response"
-                return (data.get("response") or "").strip() or "error"
-        except Exception:
-            # fall through to completions
-            pass
+                return (data.get("response") or "").strip() or "error: empty_response"
+            return f"error: {resp.status_code} {resp.text[:200]}"
+        elif isinstance(resp, Exception):
+            return f"error: {type(resp).__name__}: {resp}"
 
         # Fallback: plain completions
         url_comp = f"{self.api_base}/completions"
-        try:
-            prompt = "\n".join(m.get("content", "") for m in messages)
-            payload_comp: Dict[str, Any] = {
-                "model": model,
-                "prompt": prompt,
-                "max_tokens": max_tokens,
-                "temperature": temperature,
-                "stream": False,
-            }
-            r = requests.post(url_comp, headers=self._headers(), json=payload_comp, timeout=self.timeout_s)
-            if r.status_code == 200:
-                data = r.json()
-                # OpenAI legacy: choices[0].text
+        prompt = "\n".join(m.get("content", "") for m in messages)
+        payload_comp: Dict[str, Any] = {
+            "model": model,
+            "prompt": prompt,
+            "max_tokens": max_tokens,
+            "temperature": temperature,
+            "stream": False,
+        }
+        resp = self._post_with_retries(url_comp, payload_comp)
+        if isinstance(resp, requests.Response):
+            if resp.status_code == 200:
+                try:
+                    data = resp.json()
+                except Exception as e:
+                    return f"error: invalid_json {type(e).__name__}"
                 choices = data.get("choices", [])
                 if choices and isinstance(choices[0], dict):
                     return (choices[0].get("text") or "").strip()
-                return (data.get("response") or "").strip() or "error"
-        except Exception:
-            pass
-        return "error"
+                return (data.get("response") or "").strip() or "error: empty_response"
+            return f"error: {resp.status_code} {resp.text[:200]}"
+        elif isinstance(resp, Exception):
+            return f"error: {type(resp).__name__}: {resp}"
+        return "error: unknown"
+
+    # -------------------------------
+    # HTTP helper with retries
+    # -------------------------------
+    def _post_with_retries(self, url: str, payload: Dict[str, Any], retries: int = 2):
+        delay = 0.5
+        for attempt in range(retries + 1):
+            try:
+                r = requests.post(url, headers=self._headers(), json=payload, timeout=self.timeout_s)
+                # Retry on 429/5xx
+                if r.status_code in (429, 500, 502, 503, 504):
+                    if attempt < retries:
+                        time.sleep(delay)
+                        delay *= 2
+                        continue
+                return r
+            except Exception as e:
+                if attempt < retries:
+                    time.sleep(delay)
+                    delay *= 2
+                    continue
+                return e
 
     # -------------------------------
     # Internals
