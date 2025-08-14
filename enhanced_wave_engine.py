@@ -4,6 +4,9 @@ Combines the temporal cognition engine with plug-and-play expert modules.
 """
 
 import time
+import subprocess
+import json as _json
+from pathlib import Path
 from typing import Dict, List, Any, Optional
 from src.temporal_cognition import TemporalCognitionEngine, ExperienceFrame
 from expert_modules.registry import ExpertRegistry
@@ -21,7 +24,7 @@ class EnhancedWaveEngine:
     - Seamless integration between Wave dynamics and expert knowledge
     """
     
-    def __init__(self):
+    def __init__(self, use_cpp_backend: bool = False):
         # Initialize core Wave engine
         self.wave_engine = TemporalCognitionEngine()
         
@@ -39,6 +42,10 @@ class EnhancedWaveEngine:
         self.query_count = 0
         self.total_processing_time = 0.0
         self.wave_expert_synergy_scores = []
+        
+        # Optional fast backend (C++) for activation computation
+        self.use_cpp_backend = use_cpp_backend
+        self._cpp_exe_path = Path("wave_engine_multi_lang/cpp/wave_engine.exe")
         
     def _register_default_experts(self):
         """Register default expert modules."""
@@ -124,16 +131,24 @@ class EnhancedWaveEngine:
         auditory_symbols = self._extract_auditory_symbols(query, context)
         goals = self._extract_goals(query, context)
         
-        # Process through Wave engine
-        wave_result = self.wave_engine.live_experience(
-            visual=visual_symbols,
-            auditory=auditory_symbols,
-            goals=goals,
-            mood=0.0,
-            arousal=0.7,
-            attention=0.9,
-            satisfaction=0.5
-        )
+        # Process through Wave engine (Python) or fast C++ backend
+        if self.use_cpp_backend and self._cpp_exe_path.exists():
+            symbols = list(set(visual_symbols + auditory_symbols + goals))
+            activation_field = self._compute_activation_field_cpp(symbols)
+            wave_result = {
+                'activation_field': activation_field,
+                'recent_resonance': [],
+            }
+        else:
+            wave_result = self.wave_engine.live_experience(
+                visual=visual_symbols,
+                auditory=auditory_symbols,
+                goals=goals,
+                mood=0.0,
+                arousal=0.7,
+                attention=0.9,
+                satisfaction=0.5
+            )
         
         # Generate Wave-based answer
         wave_answer = self._generate_wave_answer(wave_result, query, context)
@@ -145,6 +160,25 @@ class EnhancedWaveEngine:
             'confidence': self._calculate_wave_confidence(wave_result),
             'reasoning': self._generate_wave_reasoning(wave_result, query)
         }
+
+    def _compute_activation_field_cpp(self, symbols: List[str]) -> Dict[str, float]:
+        """Compute activation_field via the C++ wave engine executable.
+        Falls back to empty dict on error."""
+        if not symbols:
+            return {}
+        cmd = [str(self._cpp_exe_path), "--process"] + symbols
+        try:
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=2.0)
+            if proc.returncode == 0 and proc.stdout.strip().startswith("{"):
+                try:
+                    data = _json.loads(proc.stdout)
+                    # Ensure values are floats
+                    return {k: float(v) for k, v in data.items()}
+                except Exception:
+                    return {}
+            return {}
+        except Exception:
+            return {}
     
     def _extract_visual_symbols(self, query: str, context: Dict[str, Any] = None) -> List[str]:
         """Extract visual symbols from query and context."""
@@ -195,55 +229,34 @@ class EnhancedWaveEngine:
         return goals
     
     def _generate_wave_answer(self, wave_result: Dict[str, Any], query: str, context: Dict[str, Any] = None) -> str:
-        """Generate answer based on Wave activation patterns."""
+        """Generate answer based purely on activation energy, without lexical heuristics.
+
+        Decision rule for binary (yes/no) questions:
+        - yes if total positive activation ≥ total negative activation
+        - no  otherwise
+
+        For non-binary questions, return the symbol with maximum absolute activation.
+        """
         activation_field = wave_result['activation_field']
-        
-        # Look for strong positive or negative activations
-        positive_activations = {k: v for k, v in activation_field.items() if v > 0.5}
-        negative_activations = {k: v for k, v in activation_field.items() if v < -0.5}
+        if not activation_field:
+            return "unknown"
 
-        # Enhanced heuristic for yes/no questions with contradiction handling
-        # We compute weighted sums of positive vs negative activations; negatives get a slight boost
-        yes_no_pattern = any(word in query.lower() for word in [
-            'can', 'does', 'do', 'is', 'are', "won't", "can't", 'cannot', 'will']
-        ) and '?' in query
+        # Compute energy split
+        pos_energy = 0.0
+        neg_energy = 0.0
+        for value in activation_field.values():
+            if value >= 0:
+                pos_energy += value
+            else:
+                neg_energy += -value
 
-        if yes_no_pattern:
-            # Quick contradiction check: if context explicitly negates the subject performing the action
-            if context and 'context' in context:
-                ctx_text = context['context'].lower()
-                # crude subject extraction: first noun-like word in query after modal/verb
-                tokens = query.lower().replace('?', '').split()
-                if tokens:
-                    try:
-                        subj_index = next(i for i, t in enumerate(tokens) if t in ['can', 'does', 'do', 'is', 'are', 'will', "won't", "can't", 'cannot']) + 1
-                        subject_token = tokens[subj_index] if subj_index < len(tokens) else ''
-                    except StopIteration:
-                        subject_token = ''
-                else:
-                    subject_token = ''
-                neg_keywords = ["cannot", "can't", "doesn't", "does not", "do not", "won't", "isn't", "is not", "aren't", "are not", "not"]
-                if subject_token and any(neg_kw in ctx_text for neg_kw in neg_keywords):
-                    return "no"
+        # If there is meaningful energy, emit a binary decision
+        if (pos_energy + neg_energy) > 0:
+            return "yes" if pos_energy >= neg_energy else "no"
 
-            pos_sum = sum(abs(v) for v in positive_activations.values())
-            neg_sum = sum(abs(v) for v in negative_activations.values()) * 1.2  # give negatives override weight
-
-            if neg_sum > pos_sum:
-                return "no"
-            if pos_sum > neg_sum:
-                return "yes"
-            # If tie, fall back to count comparison
-            if len(positive_activations) >= len(negative_activations):
-                return "yes"
-            return "no"
-        
-        # For other questions, return most activated concept
-        if activation_field:
-            max_activation = max(activation_field.items(), key=lambda x: abs(x[1]))
-            return max_activation[0]
-        
-        return "unknown"
+        # Otherwise, emit the max-activation symbol as a fallback descriptive answer
+        symbol, _ = max(activation_field.items(), key=lambda kv: abs(kv[1]))
+        return symbol
     
     def _calculate_wave_confidence(self, wave_result: Dict[str, Any]) -> float:
         """Calculate confidence based on Wave activation strength."""
